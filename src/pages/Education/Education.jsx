@@ -1,11 +1,8 @@
-import React, { useState } from "react";
-import EducationLoader from "@/components/ui/EducationLoader";
+import { useState } from "react";
 import {
-  Star,
   Award,
   Calendar,
   BookOpen,
-  GraduationCap,
   Trophy,
 } from "lucide-react";
 import { motion } from "framer-motion";
@@ -77,10 +74,6 @@ const EducationSection = () => {
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent mb-6">
             Educational Journey
           </h2>
-          <p className="text-gray-300 max-w-2xl mx-auto text-lg">
-            Discover how academic excellence shapes innovative thinking and
-            professional growth.
-          </p>
         </motion.div>
 
         <motion.div

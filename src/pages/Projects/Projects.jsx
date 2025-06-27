@@ -14,6 +14,16 @@ import pixelforgeImg from "@/assets/images/pixelforge.png";
 import fluppyImg from "@/assets/images/fluppy.png";
 
 const projects = [
+    {
+    title: "NexMeet",
+    description:
+      "Designed and developed a video conferencing platform with real-time meeting features, scheduling options, and session recording",
+    src: nexmeetImg,
+    link: nexmeetImg,
+    color: "#8f89ff",
+    githubLink: "https://github.com/mdhralif/nexmeet",
+    liveLink: "https://alif-nexmeet.vercel.app",
+  },
   {
     title: "SoulAce",
     description:
@@ -23,16 +33,6 @@ const projects = [
     color: "#5196fd",
     githubLink: "https://github.com/mdhralif/Blingo",
     liveLink: "https://soulace.onrender.com/",
-  },
-  {
-    title: "NexMeet",
-    description:
-      "Designed and developed a video conferencing platform with real-time meeting features, scheduling options, and session recording",
-    src: nexmeetImg,
-    link: nexmeetImg,
-    color: "#8f89ff",
-    githubLink: "https://github.com/mdhralif/nexmeet",
-    liveLink: "https://alif-nexmeet.vercel.app",
   },
   {
     title: "Blingo",

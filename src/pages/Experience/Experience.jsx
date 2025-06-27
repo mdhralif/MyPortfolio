@@ -1,5 +1,4 @@
-import React from "react";
-import { Code2, Layers, Network } from "lucide-react";
+import { Code2 } from "lucide-react";
 
 const ExperienceCard = ({
   title,

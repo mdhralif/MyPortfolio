@@ -1,13 +1,14 @@
 import HeroImg from "@/assets/images/profile.jpg";
+import SparklesText from "@/components/ui/sparkles-text";
 
 export default function About() {
   return (
     <>
       <section id="about" className="py-16 md:py-32  text-white bg-[#04081A]">
         <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
-          <h2 className="relative z-10 max-w-xl text-4xl font-medium lg:text-5xl text-white">
-            Wev Dev Enthusiast 
-          </h2>
+          <h1 className="relative z-10 max-w-xl text-4xl font-medium lg:text-5xl text-white">
+            <SparklesText text="Here I'm" />  
+          </h1>
           <div className="grid gap-6 sm:grid-cols-2 md:gap-12 lg:gap-24">
             <div className="relative mb-6 sm:mb-0">
               <div className="bg-linear-to-b aspect-76/59 relative rounded-2xl p-px from-zinc-300 to-transparent">
