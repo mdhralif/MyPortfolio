@@ -3,13 +3,23 @@ import { useTransform, motion, useScroll } from "framer-motion";
 import { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 
+// Import all images
+import soulaceImg from "@/assets/images/soulace.png";
+import nexmeetImg from "@/assets/images/nexmeet.png";
+import blingoImg from "@/assets/images/blingo.png";
+import nexbookImg from "@/assets/images/nexbook.png";
+import nextalkImg from "@/assets/images/nextalk.png";
+import iutWebImg from "@/assets/images/iut_web.png";
+import pixelforgeImg from "@/assets/images/pixelforge.png";
+import fluppyImg from "@/assets/images/fluppy.png";
+
 const projects = [
   {
     title: "SoulAce",
     description:
       "Built a mental health platform offering AI-powered journalism, personalized well being tools, real-time mental health assessment and personalized recommendations.",
-    src: "/src/assets/images/soulace.png",
-    link: "/src/assets/images/soulace.png",
+    src: soulaceImg,
+    link: soulaceImg,
     color: "#5196fd",
     githubLink: "https://github.com/mdhralif/Blingo",
     liveLink: "https://soulace.onrender.com/",
@@ -18,8 +28,8 @@ const projects = [
     title: "NexMeet",
     description:
       "Designed and developed a video conferencing platform with real-time meeting features, scheduling options, and session recording",
-    src: "/src/assets/images/nexmeet.png",
-    link: "/src/assets/images/nexmeet.png",
+    src: nexmeetImg,
+    link: nexmeetImg,
     color: "#8f89ff",
     githubLink: "https://github.com/mdhralif/nexmeet",
     liveLink: "https://alif-nexmeet.vercel.app",
@@ -28,8 +38,8 @@ const projects = [
     title: "Blingo",
     description:
       "Built an AI-driven text editor that translates Banglish into proper Bangla using Groq API and LLaMA 3.3 with custom prompt engineering.",
-    src: "/src/assets/images/blingo.png",
-    link: "/src/assets/images/blingo.png",
+    src: blingoImg,
+    link: blingoImg,
     color: "#fff",
     githubLink: "https://github.com/mdhralif/Blingo",
     liveLink: "https://blingo.onrender.com/",
@@ -38,8 +48,8 @@ const projects = [
     title: "Nexbook",
     description:
       "A prototype of Facebook, Nexbook is a social networking platform that enables users to React, post, and follow in a virtual community",
-    src: "/src/assets/images/nexbook.png",
-    link: "/src/assets/images/nexbook.png",
+    src: nexbookImg,
+    link: nexbookImg,
     color: "#ed649e",
     githubLink: "https://github.com/mdhralif/Nexbook",
     liveLink: "",
@@ -48,8 +58,8 @@ const projects = [
     title: "NexTalk",
     description:
       "Nextalk is a real-time conversation web app designed to facilitate instant messaging and seamless communication between users.",
-    src: "/src/assets/images/nextalk.png",
-    link: "/src/assets/images/nextalk.png",
+    src: nextalkImg,
+    link: nextalkImg,
     color: "#fff",
     githubLink: "https://github.com/mdhralif/Realtime_Chat_Application",
     liveLink: "",
@@ -58,8 +68,8 @@ const projects = [
     title: "IUT website Demo Prototyping",
     description:
       "A prototype of the Islamic University of Technology (IUT) website using basic HTML, CSS, and JavaScript",
-    src: "/src/assets/image/iut_web.png",
-    link: "/src/assets/images/iut_web.png",
+    src: iutWebImg,
+    link: iutWebImg,
     color: "#fff",
     githubLink: "",
     liveLink: "",
@@ -69,8 +79,8 @@ const projects = [
     title: "PixelForge",
     description:
       "Pixelforge is a Minecraft-inspired prototype that simulates a block-based world with crafting and building mechanics,focused on creating a detailed map of the Islamic University of Technology (IUT).",
-    src: "/src/assets/images/pixelforge.png",
-    link: "/src/assets/images/pixelforge.png",
+    src: pixelforgeImg,
+    link: pixelforgeImg,
     color: "#fff",
     githubLink: "",
     liveLink: "",
@@ -79,8 +89,8 @@ const projects = [
     title: "Flappy Bird",
     description:
       "A clone of the classic Flappy Bird game, built using Unity & scripting with C#, featuring responsive controls and dynamic gameplay.",
-    src: "/src/assets/images/fluppy.png",
-    link: "/src/assets/images/fluppy.png",
+    src: fluppyImg,
+    link: fluppyImg,
     color: "#fff",
     githubLink: "",
     liveLink: "",
