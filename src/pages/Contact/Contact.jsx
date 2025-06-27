@@ -121,7 +121,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold">Phone</h3>
-                    <p className="text-gray-400">(+880) 132 457 57 19</p>
+                    <p className="text-gray-400">(+880) 132 457 58 19</p>
                   </div>
                 </div>
 
