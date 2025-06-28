@@ -51,12 +51,12 @@ export default function Header() {
           <nav className="bg-gray-900/90 backdrop-blur-md md:rounded-full px-4 md:px-6 py-2.5">
             {/* Mobile Menu Button */}
             <div className="flex justify-between items-center md:hidden px-2">
-              <Link to="/" className="text-white font-bold">mdhralif <b style={{color: 'aqua'}}>.</b></Link>
+              <Link to="/" className="text-white font-bold text-lg">mdhralif <b style={{color: 'aqua'}}>.</b></Link>
               <button 
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="text-white p-2"
               >
-                <FaBars />
+                <FaBars className="text-lg" />
               </button>
             </div>
 
@@ -71,7 +71,7 @@ export default function Header() {
                       setActiveLink(id);
                       setIsMenuOpen(false);
                     }}
-                    className={`px-3 py-2 md:py-1.5 rounded-lg md:rounded-full text-sm font-medium
+                    className={`px-3 py-2 md:py-1.5 rounded-lg md:rounded-full text-base font-medium
                       transition-all duration-300 flex items-center gap-2
                       hover:bg-white/10 
                       ${
