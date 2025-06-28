@@ -62,20 +62,29 @@ const ExperienceSection = () => {
     },
     {
       icon: Code2,
-      title: "IoT-Based Flood Monitoring System — Collaborative Paid Project",
-      company: "Contract-Based Role",
-      period: "Dec. 24 – April 2025",
+      title: "",
+      company: "",
+      period: "",
       description:
-        "Developed modules for analyzing flood risk and estimating evacuation time based on sensor data and location-specific parameters.",
+        "",
     },
+    {
+      icon: Code2,
+      title: "",
+      company: "",
+      period: "",
+      description:
+        "",
+    },
+
     // {
     //   icon: Code2,
-    //   title: "",
+    //   title: "IoT-Based Flood Monitoring System — Collaborative Paid Project",
     //   company: "Contract-Based Role",
     //   period: "Dec. 24 – April 2025",
     //   description:
     //     "Developed modules for analyzing flood risk and estimating evacuation time based on sensor data and location-specific parameters.",
-    // }
+    // },
   ];
 
   return (
