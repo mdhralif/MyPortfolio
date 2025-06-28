@@ -83,7 +83,7 @@ const projects = [
     link: pixelforgeImg,
     color: "#fff",
     githubLink: "",
-    liveLink: "",
+    liveLink: "https://drive.google.com/file/d/1SKGoVzAZgH5KBLp6EEodw4J9MyL5iFRx/view?usp=drive_link",
   },
   {
     title: "Flappy Bird",
@@ -92,8 +92,8 @@ const projects = [
     src: fluppyImg,
     link: fluppyImg,
     color: "#fff",
-    githubLink: "",
-    liveLink: "",
+    githubLink: "https://github.com/mdhralif/Fluppy_Bird",
+    liveLink: "https://drive.google.com/file/d/1UAgQtEz32a5xWLXzvf5yd3ghycyVUYvg/view?usp=drive_link",
   },
 
   
