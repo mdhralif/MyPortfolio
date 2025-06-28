@@ -3,39 +3,63 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const LoadingScreen = ({ onLoadingComplete }) => {
   const [progress, setProgress] = useState(0);
-  const [currentText, setCurrentText] = useState(0);
+  const [codeLines, setCodeLines] = useState([]);
+  const [currentPhase, setCurrentPhase] = useState(0);
 
-  const loadingTexts = [
-    "Initializing...",
-    "Loading Portfolio...",
-    "Setting up Components...",
-    "Almost Ready...",
-    "Welcome!"
+  const codeSnippets = [
+    "const developer = new Developer();",
+    "developer.initialize();",
+    "Loading skills.js...",
+    "Importing projects.jsx...",
+    "Rendering portfolio...",
+    "Optimizing performance...",
+    "Building dreams with code...",
+    "Portfolio ready!"
+  ];
+
+  const phases = [
+    "BOOTING",
+    "LOADING",
+    "COMPILING", 
+    "READY"
   ];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setProgress((prev) => {
-        if (prev >= 100) {
+        const newProgress = prev + 1.2;
+        
+        // Update phase based on progress
+        if (newProgress >= 25 && currentPhase === 0) setCurrentPhase(1);
+        if (newProgress >= 50 && currentPhase === 1) setCurrentPhase(2);
+        if (newProgress >= 85 && currentPhase === 2) setCurrentPhase(3);
+        
+        if (newProgress >= 100) {
           clearInterval(interval);
           setTimeout(() => {
             onLoadingComplete();
-          }, 500);
+          }, 1000);
           return 100;
         }
-        return prev + 2;
+        return newProgress;
       });
-    }, 50);
+    }, 70);
 
     return () => clearInterval(interval);
-  }, [onLoadingComplete]);
+  }, [onLoadingComplete, currentPhase]);
 
+  // Simulate code typing effect
   useEffect(() => {
-    const textInterval = setInterval(() => {
-      setCurrentText((prev) => (prev + 1) % loadingTexts.length);
-    }, 800);
+    const codeInterval = setInterval(() => {
+      setCodeLines(prev => {
+        if (prev.length < codeSnippets.length) {
+          return [...prev, codeSnippets[prev.length]];
+        }
+        return prev;
+      });
+    }, 600);
 
-    return () => clearInterval(textInterval);
+    return () => clearInterval(codeInterval);
   }, []);
 
   return (
@@ -43,122 +67,194 @@ const LoadingScreen = ({ onLoadingComplete }) => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        exit={{ opacity: 0, scale: 0.8 }}
-        transition={{ duration: 0.5 }}
-        className="fixed inset-0 z-50 flex items-center justify-center bg-[#04081A] overflow-hidden"
+        exit={{ 
+          opacity: 0,
+          scale: 0.95,
+          rotateX: 10,
+          filter: "blur(8px)"
+        }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+        className="fixed inset-0 z-50 bg-black overflow-hidden font-mono"
       >
-        {/* Animated background */}
+        {/* Matrix-style background */}
         <div className="absolute inset-0">
-          {/* Grid background */}
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(50,50,70,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(50,50,70,0.15)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_70%,transparent_100%)]" />
-          
-          {/* Floating particles */}
-          {[...Array(20)].map((_, i) => (
+          {[...Array(40)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-2 h-2 bg-cyan-500/30 rounded-full"
+              className="absolute text-green-500/20 text-xs"
               initial={{
                 x: Math.random() * window.innerWidth,
-                y: Math.random() * window.innerHeight,
-                opacity: 0,
+                y: -20,
+                opacity: 0
               }}
               animate={{
-                y: [null, Math.random() * window.innerHeight],
-                opacity: [0, 1, 0],
+                y: window.innerHeight + 20,
+                opacity: [0, 1, 0]
               }}
               transition={{
-                duration: Math.random() * 3 + 2,
+                duration: Math.random() * 5 + 3,
                 repeat: Infinity,
-                delay: Math.random() * 2,
+                delay: Math.random() * 3,
+                ease: "linear"
               }}
-            />
+            >
+              {Math.random().toString(36).substring(2, 15)}
+            </motion.div>
           ))}
         </div>
 
-        {/* Main loading content */}
-        <div className="relative z-10 text-center space-y-8">
-          {/* Logo/Name */}
+        {/* Terminal window */}
+        <div className="relative z-10 min-h-screen flex items-center justify-center p-4">
           <motion.div
-            initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-2"
+            initial={{ scale: 0.8, opacity: 0, y: 50 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2, type: "spring" }}
+            className="w-full max-w-4xl bg-gray-900/95 backdrop-blur-md rounded-lg overflow-hidden border border-gray-700 shadow-2xl"
           >
-            <h1 className="text-4xl md:text-6xl font-bold text-transparent bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text">
-              mdhralif<span className="text-cyan-400">.</span>
-            </h1>
-            <p className="text-gray-400 text-lg">Portfolio Loading...</p>
-          </motion.div>
+            {/* Terminal header */}
+            <div className="bg-gray-800 px-4 py-3 flex items-center space-x-2 border-b border-gray-700">
+              <div className="flex space-x-2">
+                <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+              </div>
+              <div className="flex-1 text-center">
+                <span className="text-gray-400 text-sm">mdhralif@portfolio:~$</span>
+              </div>
+              <div className="text-gray-400 text-sm">
+                {phases[currentPhase]}
+              </div>
+            </div>
 
-          {/* Loading bar */}
-          <motion.div
-            initial={{ width: 0, opacity: 0 }}
-            animate={{ width: "300px", opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="mx-auto"
-          >
-            <div className="w-[300px] h-2 bg-gray-800 rounded-full overflow-hidden">
+            {/* Terminal content */}
+            <div className="p-6 h-96 bg-black/90 relative overflow-hidden">
+              {/* ASCII Art Logo */}
               <motion.div
-                className="h-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full"
-                initial={{ width: "0%" }}
-                animate={{ width: `${progress}%` }}
-                transition={{ duration: 0.3 }}
-              />
-            </div>
-            <div className="flex justify-between items-center mt-2 text-sm text-gray-400">
-              <span>{progress}%</span>
-              <span>Complete</span>
-            </div>
-          </motion.div>
-
-          {/* Loading text */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="h-8"
-          >
-            <AnimatePresence mode="wait">
-              <motion.p
-                key={currentText}
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: -20, opacity: 0 }}
-                transition={{ duration: 0.3 }}
-                className="text-cyan-400 text-lg font-medium"
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.5, duration: 0.8 }}
+                className="mb-6"
               >
-                {loadingTexts[currentText]}
-              </motion.p>
-            </AnimatePresence>
-          </motion.div>
+                <pre className="text-cyan-400 text-xs leading-tight">
+{`
+ █████╗ ██╗     ██╗███████╗
+██╔══██╗██║     ██║██╔════╝
+███████║██║     ██║█████╗  
+██╔══██║██║     ██║██╔══╝  
+██║  ██║███████╗██║██║     
+╚═╝  ╚═╝╚══════╝╚═╝╚═╝     
+                            
+`}
+                </pre>
+              </motion.div>
 
-          {/* Spinning loader */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 1 }}
-            className="flex justify-center"
-          >
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-              className="w-8 h-8 border-2 border-cyan-500/30 border-t-cyan-500 rounded-full"
-            />
+              {/* Code lines with typing effect */}
+              <div className="space-y-2">
+                {codeLines.map((line, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    className="flex items-center space-x-2"
+                  >
+                    <span className="text-green-400">$</span>
+                    <motion.span
+                      initial={{ width: 0 }}
+                      animate={{ width: "auto" }}
+                      className="text-white overflow-hidden whitespace-nowrap"
+                    >
+                      {line}
+                    </motion.span>
+                    <motion.span
+                      animate={{ opacity: [1, 0] }}
+                      transition={{ duration: 0.8, repeat: Infinity }}
+                      className="text-green-400"
+                    >
+                      |
+                    </motion.span>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Progress section */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1, duration: 0.8 }}
+                className="absolute bottom-6 left-6 right-6"
+              >
+                <div className="space-y-3">
+                  {/* Status */}
+                  <div className="flex justify-between items-center">
+                    <span className="text-cyan-400">Status:</span>
+                    <motion.span
+                      key={currentPhase}
+                      initial={{ scale: 1.2, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      className="text-yellow-400 font-bold"
+                    >
+                      [{phases[currentPhase]}]
+                    </motion.span>
+                  </div>
+
+                  {/* Progress bar */}
+                  <div className="space-y-1">
+                    <div className="flex justify-between text-xs">
+                      <span className="text-gray-400">Progress:</span>
+                      <span className="text-cyan-400">{Math.floor(progress)}%</span>
+                    </div>
+                    <div className="h-2 bg-gray-800 rounded-full overflow-hidden">
+                      <motion.div
+                        className="h-full bg-gradient-to-r from-green-500 via-cyan-500 to-blue-500"
+                        initial={{ width: "0%" }}
+                        animate={{ width: `${progress}%` }}
+                        transition={{ duration: 0.3, ease: "easeOut" }}
+                      />
+                    </div>
+                  </div>
+
+                  {/* Binary loading animation */}
+                  <div className="flex items-center space-x-2">
+                    <span className="text-green-400">Loading:</span>
+                    <div className="flex space-x-1">
+                      {[...Array(20)].map((_, i) => (
+                        <motion.span
+                          key={i}
+                          animate={{ 
+                            opacity: [0.3, 1, 0.3],
+                            color: ["#10b981", "#06b6d4", "#3b82f6"]
+                          }}
+                          transition={{
+                            duration: 0.5,
+                            delay: i * 0.1,
+                            repeat: Infinity
+                          }}
+                          className="text-xs"
+                        >
+                          {Math.random() > 0.5 ? '1' : '0'}
+                        </motion.span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
           </motion.div>
         </div>
 
-        {/* Decorative elements */}
+        {/* Glitch effect overlay */}
         <motion.div
-          initial={{ scale: 0, opacity: 0 }}
-          animate={{ scale: 1, opacity: 0.1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="absolute top-20 left-20 w-64 h-64 bg-cyan-500 rounded-full filter blur-3xl"
-        />
-        <motion.div
-          initial={{ scale: 0, opacity: 0 }}
-          animate={{ scale: 1, opacity: 0.1 }}
-          transition={{ duration: 1, delay: 0.7 }}
-          className="absolute bottom-20 right-20 w-64 h-64 bg-blue-500 rounded-full filter blur-3xl"
+          className="absolute inset-0 bg-cyan-500/5"
+          animate={{
+            opacity: [0, 0.1, 0],
+            x: [0, -2, 2, 0]
+          }}
+          transition={{
+            duration: 0.1,
+            repeat: Infinity,
+            repeatDelay: Math.random() * 3 + 1
+          }}
         />
       </motion.div>
     </AnimatePresence>
