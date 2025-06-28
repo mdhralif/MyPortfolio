@@ -6,6 +6,7 @@ import Meteors from "@/components/ui/meteors";
 import PortfolioPage from "@/pages/About/About";
 import SparklesText from "@/components/ui/sparkles-text";
 import { FlipWords } from "@/components/ui/flip-words";
+import { FaGithub, FaDownload, FaArrowRight, FaEnvelope } from "react-icons/fa";
 
 // Grid Background - Replacing the HexagonBackground
 const GridBackground = () => {
@@ -211,8 +212,9 @@ const profile = {
                 >
                   <span className="block w-full px-6 sm:px-8 py-3 sm:py-4 rounded-[11px] bg-gray-900 transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-teal-400">
                     <span className="relative flex items-center justify-center gap-2 text-white font-medium">
+                      <FaGithub className="text-lg" />
                       <span>My Github</span>
-                      <i className="fas fa-arrow-right transform transition-all duration-300 group-hover:translate-x-1"></i>
+                      <FaArrowRight className="transform transition-all duration-300 group-hover:translate-x-1" />
                     </span>
                   </span>
                 </a>
@@ -225,8 +227,10 @@ const profile = {
                 >
                   <span className="block w-full px-6 sm:px-8 py-3 sm:py-4 rounded-[11px] bg-gray-900 border border-gray-700/50 transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-gray-800 group-hover:to-gray-700">
                     <span className="relative flex items-center justify-center gap-2 text-gray-300 font-medium group-hover:text-white">
-                      <span>Get My CV</span>
-                      <i className="fas fa-envelope transform transition-all duration-300 group-hover:rotate-12"></i>
+                      <FaEnvelope className="transform transition-all duration-300 group-hover:rotate-12" /> 
+                      <span>Get my CV</span>
+                      <FaDownload className="text-lg" />
+                      
                     </span>
                   </span>
                 </a>
