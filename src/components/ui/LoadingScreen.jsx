@@ -135,17 +135,31 @@ const LoadingScreen = ({ onLoadingComplete }) => {
                 transition={{ delay: 0.5, duration: 0.8 }}
                 className="mb-6"
               >
-                <pre className="text-cyan-400 text-xs leading-tight">
+                <motion.pre 
+                  className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-cyan-400 to-blue-400 text-sm leading-tight font-bold"
+                  animate={{
+                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  style={{
+                    backgroundSize: "200% 200%",
+                    filter: "drop-shadow(0 0 8px rgba(6, 182, 212, 0.4))"
+                  }}
+                >
 {`
- █████╗ ██╗     ██╗███████╗
-██╔══██╗██║     ██║██╔════╝
-███████║██║     ██║█████╗  
-██╔══██║██║     ██║██╔══╝  
-██║  ██║███████╗██║██║     
-╚═╝  ╚═╝╚══════╝╚═╝╚═╝     
-                            
+ ░█████╗░██╗░░░░░██╗███████╗
+ ██╔══██╗██║░░░░░██║██╔════╝
+ ███████║██║░░░░░██║█████╗░░
+ ██╔══██║██║░░░░░██║██╔══╝░░
+ ██║░░██║███████╗██║██║░░░░░
+ ╚═╝░░╚═╝╚══════╝╚═╝╚═╝░░░░░
+                              
 `}
-                </pre>
+                </motion.pre>
               </motion.div>
 
               {/* Code lines with typing effect */}
