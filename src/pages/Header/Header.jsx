@@ -72,7 +72,7 @@ export default function Header() {
                       setActiveLink(id);
                       setIsMenuOpen(false);
                     }}
-                    className={`px-3 py-2 md:py-1.5 rounded-lg md:rounded-full text-1xl font-medium
+                    className={`px-3 py-2 md:py-1.5 rounded-lg md:rounded-full text-2xl font-medium
                       transition-all duration-300 flex items-center gap-2
                       hover:bg-white/10 
                       ${
