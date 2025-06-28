@@ -52,7 +52,7 @@ const projects = [
     link: nexbookImg,
     color: "#ed649e",
     githubLink: "https://github.com/mdhralif/Nexbook",
-    liveLink: "",
+    liveLink: "https://drive.google.com/file/d/10t3EwYO7p8HiJYq49aEG4ZjP7Y4uVac4/view?usp=drive_link",
   },
   {
     title: "NexTalk",
@@ -71,7 +71,7 @@ const projects = [
     src: iutWebImg,
     link: iutWebImg,
     color: "#fff",
-    githubLink: "",
+    githubLink: "https://github.com/mdhralif",
     liveLink: "",
   },
 
@@ -82,7 +82,7 @@ const projects = [
     src: pixelforgeImg,
     link: pixelforgeImg,
     color: "#fff",
-    githubLink: "",
+    githubLink: "https://github.com/mdhralif",
     liveLink: "https://drive.google.com/file/d/1SKGoVzAZgH5KBLp6EEodw4J9MyL5iFRx/view?usp=drive_link",
   },
   {
