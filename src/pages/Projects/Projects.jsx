@@ -52,7 +52,7 @@ const projects = [
     link: nexbookImg,
     color: "#ed649e",
     githubLink: "https://github.com/mdhralif/Nexbook",
-    liveLink: "https://drive.google.com/file/d/10t3EwYO7p8HiJYq49aEG4ZjP7Y4uVac4/view?usp=drive_link",
+    liveLink: "https://drive.google.com/file/d/10t3EwYO7p8HiJYq49aEG4ZjP7Y4uVac4/view?usp=sharing",
   },
   {
     title: "IUT website Demo Prototyping",
@@ -62,7 +62,7 @@ const projects = [
     link: iutWebImg,
     color: "#fff",
     githubLink: "https://github.com/mdhralif",
-    liveLink: "https://drive.google.com/file/d/1AD-3NzOo-DUug4-E801I4hanOdGLkNSd/view?usp=drive_link",
+    liveLink: "https://drive.google.com/file/d/1AD-3NzOo-DUug4-E801I4hanOdGLkNSd/view?usp=sharing",
   },
   {
     title: "NexTalk",
@@ -72,7 +72,7 @@ const projects = [
     link: nextalkImg,
     color: "#fff",
     githubLink: "https://github.com/mdhralif/Realtime_Chat_Application",
-    liveLink: "",
+    liveLink: "https://drive.google.com/file/d/1GaoliAKVd3J9IDk97kINaRAaMSNF5kUx/view?usp=sharing",
   },
 
   {
@@ -83,7 +83,7 @@ const projects = [
     link: pixelforgeImg,
     color: "#fff",
     githubLink: "https://github.com/mdhralif",
-    liveLink: "https://drive.google.com/file/d/1SKGoVzAZgH5KBLp6EEodw4J9MyL5iFRx/view?usp=drive_link",
+    liveLink: "https://drive.google.com/file/d/1SKGoVzAZgH5KBLp6EEodw4J9MyL5iFRx/view?usp=sharing",
   },
   {
     title: "Flappy Bird",
@@ -93,7 +93,7 @@ const projects = [
     link: fluppyImg,
     color: "#fff",
     githubLink: "https://github.com/mdhralif/Fluppy_Bird",
-    liveLink: "https://drive.google.com/file/d/1UAgQtEz32a5xWLXzvf5yd3ghycyVUYvg/view?usp=drive_link",
+    liveLink: "https://drive.google.com/file/d/1UAgQtEz32a5xWLXzvf5yd3ghycyVUYvg/view?usp=sharing",
   },
 
   
