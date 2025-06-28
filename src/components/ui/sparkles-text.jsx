@@ -9,11 +9,17 @@ const SparklesText = ({
   colors = { first: "#9E7AFF", second: "#FE8BBB" },
   className,
   sparklesCount = 10,
+  showSparkles = true,
   ...props
 }) => {
   const [sparkles, setSparkles] = useState([]);
 
   useEffect(() => {
+    if (!showSparkles) {
+      setSparkles([]);
+      return;
+    }
+
     const generateStar = () => {
       const starX = `${Math.random() * 100}%`;
       const starY = `${Math.random() * 100}%`;
@@ -45,7 +51,7 @@ const SparklesText = ({
     const interval = setInterval(updateStars, 100);
 
     return () => clearInterval(interval);
-  }, [colors.first, colors.second]);
+  }, [colors.first, colors.second, showSparkles, sparklesCount]);
 
   return (
     (<div
@@ -58,7 +64,7 @@ const SparklesText = ({
         }
       }>
       <span className="relative inline-block">
-        {sparkles.map((sparkle) => (
+        {showSparkles && sparkles.map((sparkle) => (
           <Sparkle key={sparkle.id} {...sparkle} />
         ))}
         <strong>{text}</strong>
