@@ -24,7 +24,7 @@ export default function Header() {
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  }, );
 
   const navLinks = [
     { id: "home", icon: FaHome, text: "Home", path: "/" },
