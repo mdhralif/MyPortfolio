@@ -7,6 +7,7 @@ import {
   FaCode,
   FaEnvelope,
   FaBars,
+  FaTimes,
 } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 
@@ -55,9 +56,13 @@ export default function Header() {
               <Link to="/" className="text-white font-bold text-3xl">mdhr@lif <b style={{color: 'aqua'}}>.</b></Link>
               <button 
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-white p-2"
+                className="text-white p-2 transition-all duration-300"
               >
-                <FaBars className="text-3xl" />
+                {isMenuOpen ? (
+                  <FaTimes className="text-3xl transform transition-transform duration-300" />
+                ) : (
+                  <FaBars className="text-3xl transition-transform duration-300" />
+                )}
               </button>
             </div>
 
@@ -112,4 +117,6 @@ export default function Header() {
       `}</style>
     </header>
   );
+
 }
+
