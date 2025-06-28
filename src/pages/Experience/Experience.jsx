@@ -60,22 +60,22 @@ const ExperienceSection = () => {
       description:
         "Contributed as a Student Collaborator and Web Contributor by developing and maintaining the lab’s official website, including a comprehensive student and alumni directory, improving design and layouts",
     },
-    {
-      icon: Code2,
-      title: "",
-      company: "",
-      period: "",
-      description:
-        "",
-    },
-    {
-      icon: Code2,
-      title: "",
-      company: "",
-      period: "",
-      description:
-        "",
-    },
+    // {
+    //   icon: Code2,
+    //   title: "",
+    //   company: "",
+    //   period: "",
+    //   description:
+    //     "",
+    // },
+    // {
+    //   icon: Code2,
+    //   title: "",
+    //   company: "",
+    //   period: "",
+    //   description:
+    //     "",
+    // },
 
     // {
     //   icon: Code2,
