@@ -116,7 +116,7 @@ const LoadingScreen = ({ onLoadingComplete }) => {
         <div className="space-y-4">
           <div className="relative">
             <h1 className="text-6xl md:text-8xl font-bold text-white tracking-tight">
-              ALIF
+              mdhr@lif <b style={{ color: 'aqua' }}>.</b>
             </h1>
             <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/20 to-teal-400/20 rounded-lg blur opacity-75"></div>
           </div>

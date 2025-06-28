@@ -97,7 +97,7 @@ export default function Contact() {
             {/* Contact Info */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                <h2 className="text-4xl md:text-4xl font-black text-transparent bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text">
                   Get in Touch
                 </h2>
                 <p className="text-gray-300 text-lg">
@@ -219,7 +219,7 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white py-3 px-6 rounded-lg font-semibold flex items-center justify-center space-x-2 hover:opacity-90 transition-opacity"
+                  className="w-full bg-gradient-to-r from-blue-500 to-teal-400 text-white py-3 px-6 rounded-lg font-semibold flex items-center justify-center space-x-2 hover:opacity-90 transition-opacity"
                 >
                   <span>Send Message</span>
                   <Send className="w-4 h-4" />
