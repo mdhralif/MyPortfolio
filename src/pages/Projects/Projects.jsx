@@ -55,16 +55,6 @@ const projects = [
     liveLink: "https://drive.google.com/file/d/10t3EwYO7p8HiJYq49aEG4ZjP7Y4uVac4/view?usp=drive_link",
   },
   {
-    title: "NexTalk",
-    description:
-      "Nextalk is a real-time conversation web app designed to facilitate instant messaging and seamless communication between users.",
-    src: nextalkImg,
-    link: nextalkImg,
-    color: "#fff",
-    githubLink: "https://github.com/mdhralif/Realtime_Chat_Application",
-    liveLink: "",
-  },
-  {
     title: "IUT website Demo Prototyping",
     description:
       "A prototype of the Islamic University of Technology (IUT) website using basic HTML, CSS, and JavaScript",
@@ -73,6 +63,16 @@ const projects = [
     color: "#fff",
     githubLink: "https://github.com/mdhralif",
     liveLink: "https://drive.google.com/file/d/1AD-3NzOo-DUug4-E801I4hanOdGLkNSd/view?usp=drive_link",
+  },
+  {
+    title: "NexTalk",
+    description:
+      "Nextalk is a real-time conversation web app designed to facilitate instant messaging and seamless communication between users.",
+    src: nextalkImg,
+    link: nextalkImg,
+    color: "#fff",
+    githubLink: "https://github.com/mdhralif/Realtime_Chat_Application",
+    liveLink: "",
   },
 
   {
