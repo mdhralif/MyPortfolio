@@ -18,16 +18,16 @@ const ExperienceCard = ({
       {/* Floating icon with pulse effect */}
       <div className="relative mb-6">
         <div className="absolute -inset-4 opacity-25 rounded-full blur-xl group-hover:opacity-75 animate-pulse transition-all duration-500" />
-        <Icon className="w-12 h-12 text-cyan-400 relative z-10 transform group-hover:rotate-12 transition-transform duration-300" />
+        <Icon className="w-12 h-12 text-white relative z-10 transform group-hover:rotate-12 transition-transform duration-300" />
       </div>
 
       {/* Content with improved typography */}
       <div className="space-y-3">
-        <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+        <h3 className="text-2xl font-bold bg-white bg-clip-text text-transparent">
           {title}
         </h3>
         <div className="flex justify-between items-center text-gray-300">
-          <span className="font-semibold text-blue-400">{company}</span>
+          <span className="font-semibold text-green-200">{company}</span>
           <span className="text-sm font-mono bg-blue-500/10 px-3 py-1 rounded-full">
             {period}
           </span>
