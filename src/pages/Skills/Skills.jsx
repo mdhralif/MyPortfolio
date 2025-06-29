@@ -30,7 +30,7 @@ import {
   SiJunit5,
   SiIntellijidea,
 } from "react-icons/si";
-import { TbBrandCSharp, TbBrandVscode } from "react-icons/tb";
+import { TbBrandCSharp, TbBrandVscode, TbBrandCpp } from "react-icons/tb";
 import { BsFileEarmarkCode, BsGrid1X2 } from "react-icons/bs";
 import { MdAnimation } from "react-icons/md";
 import { FcWorkflow } from "react-icons/fc";
@@ -70,23 +70,47 @@ const SkillCard = ({ icon: Icon, title, skills, color }) => (
 const SkillsSection = () => {
   const skillCategories = [
     {
-      icon: Code2,
-      title: "Frontend Development",
-      color: "text-blue-400",
+      icon: Layout,
+      title: "Programming Languages",
+      color: "text-purple-400",
       skills: [
-        { name: "React", icon: <FaReact className="w-4 h-4 text-[#61DAFB]" /> },
         {
-          name: "Next.js",
-          icon: <SiNextdotjs className="w-4 h-4 text-white" />,
+          name: "C",
+          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#A8B9CC]" />,
+        },
+        {
+          name: "C#",
+          icon: <TbBrandCSharp className="w-4 h-4 text-[#239120]" />,
+        },
+        {
+          name: "C++",
+          icon: <TbBrandCpp className="w-4 h-4 text-[#00599C]" />,
+        },
+        {
+          name: "JavaScript",
+          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#F7DF1E]" />,
         },
         {
           name: "TypeScript",
           icon: <SiTypescript className="w-4 h-4 text-[#3178C6]" />,
         },
         {
-          name: "Tailwind CSS",
-          icon: <SiTailwindcss className="w-4 h-4 text-[#38B2AC]" />,
+          name: "Python",
+          icon: <FaPython className="w-4 h-4 text-[#3776AB]" />,
         },
+        {
+          name: "Java",
+          icon: <FaJava className="w-4 h-4 text-[#ED8B00]" />,
+        },
+        
+        
+      ],
+    },
+    {
+      icon: Code2,
+      title: "Frontend Development",
+      color: "text-blue-400",
+      skills: [
         {
           name: "HTML5",
           icon: <BsFileEarmarkCode className="w-4 h-4 text-[#E34F26]" />,
@@ -94,6 +118,27 @@ const SkillsSection = () => {
         {
           name: "CSS3",
           icon: <BsFileEarmarkCode className="w-4 h-4 text-[#1572B6]" />,
+        },
+        { name: "React", icon: <FaReact className="w-4 h-4 text-[#61DAFB]" /> },
+        {
+          name: "Next.js",
+          icon: <SiNextdotjs className="w-4 h-4 text-white" />,
+        },
+        {
+          name: "Tailwind CSS",
+          icon: <SiTailwindcss className="w-4 h-4 text-[#38B2AC]" />,
+        },
+        {
+          name: "Redux",
+          icon: <SiRedux className="w-4 h-4 text-[#764ABC]" />,
+        },
+        {
+          name: "Vite",
+          icon: <SiVite className="w-4 h-4 text-[#646CFF]" />,
+        },
+        {
+          name: "Webpack",
+          icon: <SiWebpack className="w-4 h-4 text-[#8DD6F9]" />,
         },
       ],
     },
@@ -105,10 +150,6 @@ const SkillsSection = () => {
         {
           name: "Node.js",
           icon: <FaNodeJs className="w-4 h-4 text-[#339933]" />,
-        },
-        {
-          name: "Python",
-          icon: <FaPython className="w-4 h-4 text-[#3776AB]" />,
         },
         {
           name: "PostgreSQL",
@@ -123,16 +164,74 @@ const SkillsSection = () => {
           icon: <BsGrid1X2 className="w-4 h-4 text-[#FF6C37]" />,
         },
         {
-          name: "java",
-          icon: <FaJava className="w-4 h-4 text-[#FF6C37]" />,
-        },
-        {
-          name: "C#",
-          icon: "",
-        },
-        {
           name: "GraphQL",
           icon: <SiGraphql className="w-4 h-4 text-[#E10098]" />,
+        },
+        {
+          name: "Firebase",
+          icon: <SiFirebase className="w-4 h-4 text-[#FFCA28]" />,
+        },
+      ],
+    },
+    {
+      icon: Cloud,
+      title: "Machine Learning",
+      color: "text-orange-400",
+      skills: [
+        {
+          name: "TensorFlow",
+          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#FF6F00]" />,
+        },
+        {
+          name: "PyTorch",
+          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#EE4C2C]" />,
+        },
+        {
+          name: "Scikit-learn",
+          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#F7931E]" />,
+        },
+        {
+          name: "Pandas",
+          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#150458]" />,
+        },
+        {
+          name: "NumPy",
+          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#013243]" />,
+        },
+        {
+          name: "Matplotlib",
+          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#11557C]" />,
+        },
+        {
+          name: "Jupyter",
+          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#F37626]" />,
+        },
+      ],
+    },
+    {
+      icon: Paintbrush,
+      title: "Design & UI/UX",
+      color: "text-cyan-400",
+      skills: [
+        {
+          name: "Figma",
+          icon: <FaFigma className="w-4 h-4 text-[#F24E1E]" />,
+        },
+        {
+          name: "Canva",
+          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#00C4CC]" />,
+        },
+        {
+          name: "Responsive Design",
+          icon: <Layout className="w-4 h-4 text-[#38B2AC]" />,
+        },
+        {
+          name: "Wireframing",
+          icon: <BsGrid1X2 className="w-4 h-4 text-[#9333EA]" />,
+        },
+        {
+          name: "Prototyping",
+          icon: <MdAnimation className="w-4 h-4 text-[#F59E0B]" />,
         },
       ],
     },
@@ -150,14 +249,16 @@ const SkillsSection = () => {
           name: "IntelliJ IDEA",
           icon: <SiIntellijidea className="w-4 h-4 text-[#007ACC]" />,
         },
-        
         {
-          name: "Firebase",
-          icon: <SiFirebase className="w-4 h-4 text-[#FFCA28]" />,
+          name: "Git",
+          icon: <FaGitAlt className="w-4 h-4 text-[#F05032]" />,
         },
         { name: "Vercel", icon: <SiVercel className="w-4 h-4 text-white" /> },
-        { name: "Junit5", icon: <SiJunit5 className="w-4 h-4 text-white" /> },
-
+        { name: "JUnit5", icon: <SiJunit5 className="w-4 h-4 text-[#25A162]" /> },
+        {
+          name: "Linux",
+          icon: <FaLinux className="w-4 h-4 text-[#FCC624]" />,
+        },
       ],
     },
     
@@ -184,7 +285,7 @@ const SkillsSection = () => {
           ))}
         </div>
       </section>
-      <style jsx>{`
+      <style>{`
         @keyframes shimmer {
           0% {
             transform: translateX(-100%);

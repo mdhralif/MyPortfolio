@@ -17,7 +17,7 @@ const EducationSection = () => {
       mascot: "🎓",
       year: "August 2022-present",
       achievements: ["CGPA: 3.86"],
-      skills: [],
+      skills: ["OOP","Design Pattern", "Data Structures", "Algorithms", "Web Development", "Artificial Intelligence","Machine Learning"," Database Management","Sofware Security", "Networking"," Software Testing","Server Programming","Computer Architecture"],  
       description:
         "",
     },
