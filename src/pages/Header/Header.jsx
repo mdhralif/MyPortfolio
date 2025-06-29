@@ -54,11 +54,11 @@ export default function Header() {
             {/* Mobile Menu Button */}
             <div className="flex justify-between items-center md:hidden px-2">
               {/* <Link to="/" className="text-white font-bold text-3xl">mdhr@lif <b style={{color: 'aqua'}}>.</b></Link> */}
-                            <Link to="/" className="text-white font-mono text-xs leading-none hover:text-cyan-300 transition-colors">
+                            <Link to="/" className="text-gray-300 font-mono text-xs leading-none hover:text-gray-200 transition-colors">
                 <pre className="select-none whitespace-pre">
 {`█▀▀█ █░░ ▀░█▀▀
 █▄▄█ █░░ █ █▀▀
-▀░░▀ ▀▀▀ ▀ ▀░░  ▀`}
+▀░░▀ ▀▀▀ ▀ ▀░░  `}<span className="text-cyan-400">▀</span>
                 </pre>
               </Link>
               <button 
