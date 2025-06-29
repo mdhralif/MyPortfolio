@@ -54,9 +54,9 @@ const ExperienceSection = () => {
   const experiences = [
     {
       icon: Code2,
-      title: "Network and Data Analysis Group (NDAG) — Official Website Contribution",
+      title: "Network & Data Analysis Lab's Official Website Contribution",
       company: "Student Collaborator",
-      period: "May 2025- present",
+      period: "May 2025 - present",
       description:
         "Contributed as a Student Collaborator and Web Contributor by developing and maintaining the lab’s official website, including a comprehensive student and alumni directory, improving design and layouts",
     },
@@ -124,7 +124,11 @@ const ExperienceSection = () => {
           </div>
 
           {/* Experience grid with improved layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
+          <div className={`grid gap-10 max-w-7xl mx-auto ${
+            experiences.length === 1 
+              ? 'grid-cols-1 place-items-center max-w-md' 
+              : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
+          }`}>
             {experiences.map((exp, index) => (
               <ExperienceCard key={index} {...exp} />
             ))}
