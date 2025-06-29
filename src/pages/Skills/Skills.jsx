@@ -259,6 +259,10 @@ const SkillsSection = () => {
           name: "Linux",
           icon: <FaLinux className="w-4 h-4 text-[#FCC624]" />,
         },
+        {
+          name: "Latex",
+          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#008080]" />,
+        },
       ],
     },
     
