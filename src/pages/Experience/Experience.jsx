@@ -60,31 +60,6 @@ const ExperienceSection = () => {
       description:
         "Contributed as a Student Collaborator and Web Contributor by developing and maintaining the lab’s official website, including a comprehensive student and alumni directory, improving design and layouts",
     },
-    // {
-    //   icon: Code2,
-    //   title: "",
-    //   company: "",
-    //   period: "",
-    //   description:
-    //     "",
-    // },
-    // {
-    //   icon: Code2,
-    //   title: "",
-    //   company: "",
-    //   period: "",
-    //   description:
-    //     "",
-    // },
-
-    // {
-    //   icon: Code2,
-    //   title: "IoT-Based Flood Monitoring System — Collaborative Paid Project",
-    //   company: "Contract-Based Role",
-    //   period: "Dec. 24 – April 2025",
-    //   description:
-    //     "Developed modules for analyzing flood risk and estimating evacuation time based on sensor data and location-specific parameters.",
-    // },
   ];
 
   return (
@@ -136,8 +111,8 @@ const ExperienceSection = () => {
         </div>
 
         {/* Enhanced background effects */}
-        <div className="absolute top-20 left-20 w-96 h-96 bg-cyan-500/10 rounded-full filter blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500/10 rounded-full filter blur-3xl animate-pulse delay-1000" />
+        {/* <div className="absolute top-20 left-20 w-96 h-96 bg-cyan-500/10 rounded-full filter blur-3xl animate-pulse" /> */}
+        {/* <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500/10 rounded-full filter blur-3xl animate-pulse delay-1000" /> */}
       </div>
     </>
   );
