@@ -26,7 +26,7 @@ const EducationSection = () => {
       school: "Khulna Public College",
       mascot: "📗",
       year: "2019-2021",
-      achievements: ["GPA: 5.00", "Government Scholarship"],
+      achievements: ["GPA: 5.00", "Government Scholarship", "National Winner - Physics Olympiad", "National Winner - ICT Olympiad"],
       skills: [],
       description:
         "",
