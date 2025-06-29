@@ -32,7 +32,7 @@ const ExperienceCard = ({
             {period}
           </span>
         </div>
-        <p className="text-gray-300 border-l-4 border-blue-500/50 pl-4 mt-4 leading-relaxed">
+        <p className="text-gray-300 border-l-4 border-blue-500/50 pl-4 mt-4 leading-relaxed text-justify">
           {description}
         </p>
       </div>
