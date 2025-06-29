@@ -2,16 +2,20 @@ import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 const loadingMessages = [
-  'Initializing',
-  'Loading assets',
-  'Preparing content', 
-  'Almost ready',
-  'Welcome!'
+  // 'Initializing',
+  // 'Loading assets',
+  // 'Preparing content', 
+  // 'Almost ready',
+  // 'Welcome!'
+  'Welcome',
+  'To',
+  'My',
+  'Portfolio',
 ];
 
 const LoadingScreen = ({ onLoadingComplete }) => {
   const [progress, setProgress] = useState(0);
-  const [loadingText, setLoadingText] = useState('Initializing');
+  const [loadingText, setLoadingText] = useState('Welcome');
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
@@ -113,7 +117,7 @@ const LoadingScreen = ({ onLoadingComplete }) => {
       <div className="relative z-10 text-center space-y-8 px-8">
         
         {/* Logo/Brand */}
-        <div className="space-y-4">
+        {/* <div className="space-y-4">
           <div className="relative">
             <h1 className="text-6xl md:text-8xl font-bold text-white tracking-tight">
               mdhr@lif <b style={{ color: 'aqua' }}>.</b>
@@ -131,20 +135,20 @@ const LoadingScreen = ({ onLoadingComplete }) => {
           <p className="text-gray-400 text-xl font-light">
             Portfolio
           </p>
-        </div>
+        </div> */}
 
         {/* Loading section */}
         <div className="space-y-6">
           
           {/* Loading text */}
           <div className="min-h-[2rem] flex items-center justify-center">
-            <span className="text-gray-300 text-lg font-medium">
+            <span className="text-gray-300 text-4xl font-medium">
               {loadingText}
             </span>
           </div>
           
           {/* Progress bar */}
-          <div className="w-80 max-w-full mx-auto space-y-3">
+          {/* <div className="w-80 max-w-full mx-auto space-y-3">
             <div className="h-2 bg-gray-800/50 rounded-full overflow-hidden backdrop-blur-sm border border-gray-700/30">
               <div 
                 className="h-full bg-gradient-to-r from-blue-500 to-teal-400 rounded-full transition-all duration-300 ease-out"
@@ -160,7 +164,7 @@ const LoadingScreen = ({ onLoadingComplete }) => {
                 Loading...
               </span>
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Loading dots */}

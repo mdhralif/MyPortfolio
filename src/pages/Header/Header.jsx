@@ -28,6 +28,7 @@ export default function Header() {
 
   const navLinks = [
     { id: "home", icon: FaHome, text: "Home", path: "/" },
+    { id: "projects", icon: FaLaptopCode, text: "Projects", path: "/projects" },
     { id: "skills", icon: FaCode, text: "Skills", path: "/skills" },
     {
       id: "experience",
@@ -41,7 +42,6 @@ export default function Header() {
       text: "Education",
       path: "/education",
     },
-    { id: "projects", icon: FaLaptopCode, text: "Projects", path: "/projects" },
     { id: "contact", icon: FaEnvelope, text: "Contact", path: "/contact" },
   ];
 
