@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import SparklesText from './sparkles-text';
 
 const loadingMessages = [
   // 'Initializing',
@@ -142,7 +143,7 @@ const LoadingScreen = ({ onLoadingComplete }) => {
           
           {/* Loading text */}
           <div className="min-h-[2rem] flex items-center justify-center">
-            <span className="text-gray-300 text-4xl font-medium">
+            <span className="text-gray-300 text-5xl font-extrabold">
               {loadingText}
             </span>
           </div>
