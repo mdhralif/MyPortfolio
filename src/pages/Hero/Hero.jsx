@@ -182,7 +182,7 @@ const profile = {
                   <SparklesText text="Hello" showSparkles={false} />
                   <span className="relative inline-block">
                     <span className="text-teal-400">I&apos;m</span>
-                    <span className="font-bold text-white">
+                    <span className="font-extrabold text-white">
                       {" "}
                       MD H R ALIF
                     </span>
