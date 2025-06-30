@@ -14,7 +14,7 @@ import pixelforgeImg from "@/assets/images/pixelforge.png";
 import fluppyImg from "@/assets/images/fluppy.png";
 
 const projects = [
-    {
+  {
     title: "NexMeet",
     description:
       "Designed and developed a video conferencing platform with real-time meeting features, scheduling options, and session recording",
@@ -95,8 +95,6 @@ const projects = [
     githubLink: "https://github.com/mdhralif/Fluppy_Bird",
     liveLink: "https://drive.google.com/file/d/1UAgQtEz32a5xWLXzvf5yd3ghycyVUYvg/view?usp=sharing",
   },
-
-  
 ];
 
 export default function Projects() {
@@ -173,6 +171,9 @@ export default function Projects() {
             );
           })}
         </section>
+
+        {/* Swipe from Bottom to Top Indicator */}
+        <SwipeIndicator />
       </main>
     </ReactLenis>
   );
@@ -329,6 +330,75 @@ function Card({
         </div>
       </motion.div>
     </div>
+  );
+}
+
+// Swipe Indicator Component
+function SwipeIndicator() {
+  const { scrollY } = useScroll();
+  const opacity = useTransform(scrollY, [0, 200], [1, 0]);
+
+  return (
+    <motion.div
+      className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 pointer-events-none"
+      style={{ opacity }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 1.5, duration: 0.8 }}
+    >
+      <div className="flex flex-col items-center gap-3">
+        {/* Animated arrows */}
+        <div className="flex flex-col items-center space-y-1">
+          {[0, 1, 2].map((index) => (
+            <motion.div
+              key={index}
+              className="w-6 h-6 flex items-center justify-center"
+              animate={{
+                y: [0, -8, 0],
+                opacity: [0.3, 1, 0.3],
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                delay: index * 0.2,
+                ease: "easeInOut",
+              }}
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="text-white/70"
+              >
+                <polyline points="18,15 12,9 6,15"></polyline>
+              </svg>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Text hint */}
+        <motion.div
+          className="bg-black/50 backdrop-blur-md border border-white/10 rounded-full px-4 py-2"
+          animate={{
+            opacity: [0.7, 1, 0.7],
+          }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <p className="text-white/80 text-sm font-medium">
+            Swipe up to explore projects
+          </p>
+        </motion.div>
+      </div>
+    </motion.div>
   );
 }
 
