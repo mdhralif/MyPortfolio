@@ -181,8 +181,8 @@ const profile = {
                 <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight">
                   <SparklesText text="Hello" showSparkles={false} />
                   <span className="relative inline-block">
-                    I&apos;m
-                    <span className="typing-effect gradient-text">
+                    <span className="text-teal-400">I&apos;m</span>
+                    <span className="font-bold text-white">
                       {" "}
                       MD H R ALIF
                     </span>
