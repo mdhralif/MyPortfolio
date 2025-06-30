@@ -50,7 +50,7 @@ export default function Header() {
       <div className="md:fixed md:top-4 md:left-1/2 md:transform md:-translate-x-1/2 w-full md:w-auto">
         {/* <div className="p-[2px] md:rounded-full bg-gradient-to-r from-emerald-400 via-cyan-500 to-indigo-500"> */}
         <div className="p-[0px] md:rounded-full bg-gradient-to-r">
-          <nav className="bg-gray-900/90 backdrop-blur-md md:rounded-full px-3 md:px-6 py-3.5">
+          <nav className="bg-gray-900/90 backdrop-blur-md md:rounded-full px-3 md:px-6 py-4">
             {/* Mobile Menu Button */}
             <div className="flex justify-between items-center md:hidden px-2">
               <Link to="/" className="text-white font-bold text-3xl">αℓιƒ <b style={{color: 'aqua'}}>.</b></Link>
