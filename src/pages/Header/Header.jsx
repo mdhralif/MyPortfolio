@@ -1,11 +1,5 @@
 import { useState, useEffect } from "react";
 import {
-  FaHome,
-  FaLaptopCode,
-  FaBriefcase,
-  FaGraduationCap,
-  FaCode,
-  FaEnvelope,
   FaBars,
   FaTimes,
 } from "react-icons/fa";
@@ -27,22 +21,20 @@ export default function Header() {
   }, );
 
   const navLinks = [
-    { id: "home", icon: FaHome, text: "Home", path: "/" },
-    { id: "projects", icon: FaLaptopCode, text: "Projects", path: "/projects" },
-    { id: "skills", icon: FaCode, text: "Skills", path: "/skills" },
+    { id: "home", text: "Home", path: "/" },
+    { id: "projects", text: "Projects", path: "/projects" },
+    { id: "skills", text: "Skills", path: "/skills" },
     {
       id: "experience",
-      icon: FaBriefcase,
       text: "Experience",
       path: "/experience",
     },
     {
       id: "education",
-      icon: FaGraduationCap,
       text: "Education",
       path: "/education",
     },
-    { id: "contact", icon: FaEnvelope, text: "Contact", path: "/contact" },
+    { id: "contact", text: "Contact", path: "/contact" },
   ];
 
   return (
@@ -69,7 +61,7 @@ export default function Header() {
             {/* Navigation Links */}
             <div className={`${isMenuOpen ? 'block' : 'hidden'} md:block`}>
               <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-1 lg:gap-2 py-4 md:py-0">
-                {navLinks.map(({ id, icon: Icon, text, path }) => (
+                {navLinks.map(({ id, text, path }) => (
                   <Link
                     key={id}
                     to={path}
@@ -78,7 +70,7 @@ export default function Header() {
                       setIsMenuOpen(false);
                     }}
                     className={`px-3 py-2 md:py-1.5 rounded-lg md:rounded-full text-2xl font-medium
-                      transition-all duration-300 flex items-center gap-2
+                      transition-all duration-300 flex items-center md:justify-center
                       hover:bg-white/10 
                       ${
                         activeLink === id
@@ -87,11 +79,6 @@ export default function Header() {
                       }
                     `}
                   >
-                    <Icon
-                      className={`text-base ${
-                        activeLink === id ? "scale-110" : ""
-                      }`}
-                    />
                     <span className="inline">{text}</span>
                   </Link>
                 ))}
