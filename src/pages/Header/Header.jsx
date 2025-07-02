@@ -34,7 +34,7 @@ export default function Header() {
       text: "Education",
       path: "/education",
     },
-    { id: "contact", text: "Contact", path: "/contact" },
+    // { id: "contact", text: "Contact", path: "/ContactModal" },
   ];
 
   return (

@@ -1,7 +1,18 @@
 import HeroImg from "@/assets/images/profile.jpg";
 import SparklesText from "@/components/ui/sparkles-text";
+import ContactModal from "@/components/ContactModal";
+import { useState } from "react";
 
 export default function About() {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+
+  const handleContactClick = () => {
+    setIsContactModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsContactModalOpen(false);
+  };
   return (
     <>
       <section id="about" className="py-16 md:py-32  text-white bg-[#04081A]">
@@ -76,7 +87,10 @@ export default function About() {
                 
                 {/* Let's Connect Button */}
                 <div className="mt-0 lg:mt-8">
-                  <button className="group relative w-full px-8 py-3 bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-teal-500/25">
+                  <button 
+                    onClick={handleContactClick}
+                    className="group relative w-full px-8 py-3 bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-teal-500/25"
+                  >
                     <span className="relative z-10">Let&apos;s Connect</span>
                     <div className="absolute inset-0 bg-gradient-to-r from-teal-400 to-teal-500 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
                   </button>
@@ -86,6 +100,9 @@ export default function About() {
           </div>
         </div>
       </section>
+      
+      {/* Contact Modal */}
+      <ContactModal isOpen={isContactModalOpen} onClose={handleCloseModal} />
     </>
   );
 }
