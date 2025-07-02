@@ -38,14 +38,14 @@ const ExperienceCard = ({
       </div>
 
       {/* Decorative elements */}
-      <div className="absolute top-4 right-4 w-20 h-20">
+      {/* <div className="absolute top-4 right-4 w-20 h-20">
         <div className="absolute top-0 right-0 w-6 h-[2px] bg-cyan-500/50" />
         <div className="absolute top-0 right-0 w-[2px] h-6 bg-cyan-500/50" />
       </div>
       <div className="absolute bottom-4 left-4 w-20 h-20">
         <div className="absolute bottom-0 left-0 w-6 h-[2px] bg-purple-500/50" />
         <div className="absolute bottom-0 left-0 w-[2px] h-6 bg-purple-500/50" />
-      </div>
+      </div> */}
     </div>
   </div>
 );
