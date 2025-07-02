@@ -65,16 +65,16 @@ const EducationSection = () => {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 relative z-10">
-        {/* <motion.div
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
-        > */}
-          {/* <h2 className="text-5xl md:text-7xl font-black text-transparent bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-center">
+        > 
+          <h2 className="text-5xl md:text-7xl font-black text-transparent bg-white bg-clip-text text-center">
             Educational journey
-          </h2> */}
-        {/* </motion.div> */}
+          </h2>
+         </motion.div>
 
         <motion.div
           variants={containerVariants}
