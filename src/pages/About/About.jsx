@@ -20,8 +20,8 @@ export default function About() {
           <h1 className="relative z-10 max-w-xl text-4xl font-medium lg:text-5xl text-white">
             <SparklesText text="Here I'm" showSparkles={false} />  
           </h1>
-          <div className="grid gap-6 sm:grid-cols-2 md:gap-12 lg:gap-24">
-            <div className="relative mb-6 sm:mb-0">
+          <div className="grid gap-2 sm:grid-cols-2 md:gap-12 lg:gap-24">
+            <div className="relative mb-2 sm:mb-0">
               <div className="bg-linear-to-b aspect-76/59 relative rounded-2xl p-px from-zinc-300 to-transparent">
                 <img
                   src={HeroImg}
@@ -86,13 +86,12 @@ export default function About() {
                 </div>
                 
                 {/* Let's Connect Button */}
-                <div className="mt-0 lg:mt-8">
+                <div className="mt-2 lg:mt-8">
                   <button 
                     onClick={handleContactClick}
-                    className="group relative w-full px-8 py-3 bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-teal-500/25"
+                    className="w-full px-6 py-3 bg-white text-gray-900 font-medium rounded-lg transition-all duration-200 border-2 border-white hover:bg-gray-100 hover:border-gray-200 shadow-sm"
                   >
-                    <span className="relative z-10">Let&apos;s Connect</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-teal-400 to-teal-500 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
+                    Let&apos;s Connect
                   </button>
                 </div>
               </div>
