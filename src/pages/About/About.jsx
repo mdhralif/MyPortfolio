@@ -23,10 +23,11 @@ export default function About() {
             </div>
 
             <div className="relative space-y-4">
-              <div className="pt-6">
+              <div className="pt-0 lg:pt-6">
              
                 {/* Desktop-only creative floating elements */}
-                <div className="hidden lg:block mt-8 relative h-80 overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900/50 to-slate-800/30 border border-gray-800/50">
+                <div className="hidden lg:block lg:mt-8 relative h-80 overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900/50 to-slate-800/30 border border-gray-800/50 max-w-full">
+                  {/* ...existing code... */}
                   {/* Floating geometric shapes */}
                   <div className="absolute inset-0">
                     {/* Large floating circle */}
@@ -70,7 +71,15 @@ export default function About() {
                   </div>
                   
                   {/* Gradient overlay for depth */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#04081A]/20 to-transparent pointer-events-none"></div>
+                  
+                </div>
+                
+                {/* Let's Connect Button */}
+                <div className="mt-0 lg:mt-8">
+                  <button className="group relative w-full px-8 py-3 bg-gradient-to-r from-teal-500 to-teal-600 hover:from-teal-600 hover:to-teal-700 text-white font-semibold rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-teal-500/25">
+                    <span className="relative z-10">Let&apos;s Connect</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-teal-400 to-teal-500 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
+                  </button>
                 </div>
               </div>
             </div>
