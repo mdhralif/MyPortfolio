@@ -15,7 +15,7 @@ export default function About() {
   };
   return (
     <>
-      <section id="about" className="py-16 md:py-32  text-white bg-[#04081A]">
+      <section id="about" className="py-16 md:py-32 pt-24 md:pt-32 pb-32 md:pb-40 text-white bg-[#04081A] min-h-screen">
         <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
           <h1 className="relative z-10 max-w-xl text-4xl font-medium lg:text-5xl text-white">
             <SparklesText text="Here I'm" showSparkles={false} />  
