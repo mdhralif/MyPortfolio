@@ -59,12 +59,12 @@ export default function Header() {
             </div>
 
             {/* Navigation Links */}
-            <div className={`transition-all duration-500 ease-in-out overflow-hidden ${
+            <div className={`transition-all duration-600 ease-in-out overflow-hidden ${
               isMenuOpen 
-                ? 'block opacity-100 max-h-screen' 
+                ? 'block opacity-100 max-h-screen animate-slideFromTopRight' 
                 : 'hidden opacity-0 max-h-0'
             } md:block md:opacity-100 md:max-h-none`}>
-              <div className={`flex flex-col md:flex-row md:items-center gap-2 md:gap-1 lg:gap-2 py-4 md:py-0 transition-all duration-500 ${
+              <div className={`flex flex-col md:flex-row md:items-center gap-2 md:gap-1 lg:gap-2 py-4 md:py-0 transition-all duration-600 ${
                 isMenuOpen 
                   ? 'transform translate-y-0 opacity-100' 
                   : 'transform -translate-y-4 opacity-0'
@@ -80,7 +80,7 @@ export default function Header() {
                     className={`px-3 py-2 md:py-1.5 rounded-lg md:rounded-full text-2xl font-medium
                       transition-all duration-300 flex items-center md:justify-center
                       hover:bg-white/10 transform hover:scale-105
-                      ${isMenuOpen ? `animate-slideInRight` : ''} 
+                      ${isMenuOpen ? `animate-fadeInScale` : ''} 
                       ${
                         activeLink === id
                           ? "bg-white/15 text-white"
@@ -112,6 +112,34 @@ export default function Header() {
         .animate-gradient-x {
           animation: gradient-x 3s linear infinite;
           background-size: 200% 200%;
+        }
+        @keyframes slideFromTopRight {
+          from {
+            opacity: 0;
+            transform: translateX(100%) translateY(-100%) scale(0.3);
+            transform-origin: top right;
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0) translateY(0) scale(1);
+            transform-origin: top right;
+          }
+        }
+        .animate-slideFromTopRight {
+          animation: slideFromTopRight 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+        @keyframes fadeInScale {
+          from {
+            opacity: 0;
+            transform: scale(0.8) translateY(10px);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+          }
+        }
+        .animate-fadeInScale {
+          animation: fadeInScale 0.4s ease-out forwards;
         }
         @keyframes slideInRight {
           from {
