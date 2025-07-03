@@ -28,12 +28,12 @@ const ContactModal = ({ isOpen, onClose }) => {
       value: 'hasiburrahman999.alif@gmail.com',
       action: () => window.open('mailto:hasiburrahman999.alif@gmail.com', '_blank')
     },
-    {
-      icon: FaWhatsapp,
-      label: 'WhatsApp',
-      value: '(+880) 132 457 5819',
-      action: () => window.open('https://wa.me/8801324575819', '_blank')
-    },
+    // {
+    //   icon: FaWhatsapp,
+    //   label: 'WhatsApp',
+    //   value: '(+880) 132 457 5819',
+    //   action: () => window.open('https://wa.me/8801324575819', '_blank')
+    // },
     {
       icon: FaLinkedin,
       label: 'LinkedIn',
@@ -57,7 +57,7 @@ const ContactModal = ({ isOpen, onClose }) => {
     >
       <div className="relative w-full max-w-md bg-gray-900 rounded-lg border border-gray-700 shadow-xl transform transition-all duration-300 animate-in zoom-in-95">
         {/* Header */}
-        <div className="flex items-center justify-between p-6">
+        <div className="flex items-center justify-between p-6 pb-3">
           <h2 className="text-xl font-semibold text-white">Let&apos;s Connect</h2>
           <button
             type="button"
@@ -73,7 +73,7 @@ const ContactModal = ({ isOpen, onClose }) => {
         </div>
 
         {/* Content */}
-        <div className="p-6 space-y-3">
+        <div className="px-6 pb-6 space-y-3">
           {contactOptions.map((option, index) => (
             <button
               key={index}
