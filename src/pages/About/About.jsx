@@ -89,7 +89,7 @@ export default function About() {
                 <div className="mt-2 lg:mt-8">
                   <button 
                     onClick={handleContactClick}
-                    className="w-full px-6 py-3 bg-white text-gray-900 font-medium rounded-lg transition-all duration-200 border-2 border-white hover:bg-gray-100 hover:border-gray-200 shadow-sm"
+                    className="w-full px-6 py-3 bg-white text-gray-900 font-medium rounded-lg transition-all duration-200 border-2 border-white hover:bg-gray-900 hover:text-white hover:border-gray-700 shadow-sm"
                   >
                     Let&apos;s Connect
                   </button>
