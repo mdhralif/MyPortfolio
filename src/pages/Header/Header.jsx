@@ -80,7 +80,7 @@ export default function Header() {
                     className={`px-3 py-2 md:py-1.5 rounded-lg md:rounded-full text-2xl font-medium
                       transition-all duration-300 flex items-center md:justify-center
                       hover:bg-white/10 transform hover:scale-105
-                      ${isMenuOpen ? `animate-fadeInUp` : ''} 
+                      ${isMenuOpen ? `animate-slideInRight` : ''} 
                       ${
                         activeLink === id
                           ? "bg-white/15 text-white"
@@ -112,6 +112,19 @@ export default function Header() {
         .animate-gradient-x {
           animation: gradient-x 3s linear infinite;
           background-size: 200% 200%;
+        }
+        @keyframes slideInRight {
+          from {
+            opacity: 0;
+            transform: translateX(30px) scale(0.9);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0) scale(1);
+          }
+        }
+        .animate-slideInRight {
+          animation: slideInRight 0.5s ease-out forwards;
         }
         @keyframes fadeInUp {
           from {
