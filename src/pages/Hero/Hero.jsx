@@ -53,8 +53,7 @@ const profile = {
     username: 'mdhralif',
     role: 'Full-Stack Developer',
     location: 'Khulna, Bangladesh',
-    stack: ['React', 'Next.js', 'Node.js', 'TypeScript', 'MongoDB', 'MySQL', 'Git', 'Linux'],
-    motto: 'Code. Build. Repeat.',
+    stack: ['React', 'Next.js', 'Node.js', 'TypeScript', 'MongoDB', 'MySQL'.....],
 
     about() {
         return \`> \${this.username} is a passionate \${this.role} of hands-on experience building scalable full-stack applications.\`;
