@@ -153,7 +153,7 @@ export default function Projects() {
       <main className="bg-black" ref={container}>
         <section className="text-white w-full bg-slate-950">
           {projects.map((project, i) => {
-            const targetScale = 1 - (projects.length - i) * 0.05;
+            const targetScale = 1 - (projects.length - i) * 0.02; // Reduced scaling factor
             return (
               <Card
                 key={`p_${i}`}
@@ -203,8 +203,6 @@ function Card({
         style={{
           scale,
           top: `calc(-5vh + ${i * 25}px)`,
-          transform: `scale(var(--project-scale, 1))`,
-          marginTop: "var(--project-margin, 0)",
         }}
         className="relative -top-[25%] h-auto w-[90%] md:w-[85%] lg:w-[75%] xl:w-[65%] origin-top project-card"
         whileHover={{
