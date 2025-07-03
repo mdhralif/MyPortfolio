@@ -55,7 +55,7 @@ const projects = [
     liveLink: "https://drive.google.com/file/d/10t3EwYO7p8HiJYq49aEG4ZjP7Y4uVac4/view?usp=sharing",
   },
   {
-    title: "IUT website Demo Prototyping",
+    title: "IUT website Design",
     description:
       "A prototype of the Islamic University of Technology (IUT) website using basic HTML, CSS, and JavaScript",
     src: iutWebImg,
@@ -417,63 +417,44 @@ function SwipeIndicator() {
 
   return (
     <motion.div
-      className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 pointer-events-none"
+      className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 pointer-events-none"
       style={{ opacity }}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 1.5, duration: 0.8 }}
     >
-      <div className="flex flex-col items-center gap-3">
-        {/* Animated arrows */}
-        <div className="flex flex-col items-center space-y-1">
-          {[0, 1, 2].map((index) => (
-            <motion.div
-              key={index}
-              className="w-6 h-6 flex items-center justify-center"
-              animate={{
-                y: [0, -8, 0],
-                opacity: [0.3, 1, 0.3],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                delay: index * 0.2,
-                ease: "easeInOut",
-              }}
+      {/* Simple animated arrows */}
+      <div className="flex flex-col items-center space-y-2">
+        {[0, 1, 2].map((index) => (
+          <motion.div
+            key={index}
+            className="w-8 h-8 flex items-center justify-center"
+            animate={{
+              y: [0, -12, 0],
+              opacity: [0.3, 1, 0.3],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              delay: index * 0.15,
+              ease: "easeInOut",
+            }}
+          >
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="text-white/80"
             >
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="text-white/70"
-              >
-                <polyline points="18,15 12,9 6,15"></polyline>
-              </svg>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Text hint */}
-        <motion.div
-          className="bg-black/50 backdrop-blur-md border border-white/10 rounded-full px-4 py-2"
-          animate={{
-            opacity: [0.7, 1, 0.7],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        >
-          <p className="text-white/80 text-sm font-medium">
-            Swipe up to explore projects
-          </p>
-        </motion.div>
+              <polyline points="18,15 12,9 6,15"></polyline>
+            </svg>
+          </motion.div>
+        ))}
       </div>
     </motion.div>
   );
