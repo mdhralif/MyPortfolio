@@ -52,7 +52,7 @@ const ContactModal = ({ isOpen, onClose }) => {
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-lg backdrop-saturate-150"
       onClick={handleBackdropClick}
     >
       <div className="relative w-full max-w-md bg-gray-900 rounded-lg border border-gray-700 shadow-xl transform transition-all duration-300 animate-in zoom-in-95">
