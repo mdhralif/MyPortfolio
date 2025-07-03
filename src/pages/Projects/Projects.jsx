@@ -70,7 +70,7 @@ const projects = [
       "Nextalk is a real-time conversation web app designed to facilitate instant messaging and seamless communication between users.",
     src: nextalkImg,
     link: nextalkImg,
-    color: "#fff",
+    color: "#10b981",
     githubLink: "https://github.com/mdhralif/Realtime_Chat_Application",
     liveLink: "https://drive.google.com/file/d/1GaoliAKVd3J9IDk97kINaRAaMSNF5kUx/view?usp=sharing",
   },
@@ -81,7 +81,7 @@ const projects = [
       "Pixelforge is a Minecraft-inspired prototype that simulates a block-based world with crafting and building mechanics,focused on creating a detailed map of the Islamic University of Technology (IUT).",
     src: pixelforgeImg,
     link: pixelforgeImg,
-    color: "#fff",
+    color: "#f59e0b",
     githubLink: "https://github.com/mdhralif",
     liveLink: "https://drive.google.com/file/d/1SKGoVzAZgH5KBLp6EEodw4J9MyL5iFRx/view?usp=sharing",
   },
@@ -261,7 +261,7 @@ function Card({
                     href={githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-1 px-2 py-1 rounded-lg hover:bg-white/10 transition-all duration-300 cursor-pointer"
+                    className="group flex items-center gap-1 px-3 py-2 rounded-lg hover:bg-white/20 transition-all duration-300 cursor-pointer border border-transparent hover:border-white/30"
                     whileHover={{ 
                       y: -2,
                       scale: 1.05,
@@ -291,7 +291,7 @@ function Card({
                     href={liveLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-1 px-2 py-1 rounded-lg hover:bg-white/10 transition-all duration-300 cursor-pointer"
+                    className="group flex items-center gap-1 px-3 py-2 rounded-lg hover:bg-white/20 transition-all duration-300 cursor-pointer border border-transparent hover:border-white/30"
                     whileHover={{ 
                       y: -2,
                       scale: 1.05,
