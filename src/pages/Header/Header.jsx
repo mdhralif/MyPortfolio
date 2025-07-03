@@ -80,7 +80,7 @@ export default function Header() {
                     className={`px-3 py-2 md:py-1.5 rounded-lg md:rounded-full text-2xl font-medium
                       transition-all duration-300 flex items-center md:justify-center
                       hover:bg-white/10 transform hover:scale-105
-                      ${isMenuOpen ? `animate-fadeInScale` : ''} 
+                      ${isMenuOpen ? `animate-out` : ''} 
                       ${
                         activeLink === id
                           ? "bg-white/15 text-white"
