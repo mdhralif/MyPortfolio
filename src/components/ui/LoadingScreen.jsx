@@ -2,11 +2,6 @@ import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 const loadingMessages = [
-  // 'Initializing',
-  // 'Loading assets',
-  // 'Preparing content', 
-  // 'Almost ready',
-  // 'Welcome!'
   'Welcome',
   'To',
   'My',
@@ -59,46 +54,20 @@ const LoadingScreen = ({ onLoadingComplete }) => {
       progress >= 100 ? 'opacity-0' : 'opacity-100'
     }`}
     style={{
-      background: '#020617',
+      background: 'linear-gradient(135deg, #111827 0%, #1f2937 50%, #374151 100%)',
       // Ensure it stays visible until completely faded out
       visibility: isVisible ? 'visible' : 'hidden'
     }}>
       
-      {/* Grid Background - matching your portfolio */}
-      <div className="absolute inset-0 overflow-hidden opacity-20">
-        <div className="absolute inset-0">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="100%"
-            height="100%"
-            className="absolute inset-0"
-          >
-            <pattern
-              id="loadingGrid"
-              width="40"
-              height="40"
-              patternUnits="userSpaceOnUse"
-            >
-              <rect
-                width="40"
-                height="40"
-                fill="none"
-                stroke="white"
-                strokeWidth="0.5"
-                className="opacity-40"
-              />
-            </pattern>
-            <rect width="100%" height="100%" fill="url(#loadingGrid)" />
-          </svg>
-        </div>
-      </div>
+      {/* Subtle overlay for depth */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-800/20 via-transparent to-gray-700/30"></div>
       
-      {/* Animated background particles - subtle blue/teal glow */}
+      {/* Animated background particles - subtle gray glow */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(30)].map((_, i) => (
+        {/* {[...Array(30)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-2 h-2 bg-blue-400 rounded-full opacity-10"
+            className="absolute w-2 h-2 bg-gray-400 rounded-full opacity-10"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -106,11 +75,11 @@ const LoadingScreen = ({ onLoadingComplete }) => {
               animationDelay: `${Math.random() * 2}s`
             }}
           />
-        ))}
+        ))} */}
         
         {/* Glowing orbs like your portfolio */}
-        {/* <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-teal-500/10 rounded-full blur-3xl"></div> */}
+        {/* <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gray-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-gray-400/10 rounded-full blur-3xl"></div> */}
       </div>
 
       {/* Main loading content */}
@@ -172,7 +141,7 @@ const LoadingScreen = ({ onLoadingComplete }) => {
           {[...Array(3)].map((_, i) => (
             <div
               key={i}
-              className="w-3 h-3 bg-blue-400/60 rounded-full"
+              className="w-3 h-3 bg-white rounded-full"
               style={{
                 animation: `bounce 1.4s ease-in-out infinite`,
                 animationDelay: `${i * 0.16}s`
