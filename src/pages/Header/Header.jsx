@@ -38,7 +38,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-gray-900/95 backdrop-blur-md md:bg-transparent md:backdrop-blur-none">
+    <header className={`fixed top-0 left-0 w-full z-50 bg-gray-900/95 backdrop-blur-md md:bg-transparent md:backdrop-blur-none ${isMenuOpen ? 'h-full' : 'h-auto'}`}>
       <div className="md:fixed md:top-4 md:left-1/2 md:transform md:-translate-x-1/2 w-full md:w-auto">
         {/* <div className="p-[2px] md:rounded-full bg-gradient-to-r from-emerald-400 via-cyan-500 to-indigo-500"> */}
         <div className="p-[0px] md:rounded-full bg-gradient-to-r">
@@ -81,6 +81,7 @@ export default function Header() {
                   >
                     <span className="inline">{text}</span>
                   </Link>
+                  
                 ))}
               </div>
             </div>
