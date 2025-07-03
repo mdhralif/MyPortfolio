@@ -60,7 +60,7 @@ const LoadingScreen = ({ onLoadingComplete }) => {
     }}>
       
       {/* Subtle overlay for depth */}
-      <div className="absolute inset-0 bg-gray-900/90"></div>
+      <div className="absolute inset-0 bg-gray-900"></div>
       
       {/* Animated background particles - subtle gray glow */}
       <div className="absolute inset-0 overflow-hidden">
