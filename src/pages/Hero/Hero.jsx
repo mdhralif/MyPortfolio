@@ -8,39 +8,6 @@ import SparklesText from "@/components/ui/sparkles-text";
 import { FlipWords } from "@/components/ui/flip-words";
 import { FaGithub, FaDownload, FaArrowRight, FaEnvelope } from "react-icons/fa";
 
-// Grid Background - Replacing the HexagonBackground
-const GridBackground = () => {
-  return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
-      <div className="absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,transparent_0%,black)]">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="100%"
-          height="100%"
-          className="absolute inset-0"
-        >
-          <pattern
-            id="grid"
-            width="40"
-            height="40"
-            patternUnits="userSpaceOnUse"
-          >
-            <rect
-              width="40"
-              height="40"
-              fill="none"
-              stroke="white"
-              strokeWidth="0.5"
-              className="opacity-40 animate-gridPulse"
-            />
-          </pattern>
-          <rect width="100%" height="100%" fill="url(#grid)" />
-        </svg>
-      </div>
-    </div>
-  );
-};
-
 export default function Hero() {
   const words = [
     "Full-Stack Developer",
@@ -68,14 +35,9 @@ const profile = {
   useEffect(() => {
     Prism.highlightAll();
 
-    // Add CSS animation for grid and dots
+    // Add CSS animation for dots
     const style = document.createElement("style");
     style.textContent = `
-      @keyframes gridPulse {
-        0%, 100% { opacity: 0.1; }
-        50% { opacity: 0.3; }
-      }
-      
       @keyframes dotPulse {
         0%, 100% { opacity: 0.2; transform: scale(0.8); }
         50% { opacity: 0.5; transform: scale(1.2); }
@@ -135,14 +97,6 @@ const profile = {
         >
           <div className="absolute inset-0"></div>
 
-          {/* Choose one of these background options */}
-          <GridBackground />
-
-          {/* Or keep the original backgrounds if you prefer */}
-          {/* <HexagonBackground /> */}
-          {/* <AnimatedGrid /> */}
-          {/* <DotBackground /> */}
-
           {/* Meteors Effect */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <Meteors number={10} />
@@ -163,9 +117,6 @@ const profile = {
           >
             {/* Left column - Text content */}
             <div className="w-full lg:w-1/2 mb-12 lg:mb-0 animate__animated animate__fadeInLeft relative">
-              {/* Decorative blurs */}
-              <div className="absolute hidden lg:-top-20 lg:-left-20 lg:block w-48 h-48 lg:w-64 lg:h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
-              <div className="absolute hidden lg:block lg:top-40 lg:-right-20 w-48 h-48 lg:w-64 lg:h-64 bg-teal-500/10 rounded-full blur-3xl"></div>
 
               {/* Welcome badge */}
               <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 mb-6 sm:mb-8 animate__animated animate__fadeInDown animate__delay-1s">
@@ -187,11 +138,12 @@ const profile = {
                     </span>
                   </span>
                 </h1>
-                <div className="absolute -z-10 top-1/2 -translate-y-1/2 left-1/4 w-24 sm:w-32 h-24 sm:h-32 bg-blue-500/20 rounded-full blur-2xl animate-pulse"></div>
+                {/* <div className="absolute -z-10 top-1/2 -translate-y-1/2 left-1/4 w-24 sm:w-32 h-24 sm:h-32 bg-blue-500/20 rounded-full blur-2xl animate-pulse"></div> */}
               </div>
 
               {/* Role badge */}
-              <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 rounded-xl sm:rounded-2xl bg-gradient-to-r from-blue-500/10 to-teal-500/10 border border-blue-500/20 mb-6 sm:mb-8 backdrop-blur-sm animate__animated animate__fadeInUp animate__delay-1s">
+              <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 rounded-xl sm:rounded-2xl bg-gray-800/50 border border-gray-700/50 mb-6 sm:mb-8 backdrop-blur-sm animate__animated animate__fadeInUp animate__delay-1s">
+                {/* bg-gradient-to-r from-blue-500/10 to-teal-500/10 border border-blue-500/20 */}
                 <i className="fas fa-rocket text-blue-400 animate-bounce text-sm sm:text-base"></i>
                 <span>
                   <FlipWords
