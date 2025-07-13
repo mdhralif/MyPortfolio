@@ -52,7 +52,7 @@ const projects = [
     link: nexbookImg,
     color: "#ed649e",
     githubLink: "https://github.com/mdhralif/Nexbook",
-    liveLink: "https://drive.google.com/file/d/10t3EwYO7p8HiJYq49aEG4ZjP7Y4uVac4/view?usp=sharing",
+    liveLink: "https://alif-nexbook.vercel.app",
   },
   {
     title: "IUT website Design",
