@@ -6,6 +6,8 @@ import {
   Trophy,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import iutLogo from "../../assets/images/iutlogo.png";
+import kpcLogo from "../../assets/images/kpclogo.png";
 
 const EducationSection = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -14,7 +16,8 @@ const EducationSection = () => {
     {
       degree: "B.Sc. in Software Engineering",
       school: "Islamic University of Technology (IUT)",
-      mascot: "🎓",
+      logo: iutLogo,
+      mascot: "",
       year: "August 2022-present",
       achievements: ["CGPA: 3.86"],
       skills: ["OOP","Design Pattern", "Data Structures", "Algorithms", "Web Development", "Artificial Intelligence","Machine Learning"," Database Management","Sofware Security", "Networking"," Software Testing","Server Programming","Computer Architecture"],  
@@ -24,7 +27,8 @@ const EducationSection = () => {
     {
       degree: "Higher Secondary Certificate (HSC)",
       school: "Khulna Public College",
-      mascot: "📗",
+      logo: kpcLogo, 
+      mascot: "",
       year: "2019-2021",
       achievements: ["GPA: 5.00", "Government Scholarship", "National Winner - Physics Olympiad", "National Winner - ICT Olympiad"],
       skills: [],
@@ -97,10 +101,27 @@ const EducationSection = () => {
               <div className="space-y-6">
                 <div className="space-y-2">
                   <div className="flex items-center gap-3">
-                    <span className="text-3xl">{edu.mascot}</span>
-                    <h3 className="text-2xl font-bold text-white">
-                      {edu.degree}
-                    </h3>
+                    {/* Logo Section */}
+                    <div className="flex items-center gap-3">
+                      {edu.logo ? (
+                        <div className="w-12 h-12 rounded-lg overflow-hidden bg-white  border border-white/20 flex items-center justify-center p-1">
+                          <img 
+                            src={edu.logo} 
+                            alt={`${edu.school} logo`}
+                            className="w-full h-full object-contain"
+                          />
+                        </div>
+                      ) : (
+                        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500/20 to-purple-500/20 border border-white/20 flex items-center justify-center">
+                          <span className="text-2xl">{edu.mascot}</span>
+                        </div>
+                      )}
+                      <div>
+                        <h3 className="text-2xl font-bold text-white">
+                          {edu.degree}
+                        </h3>
+                      </div>
+                    </div>
                   </div>
                   <p className="text-lg text-gray-300 flex items-center gap-2">
                     <BookOpen className="w-5 h-5 text-teal-500" />
