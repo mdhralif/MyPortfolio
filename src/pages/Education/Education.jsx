@@ -90,7 +90,7 @@ const EducationSection = () => {
             <motion.div
               key={index}
               variants={cardVariants}
-              className={`relative border rounded-xl p-8 transition-all duration-300 bg-gray-900/50 backdrop-blur-sm ${
+              className={`relative border rounded-xl p-8 transition-all duration-300 bg-gray-900 ${
                 hoveredIndex === index
                   ? "border-teal-500 scale-[1.02]"
                   : "border-blue-400/20"
