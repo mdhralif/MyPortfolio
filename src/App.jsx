@@ -10,12 +10,18 @@ import About from "./pages/About/About";
 import Footer from "./pages/Footer/Footer";
 import LoadingScreen from "./components/ui/LoadingScreen";
 import NotFound from "./components/NotFound";
+import ContactModal from "./components/ContactModal";
 
 import { Route, Routes } from "react-router-dom";
 
 export default function App() {
-  const [isOnePage] = useState(false); // Toggle state
+  const [isOnePage] = useState(true); // Toggle state - set to true for single-page scroll
   const [isLoading, setIsLoading] = useState(true);
+
+  // Contact modal state - shared across Hero and About
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const handleContactClick = () => setIsContactModalOpen(true);
+  const handleCloseModal = () => setIsContactModalOpen(false);
 
   // Handle loading completion
   const handleLoadingComplete = () => {
@@ -34,11 +40,11 @@ export default function App() {
       {isOnePage ? (
         // One-Page Mode: Render all components together
         <>
-          <Hero />
+          <Hero onContactClick={handleContactClick} />
+          <Projects />
           <Skills />
           <Experience />
           <Education />
-          {/* <Contact /> */}
           <Footer />
         </>
       ) : (
@@ -58,6 +64,9 @@ export default function App() {
           <Footer />
         </>
       )}
+      
+      {/* Contact Modal - shared across all sections */}
+      <ContactModal isOpen={isContactModalOpen} onClose={handleCloseModal} />
     </>
   );
 }
