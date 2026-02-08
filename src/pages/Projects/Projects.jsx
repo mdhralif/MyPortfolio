@@ -153,7 +153,7 @@ export default function Projects() {
       <main className="bg-black" ref={container}>
         <section className="text-white w-full bg-slate-950 pb-32 md:pb-40">
           {projects.map((project, i) => {
-            const targetScale = 1 - (projects.length - i) * 0.02; // Reduced scaling factor
+            const targetScale = 1; // All cards same size
             return (
               <Card
                 key={`p_${i}`}
