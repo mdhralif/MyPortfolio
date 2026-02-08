@@ -1,16 +1,11 @@
 import { useEffect } from "react";
-// Meteors effect removed per request
 import SparklesText from "@/components/ui/sparkles-text";
-import { FlipWords } from "@/components/ui/flip-words";
 import { FaGithub, FaArrowRight, FaEnvelope } from "react-icons/fa";
 import PropTypes from "prop-types";
+import AnimatedGrid from "@/components/AnimatedGrid";
 
 export default function Hero({ onContactClick }) {
-  const words = [
-    "Full-Stack Developer",
-    "Learning Spring Boot",
 
-  ];
 
   useEffect(() => {
     const style = document.createElement("style");
@@ -67,12 +62,13 @@ export default function Hero({ onContactClick }) {
 
   return (
     <>
-      <main className="bg-[#020617] text-white min-h-screen">
+      <main className="bg-[#1C1F2E] text-white min-h-screen">
         <section
           className="hero min-h-screen flex items-center justify-center relative px-4 sm:px-6 lg:px-8 py-10 md:py-16 lg:py-0 hero-section-padding"
           style={{ paddingTop: "var(--hero-padding-top, 0)" }}
         >
           <div className="absolute inset-0"></div>
+          <AnimatedGrid />
 
 
           {/* Main content container */}
@@ -94,8 +90,8 @@ export default function Hero({ onContactClick }) {
 
               {/* Name section */}
               <div className="relative mb-6 sm:mb-8">
-                <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight">
-                  <SparklesText text="Hello" showSparkles={false} />
+                <h1 className="text-4xl sm:text-7xl lg:text-7xl font-bold leading-tight">
+                  <SparklesText text="Hello," showSparkles={false} />
                   <span className="relative inline-block">
                     <span className="text-teal-400">I&apos;m</span>
                     <span className="font-extrabold text-white">
@@ -107,17 +103,6 @@ export default function Hero({ onContactClick }) {
                 {/* <div className="absolute -z-10 top-1/2 -translate-y-1/2 left-1/4 w-24 sm:w-32 h-24 sm:h-32 bg-blue-500/20 rounded-full blur-2xl animate-pulse"></div> */}
               </div>
 
-              {/* Role badge */}
-              <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 rounded-xl sm:rounded-2xl bg-gray-800/50 border border-gray-700/50 mb-6 sm:mb-8 backdrop-blur-sm animate__animated animate__fadeInUp animate__delay-1s mx-auto">
-                {/* bg-gradient-to-r from-blue-500/10 to-teal-500/10 border border-blue-500/20 */}
-                <i className="fas fa-rocket text-blue-400 animate-bounce text-sm sm:text-base"></i>
-                <span>
-                  <FlipWords
-                    className={"text-lg sm:text-xl text-blue-400 font-medium"}
-                    words={words}
-                  />
-                </span>
-              </div>
              
 
               {/* CTA Buttons */}
@@ -125,9 +110,9 @@ export default function Hero({ onContactClick }) {
                 {/* View Projects Button */}
                 <a
                   href="https://github.com/mdhralif"
-                  className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-500 to-teal-400 p-0.5 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_2rem_-0.5rem_#60A5FA]"
+                  className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-500 to-teal-400 p-0.5 rounded-xl transition-all duration-300 hover:scale-105"
                 >
-                  <span className="block w-full px-6 sm:px-8 py-3 sm:py-4 rounded-[11px] bg-gray-900 transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-teal-400">
+                  <span className="block w-full px-6 sm:px-8 py-3 sm:py-4 rounded-[11px] bg-gray-900 transition-all duration-300 ">
                     <span className="relative flex items-center justify-center gap-2 text-white font-medium">
                       <FaGithub className="text-lg" />
                       <span>My Github</span>
@@ -139,10 +124,10 @@ export default function Hero({ onContactClick }) {
                 {/* Contact Button */}
                 <button
                   onClick={onContactClick}
-                  className="group relative inline-flex items-center justify-center gap-3 p-0.5 rounded-xl bg-gradient-to-r from-gray-800 to-gray-700 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_2rem_-0.5rem_#60A5FA]"
+                  className="group relative inline-flex items-center justify-center gap-3 p-0.5 rounded-xl bg-gradient-to-r from-gray-800 to-gray-700 transition-all duration-300 hover:scale-105 ]"
                 >
-                  <span className="block w-full px-6 sm:px-8 py-3 sm:py-4 rounded-[11px] bg-gray-900 border border-gray-700/50 transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-gray-800 group-hover:to-gray-700">
-                    <span className="relative flex items-center justify-center gap-2 text-gray-300 font-medium group-hover:text-white">
+                  <span className="block w-full px-6 sm:px-8 py-3 sm:py-4 rounded-[11px] bg-gray-900 border border-gray-700/50 ">
+                    <span className="relative flex items-center justify-center gap-2 text-gray-300 font-medium ">
                       <FaEnvelope className="transform transition-all duration-300 group-hover:rotate-12" /> 
                       <span>Let&apos;s Connect</span>
                     </span>
@@ -162,8 +147,6 @@ export default function Hero({ onContactClick }) {
             </div>
           </div>
         </section>
-
-        {/* Scroll indicator removed */}
       </main>
     </>
   );

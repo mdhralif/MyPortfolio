@@ -93,13 +93,17 @@ export default function Contact() {
     >
       <section className="hero min-h-screen flex items-center relative px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto">
+          {/* Section Title */}
+          <div className="flex flex-col items-center space-y-8 mb-16">
+            <h2 className="text-5xl md:text-7xl font-black text-transparent bg-white bg-clip-text text-center">
+              Get in Touch
+            </h2>
+          </div>
+          
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Contact Info */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-4xl md:text-4xl font-black text-transparent bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text">
-                  Get in Touch
-                </h2>
                 <p className="text-gray-300 text-lg">
                   
                 </p>

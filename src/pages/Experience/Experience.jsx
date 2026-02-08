@@ -1,4 +1,7 @@
-import { Code2 } from "lucide-react";
+import KAZLogo from "../../assets/images/KAZ.png";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+import PropTypes from "prop-types";
 
 const ExperienceCard = ({
   title,
@@ -6,114 +9,186 @@ const ExperienceCard = ({
   period,
   description,
   icon: Icon,
-}) => (
-  <div className="group relative overflow-hidden transform hover:-translate-y-2 transition-all duration-300">
-    {/* Glass morphism effect */}
-    <div className="absolute inset-0 backdrop-blur-lg bg-white/5 rounded-lg" />
+  color = "#06b6d4",
+  index = 0,
+  progress,
+  range,
+  targetScale,
+}) => {
+  const container = useRef(null);
+  const scale = useTransform(progress, range, [1, targetScale]);
 
-    {/* Animated gradient border */}
-    {/* <div className="absolute -inset-[2px] bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 rounded-lg opacity-0 group-hover:opacity-100 animate-gradient-xy transition-all duration-500" /> */}
+  return (
+    <div
+      ref={container}
+      className="h-screen flex items-start justify-center sticky top-16 md:top-20"
+    >
+      <motion.div
+        style={{
+          scale,
+          top: `calc(-2vh + ${index * 12}px)`,
+        }}
+        className="relative h-auto w-[90%] md:w-[85%] lg:w-[70%] origin-top"
+        whileHover={{
+          y: -8,
+          transition: { duration: 0.3 },
+        }}
+      >
+        {/* Modern split card design - similar to project card */}
+        <div className="w-full flex flex-col md:flex-row bg-zinc-900 rounded-2xl overflow-hidden shadow-2xl border border-zinc-800">
+          
+          {/* Icon section - similar to image section in project card */}
+          <div className="w-full md:w-[40%] h-[250px] md:h-[350px] relative overflow-hidden bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center">
+            
+            {/* Background pattern */}
+            <div className="absolute inset-0 opacity-10">
+              <div 
+                className="absolute inset-0"
+                style={{
+                  backgroundImage: `
+                    linear-gradient(to right, rgba(6, 182, 212, 0.3) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(6, 182, 212, 0.3) 1px, transparent 1px)
+                  `,
+                  backgroundSize: '30px 30px'
+                }}
+              />
+            </div>
 
-    <div className="relative bg-gray-900/90 rounded-lg p-8 h-full border border-gray-800/50 shadow-xl backdrop-blur-xl">
-      {/* Floating icon with pulse effect */}
-      <div className="relative mb-6">
-        <div className="absolute -inset-4 opacity-25 rounded-full blur-xl group-hover:opacity-75 animate-pulse transition-all duration-500" />
-        <Icon className="w-12 h-12 text-white relative z-10 transform group-hover:rotate-12 transition-transform duration-300" />
-      </div>
+            {/* Icon with glow effect */}
+            <motion.div
+              className="relative z-10"
+              whileHover={{ scale: 1.15, rotate: 8 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+            >
+              <div 
+                  className="absolute inset-0 blur-3xl opacity-60"
+                  style={{ backgroundColor: color }}
+                />
+                {typeof Icon === "string" ? (
+                  <img
+                    src={Icon}
+                    alt={title}
+                    className="absolute inset-0 w-full h-full object-cover relative z-0"
+                  />
+                ) : (
+                  <Icon className="w-24 h-24 md:w-28 md:h-28 text-white relative z-10 drop-shadow-2xl" />
+                )}
+            </motion.div>
 
-      {/* Content with improved typography */}
-      <div className="space-y-3">
-        <h3 className="text-2xl font-bold bg-white bg-clip-text text-transparent">
-          {title}
-        </h3>
-        <div className="flex justify-between items-center text-gray-300">
-          <span className="font-semibold text-green-200">{company}</span>
-          <span className="text-sm font-mono bg-blue-500/10 px-3 py-1 rounded-full">
-            {period}
-          </span>
+            {/* Colored overlay */}
+            <motion.div
+              className="absolute inset-0"
+              style={{ backgroundColor: color, mixBlendMode: "overlay" }}
+              initial={{ opacity: 0.1 }}
+              whileHover={{ opacity: 0.3 }}
+              transition={{ duration: 0.3 }}
+            />
+
+            {/* Experience number */}
+            <div className="absolute top-4 left-4 md:top-6 md:left-6 bg-black/50 backdrop-blur-md text-white px-3 py-1 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-medium">
+              Experience {index + 1}
+            </div>
+          </div>
+
+          {/* Content section - 60% on desktop */}
+          <div className="w-full md:w-[60%] p-6 md:p-8 lg:p-10 flex flex-col justify-between bg-zinc-900/50">
+            <div>
+              <div className="flex items-center gap-3 mb-4 md:mb-6">
+                <div
+                  className="w-2 h-2 md:w-3 md:h-3 rounded-full"
+                  style={{ backgroundColor: color }}
+                />
+                <div className="h-[1px] w-12 md:w-20 bg-gray-600" />
+              </div>
+
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-3 md:mb-4">
+                {title}
+              </h3>
+              
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-4 md:mb-6">
+                <span className="text-base md:text-lg font-semibold text-cyan-400">
+                  {company}
+                </span>
+                <span className="text-xs md:text-sm font-mono bg-blue-500/10 px-3 py-1 rounded-full text-gray-300 w-fit">
+                  {period}
+                </span>
+              </div>
+
+              <p className="text-sm md:text-base text-gray-300 leading-relaxed">
+                {description}
+              </p>
+            </div>
+
+            {/* Bottom decorative line */}
+            <div className="mt-6 md:mt-8 flex items-center gap-2">
+              <div className="flex-1 h-[1px] bg-gradient-to-r from-transparent via-gray-700 to-transparent" />
+            </div>
+          </div>
         </div>
-        <p className="text-gray-300 border-l-4 border-blue-500/50 pl-4 mt-4 leading-relaxed text-justify">
-          {description}
-        </p>
-      </div>
-
-      {/* Decorative elements */}
-      {/* <div className="absolute top-4 right-4 w-20 h-20">
-        <div className="absolute top-0 right-0 w-6 h-[2px] bg-cyan-500/50" />
-        <div className="absolute top-0 right-0 w-[2px] h-6 bg-cyan-500/50" />
-      </div>
-      <div className="absolute bottom-4 left-4 w-20 h-20">
-        <div className="absolute bottom-0 left-0 w-6 h-[2px] bg-purple-500/50" />
-        <div className="absolute bottom-0 left-0 w-[2px] h-6 bg-purple-500/50" />
-      </div> */}
+      </motion.div>
     </div>
-  </div>
-);
+  );
+};
+
+ExperienceCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  company: PropTypes.string.isRequired,
+  period: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  icon: PropTypes.oneOfType([PropTypes.string, PropTypes.elementType]).isRequired,
+  color: PropTypes.string,
+  index: PropTypes.number,
+  progress: PropTypes.object.isRequired,
+  range: PropTypes.array.isRequired,
+  targetScale: PropTypes.number.isRequired,
+};
 
 const ExperienceSection = () => {
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start start", "end end"],
+  });
+
   const experiences = [
     {
-      icon: Code2,
-      title: "Network & Data Analysis Lab's Official Website Contribution",
-      company: "Student Collaborator",
-      period: "May 2025 - present",
-      description:
-        "Contributed as a Student Collaborator and Web Contributor by developing and maintaining the lab’s official website, including a comprehensive student and alumni directory, improving design and layouts",
+      icon: KAZLogo,
+      title: "Software Engineer Intern",
+      company: "KAZ Software Ltd.",
+      period: "29 Sep 2025 - 30 Jan 2026",
+      color: "#06b6d4",
+      description: "Contributed as a Student Collaborator and Web Contributor by developing and maintaining the lab’s official website, including a comprehensive student and alumni directory, improving design and layouts",
     },
+
   ];
 
   return (
     <>
-      <div className="min-h-screen bg-gradient-to-b relative overflow-hidden pt-32 pb-20">
-        {/* Animated gradient background */}
-        <div className="absolute inset-0 bg-slate-950" />
-
-        {/* Grid background
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(50,50,70,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(50,50,70,0.15)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_70%,transparent_100%)]" /> */}
-
-        {/* Animated particles */}
-        {/* <div className="absolute inset-0">
-          {[...Array(20)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-2 h-2 bg-blue-500/20 rounded-full animate-float"
-              style={{
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`,
-              }}
-            />
-          ))}
-        </div> */}
-
-        {/* Content container */}
-        <div className="relative container mx-auto px-6 mt-10">
-          {/* Section header with enhanced effects */}
-          <div className="flex flex-col items-center space-y-8 mb-20">
-            <div className="relative">
-              <h2 className="text-5xl md:text-7xl font-black text-transparent bg-white bg-clip-text text-center">
-                My Experience
-              </h2>
-              <div className="absolute inset-0 -z-10 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 blur-3xl rounded-full" />
-            </div>
-          </div>
-
-          {/* Experience grid with improved layout */}
-          <div className={`grid gap-10 max-w-7xl mx-auto ${
-            experiences.length === 1 
-              ? 'grid-cols-1 place-items-center max-w-md' 
-              : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
-          }`}>
-            {experiences.map((exp, index) => (
-              <ExperienceCard key={index} {...exp} />
-            ))}
-          </div>
+      <main className="bg-[#161925]" ref={container}>
+        {/* Section Title */}
+        <div className="flex flex-col items-center space-y-6 pt-28 md:pt-32 pb-12">
+          <h2 className="text-5xl md:text-7xl font-black text-transparent bg-white bg-clip-text text-center leading-tight">
+            Where I’ve Worked
+          </h2>
         </div>
 
-        {/* Enhanced background effects */}
-        {/* <div className="absolute top-20 left-20 w-96 h-96 bg-cyan-500/10 rounded-full filter blur-3xl animate-pulse" /> */}
-        {/* <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500/10 rounded-full filter blur-3xl animate-pulse delay-1000" /> */}
-      </div>
+        {/* Stacking Experience Cards */}
+        <section className="text-white w-full bg-[#161925] pb-12 md:pb-20">
+          {experiences.map((exp, i) => {
+            const targetScale = 1;
+            return (
+              <ExperienceCard
+                key={i}
+                {...exp}
+                index={i}
+                progress={scrollYProgress}
+                range={[i * 0.25, 1]}
+                targetScale={targetScale}
+              />
+            );
+          })}
+        </section>
+      </main>
     </>
   );
 };

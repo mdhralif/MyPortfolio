@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import IconCloudDemo from "@/components/globe";
@@ -7,11 +7,9 @@ import {
   FaReact,
   FaNodeJs,
   FaPython,
-  FaDocker,
   FaGitAlt,
   FaLinux,
   FaFigma,
-  FaAws,
   FaJava,
 } from "react-icons/fa";
 import {
@@ -21,7 +19,6 @@ import {
   SiPostgresql,
   SiMongodb,
   SiGraphql,
-  SiJest,
   SiWebpack,
   SiRedux,
   SiFirebase,
@@ -33,7 +30,7 @@ import {
 import { TbBrandCSharp, TbBrandVscode, TbBrandCpp } from "react-icons/tb";
 import { BsFileEarmarkCode, BsGrid1X2 } from "react-icons/bs";
 import { MdAnimation } from "react-icons/md";
-import { FcWorkflow } from "react-icons/fc";
+
 
 const SkillCard = ({ icon: Icon, title, skills, color }) => (
   <Card className="group relative overflow-hidden bg-gray-900/80 border-gray-700 hover:scale-[1.02] transition-all duration-300 ">
@@ -65,6 +62,18 @@ const SkillCard = ({ icon: Icon, title, skills, color }) => (
     </CardContent>
   </Card>
 );
+
+SkillCard.propTypes = {
+  icon: PropTypes.elementType.isRequired,
+  title: PropTypes.string.isRequired,
+  skills: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      icon: PropTypes.node.isRequired,
+    })
+  ).isRequired,
+  color: PropTypes.string.isRequired,
+};
 
 const SkillsSection = () => {
   const skillCategories = [
@@ -268,8 +277,13 @@ const SkillsSection = () => {
   ];
 
   return (
-    <main className="pt-15 lg:pt-0 text-white min-h-screen bg-slate-950 relative">
+    <main className="pt-15 lg:pt-0 text-white min-h-screen bg-[#1C1F2E] relative">
       <section className="container mx-auto px-4 py-11 relative z-10">
+        {/* Section Title */}
+        <h2 className="text-5xl md:text-7xl font-black text-transparent bg-white bg-clip-text text-center">
+              What I’m Good At
+        </h2>    
+
         <div className="flex justify-center items-center ">
           <IconCloudDemo />
         </div>

@@ -150,8 +150,11 @@ export default function Projects() {
 
   return (
     <ReactLenis root>
-      <main className="bg-black" ref={container}>
-        <section className="text-white w-full bg-slate-950 pb-32 md:pb-40">
+      <main className="bg-[#161925]" ref={container}>
+        <section className="text-white w-full bg-[#161925] pb-16 md:pb-40 pt-40 md:pt-48">
+            <h2 className="text-5xl md:text-7xl font-black text-transparent bg-white bg-clip-text text-center leading-tight">
+              Stuff I’ve Built
+            </h2>       
           {projects.map((project, i) => {
             const targetScale = 1; // All cards same size
             return (
@@ -171,8 +174,6 @@ export default function Projects() {
             );
           })}
         </section>
-
-        {/* Swipe from Bottom to Top Indicator */}
         <SwipeIndicator />
       </main>
     </ReactLenis>

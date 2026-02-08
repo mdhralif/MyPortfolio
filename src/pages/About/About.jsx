@@ -5,9 +5,14 @@ export default function About({ onContactClick }) {
   return (
     <>
       <section id="about" className="py-16 md:py-32 pt-24 md:pt-32 pb-32 md:pb-40 text-white bg-[#04081A] min-h-screen">
+        {/* Section Title */}
+        <div className="flex flex-col items-center space-y-8 mb-16">
+          <h2 className="text-5xl md:text-7xl font-black text-transparent bg-white bg-clip-text text-center">
+            About Me
+          </h2>
+        </div>
         
-          
-          <div className="grid gap-2 grid-cols-1 md:gap-12 lg:gap-24">
+        <div className="grid gap-2 grid-cols-1 md:gap-12 lg:gap-24">
             
              
                 {/* Desktop-only creative floating elements */}

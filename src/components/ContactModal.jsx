@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { FaTimes, FaEnvelope, FaWhatsapp, FaLinkedin, FaPhone } from 'react-icons/fa';
+import { FaTimes, FaEnvelope, FaLinkedin, FaPhone } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 
 const ContactModal = ({ isOpen, onClose }) => {
