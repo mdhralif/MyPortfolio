@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import Meteors from "@/components/ui/meteors";
+// Meteors effect removed per request
 import SparklesText from "@/components/ui/sparkles-text";
 import { FlipWords } from "@/components/ui/flip-words";
 import { FaGithub, FaArrowRight, FaEnvelope } from "react-icons/fa";
@@ -74,10 +74,6 @@ export default function Hero({ onContactClick }) {
         >
           <div className="absolute inset-0"></div>
 
-          {/* Meteors Effect */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <Meteors number={10} />
-          </div>
 
           {/* Main content container */}
           <div
@@ -167,14 +163,7 @@ export default function Hero({ onContactClick }) {
           </div>
         </section>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce flex flex-col items-center gap-2">
-          <span className="text-gray-400 text-sm flex items-center gap-2">
-            <i className="fas fa-mouse text-blue-400"></i>
-            Scroll down
-          </span>
-          <i className="fas fa-chevron-down text-blue-400 text-xl"></i>
-        </div>
+        {/* Scroll indicator removed */}
       </main>
     </>
   );
