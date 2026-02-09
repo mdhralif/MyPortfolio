@@ -38,56 +38,23 @@ const ExperienceCard = ({
         <div className="w-full flex flex-col md:flex-row bg-zinc-900 rounded-2xl overflow-hidden shadow-2xl">
           
           {/* Icon section - similar to image section in project card */}
-          <div className="w-full md:w-[40%] h-[250px] md:h-[350px] relative overflow-hidden bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center">
-            
-            {/* Background pattern */}
-            <div className="absolute inset-0 opacity-10">
-              <div 
-                className="absolute inset-0"
-                style={{
-                  backgroundImage: `
-                    linear-gradient(to right, rgba(6, 182, 212, 0.3) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgba(6, 182, 212, 0.3) 1px, transparent 1px)
-                  `,
-                  backgroundSize: '30px 30px'
-                }}
-              />
-            </div>
-
-            {/* Icon with glow effect */}
+          <div className="w-full md:w-[40%] relative overflow-hidden flex items-center justify-center">
+            {/* Image fills width; height auto so the panel fits the image */}
             <motion.div
-              className="relative z-10"
-              whileHover={{ scale: 1.15, rotate: 8 }}
+              className="relative z-10 w-full flex items-center justify-center"
+              whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
             >
-              <div 
-                  className="absolute inset-0 blur-3xl opacity-60"
-                  style={{ backgroundColor: color }}
+              {typeof Icon === "string" ? (
+                <img
+                  src={Icon}
+                  alt={title}
+                  className="block w-full h-auto object-contain"
                 />
-                {typeof Icon === "string" ? (
-                  <img
-                    src={Icon}
-                    alt={title}
-                    className="absolute inset-0 w-full h-full object-cover relative z-0"
-                  />
-                ) : (
-                  <Icon className="w-24 h-24 md:w-28 md:h-28 text-white relative z-10 drop-shadow-2xl" />
-                )}
+              ) : (
+                <Icon className="w-24 h-24 md:w-28 md:h-28 text-white relative z-10 drop-shadow-2xl" />
+              )}
             </motion.div>
-
-            {/* Colored overlay */}
-            <motion.div
-              className="absolute inset-0"
-              style={{ backgroundColor: color, mixBlendMode: "overlay" }}
-              initial={{ opacity: 0.1 }}
-              whileHover={{ opacity: 0.3 }}
-              transition={{ duration: 0.3 }}
-            />
-
-            {/* Experience number */}
-            <div className="absolute top-4 left-4 md:top-6 md:left-6 bg-black/50 backdrop-blur-md text-white px-3 py-1 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-medium">
-              Experience {index + 1}
-            </div>
           </div>
 
           {/* Content section - 60% on desktop */}
@@ -106,22 +73,17 @@ const ExperienceCard = ({
               </h3>
               
               <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-4 md:mb-6">
-                <span className="text-base md:text-lg font-semibold text-cyan-400">
+                <span className="text-base md:text-lg font-semibold text-orange-400">
                   {company}
                 </span>
-                <span className="text-xs md:text-sm font-mono bg-blue-500/10 px-3 py-1 rounded-full text-gray-300 w-fit">
+                <span className="text-xs md:text-sm font-mono bg-blue-500/10 px-3 py-1 rounded-none text-gray-300 w-fit">
                   {period}
                 </span>
               </div>
 
-              <p className="text-sm md:text-base text-gray-300 leading-relaxed">
+              <p className="text-sm md:text-base text-gray-300 leading-relaxed text-justify">
                 {description}
               </p>
-            </div>
-
-            {/* Bottom decorative line */}
-            <div className="mt-6 md:mt-8 flex items-center gap-2">
-              <div className="flex-1 h-[1px] bg-gradient-to-r from-transparent via-gray-700 to-transparent" />
             </div>
           </div>
         </div>
@@ -157,7 +119,7 @@ const ExperienceSection = () => {
       company: "KAZ Software Ltd.",
       period: "29 Sep 2025 - 30 Jan 2026",
       color: "#06b6d4",
-      description: "Contributed as a Student Collaborator and Web Contributor by developing and maintaining the lab’s official website, including a comprehensive student and alumni directory, improving design and layouts",
+      description: "Worked on production-level web applications, contributing to UI development, API integration, and bug fixing while collaborating closely with cross-functional teams in a real-world software engineering environment.",
     },
 
   ];
