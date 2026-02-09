@@ -91,16 +91,16 @@ export default function Hero({ onContactClick }) {
               {/* Name section */}
               <div className="relative mb-6 sm:mb-8">
                 <h1 className="text-4xl sm:text-7xl lg:text-7xl font-bold leading-tight">
-                  <SparklesText text="Hello," showSparkles={false} />
+                  <SparklesText
+                    text="Hello,"
+                    showSparkles={false}
+                    className="text-4xl sm:text-7xl lg:text-7xl font-bold text-[#2DD4BF] inline-block mr-2"
+                  />
                   <span className="relative inline-block">
-                    <span className="text-teal-400">I&apos;m</span>
-                    <span className="font-extrabold text-white">
-                      {" "}
-                      MD H R ALIF
-                    </span>
+                    <span className="">I&apos;m</span>
+                    <span className="font-extrabold text-white"> MD H R ALIF</span>
                   </span>
                 </h1>
-                {/* <div className="absolute -z-10 top-1/2 -translate-y-1/2 left-1/4 w-24 sm:w-32 h-24 sm:h-32 bg-blue-500/20 rounded-full blur-2xl animate-pulse"></div> */}
               </div>
 
              
