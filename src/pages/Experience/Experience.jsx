@@ -166,9 +166,9 @@ const ExperienceSection = () => {
     <>
       <main className="bg-[#161925]" ref={container}>
         {/* Section Title */}
-        <div className="flex flex-col items-center space-y-6 pt-28 md:pt-32 pb-12">
+        <div className="flex flex-col items-center space-y-6 pt-28 md:pt-8 pb-16">
           <h2 className="text-5xl md:text-7xl font-black text-transparent bg-white bg-clip-text text-center leading-tight">
-            Where I’ve Worked
+            <span style={{ color: '#2DD4BF' }}>Where</span> I’ve Worked
           </h2>
         </div>
 
