@@ -12,7 +12,7 @@ const ExperienceCard = [
     src:KAZlogo ,
     link: KAZlogo,
     color: "#f59e0b",
-    githubLink: "https://github.com/mdhralif",
+    githubLink: "https://drive.google.com/file/d/1DdeOV4q5CSZsYMinkoK4dUqjOGIP5eZw/view?usp=sharing",
     liveLink: "https://drive.google.com/file/d/1SKGoVzAZgH5KBLp6EEodw4J9MyL5iFRx/view?usp=sharing",
   },
 
@@ -249,6 +249,7 @@ function Card({
                 <span className="text-base md:text-lg font-semibold text-orange-400">
                   {company}
                 </span>
+                <span></span>
                 <span className="text-xs md:text-sm font-mono bg-blue-500/10 px-3 py-1 rounded-none text-gray-300 w-fit">
                   {period}
                 </span>
