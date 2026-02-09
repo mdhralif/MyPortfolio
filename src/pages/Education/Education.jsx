@@ -64,9 +64,6 @@ const EducationSection = () => {
       {/* Grid Background */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-grid-white/[0.05] bg-[length:50px_50px]" />
-        <div className="absolute inset-0 border border-white/[0.05] grid grid-cols-2 md:grid-cols-4" />
-          <div className="absolute inset-0 bg-grid-white/[0.05] bg-[length:50px_50px]" />
-          <div className="absolute inset-0 border border-white/[0.05] grid grid-cols-2 md:grid-cols-4" />
       </div>
 
       <div className="max-w-6xl mx-auto px-4 relative z-10">
@@ -99,7 +96,7 @@ const EducationSection = () => {
                     {/* Logo Section */}
                     <div className="flex items-center gap-3">
                       {edu.logo ? (
-                        <div className="w-12 h-12 rounded-lg overflow-hidden bg-white  border border-white/20 flex items-center justify-center p-1">
+                        <div className="w-12 h-12 rounded-lg overflow-hidden bg-white flex items-center justify-center p-1">
                           <img 
                             src={edu.logo} 
                             alt={`${edu.school} logo`}
@@ -107,7 +104,7 @@ const EducationSection = () => {
                           />
                         </div>
                       ) : (
-                        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500/20 to-purple-500/20 border border-white/20 flex items-center justify-center">
+                        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center">
                           <span className="text-2xl">{edu.mascot}</span>
                         </div>
                       )}
