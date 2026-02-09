@@ -1,3 +1,4 @@
+import React from "react";
 import PropTypes from "prop-types";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -11,6 +12,7 @@ import {
   FaLinux,
   FaFigma,
   FaJava,
+  FaGithub,
 } from "react-icons/fa";
 import {
   SiNextdotjs,
@@ -22,10 +24,10 @@ import {
   SiWebpack,
   SiRedux,
   SiFirebase,
-  SiVercel,
   SiVite,
   SiJunit5,
   SiIntellijidea,
+  
 } from "react-icons/si";
 import { TbBrandCSharp, TbBrandVscode, TbBrandCpp } from "react-icons/tb";
 import { BsFileEarmarkCode, BsGrid1X2 } from "react-icons/bs";
@@ -47,7 +49,12 @@ const SkillCard = ({ title, skills }) => (
             className="group/badge relative bg-gray-800/50 hover:bg-gray-700/80 text-gray-100 flex items-center gap-2 py-2 px-3 rounded-none"
           >
             <span className="transform group-hover/badge:scale-110 transition-transform duration-300 bg-transparent rounded-none">
-              {skill.icon}
+              {React.isValidElement(skill.icon)
+                ? React.cloneElement(skill.icon, {
+                    className: `${skill.icon.props.className ? skill.icon.props.className.split(' ').filter(c=>!c.startsWith('text-')).join(' ') + ' ' : ''}w-5 h-5`,
+                    style: { color: '#ffffff' },
+                  })
+                : skill.icon}
             </span>
             <span className="font-medium">{skill.name}</span>
           </Badge>
@@ -255,7 +262,10 @@ const SkillsSection = () => {
           name: "Git",
           icon: <FaGitAlt className="w-4 h-4 text-[#F05032]" />,
         },
-        { name: "Vercel", icon: <SiVercel className="w-4 h-4 text-white" /> },
+        {
+          name: "Github",
+          icon: <FaGithub className="w-4 h-4 text-[#F05032]" />,
+        },
         { name: "JUnit5", icon: <SiJunit5 className="w-4 h-4 text-[#25A162]" /> },
         {
           name: "Linux",
