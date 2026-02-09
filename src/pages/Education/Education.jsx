@@ -74,7 +74,7 @@ const EducationSection = () => {
           className="text-center mb-16"
         > 
           <h2 className="text-5xl md:text-7xl font-black text-transparent bg-white bg-clip-text text-center">
-            Educational journey
+            <span style={{ color: '#2DD4BF' }}>Educational</span> journey
           </h2>
          </motion.div>
 
