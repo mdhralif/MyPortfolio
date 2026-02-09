@@ -35,7 +35,7 @@ const ExperienceCard = ({
         }}
       >
         {/* Modern split card design - similar to project card */}
-        <div className="w-full flex flex-col md:flex-row bg-zinc-900 rounded-2xl overflow-hidden shadow-2xl border border-zinc-800">
+        <div className="w-full flex flex-col md:flex-row bg-zinc-900 rounded-2xl overflow-hidden shadow-2xl">
           
           {/* Icon section - similar to image section in project card */}
           <div className="w-full md:w-[40%] h-[250px] md:h-[350px] relative overflow-hidden bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center">
