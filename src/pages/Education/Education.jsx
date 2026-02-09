@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import {
   Award,
   Calendar,
@@ -10,7 +10,7 @@ import iutLogo from "../../assets/images/iutlogo.png";
 import kpcLogo from "../../assets/images/kpclogo.png";
 
 const EducationSection = () => {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
+  
 
   const educationData = [
     {
@@ -90,13 +90,7 @@ const EducationSection = () => {
             <motion.div
               key={index}
               variants={cardVariants}
-              className={`relative border rounded-xl p-8 transition-all duration-300 bg-gray-900 ${
-                hoveredIndex === index
-                  ? "border-teal-500 scale-[1.02]"
-                  : "border-blue-400/20"
-              }`}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
+              className={`relative rounded-xl p-8 bg-gray-900`}
             >
               <div className="space-y-6">
                 <div className="space-y-2">

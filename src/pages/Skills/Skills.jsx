@@ -33,7 +33,7 @@ import { MdAnimation } from "react-icons/md";
 
 
 const SkillCard = ({ icon: Icon, title, skills, color }) => (
-  <Card className="group relative overflow-hidden bg-gray-900/80 border-gray-700 hover:scale-[1.02] transition-all duration-300 ">
+  <Card className="group relative overflow-hidden bg-gray-900/80 border-0">
     <CardContent className="p-6 relative z-10">
       <div className="flex items-center gap-4 mb-6">
         <div
