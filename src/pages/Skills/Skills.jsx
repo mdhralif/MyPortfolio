@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import IconCloudDemo from "@/components/globe";
-import { Code2, Paintbrush, Database, Layout, Cpu, Cloud } from "lucide-react";
+import { Code2, Paintbrush, Database, Layout, Cpu, Cloud,} from "lucide-react";
 import {
   FaReact,
   FaNodeJs,
@@ -13,25 +13,29 @@ import {
   FaFigma,
   FaJava,
   FaGithub,
+  FaAngular,
+  FaKaggle,
 } from "react-icons/fa";
 import {
-  SiNextdotjs,
   SiTypescript,
   SiTailwindcss,
   SiPostgresql,
   SiMongodb,
   SiGraphql,
-  SiWebpack,
-  SiRedux,
   SiFirebase,
-  SiVite,
   SiJunit5,
   SiIntellijidea,
+  SiPostman,
+  SiSupabase,
+  SiMysql,
+  SiCss3,
+  SiTensorflow,
+  SiHuggingface,
+  SiJupyter,
   
 } from "react-icons/si";
 import { TbBrandCSharp, TbBrandVscode, TbBrandCpp } from "react-icons/tb";
 import { BsFileEarmarkCode, BsGrid1X2 } from "react-icons/bs";
-import { MdAnimation } from "react-icons/md";
 
 
 const SkillCard = ({ title, skills }) => (
@@ -88,11 +92,11 @@ const SkillsSection = () => {
           icon: <BsFileEarmarkCode className="w-4 h-4 text-[#A8B9CC]" />,
         },
         {
-          name: "C#",
+          name: "",
           icon: <TbBrandCSharp className="w-4 h-4 text-[#239120]" />,
         },
         {
-          name: "C++",
+          name: "",
           icon: <TbBrandCpp className="w-4 h-4 text-[#00599C]" />,
         },
         {
@@ -121,33 +125,21 @@ const SkillsSection = () => {
       color: "text-blue-400",
       skills: [
         {
-          name: "HTML5",
-          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#E34F26]" />,
+          name: "Angular",
+          icon: <FaAngular className="w-4 h-4 text-[#DD0031]" />,
         },
         {
-          name: "CSS3",
-          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#1572B6]" />,
+          name: "CSS 3",
+          icon: <SiCss3 className="w-4 h-4 text-[#1572B6]" />,
         },
         { name: "React", icon: <FaReact className="w-4 h-4 text-[#61DAFB]" /> },
         {
-          name: "Next.js",
-          icon: <SiNextdotjs className="w-4 h-4 text-white" />,
+          name: "React Native",
+          icon: <FaReact className="w-4 h-4 text-[#61DAFB]" />,
         },
         {
           name: "Tailwind CSS",
           icon: <SiTailwindcss className="w-4 h-4 text-[#38B2AC]" />,
-        },
-        {
-          name: "Redux",
-          icon: <SiRedux className="w-4 h-4 text-[#764ABC]" />,
-        },
-        {
-          name: "Vite",
-          icon: <SiVite className="w-4 h-4 text-[#646CFF]" />,
-        },
-        {
-          name: "Webpack",
-          icon: <SiWebpack className="w-4 h-4 text-[#8DD6F9]" />,
         },
       ],
     },
@@ -161,6 +153,70 @@ const SkillsSection = () => {
           icon: <FaNodeJs className="w-4 h-4 text-[#339933]" />,
         },
         {
+          name: "C# .NET",
+        },
+        {
+          name: "Express.js",
+          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#000000]" />,
+        },
+        {
+          name: "REST APIs",
+          icon: <BsGrid1X2 className="w-4 h-4 text-[#FF6C37]" />,
+        },
+        {
+          name: "Web RTC",
+          icon: (
+            <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="2" fill="currentColor" />
+              <path d="M12 6a6 6 0 000 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M12 4a8 8 0 010 16" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" opacity="0.7" />
+            </svg>
+          ),
+        },
+        {
+          name: "Socket.IO",
+          icon: (
+            <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" fill="currentColor" />
+            </svg>
+          ),
+        }
+
+      ],
+    },
+    {
+      icon: Cloud,
+      title: "AI & Data Science",
+      color: "text-orange-400",
+      skills: [
+        {
+          name: "TensorFlow",
+          icon: <SiTensorflow className="w-4 h-4 text-[#FF6F00]" />,
+        },
+        {
+          name: "Jupyter",
+          icon: <SiJupyter className="w-4 h-4 text-[#F37626]" />,
+        },
+        {
+          name: "Kaggle",
+          icon: <FaKaggle className="w-4 h-4 text-[#20BEFF]" />,
+        },
+        {
+          name: "Hugging Face",
+          icon: <SiHuggingface className="w-4 h-4 text-[#FF6F00]" />,
+        },
+      ],
+    },
+    {
+      icon: Paintbrush,
+      title: "Databases & SaaS",
+      color: "text-cyan-400",
+      skills: [
+        {
+          name: "MySQL",
+          icon: <SiMysql className="w-4 h-4 text-[#FFCA28]" />,
+        },
+        {
           name: "PostgreSQL",
           icon: <SiPostgresql className="w-4 h-4 text-[#336791]" />,
         },
@@ -168,10 +224,7 @@ const SkillsSection = () => {
           name: "MongoDB",
           icon: <SiMongodb className="w-4 h-4 text-[#47A248]" />,
         },
-        {
-          name: "REST APIs",
-          icon: <BsGrid1X2 className="w-4 h-4 text-[#FF6C37]" />,
-        },
+        
         {
           name: "GraphQL",
           icon: <SiGraphql className="w-4 h-4 text-[#E10098]" />,
@@ -180,80 +233,29 @@ const SkillsSection = () => {
           name: "Firebase",
           icon: <SiFirebase className="w-4 h-4 text-[#FFCA28]" />,
         },
-      ],
-    },
-    {
-      icon: Cloud,
-      title: "Machine Learning",
-      color: "text-orange-400",
-      skills: [
         {
-          name: "TensorFlow",
-          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#FF6F00]" />,
+          name: "Supabase",
+          icon: <SiSupabase className="w-4 h-4 text-[#FFCA28]" />,
         },
-        {
-          name: "PyTorch",
-          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#EE4C2C]" />,
-        },
-        {
-          name: "Scikit-learn",
-          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#F7931E]" />,
-        },
-        {
-          name: "Pandas",
-          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#150458]" />,
-        },
-        {
-          name: "NumPy",
-          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#013243]" />,
-        },
-        {
-          name: "Matplotlib",
-          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#11557C]" />,
-        },
-        {
-          name: "Jupyter",
-          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#F37626]" />,
-        },
-      ],
-    },
-    {
-      icon: Paintbrush,
-      title: "Design & UI/UX",
-      color: "text-cyan-400",
-      skills: [
-        {
-          name: "Figma",
-          icon: <FaFigma className="w-4 h-4 text-[#F24E1E]" />,
-        },
-        {
-          name: "Canva",
-          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#00C4CC]" />,
-        },
-        {
-          name: "Responsive Design",
-          icon: <Layout className="w-4 h-4 text-[#38B2AC]" />,
-        },
-        {
-          name: "Wireframing",
-          icon: <BsGrid1X2 className="w-4 h-4 text-[#9333EA]" />,
-        },
-        {
-          name: "Prototyping",
-          icon: <MdAnimation className="w-4 h-4 text-[#F59E0B]" />,
-        },
+        
+
       ],
     },
     
     {
       icon: Cpu,
-      title: "Tools & Technologies",
+      title: "Developer tools",
       color: "text-pink-400",
       skills: [
         {
           name: "VS Code",
           icon: <TbBrandVscode className="w-4 h-4 text-[#007ACC]" />,
         },
+        {
+          name: "Postman",
+          icon: <SiPostman className="w-4 h-4 text-[#FF6C37]" />,
+        },
+        
         {
           name: "IntelliJ IDEA",
           icon: <SiIntellijidea className="w-4 h-4 text-[#007ACC]" />,
@@ -272,8 +274,8 @@ const SkillsSection = () => {
           icon: <FaLinux className="w-4 h-4 text-[#FCC624]" />,
         },
         {
-          name: "Latex",
-          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#008080]" />,
+          name: "Figma",
+          icon: <FaFigma className="w-4 h-4 text-[#F24E1E]" />,
         },
       ],
     },
