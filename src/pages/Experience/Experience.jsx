@@ -12,8 +12,8 @@ const ExperienceCard = [
     src:KAZlogo ,
     link: KAZlogo,
     color: "#f59e0b",
-    githubLink: "https://drive.google.com/file/d/1DdeOV4q5CSZsYMinkoK4dUqjOGIP5eZw/view?usp=sharing",
-    liveLink: "https://drive.google.com/file/d/1SKGoVzAZgH5KBLp6EEodw4J9MyL5iFRx/view?usp=sharing",
+    reportLink: "https://drive.google.com/file/d/1MBG4-G79_cXUBKiTSOmdJGPzV7AtYzWZ/view?usp=sharing",
+    certificateLink: "https://drive.google.com/file/d/1DdeOV4q5CSZsYMinkoK4dUqjOGIP5eZw/view?usp=sharing",
   },
 
 ];
@@ -92,8 +92,8 @@ export default function Projects() {
                 progress={scrollYProgress}
                 range={[i * 0.25, 1]}
                 targetScale={targetScale}
-                githubLink={project.githubLink}
-                liveLink={project.liveLink}
+                reportLink={project.reportLink}
+                certificateLink={project.certificateLink}
               />
             );
           })}
@@ -115,8 +115,8 @@ function Card({
   progress,
   range,
   targetScale,
-  githubLink,
-  liveLink,
+  reportLink,
+  certificateLink,
 }) {
   const container = useRef(null);
   const scale = useTransform(progress, range, [1, targetScale]);
@@ -180,7 +180,7 @@ function Card({
                 <div className="flex items-center gap-3 md:hidden">
                   {/* GitHub Link */}
                   <motion.a
-                    href={githubLink}
+                    href={reportLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group flex items-center gap-1 px-3 py-2 rounded-lg hover:bg-white/20 transition-all duration-300 cursor-pointer border border-transparent hover:border-white/30"
@@ -211,7 +211,7 @@ function Card({
 
                   {/* Live Link */}
                   <motion.a
-                    href={liveLink}
+                    href={certificateLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group flex items-center gap-1 px-3 py-2 rounded-lg hover:bg-white/20 transition-all duration-300 cursor-pointer border border-transparent hover:border-white/30"
@@ -265,7 +265,7 @@ function Card({
               <div className="hidden md:flex items-center gap-4">
                 {/* GitHub Link */}
                 <motion.a
-                  href={githubLink}
+                  href={reportLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-white/10 transition-all duration-300 cursor-pointer"
@@ -302,7 +302,7 @@ function Card({
 
                 {/* Live Link */}
                 <motion.a
-                  href={liveLink}
+                  href={certificateLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-white/10 transition-all duration-300 cursor-pointer"
@@ -412,7 +412,7 @@ Card.propTypes = {
   progress: PropTypes.object.isRequired,
   range: PropTypes.array.isRequired,
   targetScale: PropTypes.number.isRequired,
-  githubLink: PropTypes.string.isRequired,
-  liveLink: PropTypes.string.isRequired,
+  reportLink: PropTypes.string.isRequired,
+  certificateLink: PropTypes.string.isRequired,
 };
 

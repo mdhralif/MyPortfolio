@@ -5,11 +5,11 @@ const AnimatedGrid = () => {
       <div className="relative w-full h-full">
         {/* Square Grid Pattern */}
         <div 
-          className="absolute inset-0 opacity-30"
+          className="absolute inset-0 opacity-20"
           style={{
             backgroundImage: `
-              linear-gradient(to right, rgba(6, 182, 212, 0.3) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(6, 182, 212, 0.3) 1px, transparent 1px)
+              linear-gradient(to right, rgba(6, 182, 212, 0.3) 1.5px, transparent 1px),
+              linear-gradient(to bottom, rgba(6, 182, 212, 0.3) 1.5px, transparent 1px)
             `,
             backgroundSize: '50px 50px'
           }}
