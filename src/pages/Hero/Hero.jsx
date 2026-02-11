@@ -121,18 +121,13 @@ export default function Hero({ onContactClick }) {
                   </span>
                 </a>
 
-                {/* Contact Button */}
                 <button
-                  onClick={onContactClick}
-                  className="group relative inline-flex items-center justify-center gap-3 p-0.5 rounded-xl bg-gradient-to-r from-gray-800 to-gray-700 transition-all duration-300 hover:scale-105 ]"
-                >
-                  <span className="block w-full px-6 sm:px-8 py-3 sm:py-4 rounded-[11px] bg-gray-900 border border-gray-700/50 ">
-                    <span className="relative flex items-center justify-center gap-2 text-gray-300 font-medium ">
-                      <FaEnvelope className="transform transition-all duration-300 group-hover:rotate-12" /> 
-                      <span>Let&apos;s Connect</span>
-                    </span>
-                  </span>
-                </button>
+              onClick={onContactClick}
+              className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-white text-gray-900 font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+            >
+              <FaEnvelope className="text-xl transform transition-all duration-300 group-hover:rotate-12" /> 
+              <span>Let&apos;s Connect</span>
+            </button>
               </div>
 
               {/* Floating badges */}
