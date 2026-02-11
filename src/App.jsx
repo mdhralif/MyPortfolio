@@ -34,7 +34,7 @@ export default function App() {
 
   return (
     <>
-      <Header />
+
       {/* Conditional Rendering */}
       {isOnePage ? (
         // One-Page Mode: Render all components together
