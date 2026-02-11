@@ -98,7 +98,7 @@ export default function Projects() {
             );
           })}
         </section>
-        <SwipeIndicator />
+
       </main>
     </ReactLenis>
   );
@@ -350,55 +350,6 @@ function Card({
   );
 }
 
-// Swipe Indicator Component
-function SwipeIndicator() {
-  const { scrollY } = useScroll();
-  const opacity = useTransform(scrollY, [0, 200], [1, 0]);
-
-  return (
-    <motion.div
-      className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 pointer-events-none"
-      style={{ opacity }}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 1.5, duration: 0.8 }}
-    >
-      {/* Simple animated arrows */}
-      <div className="flex flex-col items-center space-y-2">
-        {[0, 1, 2].map((index) => (
-          <motion.div
-            key={index}
-            className="w-8 h-8 flex items-center justify-center"
-            animate={{
-              y: [0, -12, 0],
-              opacity: [0.3, 1, 0.3],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              delay: index * 0.15,
-              ease: "easeInOut",
-            }}
-          >
-            <svg
-              width="28"
-              height="28"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="3"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="text-white/80"
-            >
-              <polyline points="18,15 12,9 6,15"></polyline>
-            </svg>
-          </motion.div>
-        ))}
-      </div>
-    </motion.div>
-  );
-}
 
 // Add PropTypes validation
 Card.propTypes = {

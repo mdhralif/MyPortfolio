@@ -114,7 +114,7 @@ export default function Hero({ onContactClick }) {
 
                 {/* Description */}
                 <p className="text-gray-400 text-lg sm:text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
-                  Full Stack Developer | Turning ideas into functional and impactful web applications.
+                  Software Engineer | Full Stack Developer
                 </p>
 
                 {/* CTA Buttons */}
@@ -149,15 +149,7 @@ export default function Hero({ onContactClick }) {
                 </div>
               </div>
 
-              {/* Floating badges */}
-              <div className="hidden lg:block absolute left-[5.5rem] top-[2.3rem] animate-float-slow">
-              </div>
-              <div className="hidden lg:block absolute right-10 top-20 animate-float">
-                
-              </div>
-              <div className="hidden lg:block absolute top-[17rem] left-[70%] transform -translate-x-1/2 animate-float">
-                
-              </div>
+
 
             </div>
           </div>
