@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import SparklesText from "@/components/ui/sparkles-text";
-import { FaGithub, FaArrowRight, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaArrowRight, FaPaperPlane, FaFileDownload } from "react-icons/fa";
 import PropTypes from "prop-types";
 import AnimatedGrid from "@/components/AnimatedGrid";
 
+import ProfileImage from "@/assets/images/profile.jpg";
 export default function Hero({ onContactClick }) {
 
 
@@ -87,47 +88,65 @@ export default function Hero({ onContactClick }) {
           >
             {/* Left column - Text content */}
             <div className="w-full max-w-4xl mb-12 lg:mb-0 animate__animated animate__fadeInLeft relative text-center">
+              
+              <div className="relative mt-20 p-10 bg-[#161825] rounded-2xl">
+                {/* Profile Image */}
+                <div className="absolute -top-20 left-1/2 transform -translate-x-1/2">
+                  <div className="w-40 h-40 rounded-full overflow-hidden bg-[#1C1F2E]">
+                    <img src={ProfileImage} alt="Profile" className="w-full h-full object-cover" />
+                  </div>
+                </div>
 
-              {/* Name section */}
-              <div className="relative mb-6 sm:mb-8">
-                <h1 className="text-4xl sm:text-7xl lg:text-7xl font-bold leading-tight">
-                  <SparklesText
-                    text="Hello,"
-                    showSparkles={false}
-                    className="text-4xl sm:text-7xl lg:text-7xl font-bold text-[#2DD4BF] inline-block mr-2"
-                  />
-                  <span className="relative inline-block">
-                    <span className="">I&apos;m</span>
-                    <span className="font-extrabold text-white"> MD H R ALIF</span>
-                  </span>
-                </h1>
-              </div>
-
-             
-
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 animate__animated animate__fadeInUp animate__delay-2s justify-center">
-                {/* View Projects Button */}
-                <a
-                  href="https://github.com/mdhralif"
-                  className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-500 to-teal-400 p-0.5 rounded-xl transition-all duration-300 hover:scale-105"
-                >
-                  <span className="block w-full px-6 sm:px-8 py-3 sm:py-4 rounded-[11px] bg-gray-900 transition-all duration-300 ">
-                    <span className="relative flex items-center justify-center gap-2 text-white font-medium">
-                      <FaGithub className="text-lg" />
-                      <span>My Github</span>
-                      <FaArrowRight className="transform transition-all duration-300 group-hover:translate-x-1" />
+                {/* Name section */}
+                <div className="relative mb-6 sm:mb-8 mt-12">
+                  <h1 className="text-4xl sm:text-7xl lg:text-7xl font-bold leading-tight">
+                    <SparklesText
+                      text="Hello,"
+                      showSparkles={false}
+                      className="text-4xl sm:text-7xl lg:text-7xl font-bold text-[#2DD4BF] inline-block mr-2"
+                    />
+                    <span className="relative inline-block">
+                      <span className="">I&apos;m</span>
+                      <span className="font-extrabold text-white"> MD H R ALIF</span>
                     </span>
-                  </span>
-                </a>
+                  </h1>
+                </div>
 
-                <button
-              onClick={onContactClick}
-              className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-white text-gray-900 font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
-            >
-              <FaEnvelope className="text-xl transform transition-all duration-300 group-hover:rotate-12" /> 
-              <span>Let&apos;s Connect</span>
-            </button>
+                {/* Description */}
+                <p className="text-gray-400 text-lg sm:text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+                  Full Stack Developer | Turning ideas into functional and impactful web applications.
+                </p>
+
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 animate__animated animate__fadeInUp animate__delay-2s justify-center">
+                  <button
+                    onClick={onContactClick}
+                    className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-[#18181a] text-white font-extrabold text-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                  >
+                    <FaPaperPlane className="text-xl transform transition-all duration-300 group-hover:rotate-12" /> 
+                    <span>Reach Me</span>
+                  </button>
+
+                  <a
+                    href="https://drive.google.com/file/d/1vg9ZRsNnimnVixbsyHrKLEDVDEvGTgmK/view?usp=sharing" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-[#18181a] text-white font-extrabold text-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                  >
+                    <FaFileDownload className="text-xl transform transition-all duration-300 group-hover:-translate-y-1" /> 
+                    <span>My CV</span>
+                  </a>
+
+                  <a
+                    href="https://github.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-[#18181a] text-white font-extrabold text-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                  >
+                    <FaGithub className="text-xl transform transition-all duration-300 group-hover:rotate-12" />
+                    <span>GitHub</span>
+                  </a>
+                </div>
               </div>
 
               {/* Floating badges */}
@@ -139,6 +158,7 @@ export default function Hero({ onContactClick }) {
               <div className="hidden lg:block absolute top-[17rem] left-[70%] transform -translate-x-1/2 animate-float">
                 
               </div>
+
             </div>
           </div>
         </section>

@@ -8,7 +8,7 @@ const ExperienceCard = [
     title: "Software Engineer Intern",
     company: "KAZ Software",
     period: "29 Sep 2025 - 30 Jan 2026",
-    description:"Worked on production web apps, focusing on UI, APIs, and issue resolution with cross-functional teams.",
+    description:"Developed web apps, designed UI, integrated APIs & done some bugs fixing.",
     src:KAZlogo ,
     link: KAZlogo,
     color: "#f59e0b",
