@@ -101,12 +101,11 @@ export default function Hero({ onContactClick }) {
                 <div className="relative mb-6 sm:mb-8 mt-12">
                   <h1 className="text-4xl sm:text-7xl lg:text-7xl font-bold leading-tight">
                     <SparklesText
-                      text="Hello,"
+                      text="It's me, "
                       showSparkles={false}
                       className="text-4xl sm:text-7xl lg:text-7xl font-bold text-[#2DD4BF] inline-block mr-2"
                     />
                     <span className="relative inline-block">
-                      <span className="">I&apos;m</span>
                       <span className="font-extrabold text-white"> MD H R ALIF</span>
                     </span>
                   </h1>
