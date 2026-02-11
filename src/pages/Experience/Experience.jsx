@@ -2,7 +2,7 @@ import { ReactLenis } from "lenis/react";
 import { useTransform, motion, useScroll } from "framer-motion";
 import { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
-import KAZlogo from "../../assets/images/KAZLOGO.png";
+import KAZlogo from "@/assets/images/KAZLOGO.png";
 const ExperienceCard = [
   {
     title: "Software Engineer Intern",
