@@ -3,10 +3,10 @@ import AchievementCarousel from "./AchievementCarousel";
 const achievements = [
 
   {
-    title: "Hackathon Winner",
-    org: "Local Hack Day",
-    year: "2023",
-    description: "Built an accessibility-focused web tool and won first place.",
+    title: "",
+    org: "",
+    year: "",
+    description: "",
     color: "#8f89ff",
   },
 ];
