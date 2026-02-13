@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./assets/css/index.css";
 import Experience from "./pages/Experience/Experience";
+import Education from "./pages/Education/Education";
+import Achievement from "./pages/Achievement/Achievement";
 import Projects from "./pages/Projects/Projects";
 import Hero from "./pages/Hero/Hero";
 import Skills from "./pages/Skills/Skills";
@@ -13,7 +15,6 @@ import ContactModal from "./components/ContactModal";
 import { Route, Routes } from "react-router-dom";
 
 export default function App() {
-  const [isOnePage] = useState(true); 
   const [isLoading, setIsLoading] = useState(true);
 
   // Contact modal state - shared across Hero and About
@@ -49,6 +50,8 @@ export default function App() {
         />
         <Route path="/skills" element={<Skills />} />
         <Route path="/experience" element={<Experience />} />
+        <Route path="/education" element={<Education />} />
+        <Route path="/achievement" element={<Achievement />} />
         <Route path="/contact" element={<ContactModal />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/about" element={
