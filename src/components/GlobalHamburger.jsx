@@ -46,7 +46,14 @@ export default function GlobalHamburger({ onContactClick = () => {} }) {
             onClick={() => setMenuOpen(false)}
             className="block font-bold text-5xl md:text-7xl lg:text-8xl text-white leading-tight mb-6 hover:text-cyan-400 transition-colors"
           >
-            Profile
+            Home
+          </Link>
+          <Link
+            to="/about"
+            onClick={() => setMenuOpen(false)}
+            className="block font-bold text-5xl md:text-7xl lg:text-8xl text-white leading-tight mb-6 hover:text-cyan-400 transition-colors"
+          >
+            About
           </Link>
 
           <Link
@@ -54,7 +61,7 @@ export default function GlobalHamburger({ onContactClick = () => {} }) {
             onClick={() => setMenuOpen(false)}
             className="block font-bold text-5xl md:text-7xl lg:text-8xl text-white leading-tight mb-6 hover:text-cyan-400 transition-colors"
           >
-            Projects
+            My Projects
           </Link>
 
           <Link
@@ -64,20 +71,7 @@ export default function GlobalHamburger({ onContactClick = () => {} }) {
           >
             Skills
           </Link>
-          <Link
-            to="/achievement"
-            onClick={() => setMenuOpen(false)}
-            className="block font-bold text-5xl md:text-7xl lg:text-8xl text-white leading-tight mb-6 hover:text-cyan-400 transition-colors"
-          >
-            Achievement
-          </Link>
-          <Link
-            to="/education"
-            onClick={() => setMenuOpen(false)}
-            className="block font-bold text-5xl md:text-7xl lg:text-8xl text-white leading-tight mb-6 hover:text-cyan-400 transition-colors"
-          >
-            Education
-          </Link>
+          
 
         </nav>
 

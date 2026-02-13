@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./assets/css/index.css";
 import Experience from "./pages/Experience/Experience";
 import Education from "./pages/Education/Education";
+import About from "./pages/About/About";
 import Achievement from "./pages/Achievement/Achievement";
 import Projects from "./pages/Projects/Projects";
 import Hero from "./pages/Hero/Hero";
@@ -53,11 +54,7 @@ export default function App() {
         <Route path="/achievement" element={<Achievement />} />
         <Route path="/contact" element={<ContactModal />} />
         <Route path="/projects" element={<Projects />} />
-        <Route path="/about" element={
-          // if you have a dedicated About page
-          // prefer importing it at top. For now render Hero's About section if available
-          <Hero onContactClick={handleContactClick} />
-        } />
+        <Route path="/about" element={<About onContactClick={handleContactClick} />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
