@@ -97,7 +97,7 @@ export default function Hero({ onContactClick = () => {} }) {
 
                 {/* Small CV download icon (top-right of the card) */}
                 <a
-                  href="https://drive.google.com/file/d/1vg9ZRsNnimnVixbsyHrKLEDVDEvGTgmK/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1vg9YRsNnimnVixbsyHrKLEDVDEvGTgmK/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                   title="My CV"
@@ -148,7 +148,7 @@ export default function Hero({ onContactClick = () => {} }) {
           {/* Bottom-left social icons */}
           <div className="absolute left-6 bottom-6 z-30 flex flex-col gap-3">
             <a
-              href="https://github.com/"
+              href="https://github.com/mdhralif"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
@@ -159,7 +159,7 @@ export default function Hero({ onContactClick = () => {} }) {
             </a>
 
             <a
-              href="https://www.linkedin.com/"
+              href="https://www.linkedin.com/in/md-h-r-alif-7358801a6/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -170,7 +170,7 @@ export default function Hero({ onContactClick = () => {} }) {
             </a>
 
             <a
-              href="https://www.facebook.com/"
+              href="https://www.facebook.com/mdhr.alif.4"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
