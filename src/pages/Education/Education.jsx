@@ -60,7 +60,7 @@ const EducationSection = () => {
   };
 
   return (
-    <section className="min-h-screen relative overflow-hidden py-40 bg-[#1C1F2E]">
+    <section className="min-h-screen relative overflow-hidden pt-20 pb-16 bg-[#1C1F2E]">
       {/* Grid Background */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-grid-white/[0.05] bg-[length:50px_50px]" />
