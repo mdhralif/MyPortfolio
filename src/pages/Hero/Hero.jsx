@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import SparklesText from "@/components/ui/sparkles-text";
-import { FaGithub, FaArrowRight, FaPaperPlane, FaFileDownload } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaFacebook, FaArrowRight, FaPaperPlane, FaFileDownload } from "react-icons/fa";
 import PropTypes from "prop-types";
 import AnimatedGrid from "@/components/AnimatedGrid";
 
@@ -136,21 +136,49 @@ export default function Hero({ onContactClick }) {
                     <span>My CV</span>
                   </a>
 
-                  <a
-                    href="https://github.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-[#18181a] text-white font-extrabold text-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
-                  >
-                    <FaGithub className="text-xl transform transition-all duration-300 group-hover:rotate-12" />
-                    <span>GitHub</span>
-                  </a>
+                  {/* GitHub CTA removed (now available in bottom-left icons) */}
                 </div>
               </div>
 
 
 
             </div>
+          </div>
+
+          {/* Bottom-left social icons */}
+          <div className="absolute left-6 bottom-6 z-30 flex flex-col gap-3">
+            <a
+              href="https://github.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 flex items-center justify-center rounded-full bg-[#161825] hover:bg-[#2DD4BF] transition-colors shadow-lg"
+              title="GitHub"
+            >
+              <FaGithub className="text-white w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8" />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 flex items-center justify-center rounded-full bg-[#161825] hover:bg-[#2DD4BF] transition-colors shadow-lg"
+              title="LinkedIn"
+            >
+              <FaLinkedin className="text-white w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8" />
+            </a>
+
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 flex items-center justify-center rounded-full bg-[#161825] hover:bg-[#2DD4BF] transition-colors shadow-lg"
+              title="Facebook"
+            >
+              <FaFacebook className="text-white w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8" />
+            </a>
           </div>
         </section>
       </main>
