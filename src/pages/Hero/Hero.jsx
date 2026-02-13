@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import SparklesText from "@/components/ui/sparkles-text";
-import { FaGithub, FaLinkedin, FaFacebook, FaArrowRight, FaPaperPlane, FaFileDownload } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaFacebook, FaPaperPlane, FaFileDownload } from "react-icons/fa";
 import PropTypes from "prop-types";
 import AnimatedGrid from "@/components/AnimatedGrid";
 
