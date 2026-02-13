@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import SparklesText from "@/components/ui/sparkles-text";
-import { FaGithub, FaLinkedin, FaFacebook, FaPaperPlane, FaFileDownload } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaFacebook, FaEnvelope, FaFileDownload } from "react-icons/fa";
 import PropTypes from "prop-types";
 import AnimatedGrid from "@/components/AnimatedGrid";
 
@@ -97,6 +97,19 @@ export default function Hero({ onContactClick }) {
                   </div>
                 </div>
 
+                {/* Small CV download icon (top-right of the card) */}
+                <a
+                  href="https://drive.google.com/file/d/1vg9ZRsNnimnVixbsyHrKLEDVDEvGTgmK/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="My CV"
+                  aria-label="My CV"
+                  className="absolute top-6 right-6 w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 flex items-center justify-center transition-colors group"
+                >
+                  <FaFileDownload className="text-white group-hover:text-[#2DD4BF] w-7 h-7 md:w-8 md:h-8 lg:w-10 lg:h-10" />
+                  <span className="sr-only">My CV</span>
+                </a>
+
                 {/* Name section */}
                 <div className="relative mb-6 sm:mb-8 mt-12">
                   <h1 className="text-4xl sm:text-7xl lg:text-7xl font-bold leading-tight">
@@ -112,7 +125,7 @@ export default function Hero({ onContactClick }) {
                 </div>
 
                 {/* Description */}
-                <p className="text-gray-400 text-lg sm:text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+                <p className="text-gray-300 text-xl sm:text-2xl mb-8 max-w-2xl mx-auto leading-relaxed">
                   Software Engineer | Full Stack Developer
                 </p>
 
@@ -120,23 +133,12 @@ export default function Hero({ onContactClick }) {
                 <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 animate__animated animate__fadeInUp animate__delay-2s justify-center">
                   <button
                     onClick={onContactClick}
-                    className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-[#18181a] text-white font-extrabold text-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                    className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-none bg-white text-[#18181a] font-extrabold text-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
                   >
-                    <FaPaperPlane className="text-xl transform transition-all duration-300 group-hover:rotate-12" /> 
+                    <FaEnvelope className="text-xl transform transition-all duration-300 group-hover:rotate-12" /> 
                     <span>Reach Me</span>
                   </button>
 
-                  <a
-                    href="https://drive.google.com/file/d/1vg9ZRsNnimnVixbsyHrKLEDVDEvGTgmK/view?usp=sharing" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-[#18181a] text-white font-extrabold text-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
-                  >
-                    <FaFileDownload className="text-xl transform transition-all duration-300 group-hover:-translate-y-1" /> 
-                    <span>My CV</span>
-                  </a>
-
-                  {/* GitHub CTA removed (now available in bottom-left icons) */}
                 </div>
               </div>
 
