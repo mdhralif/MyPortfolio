@@ -58,7 +58,7 @@ const ContactModal = ({ isOpen, onClose }) => {
       <div className="relative w-full max-w-xl md:max-w-2xl lg:max-w-3xl bg-gray-900 rounded-lg shadow-xl transform transition-all duration-300 animate-in zoom-in-95 max-h-[85vh] overflow-y-auto">
         {/* Header */}
         <div className="flex items-center justify-between p-8 pb-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-white"><span className="text-cyan-400">Let&apos;s</span> Talk</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white"><span className="text-cyan-400"></span></h2>
           <button
             type="button"
             onClick={(e) => {

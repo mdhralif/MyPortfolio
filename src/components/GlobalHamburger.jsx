@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import { FaEnvelope } from "react-icons/fa";
 
 export default function GlobalHamburger({ onContactClick = () => {} }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -89,6 +90,7 @@ export default function GlobalHamburger({ onContactClick = () => {} }) {
             }}
             className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-[#08121a] font-extrabold text-lg shadow-lg transition-transform hover:scale-105"
           >
+            <FaEnvelope className="text-xl transform transition-all duration-300 group-hover:rotate-12" /> 
             Reach out
           </button>
         </div>
