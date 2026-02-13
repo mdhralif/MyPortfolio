@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
+import PropTypes from "prop-types";
 import { useTheme } from "next-themes";
 import { Cloud, fetchSimpleIcons, renderSimpleIcon } from "react-icon-cloud";
 
@@ -103,3 +104,8 @@ export default function IconCloud({
     </Cloud>
   );
 }
+
+IconCloud.propTypes = {
+  iconSlugs: PropTypes.arrayOf(PropTypes.string),
+  imageArray: PropTypes.arrayOf(PropTypes.string),
+};
