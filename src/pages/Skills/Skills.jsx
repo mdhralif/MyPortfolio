@@ -74,7 +74,7 @@ SkillCard.propTypes = {
   skills: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
-      icon: PropTypes.node.isRequired,
+      icon: PropTypes.node,
     })
   ).isRequired,
   color: PropTypes.string.isRequired,

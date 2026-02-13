@@ -4,8 +4,8 @@ import { FaGithub, FaLinkedin, FaFacebook, FaEnvelope, FaFileDownload } from "re
 import PropTypes from "prop-types";
 import AnimatedGrid from "@/components/AnimatedGrid";
 
-import ProfileImage from "@/assets/images/profile.jpg";
-export default function Hero({ onContactClick }) {
+import ProfileImage from "@/assets/images/Alif_.png";
+export default function Hero({ onContactClick = () => {} }) {
 
 
   useEffect(() => {
@@ -136,7 +136,7 @@ export default function Hero({ onContactClick }) {
                     className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-none bg-white text-[#18181a] font-extrabold text-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
                   >
                     <FaEnvelope className="text-xl transform transition-all duration-300 group-hover:rotate-12" /> 
-                    <span>Reach Me</span>
+                    <span>Reach out</span>
                   </button>
 
                 </div>
@@ -190,8 +190,4 @@ export default function Hero({ onContactClick }) {
 
 Hero.propTypes = {
   onContactClick: PropTypes.func,
-};
-
-Hero.defaultProps = {
-  onContactClick: () => {},
 };

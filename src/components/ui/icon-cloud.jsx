@@ -60,9 +60,20 @@ export default function IconCloud({
   const { theme } = useTheme();
 
   useEffect(() => {
-    if (iconSlugs.length > 0) {
-      // Check if iconSlugs is not empty
-      fetchSimpleIcons({ slugs: iconSlugs }).then(setData);
+    if (iconSlugs && iconSlugs.length > 0) {
+      // Attempt to fetch simple icons, but handle failures gracefully
+      (async () => {
+        try {
+          const result = await fetchSimpleIcons({ slugs: iconSlugs });
+          setData(result);
+        } catch (err) {
+          // Log once and avoid throwing - keep UI functional
+          // Browser may still show 404 in Network, but we won't break rendering
+          // eslint-disable-next-line no-console
+          console.warn("fetchSimpleIcons failed:", err);
+          setData(null);
+        }
+      })();
     }
   }, [iconSlugs]);
 
