@@ -6,8 +6,6 @@ import AnimatedGrid from "@/components/AnimatedGrid";
 
 import ProfileImage from "@/assets/images/Alif_.png";
 export default function Hero({ onContactClick = () => {} }) {
-
-
   useEffect(() => {
     const style = document.createElement("style");
     style.textContent = ` 
@@ -61,6 +59,7 @@ export default function Hero({ onContactClick = () => {} }) {
     };
   }, []);
 
+
   return (
     <>
       <main className="bg-[#1C1F2E] text-white min-h-screen">
@@ -68,7 +67,6 @@ export default function Hero({ onContactClick = () => {} }) {
           className="hero min-h-screen flex items-center justify-center relative px-4 sm:px-6 lg:px-8 py-10 md:py-16 lg:py-0 hero-section-padding"
           style={{ paddingTop: "var(--hero-padding-top, 0)" }}
         >
-          <div className="absolute inset-0"></div>
           <AnimatedGrid />
 
 
