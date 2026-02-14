@@ -52,13 +52,14 @@ export default function About() {
 
             {/* CV Download */}
                             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 animate__animated animate__fadeInUp animate__delay-2s justify-start">
-                              <button
-                                onClick={() => window.open("https://drive.google.com/file/d/1vg9YRsNnimnVixbsyHrKLEDVDEvGTgmK/view?usp=sharing", "_blank")}
+                              <a
+                                href="https://drive.google.com/uc?export=download&id=1vg9YRsNnimnVixbsyHrKLEDVDEvGTgmK"
+                                download="MD_H_R_ALIF_CV.pdf"
                                 className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-none bg-white text-[#18181a] font-extrabold text-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
                               >
                                 <FaFileDownload className="text-xl transform transition-all duration-300 group-hover:rotate-12" /> 
                                 <span>Download CV</span>
-                              </button>
+                              </a>
             
                             </div>
 
