@@ -46,7 +46,7 @@ export default function About() {
             </h1>
 
             <p className="text-gray-300 text-lg md:text-xl max-w-2xl mb-6 text-justify">
-              Need a web developer who actually enjoys building cool stuff? I’m Md Hasibur Rahman Alif, and I specialize in creating fast, modern, and user-friendly web applications. From full-stack platforms to AI-powered tools, I love turning ideas into clean, functional products that people enjoy using. If you have a vision, I’m ready to help you bring it to life.
+              Need a web developer who actually enjoys building cool stuff? I’m Md Hasibur Rahman Alif, and I specialize in creating fast, modern, and user friendly web applications. From full-stack platforms to AI-powered tools, I love turning ideas into clean, functional products that people enjoy using. If you have a vision, I’m ready to help you bring it to life.
             </p>
 
             {/* CV Download */}
