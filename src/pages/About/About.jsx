@@ -1,7 +1,7 @@
 import ProfileImage from "@/assets/images/Alif_.png";
 import Education from "../Education/Education";
 import Experience from "../Experience/Experience";
-import { FaFacebook, FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaFacebook, FaLinkedin, FaGithub,FaFileDownload } from "react-icons/fa";
 
 export default function About() {
   return (
@@ -45,9 +45,21 @@ export default function About() {
               Myself, MD H R ALIF
             </h1>
 
-            <p className="text-gray-300 max-w-2xl mb-6 text-justify">
+            <p className="text-gray-300 text-lg md:text-xl max-w-2xl mb-6 text-justify">
               Need a web developer who actually enjoys building cool stuff? I’m Md Hasibur Rahman Alif, and I specialize in creating fast, modern, and user-friendly web applications. From full-stack platforms to AI-powered tools, I love turning ideas into clean, functional products that people enjoy using. If you have a vision, I’m ready to help you bring it to life.
             </p>
+
+            {/* CV Download */}
+                            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 animate__animated animate__fadeInUp animate__delay-2s justify-start">
+                              <button
+                                onClick={() => window.open("https://drive.google.com/file/d/1vg9YRsNnimnVixbsyHrKLEDVDEvGTgmK/view?usp=sharing", "_blank")}
+                                className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-none bg-white text-[#18181a] font-extrabold text-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                              >
+                                <FaFileDownload className="text-xl transform transition-all duration-300 group-hover:rotate-12" /> 
+                                <span>Download CV</span>
+                              </button>
+            
+                            </div>
 
 
             
