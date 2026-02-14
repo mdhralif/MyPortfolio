@@ -1,7 +1,5 @@
 import { useState } from "react";
 import "./assets/css/index.css";
-import Experience from "./pages/Experience/Experience";
-import Education from "./pages/Education/Education";
 import About from "./pages/About/About";
 import Achievement from "./pages/Achievement/Achievement";
 import Projects from "./pages/Projects/Projects";
@@ -49,8 +47,6 @@ export default function App() {
           }
         />
         <Route path="/skills" element={<Skills />} />
-        <Route path="/experience" element={<Experience />} />
-        <Route path="/education" element={<Education />} />
         <Route path="/achievement" element={<Achievement />} />
         <Route path="/contact" element={<ContactModal />} />
         <Route path="/projects" element={<Projects />} />

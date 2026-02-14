@@ -1,7 +1,8 @@
 import ProfileImage from "@/assets/images/Alif_.png";
-import Education from "../Education/Education";
-import Experience from "../Experience/Experience";
-import { FaFacebook, FaLinkedin, FaGithub,FaFileDownload } from "react-icons/fa";
+import iutLogo from "@/assets/images/iutlogo.png";
+import KAZlogo from "@/assets/images/KAZLOGO.png";
+import { FaFacebook, FaLinkedin, FaGithub, FaFileDownload, FaCalendarAlt, FaAward } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 export default function About() {
   return (
@@ -15,7 +16,7 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-[360px_1fr] gap-12 items-center">
           {/* Left: image card with offset background and social icons */}
           <div className="relative flex justify-center lg:justify-start">
-            <div className="absolute left-0 top-12 w-80 h-96 bg-[#1c1f2e] opacity-95 transform -translate-x-8 lg:-translate-x-16 border border-white/5" />
+            <div className="absolute left-0 top-12 w-80 h-96 bg-[#1c1f2e] opacity-95 transform -translate-x-8 lg:-translate-x-16 " />
 
             <div className="relative z-10 bg-transparent p-6">
               <div className="w-64 h-80 bg-[#0f1223] shadow-2xl overflow-hidden">
@@ -67,13 +68,109 @@ export default function About() {
         </div>
       </section>
 
-      {/* Education and Experience sections */}
-      <section>
-        <Education />
+      {/* Education Section */}
+      <section className="max-w-6xl mx-auto px-6 py-16">
+        <h3 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">
+          <span>Education</span>
+        </h3>
+        
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="bg-[#1c1f2e] p-6"
+        >
+          <div className="flex items-start gap-4">
+            <div className="w-16 h-16 rounded-lg overflow-hidden bg-white flex items-center justify-center p-2">
+              <img 
+                src={iutLogo} 
+                alt="IUT Logo"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            
+            <div className="flex-1">
+              <h4 className="text-xl font-bold text-white mb-2">B.Sc. in Software Engineering</h4>
+              <p className="text-[#2DD4BF] font-medium mb-2">Islamic University of Technology (IUT)</p>
+              
+              <div className="flex items-center gap-4 text-gray-400 text-sm mb-3">
+                <div className="flex items-center gap-1">
+                  <FaCalendarAlt className="w-4 h-4" />
+                  <span>August 2022 - Present</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <FaAward className="w-4 h-4" />
+                  <span>CGPA: 3.86</span>
+                </div>
+              </div>
+              
+              <div className="flex flex-wrap gap-2">
+                {["OOP", "Data Structures", "Algorithms", "Web Development", "AI/ML", "Database", "Networking"].map((skill, index) => (
+                  <span key={index} className="px-3 py-1 bg-[#2DD4BF]/20 text-[#2DD4BF] rounded-full text-xs font-medium">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </section>
 
-      <section>
-        <Experience />
+      {/* Experience Section */}
+      <section className="max-w-6xl mx-auto px-6 pb-16">
+        <h3 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">
+          <span>Experience</span>
+        </h3>
+        
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="bg-[#1c1f2e] p-6"
+        >
+          <div className="flex items-start gap-4">
+            <div className="w-16 h-16 rounded-lg overflow-hidden bg-white flex items-center justify-center p-2">
+              <img 
+                src={KAZlogo} 
+                alt="KAZ Software Logo"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            
+            <div className="flex-1">
+              <h4 className="text-xl font-bold text-white mb-2">Software Engineer Intern</h4>
+              <p className="text-[#2DD4BF] font-medium mb-2">KAZ Software</p>
+              
+              <div className="flex items-center gap-4 text-gray-400 text-sm mb-3">
+                <div className="flex items-center gap-1">
+                  <FaCalendarAlt className="w-4 h-4" />
+                  <span>Sep 2025 - Jan 2026</span>
+                </div>
+              </div>
+              
+              <p className="text-gray-300 mb-4">Developed web apps, designed UI, integrated APIs & done some bug fixing.</p>
+              
+              <div className="flex gap-3">
+                <a 
+                  href="https://drive.google.com/file/d/1MBG4-G79_cXUBKiTSOmdJGPzV7AtYzWZ/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-[#2DD4BF]/20 text-[#2DD4BF] rounded-lg text-sm font-medium hover:bg-[#2DD4BF]/30 transition-colors"
+                >
+                  View Report
+                </a>
+                <a 
+                  href="https://drive.google.com/file/d/1DdeOV4q5CSZsYMinkoK4dUqjOGIP5eZw/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 border border-[#2DD4BF] text-[#2DD4BF] rounded-lg text-sm font-medium hover:bg-[#2DD4BF]/10 transition-colors"
+                >
+                  Certificate
+                </a>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </section>
     </main>
   );
