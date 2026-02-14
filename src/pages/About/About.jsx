@@ -107,11 +107,11 @@ export default function About() {
                 </div>
               </div>
               
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-3">
                 {["OOP", "Data Structures", "Algorithms", "Web Development", "AI/ML", "Database", "Networking"].map((skill, index) => (
-                  <span key={index} className="px-3 py-1 bg-[#2DD4BF]/20 text-[#2DD4BF] rounded-full text-xs font-medium">
+                  <div key={index} className="min-w-[72px] h-10 flex items-center justify-center bg-[#0f1223]  text-white rounded-none text-sm font-medium px-2">
                     {skill}
-                  </span>
+                  </div>
                 ))}
               </div>
             </div>
