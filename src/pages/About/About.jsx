@@ -5,6 +5,8 @@ import { FaFacebook, FaLinkedin, FaGithub, FaFileDownload, FaCalendarAlt, FaAwar
 import { motion } from "framer-motion";
 
 export default function About() {
+  const iconColor = "#ffffff";
+
   return (
     <main className="bg-[#161825] text-white min-h-screen">
       <section className="max-w-6xl mx-auto px-6 py-16">
@@ -152,22 +154,82 @@ export default function About() {
               <p className="text-gray-300 mb-4">Developed web apps, designed UI, integrated APIs & done some bug fixing.</p>
               
               <div className="flex gap-3">
-                <a 
+                <motion.a
                   href="https://drive.google.com/file/d/1MBG4-G79_cXUBKiTSOmdJGPzV7AtYzWZ/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 bg-[#2DD4BF]/20 text-[#2DD4BF] rounded-lg text-sm font-medium hover:bg-[#2DD4BF]/30 transition-colors"
+                  className="group flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-white/10 transition-all duration-300 cursor-pointer"
+                  whileHover={{
+                    y: -3,
+                    scale: 1.05,
+                    transition: { type: "spring", stiffness: 400 },
+                  }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  View Report
-                </a>
-                <a 
+                  <motion.svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke={iconColor}
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="group-hover:stroke-white transition-colors duration-300"
+                    whileHover={{ rotate: 5 }}
+                  >
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <path d="M14 2v6h6"></path>
+                  </motion.svg>
+                  <span
+                    className="text-xs md:text-sm font-medium group-hover:text-white transition-colors duration-300"
+                    style={{ color: iconColor }}
+                  >
+                    Report
+                  </span>
+                </motion.a>
+
+                <motion.a
                   href="https://drive.google.com/file/d/1DdeOV4q5CSZsYMinkoK4dUqjOGIP5eZw/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 border border-[#2DD4BF] text-[#2DD4BF] rounded-lg text-sm font-medium hover:bg-[#2DD4BF]/10 transition-colors"
+                  className="group flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-white/10 transition-all duration-300 cursor-pointer"
+                  whileHover={{
+                    y: -3,
+                    scale: 1.05,
+                    transition: { type: "spring", stiffness: 400 },
+                  }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  Certificate
-                </a>
+                  <motion.svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke={iconColor}
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="group-hover:stroke-white transition-colors duration-300"
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    <rect x="2" y="2" width="16" height="20" rx="2"></rect>
+                    <line x1="6" y1="8" x2="12" y2="8"></line>
+                    <line x1="6" y1="12" x2="12" y2="12"></line>
+                    <circle cx="11" cy="18" r="2"></circle>
+                    <path d="M9 20l-1 3"></path>
+                    <path d="M13 20l1 3"></path>
+                  </motion.svg>
+                  <span
+                    className="text-xs md:text-sm font-medium group-hover:text-white transition-colors duration-300"
+                    style={{ color: iconColor }}
+                  >
+                    Certificate
+                  </span>
+                </motion.a>
               </div>
             </div>
           </div>

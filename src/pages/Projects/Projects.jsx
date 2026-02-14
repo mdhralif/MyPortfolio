@@ -198,7 +198,7 @@ function Card({
   return (
     <div
       ref={container}
-      className="h-screen flex items-center justify-center sticky top-0 project-container pt-8 md:pt-0"
+      className="h-screen flex items-center justify-center sticky top-0 project-container pt-8 md:pt-0 "
     >
       <motion.div
         style={{
@@ -212,7 +212,7 @@ function Card({
         }}
       >
         {/* Modern split card design */}
-        <div className="w-full flex flex-col md:flex-row bg-zinc-900 rounded-2xl overflow-hidden shadow-xl">
+        <div className="w-full flex flex-col md:flex-row bg-zinc-900 rounded-none overflow-hidden shadow-xl">
           
           {/* Image section - full width on mobile, 55% on desktop */}
           <div className="w-full md:w-[55%] h-[250px] md:h-[400px] lg:h-[450px] relative overflow-hidden">
