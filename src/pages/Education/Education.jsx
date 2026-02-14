@@ -7,7 +7,6 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import iutLogo from "../../assets/images/iutlogo.png";
-import kpcLogo from "../../assets/images/kpclogo.png";
 
 const EducationSection = () => {
   
@@ -21,17 +20,6 @@ const EducationSection = () => {
       year: "August 2022-present",
       achievements: ["CGPA: 3.86"],
       skills: ["OOP","Design Pattern", "Data Structures", "Algorithms", "Web Development", "Artificial Intelligence","Machine Learning"," Database Management","Sofware Security", "Networking"," Software Testing","Server Programming","Computer Architecture"],  
-      description:
-        "",
-    },
-    {
-      degree: "Higher Secondary Certificate (HSC)",
-      school: "Khulna Public College",
-      logo: kpcLogo, 
-      mascot: "",
-      year: "2019-2021",
-      achievements: ["GPA: 5.00", "Government Scholarship", "National Winner - Physics Olympiad", "National Winner - ICT Olympiad"],
-      skills: [],
       description:
         "",
     },
@@ -74,7 +62,7 @@ const EducationSection = () => {
           className="text-center mb-16"
         > 
           <h2 className="text-5xl md:text-7xl font-black text-transparent bg-white bg-clip-text text-center">
-            <span style={{ color: '#2DD4BF' }}>Education </span>So Far
+            <span style={{ color: '#2DD4BF' }}>Pursuing</span> Studies
           </h2>
          </motion.div>
 
