@@ -81,8 +81,14 @@ export default function About() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="bg-[#1c1f2e] p-6"
+          className="bg-[#1c1f2e] p-6 relative"
         >
+          {/* CGPA in top-right corner */}
+          <div className="absolute top-4 right-4 flex items-center gap-2 bg-transparent px-4 py-2 rounded-none border border-white">
+            <FaAward className="w-4 h-4 text-yellow-400" />
+            <span className="text-white font-semibold">CGPA: 3.87</span>
+          </div>
+
           <div className="flex items-start gap-4">
             <div className="w-28 h-28 overflow-hidden bg-white flex items-center justify-center p-1">
               <img 
@@ -94,21 +100,17 @@ export default function About() {
             
             <div className="flex-1">
               <h4 className="text-xl font-bold text-white mb-2">B.Sc. in Software Engineering</h4>
-              <p className="text-[#2DD4BF] font-medium mb-2">Islamic University of Technology (IUT)</p>
+              <p className="text-gray-400 font-medium mb-2">Islamic University of Technology (IUT)</p>
               
               <div className="flex items-center gap-4 text-gray-400 text-sm mb-3">
                 <div className="flex items-center gap-1">
                   <FaCalendarAlt className="w-4 h-4" />
                   <span>August 2022 - Present</span>
                 </div>
-                <div className="flex items-center gap-1">
-                  <FaAward className="w-4 h-4" />
-                  <span>CGPA: 3.87</span>
-                </div>
               </div>
               
               <div className="flex flex-wrap gap-3">
-                {["OOP", "Data Structures", "Algorithms", "Web Development", "AI/ML", "Database", "Networking"].map((skill, index) => (
+                {["OOP", "Data Structures", "Algorithms", "Web Dev.", "AI/ML", "Database", "Networking","", "", "", "", "", "", ""].map((skill, index) => (
                   <div key={index} className="min-w-[72px] h-10 flex items-center justify-center bg-[#0f1223]  text-white rounded-none text-sm font-medium px-2">
                     {skill}
                   </div>
