@@ -7,6 +7,11 @@ export default function About() {
   return (
     <main className="bg-[#161825] text-white min-h-screen">
       <section className="max-w-6xl mx-auto px-6 py-16">
+        <div className="mb-12 text-center">
+          <h2 className="text-5xl md:text-7xl font-black text-transparent bg-white bg-clip-text leading-tight">
+            <span style={{ color: '#2DD4BF' }}>About</span> Me
+          </h2>
+        </div>
         <div className="grid grid-cols-1 lg:grid-cols-[360px_1fr] gap-12 items-center">
           {/* Left: image card with offset background and social icons */}
           <div className="relative flex justify-center lg:justify-start">
