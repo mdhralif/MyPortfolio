@@ -39,7 +39,7 @@ import { BsFileEarmarkCode, BsGrid1X2 } from "react-icons/bs";
 
 
 const SkillCard = ({ title, skills }) => (
-  <Card className="group relative overflow-hidden bg-gray-900/80 border-0">
+  <Card className="group relative overflow-hidden bg-gray-900/80 border-0 rounded-none">
     <CardContent className="p-6 relative z-10">
         <div className="flex items-center gap-4 mb-6">
           <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-200">

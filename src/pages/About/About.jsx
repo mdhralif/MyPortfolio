@@ -1,5 +1,5 @@
 import ProfileImage from "@/assets/images/Alif_.png";
-import iutLogo from "@/assets/images/iutlogo.png";
+import iutLogo from "@/assets/images/iutlogo.jpg";
 import KAZlogo from "@/assets/images/KAZLOGO.png";
 import { FaFacebook, FaLinkedin, FaGithub, FaFileDownload, FaCalendarAlt, FaAward } from "react-icons/fa";
 import { motion } from "framer-motion";
@@ -57,7 +57,7 @@ export default function About() {
                                 download="MD_H_R_ALIF_CV.pdf"
                                 className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-none bg-white text-[#18181a] font-extrabold text-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
                               >
-                                <FaFileDownload className="text-xl transform transition-all duration-300 group-hover:rotate-12" /> 
+                                <FaFileDownload className="text-xl transform transition-all duration-300 " /> 
                                 <span>Download CV</span>
                               </a>
             
@@ -82,11 +82,11 @@ export default function About() {
           className="bg-[#1c1f2e] p-6"
         >
           <div className="flex items-start gap-4">
-            <div className="w-16 h-16 rounded-lg overflow-hidden bg-white flex items-center justify-center p-2">
+            <div className="w-28 h-28 overflow-hidden bg-white flex items-center justify-center p-1">
               <img 
                 src={iutLogo} 
                 alt="IUT Logo"
-                className="w-full h-full object-contain"
+                className="w-full h-full object-cover"
               />
             </div>
             
@@ -101,7 +101,7 @@ export default function About() {
                 </div>
                 <div className="flex items-center gap-1">
                   <FaAward className="w-4 h-4" />
-                  <span>CGPA: 3.86</span>
+                  <span>CGPA: 3.87</span>
                 </div>
               </div>
               
@@ -130,11 +130,11 @@ export default function About() {
           className="bg-[#1c1f2e] p-6"
         >
           <div className="flex items-start gap-4">
-            <div className="w-16 h-16 rounded-lg overflow-hidden bg-white flex items-center justify-center p-2">
+            <div className="w-28 h-28 overflow-hidden bg-white flex items-center justify-center p-1">
               <img 
                 src={KAZlogo} 
                 alt="KAZ Software Logo"
-                className="w-full h-full object-contain"
+                className="w-full h-full object-cover"
               />
             </div>
             
