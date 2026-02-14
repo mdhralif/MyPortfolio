@@ -55,7 +55,7 @@ const ContactModal = ({ isOpen, onClose }) => {
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-lg backdrop-saturate-150"
       onClick={handleBackdropClick}
     >
-      <div className="relative w-full max-w-xl md:max-w-2xl lg:max-w-3xl bg-gray-900 rounded-lg shadow-xl transform transition-all duration-300 animate-in zoom-in-95 max-h-[85vh] overflow-y-auto">
+      <div className="relative w-full max-w-xl md:max-w-2xl lg:max-w-3xl bg-gray-900 rounded-none shadow-xl transform transition-all duration-300 animate-in zoom-in-95 max-h-[85vh] overflow-y-auto">
         {/* Header */}
         <div className="flex items-center justify-between p-8 pb-4">
           <h2 className="text-3xl md:text-4xl font-bold text-white"><span className="text-cyan-400"></span></h2>
@@ -65,7 +65,7 @@ const ContactModal = ({ isOpen, onClose }) => {
               e.stopPropagation();
               onClose();
             }}
-            className="p-3 text-gray-400 hover:text-white hover:bg-gray-800 rounded transition-colors duration-200 z-10"
+            className="p-3 text-gray-400 hover:text-white hover:bg-gray-800 rounded-none transition-colors duration-200 z-10"
             aria-label="Close modal"
           >
             <FaTimes className="w-5 h-5" />
@@ -78,7 +78,7 @@ const ContactModal = ({ isOpen, onClose }) => {
             <button
               key={index}
               onClick={option.action}
-              className="w-full p-6 bg-gray-800 hover:bg-gray-700 text-white rounded-lg transition-colors duration-200 group"
+              className="w-full p-6 bg-gray-800 hover:bg-gray-700 text-white rounded-none transition-colors duration-200 group"
             >
               <div className="flex items-center space-x-6">
                 <div className="flex-shrink-0">
