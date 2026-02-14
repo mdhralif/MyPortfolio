@@ -214,7 +214,7 @@ export default function About() {
             
             <div className="flex-1">
               <h4 className="text-xl font-bold text-white mb-2">Software Engineer Intern</h4>
-              <p className="text-orange-400 font-medium mb-2">KAZ Software Ltd.</p>
+              <p className="text-gray-400 font-medium mb-2">KAZ Software Ltd.</p>
               
               <div className="flex items-center gap-4 text-gray-400 text-sm mb-3">
                 <div className="flex items-center gap-1">
