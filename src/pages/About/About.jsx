@@ -129,8 +129,78 @@ export default function About() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="bg-[#1c1f2e] p-6"
+          className="bg-[#1c1f2e] p-6 relative"
         >
+          {/* Icons in top-right corner */}
+          <div className="absolute top-4 right-4 flex gap-2">
+            <motion.a
+              href="https://drive.google.com/file/d/1MBG4-G79_cXUBKiTSOmdJGPzV7AtYzWZ/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group p-2 rounded-lg hover:bg-white/10 transition-all duration-300 cursor-pointer"
+              whileHover={{
+                y: -3,
+                scale: 1.05,
+                transition: { type: "spring", stiffness: 400 },
+              }}
+              whileTap={{ scale: 0.95 }}
+              title="Report"
+            >
+              <motion.svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke={iconColor}
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="group-hover:stroke-white transition-colors duration-300"
+                whileHover={{ rotate: 5 }}
+              >
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <path d="M14 2v6h6"></path>
+              </motion.svg>
+            </motion.a>
+
+            <motion.a
+              href="https://drive.google.com/file/d/1DdeOV4q5CSZsYMinkoK4dUqjOGIP5eZw/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group p-2 rounded-lg hover:bg-white/10 transition-all duration-300 cursor-pointer"
+              whileHover={{
+                y: -3,
+                scale: 1.05,
+                transition: { type: "spring", stiffness: 400 },
+              }}
+              whileTap={{ scale: 0.95 }}
+              title="Certificate"
+            >
+              <motion.svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke={iconColor}
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="group-hover:stroke-white transition-colors duration-300"
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 0.6 }}
+              >
+                <rect x="2" y="2" width="16" height="20" rx="2"></rect>
+                <line x1="6" y1="8" x2="12" y2="8"></line>
+                <line x1="6" y1="12" x2="12" y2="12"></line>
+                <circle cx="11" cy="18" r="2"></circle>
+                <path d="M9 20l-1 3"></path>
+                <path d="M13 20l1 3"></path>
+              </motion.svg>
+            </motion.a>
+          </div>
+
           <div className="flex items-start gap-4">
             <div className="w-28 h-28 overflow-hidden bg-white flex items-center justify-center p-1">
               <img 
@@ -142,7 +212,7 @@ export default function About() {
             
             <div className="flex-1">
               <h4 className="text-xl font-bold text-white mb-2">Software Engineer Intern</h4>
-              <p className="text-[#2DD4BF] font-medium mb-2">KAZ Software</p>
+              <p className="text-orange-400 font-medium mb-2">KAZ Software Ltd.</p>
               
               <div className="flex items-center gap-4 text-gray-400 text-sm mb-3">
                 <div className="flex items-center gap-1">
@@ -152,85 +222,6 @@ export default function About() {
               </div>
               
               <p className="text-gray-300 mb-4">Developed web apps, designed UI, integrated APIs & done some bug fixing.</p>
-              
-              <div className="flex gap-3">
-                <motion.a
-                  href="https://drive.google.com/file/d/1MBG4-G79_cXUBKiTSOmdJGPzV7AtYzWZ/view?usp=sharing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-white/10 transition-all duration-300 cursor-pointer"
-                  whileHover={{
-                    y: -3,
-                    scale: 1.05,
-                    transition: { type: "spring", stiffness: 400 },
-                  }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <motion.svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="22"
-                    height="22"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke={iconColor}
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="group-hover:stroke-white transition-colors duration-300"
-                    whileHover={{ rotate: 5 }}
-                  >
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                    <path d="M14 2v6h6"></path>
-                  </motion.svg>
-                  <span
-                    className="text-xs md:text-sm font-medium group-hover:text-white transition-colors duration-300"
-                    style={{ color: iconColor }}
-                  >
-                    Report
-                  </span>
-                </motion.a>
-
-                <motion.a
-                  href="https://drive.google.com/file/d/1DdeOV4q5CSZsYMinkoK4dUqjOGIP5eZw/view?usp=sharing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-white/10 transition-all duration-300 cursor-pointer"
-                  whileHover={{
-                    y: -3,
-                    scale: 1.05,
-                    transition: { type: "spring", stiffness: 400 },
-                  }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <motion.svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="22"
-                    height="22"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke={iconColor}
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="group-hover:stroke-white transition-colors duration-300"
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    <rect x="2" y="2" width="16" height="20" rx="2"></rect>
-                    <line x1="6" y1="8" x2="12" y2="8"></line>
-                    <line x1="6" y1="12" x2="12" y2="12"></line>
-                    <circle cx="11" cy="18" r="2"></circle>
-                    <path d="M9 20l-1 3"></path>
-                    <path d="M13 20l1 3"></path>
-                  </motion.svg>
-                  <span
-                    className="text-xs md:text-sm font-medium group-hover:text-white transition-colors duration-300"
-                    style={{ color: iconColor }}
-                  >
-                    Certificate
-                  </span>
-                </motion.a>
-              </div>
             </div>
           </div>
         </motion.div>
