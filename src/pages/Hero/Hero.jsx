@@ -85,9 +85,9 @@ export default function Hero({ onContactClick = () => {} }) {
             }}
           >
             {/* Left column - Text content */}
-            <div className="w-full max-w-4xl mb-12 lg:mb-0 animate__animated animate__fadeInLeft relative text-center">
+            <div className="w-full max-w-4xl mb-12 lg:mb-0 animate__animated animate__fadeInLeft relative text-center ">
               
-              <div className="relative mt-20 p-10 bg-[#161825] rounded-2xl">
+              <div className="relative mt-20 p-10 bg-[#161825] rounded-none shadow-lg animate__animated animate__fadeInUp animate__delay-1s">
                 {/* Profile Image */}
                 <div className="absolute -top-20 left-1/2 transform -translate-x-1/2">
                   <div className="w-40 h-40 rounded-full overflow-hidden bg-[#1C1F2E]">
