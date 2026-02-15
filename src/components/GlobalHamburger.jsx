@@ -44,14 +44,14 @@ export default function GlobalHamburger({ onContactClick = () => {} }) {
           <Link
             to="/"
             onClick={() => setMenuOpen(false)}
-            className="block font-bold text-5xl md:text-7xl lg:text-8xl text-white leading-tight mb-6 hover:text-cyan-400 transition-colors"
+            className="block font-bold text-5xl md:text-7xl lg:text-8xl text-white leading-tight mb-6 hover:text-[#2DD4BF] transition-colors"
           >
             Home
           </Link>
           <Link
             to="/about"
             onClick={() => setMenuOpen(false)}
-            className="block font-bold text-5xl md:text-7xl lg:text-8xl text-white leading-tight mb-6 hover:text-cyan-400 transition-colors"
+            className="block font-bold text-5xl md:text-7xl lg:text-8xl text-white leading-tight mb-6 hover:text-[#2DD4BF] transition-colors"
           >
             About
           </Link>
@@ -59,7 +59,7 @@ export default function GlobalHamburger({ onContactClick = () => {} }) {
           <Link
             to="/projects"
             onClick={() => setMenuOpen(false)}
-            className="block font-bold text-5xl md:text-7xl lg:text-8xl text-white leading-tight mb-6 hover:text-cyan-400 transition-colors"
+            className="block font-bold text-5xl md:text-7xl lg:text-8xl text-white leading-tight mb-6 hover:text-[#2DD4BF] transition-colors"
           >
             My Projects
           </Link>
@@ -67,7 +67,7 @@ export default function GlobalHamburger({ onContactClick = () => {} }) {
           <Link
             to="/skills"
             onClick={() => setMenuOpen(false)}
-            className="block font-bold text-5xl md:text-7xl lg:text-8xl text-white leading-tight mb-6 hover:text-cyan-400 transition-colors"
+            className="block font-bold text-5xl md:text-7xl lg:text-8xl text-white leading-tight mb-6 hover:text-[#2DD4BF] transition-colors"
           >
             Skills
           </Link>
