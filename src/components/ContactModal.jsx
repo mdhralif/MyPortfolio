@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { FaTimes, FaEnvelope, FaLinkedin, FaPhone } from 'react-icons/fa';
+import { FaTimes, FaEnvelope, FaLinkedin, FaPhone, FaLocationArrow } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 
 const ContactModal = ({ isOpen, onClose }) => {
@@ -100,7 +100,10 @@ const ContactModal = ({ isOpen, onClose }) => {
           </div>
 
           <div className="p-4 md:p-6 bg-gray-800 h-fit">
-            <div className="sr-only">My Location</div>
+            <div className="mb-3 text-lg md:text-xl font-medium text-white">
+              <FaLocationArrow className="inline-block w-5 h-5 mr-2 text-gray-300" /><span> </span>
+              Location
+              </div>
             <div className="w-full h-48 md:h-[60vh] bg-gray-700 overflow-hidden">
               <iframe
                 title="location-map"
