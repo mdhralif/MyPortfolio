@@ -51,14 +51,14 @@ const ContactModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div 
+    <div
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-lg backdrop-saturate-150"
       onClick={handleBackdropClick}
     >
-      <div className="relative w-full max-w-xl md:max-w-2xl lg:max-w-3xl bg-gray-900 rounded-none shadow-xl transform transition-all duration-300 animate-in zoom-in-95 max-h-[85vh] overflow-y-auto">
+      <div className="relative w-full max-w-4xl bg-gray-900 rounded-none shadow-xl transform transition-all duration-300 animate-in zoom-in-95 max-h-[90vh] overflow-hidden">
         {/* Header */}
-        <div className="flex items-center justify-between p-8 pb-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-white"><span className="text-cyan-400"></span></h2>
+        <div className="flex items-center justify-between p-6 md:p-8 pb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-white">Get in touch</h2>
           <button
             type="button"
             onClick={(e) => {
@@ -72,30 +72,46 @@ const ContactModal = ({ isOpen, onClose }) => {
           </button>
         </div>
 
-        {/* Content */}
-        <div className="px-8 pb-8 space-y-4">
-          {contactOptions.map((option, index) => (
-            <button
-              key={index}
-              onClick={option.action}
-              className="w-full p-6 bg-gray-800 hover:bg-gray-700 text-white rounded-none transition-colors duration-200 group"
-            >
-              <div className="flex items-center space-x-6">
-                <div className="flex-shrink-0">
-                  <option.icon className="w-6 h-6 text-gray-300" />
+        {/* Content: left = contact options, right = map */}
+        <div className="grid items-start grid-cols-1 md:grid-cols-2 gap-0 md:gap-4 px-4 md:px-6 pb-6 max-h-[80vh]">
+          <div className="overflow-y-auto px-4 md:px-6 pb-4 md:pb-6 space-y-4 bg-transparent">
+            {contactOptions.map((option, index) => (
+              <button
+                key={index}
+                onClick={option.action}
+                className="w-full p-4 md:p-6 bg-gray-800 hover:bg-gray-700 text-white rounded-none transition-colors duration-200 group"
+              >
+                <div className="flex items-center space-x-4 md:space-x-6">
+                  <div className="flex-shrink-0">
+                    <option.icon className="w-6 h-6 text-gray-300" />
+                  </div>
+                  <div className="flex-1 text-left">
+                    <div className="font-medium text-lg md:text-xl text-white">{option.label}</div>
+                    <div className="text-sm md:text-base text-gray-400">{option.value}</div>
+                  </div>
+                  <div className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                    <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
                 </div>
-                <div className="flex-1 text-left">
-                  <div className="font-medium text-lg md:text-xl text-white">{option.label}</div>
-                  <div className="text-base md:text-lg text-gray-400">{option.value}</div>
-                </div>
-                <div className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                  <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </div>
-            </button>
-          ))}
+              </button>
+            ))}
+          </div>
+
+          <div className="p-4 md:p-6 bg-gray-800">
+            <div className="sr-only">My Location</div>
+            <div className="w-full h-64 md:h-[60vh] bg-gray-700 overflow-hidden">
+              {/* Replace the src query with your exact coordinates or place */}
+              <iframe
+                title="location-map"
+                src="https://maps.google.com/maps?q=Dhaka,+Bangladesh&z=15&output=embed"
+                className="w-full h-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
