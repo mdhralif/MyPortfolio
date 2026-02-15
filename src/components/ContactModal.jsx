@@ -102,10 +102,9 @@ const ContactModal = ({ isOpen, onClose }) => {
           <div className="p-4 md:p-6 bg-gray-800 h-fit">
             <div className="sr-only">My Location</div>
             <div className="w-full h-48 md:h-[60vh] bg-gray-700 overflow-hidden">
-              {/* Replace the src query with your exact coordinates or place */}
               <iframe
                 title="location-map"
-                src="https://maps.google.com/maps?q=Dhaka,+Bangladesh&z=15&output=embed"
+                src="https://maps.google.com/maps?q=23.948102,90.37926&z=17&output=embed"
                 className="w-full h-full border-0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
