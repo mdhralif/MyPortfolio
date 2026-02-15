@@ -134,7 +134,7 @@ export default function Hero({ onContactClick = () => {} }) {
                     className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-none bg-white text-[#18181a] font-extrabold text-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
                   >
                     <FaEnvelope className="text-xl transform transition-all duration-300 group-hover:rotate-12" /> 
-                    <span>Reach out</span>
+                    <span>Let’s Talk</span>
                   </button>
 
                 </div>
