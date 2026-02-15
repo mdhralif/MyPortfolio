@@ -73,8 +73,8 @@ const ContactModal = ({ isOpen, onClose }) => {
         </div>
 
         {/* Content: left = contact options, right = map */}
-        <div className="grid items-start grid-cols-1 md:grid-cols-2 gap-0 md:gap-4 px-4 md:px-6 pb-6 max-h-[80vh]">
-          <div className="overflow-y-auto px-4 md:px-6 pb-4 md:pb-6 space-y-4 bg-transparent">
+        <div className="grid items-start grid-cols-1 md:grid-cols-2 gap-4 px-4 md:px-6 pb-6 max-h-[80vh]">
+          <div className="overflow-y-auto space-y-4 bg-transparent">
             {contactOptions.map((option, index) => (
               <button
                 key={index}
@@ -99,9 +99,9 @@ const ContactModal = ({ isOpen, onClose }) => {
             ))}
           </div>
 
-          <div className="p-4 md:p-6 bg-gray-800">
+          <div className="p-4 md:p-6 bg-gray-800 h-fit">
             <div className="sr-only">My Location</div>
-            <div className="w-full h-64 md:h-[60vh] bg-gray-700 overflow-hidden">
+            <div className="w-full h-48 md:h-[60vh] bg-gray-700 overflow-hidden">
               {/* Replace the src query with your exact coordinates or place */}
               <iframe
                 title="location-map"
