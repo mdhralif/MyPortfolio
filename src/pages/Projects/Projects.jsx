@@ -235,7 +235,7 @@ function Card({
             />
 
             {/* Project number */}
-            <div className="absolute top-4 left-4 md:top-6 md:left-6 bg-black/50 backdrop-blur-md text-white px-3 py-1 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-medium">
+            <div className="absolute top-4 left-4 md:top-6 md:left-6 bg-black/50 backdrop-blur-md text-white px-3 py-1 md:px-4 md:py-2 rounded-none text-xs md:text-sm font-medium">
               Project {i + 1}
             </div>
           </div>
@@ -245,7 +245,7 @@ function Card({
             <div>
               <div className="flex items-center gap-3 mb-4 md:mb-6">
                 <div
-                  className="w-2 h-2 md:w-3 md:h-3 rounded-full"
+                  className="w-2 h-2 md:w-3 md:h-3 rounded-none"
                   style={{ backgroundColor: color }}
                 />
                 <div className="h-[1px] w-12 md:w-20 bg-gray-600" />
@@ -262,7 +262,7 @@ function Card({
                     href={githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-1 px-3 py-2 rounded-lg hover:bg-white/20 transition-all duration-300 cursor-pointer border border-transparent hover:border-white/30"
+                    className="group flex items-center gap-1 px-3 py-2 rounded-none hover:bg-white/20 transition-all duration-300 cursor-pointer border border-transparent hover:border-white/30"
                     whileHover={{ 
                       y: -2,
                       scale: 1.05,
@@ -292,7 +292,7 @@ function Card({
                     href={liveLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-1 px-3 py-2 rounded-lg hover:bg-white/20 transition-all duration-300 cursor-pointer border border-transparent hover:border-white/30"
+                    className="group flex items-center gap-1 px-3 py-2 rounded-none hover:bg-white/20 transition-all duration-300 cursor-pointer border border-transparent hover:border-white/30"
                     whileHover={{ 
                       y: -2,
                       scale: 1.05,
@@ -333,7 +333,7 @@ function Card({
                   href={githubLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-white/10 transition-all duration-300 cursor-pointer"
+                  className="group flex items-center gap-2 px-3 py-2 rounded-none hover:bg-white/10 transition-all duration-300 cursor-pointer"
                   whileHover={{ 
                     y: -3,
                     scale: 1.05,
@@ -369,7 +369,7 @@ function Card({
                   href={liveLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-white/10 transition-all duration-300 cursor-pointer"
+                  className="group flex items-center gap-2 px-3 py-2 rounded-none hover:bg-white/10 transition-all duration-300 cursor-pointer"
                   whileHover={{ 
                     y: -3,
                     scale: 1.05,
