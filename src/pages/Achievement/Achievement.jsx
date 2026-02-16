@@ -16,7 +16,7 @@ export default function Achievement() {
     <main className="bg-[#161825] text-white py-20 px-6">
       <section className="max-w-6xl mx-auto">
         <h2 className="text-4xl md:text-6xl font-black text-center mb-8">
-          <span style={{ color: "#2DD4BF" }}>Winning</span> moments
+          My <span style={{ color: "#2DD4BF" }}>Achievements</span>
         </h2>
 
         <div className="flex justify-center">
