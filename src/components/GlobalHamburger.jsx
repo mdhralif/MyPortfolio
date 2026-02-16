@@ -85,7 +85,7 @@ export default function GlobalHamburger({ onContactClick = () => {} }) {
             className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-[#08121a] font-extrabold text-lg shadow-lg transition-transform hover:scale-105"
           >
             <FaEnvelope className="text-xl transform transition-all duration-300 group-hover:rotate-12" /> 
-            Reach out
+            Let&apos;s Talk
           </button>
         </div>
       </div>
