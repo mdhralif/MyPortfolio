@@ -75,14 +75,14 @@ export default function GlobalHamburger({ onContactClick = () => {} }) {
 
         </nav>
 
-        <div className="absolute right-16 bottom-8">
+        <div className="absolute right-6 md:right-16 bottom-8">
           <button
             onClick={(e) => {
               e.stopPropagation();
               setMenuOpen(false);
               onContactClick();
             }}
-            className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-[#08121a] font-extrabold text-lg shadow-lg transition-transform hover:scale-105"
+            className="inline-flex items-center justify-center gap-3 px-8 py-4 md:px-12 md:py-6 bg-white text-[#08121a] font-extrabold text-lg md:text-xl shadow-lg transition-transform hover:scale-105"
           >
             <FaEnvelope className="text-xl transform transition-all duration-300 group-hover:rotate-12" /> 
             Let&apos;s Talk
