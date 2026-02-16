@@ -6,7 +6,7 @@ export default function AchievementCard({ title, org, year, description, image, 
   return (
     <div className="w-full flex flex-col md:flex-row bg-[#161825] rounded-none overflow-hidden shadow-xl">
       {/* Image/Icon section - full width on mobile, 55% on desktop */}
-      <div className="w-full md:w-[55%] h-[250px] md:h-[400px] lg:h-[450px] relative overflow-hidden bg-gray flex items-center justify-center">
+      <div className="w-full md:w-[55%] h-[250px] md:h-[320px] lg:h-[350px] relative overflow-hidden bg-gray flex items-center justify-center">
         {image ? (
           <motion.img
             src={image}
@@ -33,7 +33,7 @@ export default function AchievementCard({ title, org, year, description, image, 
       </div>
 
       {/* Content section - full width on mobile, 45% on desktop */}
-      <div className="w-full md:w-[45%] p-6 md:p-8 lg:p-10 flex flex-col justify-center bg-[#1c1f2e]">
+      <div className="w-full md:w-[45%] h-[250px] md:h-[320px] lg:h-[350px] p-6 md:p-6 lg:p-8 flex flex-col justify-center bg-[#1c1f2e] overflow-hidden">
         <div>
           <div className="flex items-center gap-3 mb-4 md:mb-6">
             <div
