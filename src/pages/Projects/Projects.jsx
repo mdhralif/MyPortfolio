@@ -153,7 +153,7 @@ export default function Projects() {
       <main className="bg-[#161925]" ref={container}>
         <section className="text-white w-full bg-[#161925] pb-12 md:pb-40 pt-12 md:pt-8">
             <h2 className="text-5xl md:text-7xl font-black text-transparent bg-white bg-clip-text text-center leading-tight">
-              <span style={{ color: '#2DD4BF' }}>Stuff</span> I’ve Built
+              <span style={{ color: '#2DD4BF' }}>Projects</span> I’ve Built
             </h2>       
           {projects.map((project, i) => {
             const targetScale = 1; // All cards same size
