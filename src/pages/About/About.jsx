@@ -1,11 +1,13 @@
 import ProfileImage from "@/assets/images/Alif_.png";
 import iutLogo from "@/assets/images/iutlogo.jpg";
 import KAZlogo from "@/assets/images/KAZLOGO.png";
-import { FaFacebook, FaLinkedin, FaGithub, FaFileDownload, FaCalendarAlt, FaAward } from "react-icons/fa";
+import { FaFacebook, FaLinkedin, FaGithub, FaFileDownload, FaCalendarAlt, FaAward, FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 export default function About() {
   const iconColor = "#ffffff";
+  const [showFullExp, setShowFullExp] = useState(false);
 
   return (
     <main className="bg-[#161825] text-white min-h-screen">
@@ -49,7 +51,7 @@ export default function About() {
             </h1>
 
             <p className="text-gray-300 text-lg md:text-xl max-w-2xl mb-6 text-justify">
-              I’m Md Hasibur Rahman Alif, a Software Engineering student and passionate full-stack developer with experience building scalable web and AI-powered applications. I’ve worked as a Software Engineer Intern at KAZ Software and developed production-level applications using React, Node.js, and Python. I’m eager to contribute my skills and grow as a developer in a dynamic team environment.
+              I’m Md Hasibur Rahman Alif, a Software Engineering student and <span className="inline-block bg-white text-black px-1">passionate full-stack developer</span> with experience building scalable web and AI-powered applications. I’ve worked as a Software Engineer Intern at KAZ Software and developed production-level applications using React, Node.js, and Python. I’m eager to contribute my skills and grow as a developer in a dynamic team environment.
             </p>
 
             {/* CV Download */}
@@ -83,8 +85,8 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="bg-[#1c1f2e] p-6 relative"
         >
-          {/* CGPA in top-right corner */}
-          <div className="absolute top-4 right-4 flex items-center gap-2 bg-transparent px-4 py-2 rounded-none border border-white">
+          {/* CGPA - desktop absolute, mobile inline to avoid overlap */}
+          <div className="hidden md:flex absolute top-4 right-4 flex items-center gap-2 bg-transparent px-4 py-2 rounded-full border border-none">
             <FaAward className="w-4 h-4 text-yellow-400" />
             <span className="text-white font-semibold">CGPA: 3.87</span>
           </div>
@@ -100,12 +102,18 @@ export default function About() {
             
             <div className="flex-1">
               <h4 className="text-xl font-bold text-white mb-2">B.Sc. in Software Engineering</h4>
-              <p className="text-gray-400 font-medium mb-2">Islamic University of Technology (IUT)</p>
+              <p className="text-sm md:text-base text-gray-400 font-medium mb-2">Islamic University of Technology (IUT)</p>
               
-              <div className="flex items-center gap-4 text-gray-400 text-sm mb-3">
+              {/* Mobile CGPA inline to prevent absolute overlap */}
+              <div className="flex md:hidden items-center gap-2 mt-2 mb-2">
+                <FaAward className="w-4 h-4 text-yellow-400" />
+                <span className="text-white font-semibold">CGPA: 3.87</span>
+              </div>
+
+              <div className="flex items-center gap-4 text-gray-400 text-xs md:text-sm mb-3">
                 <div className="flex items-center gap-1">
                   <FaCalendarAlt className="w-4 h-4" />
-                  <span>August 2022 - Present</span>
+                  <span>August 2022- Present</span>
                 </div>
               </div>
               
@@ -133,8 +141,8 @@ export default function About() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="bg-[#1c1f2e] p-6 relative"
         >
-          {/* Icons in top-right corner */}
-          <div className="absolute top-4 right-4 flex gap-2">
+          {/* Icons in top-right corner (desktop only). Mobile duplicate placed inline below to avoid overlap */}
+          <div className="hidden md:flex absolute top-4 right-4 flex gap-2">
             <motion.a
               href="https://drive.google.com/file/d/1MBG4-G79_cXUBKiTSOmdJGPzV7AtYzWZ/view?usp=sharing"
               target="_blank"
@@ -213,17 +221,72 @@ export default function About() {
             </div>
             
             <div className="flex-1">
+              {/* Mobile icons inline to avoid overlapping the layout */}
+              <div className="flex md:hidden justify-end gap-2 mb-3">
+                <a
+                  href="https://drive.google.com/file/d/1MBG4-G79_cXUBKiTSOmdJGPzV7AtYzWZ/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group p-2 rounded-lg hover:bg-white/10 transition-all duration-300 cursor-pointer"
+                  title="Report"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={iconColor} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:stroke-white transition-colors duration-300">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <path d="M14 2v6h6"></path>
+                  </svg>
+                </a>
+
+                <a
+                  href="https://drive.google.com/file/d/1DdeOV4q5CSZsYMinkoK4dUqjOGIP5eZw/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group p-2 rounded-lg hover:bg-white/10 transition-all duration-300 cursor-pointer"
+                  title="Certificate"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={iconColor} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:stroke-white transition-colors duration-300">
+                    <rect x="2" y="2" width="16" height="20" rx="2"></rect>
+                    <line x1="6" y1="8" x2="12" y2="8"></line>
+                    <line x1="6" y1="12" x2="12" y2="12"></line>
+                    <circle cx="11" cy="18" r="2"></circle>
+                    <path d="M9 20l-1 3"></path>
+                    <path d="M13 20l1 3"></path>
+                  </svg>
+                </a>
+              </div>
               <h4 className="text-xl font-bold text-white mb-2">Software Engineer Intern</h4>
-              <p className="text-gray-400 font-medium mb-2">KAZ Software Ltd.</p>
+              <p className="text-sm md:text-base text-gray-400 font-medium mb-2">KAZ Software Ltd.</p>
               
-              <div className="flex items-center gap-4 text-gray-400 text-sm mb-3">
+              <div className="flex items-center gap-4 text-gray-400 text-xs md:text-sm mb-3">
                 <div className="flex items-center gap-1">
                   <FaCalendarAlt className="w-4 h-4" />
                   <span>Sep 2025 - Jan 2026</span>
                 </div>
               </div>
               
-              <p className="text-gray-300 mb-4">Developed web apps, designed UI, integrated APIs & done some bug fixing.</p>
+              {/* Desktop: full text */}
+              <p className="hidden md:block text-gray-300 mb-4 text-justify">Developed web apps, designed UI, integrated APIs & done some bug fixing.</p>
+
+              {/* Mobile: truncated with toggle */}
+              <div className="md:hidden mb-4">
+                <p
+                  className="text-gray-300 text-justify"
+                  style={
+                    !showFullExp
+                      ? { display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }
+                      : {}
+                  }
+                >
+                  Developed web apps, designed UI, integrated APIs & done some bug fixing.
+                </p>
+
+                <button
+                  onClick={() => setShowFullExp((s) => !s)}
+                  className="mt-2 text-sm text-gray-400 hover:text-white flex items-center gap-2"
+                >
+                  {showFullExp ? <FaChevronUp /> : <FaChevronDown />}
+                  <span>{showFullExp ? 'Show less' : 'Show more'}</span>
+                </button>
+              </div>
             </div>
           </div>
         </motion.div>
