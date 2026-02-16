@@ -319,7 +319,7 @@ function Card({
                   </motion.a>
                 </div>
               </div>
-              <p className="text-sm md:text-base text-gray-400 leading-relaxed line-clamp-3 md:line-clamp-none max-w-md">
+              <p className="text-sm md:text-base text-gray-400 leading-relaxed line-clamp-3 md:line-clamp-none max-w-md text-justify">
                 {description}
               </p>
             </div>
