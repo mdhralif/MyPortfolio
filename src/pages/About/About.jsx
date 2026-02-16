@@ -28,15 +28,15 @@ export default function About() {
               </div>
 
               <div className="mt-6 flex gap-4 text-gray-300 relative -left-6 lg:-left-12">
-                <a href="#" aria-label="Facebook" className="p-2 rounded-full bg-transparent hover:bg-white/10">
+                <a href="#" aria-label="Facebook" className="p-2 rounded-none bg-transparent hover:bg-[#31d4c1]">
                   <FaFacebook className="text-white w-5 h-5 md:w-6 md:h-6" />
                 </a>
 
-                <a href="#" aria-label="LinkedIn" className="p-2 rounded-full bg-transparent hover:bg-white/10">
+                <a href="#" aria-label="LinkedIn" className="p-2 rounded-none bg-transparent hover:bg-[#31d4c1]">
                   <FaLinkedin className="text-white w-5 h-5 md:w-6 md:h-6" />
                 </a>
 
-                <a href="#" aria-label="GitHub" className="p-2 rounded-full bg-transparent hover:bg-white/10">
+                <a href="#" aria-label="GitHub" className="p-2 rounded-none bg-transparent hover:bg-[#31d4c1]">
                   <FaGithub className="text-white w-5 h-5 md:w-6 md:h-6" />
                 </a>
               </div>
