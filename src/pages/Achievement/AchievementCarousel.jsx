@@ -23,17 +23,6 @@ export default function AchievementCarousel({ items = [] }) {
               ))}
             </div>
           </div>
-
-          <div className="flex justify-center gap-3 mt-6">
-            {items.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setIndex(i)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${i === index ? "bg-[#2DD4BF] scale-125" : "bg-gray-600 hover:bg-gray-500"}`}
-                aria-label={`Go to slide ${i + 1}`}
-              />
-            ))}
-          </div>
         </div>
       </div>
     </div>

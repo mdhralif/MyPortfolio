@@ -26,17 +26,14 @@ export default function AchievementCard({ title, org, year, description, image, 
         )}
         
         {/* Colored overlay */}
-        <motion.div
+        <div
           className="absolute inset-0"
-          style={{ backgroundColor: color, mixBlendMode: "overlay" }}
-          initial={{ opacity: 0 }}
-          whileHover={{ opacity: 0.3 }}
-          transition={{ duration: 0.3 }}
+          style={{ backgroundColor: color, mixBlendMode: "overlay", opacity: 0.3 }}
         />
       </div>
 
       {/* Content section - full width on mobile, 45% on desktop */}
-      <div className="w-full md:w-[45%] p-6 md:p-8 lg:p-10 flex flex-col justify-center">
+      <div className="w-full md:w-[45%] p-6 md:p-8 lg:p-10 flex flex-col justify-center bg-[#1C1F2E]">
         <div>
           <div className="flex items-center gap-3 mb-4 md:mb-6">
             <div
