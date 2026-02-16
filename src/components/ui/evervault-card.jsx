@@ -1,6 +1,7 @@
 "use client";
+import PropTypes from "prop-types";
 import { useMotionValue } from "framer-motion";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useMotionTemplate, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -51,6 +52,11 @@ export const EvervaultCard = ({ text, className }) => {
   );
 };
 
+EvervaultCard.propTypes = {
+  text: PropTypes.string,
+  className: PropTypes.string,
+};
+
 export function CardPattern({ mouseX, mouseY, randomString }) {
   let maskImage = useMotionTemplate`radial-gradient(250px at ${mouseX}px ${mouseY}px, white, transparent)`;
   let style = { maskImage, WebkitMaskImage: maskImage };
@@ -73,6 +79,12 @@ export function CardPattern({ mouseX, mouseY, randomString }) {
     </div>
   );
 }
+
+CardPattern.propTypes = {
+  mouseX: PropTypes.object.isRequired,
+  mouseY: PropTypes.object.isRequired,
+  randomString: PropTypes.string.isRequired,
+};
 
 const characters =
   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -98,4 +110,8 @@ export const Icon = ({ className, ...rest }) => {
       <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m6-6H6" />
     </svg>
   );
+};
+
+Icon.propTypes = {
+  className: PropTypes.string,
 };

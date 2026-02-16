@@ -1,5 +1,6 @@
 "use client";;
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
 import { cn } from "@/lib/utils";
 
@@ -33,6 +34,10 @@ export const Meteors = ({
       </span>)
     ))}
   </>);
+};
+
+Meteors.propTypes = {
+  number: PropTypes.number,
 };
 
 export default Meteors;

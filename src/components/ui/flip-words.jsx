@@ -1,11 +1,18 @@
 "use client";
-import React, { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export const FlipWords = ({ words, duration = 3000, className }) => {
   const [currentWord, setCurrentWord] = useState(words[0]);
   const [isAnimating, setIsAnimating] = useState(false);
+
+FlipWords.propTypes = {
+  words: PropTypes.arrayOf(PropTypes.string).isRequired,
+  duration: PropTypes.number,
+  className: PropTypes.string,
+};
 
   // thanks for the fix Julian - https://github.com/Julian-AT
   const startAnimation = useCallback(() => {

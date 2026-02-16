@@ -1,5 +1,6 @@
 "use client";;
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 
 import { cn } from "@/lib/utils";
@@ -93,6 +94,26 @@ const Sparkle = ({ id, x, y, color, delay, scale }) => {
         fill={color} />
     </motion.svg>)
   );
+};
+
+SparklesText.propTypes = {
+  text: PropTypes.string.isRequired,
+  colors: PropTypes.shape({
+    first: PropTypes.string,
+    second: PropTypes.string,
+  }),
+  className: PropTypes.string,
+  sparklesCount: PropTypes.number,
+  showSparkles: PropTypes.bool,
+};
+
+Sparkle.propTypes = {
+  id: PropTypes.string.isRequired,
+  x: PropTypes.string.isRequired,
+  y: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
+  delay: PropTypes.number.isRequired,
+  scale: PropTypes.number.isRequired,
 };
 
 export default SparklesText;
