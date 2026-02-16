@@ -18,11 +18,10 @@ export default function AchievementCard({ title, org, year, description, image, 
           />
         ) : (
           <div className="text-center p-8">
-            <div className="text-2xl md:text-4xl font-bold text-white mb-2">Champion</div>
+            <div className="text-2xl md:text-5xl font-bold text-white mb-2">Champion</div>
             <div className="mb-4 relative">
               <FaMedal className="text-6xl md:text-8xl mx-auto text-yellow-400" />
             </div>
-            <div className="text-2xl md:text-4xl font-bold" style={{ color }}>{title}</div>
           </div>
         )}
         
@@ -41,7 +40,7 @@ export default function AchievementCard({ title, org, year, description, image, 
         <div>
           <div className="flex items-center gap-3 mb-4 md:mb-6">
             <div
-              className="w-2 h-2 md:w-3 md:h-3 rounded-full"
+              className="w-2 h-2 md:w-3 md:h-3 rounded-none"
               style={{ backgroundColor: color }}
             />
             <div className="h-[1px] w-12 md:w-20 bg-gray-600" />
@@ -59,7 +58,7 @@ export default function AchievementCard({ title, org, year, description, image, 
             <span className="text-sm md:text-base text-gray-400">{year}</span>
           </div>
           
-          <p className="text-sm md:text-base text-gray-300 leading-relaxed">
+          <p className="text-sm md:text-base text-gray-300 leading-relaxed text-justify">
             {description}
           </p>
         </div>
