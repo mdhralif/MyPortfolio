@@ -286,11 +286,11 @@ const SkillsSection = () => {
     <main className="pt-15 lg:pt-0 text-white min-h-screen bg-[#1C1F2E] relative">
       <section className="container mx-auto px-4 py-11 relative z-10">
         {/* Section Title */}
-        <h2 className="text-5xl md:text-7xl font-black text-transparent bg-white bg-clip-text text-center">
+        <h2 className="text-5xl md:text-7xl font-black text-transparent bg-white bg-clip-text text-center mb-4 md:mb-10">
               What I’m <span style={{ color: '#2DD4BF' }}>Good At</span>
         </h2>    
 
-        <div className="flex justify-center items-center relative mb-8 mt-4">
+        <div className="flex justify-center items-center relative mb-8">
           {/* Background panel matching skill card style */}
           <div className="absolute inset-0 flex justify-center items-center">
             <div className="bg-gray-900/80 border-0 rounded-none h-full w-full" />
