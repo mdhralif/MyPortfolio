@@ -1,8 +1,9 @@
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 import { FaMedal } from "react-icons/fa";
+import { FiExternalLink } from "react-icons/fi";
 
-export default function AchievementCard({ title, org, year, description, image, color = "#2DD4BF" }) {
+export default function AchievementCard({ title, org, year, description, image, color = "#2DD4BF", link, logo }) {
   return (
     <div className="w-full flex flex-col md:flex-row bg-[#161825] rounded-none overflow-hidden shadow-xl">
       {/* Image/Icon section - full width on mobile, 55% on desktop */}
@@ -43,14 +44,32 @@ export default function AchievementCard({ title, org, year, description, image, 
             <div className="h-[1px] w-12 md:w-20 bg-gray-600" />
           </div>
 
-          <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-2 md:mb-3">
-            {title}
-          </h3>
+          <div className="flex items-start justify-between">
+            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-2 md:mb-3">
+              {title}
+            </h3>
+            <div className="ml-4 mt-1">
+              {link ? (
+                <a href={link} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-[#30d6c2]">
+                  <FiExternalLink className="text-lg md:text-xl" />
+                </a>
+              ) : (
+                <FiExternalLink className="text-lg md:text-xl text-gray-600" title="No link provided" />
+              )}
+            </div>
+          </div>
           
-          <div className="flex items-center gap-2 mb-2 md:mb-3">
-            <span className="text-sm md:text-base font-semibold" style={{ color }}>
-              {org}
-            </span>
+          <div className="flex items-center gap-3 mb-2 md:mb-3">
+            <div className="flex items-center gap-2">
+              {logo ? (
+                <img src={logo} alt={`${org} logo`} className="w-6 h-6 md:w-8 md:h-8 object-contain" />
+              ) : (
+                <div className="w-6 h-6 md:w-8 md:h-8 bg-gray-700" />
+              )}
+              <span className="text-sm md:text-base font-semibold" style={{ color }}>
+                {org}
+              </span>
+            </div>
             <span className="text-gray-500">•</span>
             <span className="text-xs md:text-sm text-gray-400">{year}</span>
           </div>
@@ -71,4 +90,6 @@ AchievementCard.propTypes = {
   description: PropTypes.string.isRequired,
   image: PropTypes.string,
   color: PropTypes.string,
+  link: PropTypes.string,
+  logo: PropTypes.string,
 };
