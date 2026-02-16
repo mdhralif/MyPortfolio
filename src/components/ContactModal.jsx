@@ -73,8 +73,8 @@ const ContactModal = ({ isOpen, onClose }) => {
         </div>
 
         {/* Content: left = contact options, right = map */}
-        <div className="grid items-start grid-cols-1 md:grid-cols-2 gap-4 px-4 md:px-6 pb-6">
-          <div className="overflow-y-auto space-y-4 bg-transparent">
+        <div className="grid items-start grid-cols-1 md:grid-cols-2 gap-4 px-4 md:px-6 pb-6 overflow-hidden">
+          <div className="space-y-4 bg-transparent overflow-hidden">
             {contactOptions.map((option, index) => (
               <button
                 key={index}
