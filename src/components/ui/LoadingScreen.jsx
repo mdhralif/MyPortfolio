@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 const loadingMessages = [
-  'You\'re',
-  'Welcome'
+  'Let\'s',
+  'Explore'
 ];
 
 const LoadingScreen = ({ onLoadingComplete }) => {
   const [progress, setProgress] = useState(0);
-  const [loadingText, setLoadingText] = useState('You\'re');
+  const [loadingText, setLoadingText] = useState(loadingMessages[0]);
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
@@ -16,16 +16,12 @@ const LoadingScreen = ({ onLoadingComplete }) => {
       setProgress(prev => {
         const newProgress = prev + Math.random() * 8 + 2;
         
-        // Update loading text based on progress
-        if (newProgress >= 20 && newProgress < 40) {
-          setLoadingText(loadingMessages[1]);
-        } else if (newProgress >= 40 && newProgress < 70) {
-          setLoadingText(loadingMessages[2]);
-        } else if (newProgress >= 70 && newProgress < 95) {
-          setLoadingText(loadingMessages[3]);
-        } else if (newProgress >= 95) {
-          setLoadingText(loadingMessages[4]);
-        }
+        // Update loading text based on progress (map progress to messages)
+        const idx = Math.min(
+          loadingMessages.length - 1,
+          Math.floor(newProgress / (100 / loadingMessages.length))
+        );
+        setLoadingText(loadingMessages[idx]);
 
         if (newProgress >= 100) {
           clearInterval(timer);
