@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import { FaRobot } from "react-icons/fa";
 
 const SYSTEM_PROMPT = `You are a helpful assistant that knows everything about Md Hasibur Rahman Alif (MD H R ALIF):
 - B.Sc. in Software Engineering (Islamic University of Technology - IUT)
@@ -70,9 +71,12 @@ export default function AIChat() {
       <div className="fixed bottom-6 right-6 z-50">
         <button
           onClick={() => setOpen((o) => !o)}
-          className="bg-[#2DD4BF] text-black px-4 py-2 rounded-full font-semibold shadow-lg"
+          aria-label={open ? "Close AI" : "Ask AI"}
+          title={open ? "Close AI" : "Ask AI"}
+          className="bg-[#2DD4BF] text-white w-12 h-12 rounded-full flex items-center justify-center font-semibold shadow-lg"
         >
-          {open ? "Close AI" : "Ask AI"}
+          <span className="sr-only">{open ? "Close AI" : "Ask AI"}</span>
+          <FaRobot className="w-5 h-5" aria-hidden="true" />
         </button>
       </div>
 
