@@ -145,8 +145,8 @@ export default function Hero({ onContactClick = () => {} }) {
             </div>
           </div>
 
-          {/* Bottom-left social icons */}
-          <div className="absolute left-6 bottom-6 z-30 flex flex-col gap-3">
+          {/* Bottom-left social icons - hidden on mobile */}
+          <div className="hidden md:flex absolute left-6 bottom-6 z-30 flex-col gap-3">
             <a
               href="https://github.com/mdhralif"
               target="_blank"
