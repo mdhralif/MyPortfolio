@@ -51,7 +51,7 @@ export default function About() {
             </h1>
 
             <p className="text-gray-300 text-lg md:text-xl max-w-2xl mb-6 text-justify">
-              I’m Md Hasibur Rahman Alif, a Software Engineering student and <span className="inline-block bg-white text-black px-1">passionate full-stack developer</span> with experience building scalable web and AI-powered applications. I’ve worked as a Software Engineer Intern at KAZ Software and developed production-level applications using React, Node.js, and Python. I’m eager to contribute my skills and grow as a developer in a dynamic team environment.
+              I’m Md Hasibur Rahman Alif, a Software Engineering student and <span className="inline-block bg-white text-black px-1">passionate full-stack developer</span> with experience building scalable web and AI-powered applications. I’ve worked as a <span className="inline-block bg-white text-black px-1">Software Engineer Intern</span> at KAZ Software and developed production level applications using Angular and .NET framework. I’m eager to contribute my skills and grow as a developer in a dynamic tech company.
             </p>
 
             {/* CV Download */}
