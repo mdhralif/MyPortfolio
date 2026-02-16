@@ -43,6 +43,7 @@ export default function App() {
               <Hero onContactClick={handleContactClick} />
               <Projects />
               <Skills />
+              <Achievement />
             </>
           }
         />
