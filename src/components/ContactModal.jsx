@@ -52,10 +52,10 @@ const ContactModal = ({ isOpen, onClose }) => {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#111828] backdrop-blur-lg backdrop-saturate-150"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#111828] md:bg-black/50 md:backdrop-blur-lg md:backdrop-saturate-150"
       onClick={handleBackdropClick}
     >
-      <div className="relative w-full max-w-4xl bg-gray-900 rounded-none shadow-xl transform transition-all duration-300 animate-in zoom-in-95 max-h-[90vh] overflow-y-auto scrollbar-none [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none]">
+      <div className="relative w-full max-w-4xl bg-gray-900 rounded-none shadow-none md:shadow-xl transform transition-all duration-300 animate-in zoom-in-95 max-h-[90vh] overflow-y-auto scrollbar-none [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none]">
         {/* Header */}
         <div className="sticky top-0 z-10 bg-gray-900 flex items-center justify-between p-6 md:p-8 pb-4">
           <h2 className="text-2xl md:text-3xl font-bold text-white"><span className="text-[#2DD4BF]">Say</span> Hello!</h2>
