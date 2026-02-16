@@ -52,12 +52,12 @@ const ContactModal = ({ isOpen, onClose }) => {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-lg backdrop-saturate-150"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#111828] backdrop-blur-lg backdrop-saturate-150"
       onClick={handleBackdropClick}
     >
-      <div className="relative w-full max-w-4xl bg-gray-900 rounded-none shadow-xl transform transition-all duration-300 animate-in zoom-in-95 max-h-[90vh] overflow-hidden">
+      <div className="relative w-full max-w-4xl bg-gray-900 rounded-none shadow-xl transform transition-all duration-300 animate-in zoom-in-95 max-h-[90vh] overflow-y-auto scrollbar-none [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none]">
         {/* Header */}
-        <div className="flex items-center justify-between p-6 md:p-8 pb-4">
+        <div className="sticky top-0 z-10 bg-gray-900 flex items-center justify-between p-6 md:p-8 pb-4">
           <h2 className="text-2xl md:text-3xl font-bold text-white"><span className="text-[#2DD4BF]">Say</span> Hello!</h2>
           <button
             type="button"
@@ -73,7 +73,7 @@ const ContactModal = ({ isOpen, onClose }) => {
         </div>
 
         {/* Content: left = contact options, right = map */}
-        <div className="grid items-start grid-cols-1 md:grid-cols-2 gap-4 px-4 md:px-6 pb-6 max-h-[80vh]">
+        <div className="grid items-start grid-cols-1 md:grid-cols-2 gap-4 px-4 md:px-6 pb-6">
           <div className="overflow-y-auto space-y-4 bg-transparent">
             {contactOptions.map((option, index) => (
               <button
