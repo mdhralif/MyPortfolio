@@ -290,10 +290,10 @@ const SkillsSection = () => {
               What I’m <span style={{ color: '#2DD4BF' }}>Good At</span>
         </h2>    
 
-        <div className="flex justify-center items-center relative">
+        <div className="flex justify-center items-center relative mb-8 mt-4">
           {/* Background panel matching skill card style */}
           <div className="absolute inset-0 flex justify-center items-center">
-            <div className="bg-gray-900/80 border-0 rounded-none h-[320px] md:h-[420px] w-full" />
+            <div className="bg-gray-900/80 border-0 rounded-none h-full w-full" />
           </div>
 
           {/* Globe sits above the background panel */}
