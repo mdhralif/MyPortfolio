@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
-import { FaTrophy } from "react-icons/fa";
+import { FaMedal } from "react-icons/fa";
 
 export default function AchievementCard({ title, org, year, description, image, color = "#2DD4BF" }) {
   return (
@@ -18,8 +18,9 @@ export default function AchievementCard({ title, org, year, description, image, 
           />
         ) : (
           <div className="text-center p-8">
-            <div className="mb-4">
-              <FaTrophy className="text-6xl md:text-8xl text-white mx-auto" />
+            <div className="text-2xl md:text-4xl font-bold text-white mb-2">Champion</div>
+            <div className="mb-4 relative">
+              <FaMedal className="text-6xl md:text-8xl mx-auto text-yellow-400" />
             </div>
             <div className="text-2xl md:text-4xl font-bold" style={{ color }}>{title}</div>
           </div>
