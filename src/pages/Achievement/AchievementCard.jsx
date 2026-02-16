@@ -4,9 +4,9 @@ import { FaTrophy } from "react-icons/fa";
 
 export default function AchievementCard({ title, org, year, description, image, color = "#2DD4BF" }) {
   return (
-    <div className="w-full flex flex-col md:flex-row bg-zinc-900 rounded-2xl overflow-hidden shadow-xl">
+    <div className="w-full flex flex-col md:flex-row bg-[#161825] rounded-none overflow-hidden shadow-xl">
       {/* Image/Icon section - full width on mobile, 55% on desktop */}
-      <div className="w-full md:w-[55%] h-[250px] md:h-[400px] lg:h-[450px] relative overflow-hidden bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center">
+      <div className="w-full md:w-[55%] h-[250px] md:h-[400px] lg:h-[450px] relative overflow-hidden bg-gradient-to-br from-[#1a1d2e] to-[#161825] flex items-center justify-center">
         {image ? (
           <motion.img
             src={image}
@@ -18,14 +18,9 @@ export default function AchievementCard({ title, org, year, description, image, 
           />
         ) : (
           <div className="text-center p-8">
-            <motion.div
-              className="mb-4"
-              initial={{ scale: 0.8, opacity: 0.5 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.6, repeat: Infinity, repeatType: "reverse" }}
-            >
+            <div className="mb-4">
               <FaTrophy className="text-6xl md:text-8xl text-white mx-auto" />
-            </motion.div>
+            </div>
             <div className="text-2xl md:text-4xl font-bold" style={{ color }}>{title}</div>
           </div>
         )}
