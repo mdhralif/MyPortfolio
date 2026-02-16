@@ -3,9 +3,7 @@ import PropTypes from "prop-types";
 import AchievementCard from "./AchievementCard";
 
 export default function AchievementCarousel({ items = [] }) {
-  const [index, setIndex] = useState(0);
-  const prev = () => setIndex((i) => (i - 1 + items.length) % items.length);
-  const next = () => setIndex((i) => (i + 1) % items.length);
+  const [index] = useState(0);
 
   return (
     <div className="flex justify-center w-full">
