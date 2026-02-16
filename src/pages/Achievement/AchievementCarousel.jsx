@@ -24,27 +24,12 @@ export default function AchievementCarousel({ items = [] }) {
             </div>
           </div>
 
-          <button
-            onClick={prev}
-            aria-label="Previous"
-            className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/10 text-white p-2 rounded-full hover:bg-white/20"
-          >
-            ‹
-          </button>
-          <button
-            onClick={next}
-            aria-label="Next"
-            className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/10 text-white p-2 rounded-full hover:bg-white/20"
-          >
-            ›
-          </button>
-
-          <div className="flex justify-center gap-2 mt-4">
+          <div className="flex justify-center gap-3 mt-6">
             {items.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setIndex(i)}
-                className={`w-2 h-2 rounded-full ${i === index ? "bg-white" : "bg-gray-600"}`}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${i === index ? "bg-[#2DD4BF] scale-125" : "bg-gray-600 hover:bg-gray-500"}`}
                 aria-label={`Go to slide ${i + 1}`}
               />
             ))}
