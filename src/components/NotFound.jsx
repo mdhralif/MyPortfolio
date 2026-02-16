@@ -12,9 +12,11 @@ const NotFound = () => {
           <div className="text-sm text-gray-500 mt-4">
             <p>Try one of these:</p>
             <div className="flex flex-wrap justify-center gap-2 mt-2">
+              <Link to="/" className="text-gray-400 hover:text-white transition-colors">Home</Link>
+              <span className="text-gray-600">•</span>
               <Link to="/skills" className="text-gray-400 hover:text-white transition-colors">Skills</Link>
               <span className="text-gray-600">•</span>
-              <Link to="/experience" className="text-gray-400 hover:text-white transition-colors">Experience</Link>
+              <Link to="/about" className="text-gray-400 hover:text-white transition-colors">About Me</Link>
               <span className="text-gray-600">•</span>
               <Link to="/projects" className="text-gray-400 hover:text-white transition-colors">Projects</Link>
               <span className="text-gray-600">•</span>

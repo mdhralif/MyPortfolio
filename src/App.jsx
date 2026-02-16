@@ -35,27 +35,32 @@ export default function App() {
     <>
       <GlobalHamburger onContactClick={handleContactClick} />
 
-      {/* Routing: home (/) renders the one-page layout; other pages are separate */}
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Hero onContactClick={handleContactClick} />
-              <Projects />
-              <Skills />
-              <Achievement />
-            </>
-          }
-        />
-        <Route path="/skills" element={<Skills />} />
-        <Route path="/achievement" element={<Achievement />} />
-        <Route path="/contact" element={<ContactModal />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/about" element={<About onContactClick={handleContactClick} />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <Footer />
+      <div className="min-h-screen flex flex-col">
+        <main className="flex-grow">
+          {/* Routing: home (/) renders the one-page layout; other pages are separate */}
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <Hero onContactClick={handleContactClick} />
+                  <Projects />
+                  <Skills />
+                  <Achievement />
+                </>
+              }
+            />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/achievement" element={<Achievement />} />
+            <Route path="/contact" element={<ContactModal />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/about" element={<About onContactClick={handleContactClick} />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
+
+        <Footer />
+      </div>
 
       <ContactModal isOpen={isContactModalOpen} onClose={handleCloseModal} />
       {/* <AIChat /> */}
