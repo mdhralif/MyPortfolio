@@ -151,8 +151,8 @@ export default function Projects() {
   return (
     <ReactLenis root>
       <main className="bg-[#161925]" ref={container}>
-        <section className="text-white w-full bg-[#161925] pb-12 md:pb-40 pt-12 md:pt-8">
-            <h2 className="text-5xl md:text-7xl font-black text-transparent bg-white bg-clip-text text-center leading-tight">
+        <section className="text-white w-full bg-[#161925] pb-12 md:pb-20 pt-8 md:pt-8">
+            <h2 className="text-5xl md:text-7xl font-black text-transparent bg-white bg-clip-text text-center leading-tight mb-4 md:mb-8">
               <span style={{ color: '#2DD4BF' }}>Projects</span> I’ve Built
             </h2>       
           {projects.map((project, i) => {
@@ -198,7 +198,7 @@ function Card({
   return (
     <div
       ref={container}
-      className="h-screen flex items-center justify-center sticky top-0 project-container pt-8 md:pt-0 "
+      className={`${i === 0 ? 'h-[70vh] md:h-[80vh]' : 'h-screen'} flex items-center justify-center sticky top-0 project-container pt-8 md:pt-0`}
     >
       <motion.div
         style={{
