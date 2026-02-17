@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { FaRobot } from "react-icons/fa";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 const SYSTEM_PROMPT = `You are a helpful assistant that knows everything about Md Hasibur Rahman Alif (MD H R ALIF):
 - B.Sc. in Software Engineering (Islamic University of Technology - IUT)
@@ -9,6 +9,7 @@ const SYSTEM_PROMPT = `You are a helpful assistant that knows everything about M
 Answer user questions concisely and, when needed, refer to the profile above.`;
 
 export default function AIChat() {
+  // Using DotLottieReact component from @lottiefiles/dotlottie-react
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
@@ -73,10 +74,17 @@ export default function AIChat() {
           onClick={() => setOpen((o) => !o)}
           aria-label={open ? "Close AI" : "Ask AI"}
           title={open ? "Close AI" : "Ask AI"}
-          className="bg-[#2DD4BF] text-white w-12 h-12 rounded-full flex items-center justify-center font-semibold shadow-lg"
+          className="bg-transparent text-white w-12 h-12 rounded-full flex items-center justify-center font-semibold shadow-lg overflow-hidden"
         >
           <span className="sr-only">{open ? "Close AI" : "Ask AI"}</span>
-          <FaRobot className="w-5 h-5" aria-hidden="true" />
+          {/* DotLottie React component */}
+          <DotLottieReact
+            src="https://lottie.host/17905fa2-d895-47f0-8e4d-5bdcfe75e23c/iJnC9oOwNq.lottie"
+            autoplay={true}
+            loop={true}
+            style={{ width: 50, height: 50, display: "block", pointerEvents: "none" }}
+            aria-hidden={true}
+          />
         </button>
       </div>
 
