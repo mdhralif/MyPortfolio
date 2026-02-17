@@ -73,62 +73,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Education Section */}
-      <section className="max-w-6xl mx-auto px-6 py-16">
-        <h3 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">
-          <span>Education</span>
-        </h3>
-        
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="bg-[#1c1f2e] p-6 relative"
-        >
-          {/* CGPA - desktop absolute, mobile inline to avoid overlap */}
-          <div className="hidden md:flex absolute top-4 right-4 flex items-center gap-2 bg-transparent px-4 py-2 rounded-full border border-none">
-            <FaAward className="w-4 h-4 text-yellow-400" />
-            <span className="text-white font-semibold">CGPA: 3.87</span>
-          </div>
-
-          <div className="flex items-start gap-4">
-            <div className="w-28 h-28 overflow-hidden bg-white flex items-center justify-center p-1">
-              <img 
-                src={iutLogo} 
-                alt="IUT Logo"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            
-            <div className="flex-1">
-              <h4 className="text-xl font-bold text-white mb-2">B.Sc. in Software Engineering</h4>
-              <p className="text-sm md:text-base text-gray-400 font-medium mb-2">Islamic University of Technology (IUT)</p>
-              
-              {/* Mobile CGPA inline to prevent absolute overlap */}
-              <div className="flex md:hidden items-center gap-2 mt-2 mb-2">
-                <FaAward className="w-4 h-4 text-yellow-400" />
-                <span className="text-white font-semibold">CGPA: 3.87</span>
-              </div>
-
-              <div className="flex items-center gap-4 text-gray-400 text-xs md:text-sm mb-3">
-                <div className="flex items-center gap-1">
-                  <FaCalendarAlt className="w-4 h-4" />
-                  <span>August 2022- Present</span>
-                </div>
-              </div>
-              
-              <div className="hidden md:flex md:flex-wrap gap-3">
-                {["OOP", "Data Structures", "Algorithms", "Web Dev.", "AI/ML", "Database", "Networking"].map((skill, index) => (
-                  <div key={index} className="min-w-[72px] h-10 flex items-center justify-center bg-[#0f1223]  text-white rounded-none text-sm font-medium px-2">
-                    {skill}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </motion.div>
-      </section>
-
       {/* Experience Section */}
       <section className="max-w-6xl mx-auto px-6 pb-16">
         <h3 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">
@@ -264,7 +208,7 @@ export default function About() {
               </div>
               
               {/* Desktop: full text */}
-              <p className="hidden md:block text-gray-300 mb-4 text-justify">Developed web apps, designed UI, integrated APIs & done some bug fixing.</p>
+              <p className="hidden md:block text-gray-300 mb-4 text-justify">Designed and developed scalable web applications, implemented responsive user interfaces, integrated RESTful APIs, and resolved frontend and backend issues.</p>
 
               {/* Mobile: truncated with toggle */}
               <div className="md:hidden mb-4">
@@ -276,7 +220,7 @@ export default function About() {
                       : {}
                   }
                 >
-                  Developed web apps, designed UI, integrated APIs & done some bug fixing.
+                 Designed and developed scalable web applications, implemented responsive user interfaces, integrated RESTful APIs, and resolved frontend and backend issues.
                 </p>
 
                 <button
@@ -286,6 +230,62 @@ export default function About() {
                   {showFullExp ? <FaChevronUp /> : <FaChevronDown />}
                   <span>{showFullExp ? 'Show less' : 'Show more'}</span>
                 </button>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Education Section */}
+      <section className="max-w-6xl mx-auto px-6 py-16">
+        <h3 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">
+          <span>Education</span>
+        </h3>
+        
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="bg-[#1c1f2e] p-6 relative"
+        >
+          {/* CGPA - desktop absolute, mobile inline to avoid overlap */}
+          <div className="hidden md:flex absolute top-4 right-4 flex items-center gap-2 bg-transparent px-4 py-2 rounded-full border border-none">
+            <FaAward className="w-4 h-4 text-yellow-400" />
+            <span className="text-white font-semibold">CGPA: 3.87</span>
+          </div>
+
+          <div className="flex items-start gap-4">
+            <div className="w-28 h-28 overflow-hidden bg-white flex items-center justify-center p-1">
+              <img 
+                src={iutLogo} 
+                alt="IUT Logo"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            
+            <div className="flex-1">
+              <h4 className="text-xl font-bold text-white mb-2">B.Sc. in Software Engineering</h4>
+              <p className="text-sm md:text-base text-gray-400 font-medium mb-2">Islamic University of Technology (IUT)</p>
+              
+              {/* Mobile CGPA inline to prevent absolute overlap */}
+              <div className="flex md:hidden items-center gap-2 mt-2 mb-2">
+                <FaAward className="w-4 h-4 text-yellow-400" />
+                <span className="text-white font-semibold">CGPA: 3.87</span>
+              </div>
+
+              <div className="flex items-center gap-4 text-gray-400 text-xs md:text-sm mb-3">
+                <div className="flex items-center gap-1">
+                  <FaCalendarAlt className="w-4 h-4" />
+                  <span>August 2022- Present</span>
+                </div>
+              </div>
+              
+              <div className="hidden md:flex md:flex-wrap gap-3">
+                {["OOP", "Data Structures", "Algorithms", "Web Dev.", "AI/ML", "Database", "Networking"].map((skill, index) => (
+                  <div key={index} className="min-w-[72px] h-10 flex items-center justify-center bg-[#0f1223]  text-white rounded-none text-sm font-medium px-2">
+                    {skill}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
