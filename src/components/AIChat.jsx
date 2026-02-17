@@ -69,7 +69,7 @@ export default function AIChat() {
 
   return (
     <>
-      <div className="absolute bottom-12 right-12 z-50">
+      <div className="absolute bottom-8 right-12 z-50">
         <button
           onClick={() => setOpen((o) => !o)}
           aria-label={open ? "Close AI" : "Ask AI"}
@@ -87,7 +87,7 @@ export default function AIChat() {
       </div>
 
       {open && (
-        <div className="absolute z-40 bottom-28 right-12 flex items-end justify-end p-0">
+        <div className="absolute z-40 bottom-24 right-12 flex items-end justify-end p-0">
           <div className="w-full max-w-sm md:max-w-md bg-[#0f1223] rounded-none shadow-2xl overflow-hidden">
             <div className="px-4 py-3 flex items-center justify-between">
               <div className="font-bold text-white">AI Assistant</div>
