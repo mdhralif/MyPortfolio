@@ -7,7 +7,7 @@ export default function AchievementCard({ title, org, year, description, image, 
   return (
     <div className="w-full flex flex-col md:flex-row bg-[#161825] rounded-none overflow-hidden shadow-xl">
       {/* Image/Icon section - full width on mobile, 55% on desktop */}
-      <div className="w-full md:w-[55%] h-[250px] md:h-[320px] lg:h-[350px] relative overflow-hidden bg-gray flex items-center justify-center">
+      <div className="w-full md:w-[55%] h-[180px] md:h-[320px] lg:h-[350px] relative overflow-hidden bg-gray flex items-center justify-center">
         {image ? (
           <motion.img
             src={image}

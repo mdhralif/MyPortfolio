@@ -7,7 +7,7 @@ export default function AchievementCarousel({ items = [] }) {
 
   return (
     <div className="flex justify-center w-full">
-      <div className="w-[90%] md:w-[85%] lg:w-[75%] xl:w-[65%]">
+      <div className="w-[95%] md:w-[90%] lg:w-[85%] xl:w-[80%]">
         <div className="relative">
           <div className="overflow-hidden">
             <div
