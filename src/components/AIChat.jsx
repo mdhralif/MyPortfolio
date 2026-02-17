@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import chatbotGif from "@/assets/images/chatbot.gif";
 
 const SYSTEM_PROMPT = `You are a helpful assistant that knows everything about Md Hasibur Rahman Alif (MD H R ALIF):
 - B.Sc. in Software Engineering (Islamic University of Technology - IUT)
@@ -69,27 +69,25 @@ export default function AIChat() {
 
   return (
     <>
-      <div className="fixed bottom-6 right-6 z-50">
+      <div className="absolute bottom-12 right-12 z-50">
         <button
           onClick={() => setOpen((o) => !o)}
           aria-label={open ? "Close AI" : "Ask AI"}
           title={open ? "Close AI" : "Ask AI"}
-          className="bg-transparent text-white w-12 h-12 rounded-full flex items-center justify-center font-semibold shadow-lg overflow-hidden"
+          className="bg-transparent border-none p-0 cursor-pointer"
         >
           <span className="sr-only">{open ? "Close AI" : "Ask AI"}</span>
-          {/* DotLottie React component */}
-          <DotLottieReact
-            src="https://lottie.host/17905fa2-d895-47f0-8e4d-5bdcfe75e23c/iJnC9oOwNq.lottie"
-            autoplay={true}
-            loop={true}
-            style={{ width: 50, height: 50, display: "block", pointerEvents: "none" }}
-            aria-hidden={true}
+          <img 
+            src={chatbotGif} 
+            alt="AI Chat" 
+            className="w-20 h-20"
+            style={{ pointerEvents: "none" }}
           />
         </button>
       </div>
 
       {open && (
-        <div className="fixed z-40 bottom-20 right-6 flex items-end justify-end p-0">
+        <div className="absolute z-40 bottom-28 right-12 flex items-end justify-end p-0">
           <div className="w-full max-w-sm md:max-w-md bg-[#0f1223] rounded-none shadow-2xl overflow-hidden">
             <div className="px-4 py-3 flex items-center justify-between">
               <div className="font-bold text-white">AI Assistant</div>
