@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 import { FaMedal } from "react-icons/fa";
-import { FiExternalLink } from "react-icons/fi";
+import { FiLink } from "react-icons/fi";
 
 export default function AchievementCard({ title, org, year, description, image, color = "#2DD4BF", link, logo }) {
   return (
@@ -51,10 +51,10 @@ export default function AchievementCard({ title, org, year, description, image, 
             <div className="ml-4 mt-1">
               {link ? (
                 <a href={link} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-[#30d6c2]">
-                  <FiExternalLink className="text-lg md:text-xl" />
+                  <FiLink className="text-lg md:text-xl" />
                 </a>
               ) : (
-                <FiExternalLink className="text-lg md:text-xl text-gray-600" title="No link provided" />
+                <FiLink className="text-lg md:text-xl text-gray-600" title="No link provided" />
               )}
             </div>
           </div>
