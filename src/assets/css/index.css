@@ -251,3 +251,42 @@ pre[class*="language-"] {
   background-color: white;
   opacity: 0.8; /* Make it more visible */
 }
+
+/* Global custom scrollbar styles */
+:root {
+  --scrollbar-bg: rgba(11,17,34,0.0);
+  --scrollbar-thumb-start: #2fd8c5;
+  --scrollbar-thumb-end: #2fd8c5;
+  --scrollbar-thumb-border: rgba(47,216,197,0.35);
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb-start) transparent;
+}
+
+/* WebKit browsers (Chrome, Edge, Safari) */
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--scrollbar-bg);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--scrollbar-thumb-start), var(--scrollbar-thumb-end));
+  border-radius: 999px; 
+  border: 3px solid var(--scrollbar-thumb-border);
+  transition: background 150ms ease, transform 150ms ease;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  transform: scale(1.02);
+}
+
+*::-webkit-scrollbar-corner {
+  background: transparent;
+}
