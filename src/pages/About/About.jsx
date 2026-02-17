@@ -281,7 +281,7 @@ export default function About() {
                 </div>
               </div>
               
-              <p className="text-gray-300 mb-4">A few courses I took during my B.Sc.:</p>
+              <p className="hidden md:block text-gray-300 mb-4">A few courses I took during my B.Sc.:</p>
 
               <div
                 className={`hidden md:flex md:flex-wrap gap-3 overflow-hidden transition-[max-height] duration-300 ${
