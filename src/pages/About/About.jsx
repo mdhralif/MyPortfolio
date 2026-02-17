@@ -8,6 +8,7 @@ import { useState } from "react";
 export default function About() {
   const iconColor = "#ffffff";
   const [showFullExp, setShowFullExp] = useState(false);
+  const [showAllCourses, setShowAllCourses] = useState(false);
 
   return (
     <main className="bg-[#161825] text-white min-h-screen">
@@ -280,7 +281,13 @@ export default function About() {
                 </div>
               </div>
               
-              <div className="hidden md:flex md:flex-wrap gap-3">
+              <p className="text-gray-300 mb-4">A few courses I took during my B.Sc.:</p>
+
+              <div
+                className={`hidden md:flex md:flex-wrap gap-3 overflow-hidden transition-[max-height] duration-300 ${
+                  showAllCourses ? "max-h-[1000px]" : "max-h-10"
+                }`}
+              >
                 {[
   "Object Oriented Programming",
   "Data Structures",
@@ -309,6 +316,16 @@ export default function About() {
                     {skill}
                   </div>
                 ))}
+              </div>
+
+              <div className="mt-4 flex items-center gap-2">
+                <button
+                  onClick={() => setShowAllCourses((s) => !s)}
+                  className="hidden md:inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white"
+                >
+                  {showAllCourses ? <FaChevronUp /> : <FaChevronDown />}
+                  <span>{showAllCourses ? "Show less" : "Show more"}</span>
+                </button>
               </div>
             </div>
           </div>
