@@ -281,7 +281,30 @@ export default function About() {
               </div>
               
               <div className="hidden md:flex md:flex-wrap gap-3">
-                {["OOP", "Data Structures", "Algorithms", "Web Dev.", "AI/ML", "Database", "Networking"].map((skill, index) => (
+                {[
+  "Object Oriented Programming",
+  "Data Structures",
+  "Algorithms",
+  "Algorithm Eng.",
+  "Web Dev.",
+  "Server Prog.",
+  "AI",
+  "Machine Learning",
+  "NLP",
+  "Database",
+  "Advanced DB",
+  "Data Mining",
+  "Big Data",
+  "Networking",
+  "Advanced Net .",
+  "Network Security",
+  "Software Design",
+  "Software Testing",
+  "Software Architecture",
+  "Operating Systems",
+  "Design Patterns"
+]
+.map((skill, index) => (
                   <div key={index} className="min-w-[72px] h-10 flex items-center justify-center bg-[#0f1223]  text-white rounded-none text-sm font-medium px-2">
                     {skill}
                   </div>
