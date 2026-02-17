@@ -19,7 +19,7 @@ export default function AchievementCard({ title, org, year, description, image, 
           />
         ) : (
           <div className="text-center p-8">
-            <div className="text-2xl md:text-5xl font-bold text-white mb-2">Champion</div>
+            <div className="text-4xl md:text-6xl font-bold text-white mb-3">Champion</div>
             <div className="mb-4 relative">
               <FaMedal className="text-6xl md:text-8xl mx-auto text-yellow-400" />
             </div>
@@ -74,7 +74,7 @@ export default function AchievementCard({ title, org, year, description, image, 
             <span className="text-xs md:text-sm text-gray-400">{year}</span>
           </div>
           
-          <p className="text-xs md:text-sm text-gray-300 leading-relaxed text-justify">
+          <p className="text-sm md:text-base text-gray-300 leading-relaxed text-justify">
             {description}
           </p>
         </div>
