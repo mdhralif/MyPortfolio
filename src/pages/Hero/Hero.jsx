@@ -3,7 +3,6 @@ import SparklesText from "@/components/ui/sparkles-text";
 import { FaGithub, FaLinkedin, FaFacebook, FaEnvelope, FaFileDownload } from "react-icons/fa";
 import PropTypes from "prop-types";
 import AnimatedGrid from "@/components/AnimatedGrid";
-import AIChat from "@/components/AIChat";
 
 import ProfileImage from "@/assets/images/Alif_.png";
 export default function Hero({ onContactClick = () => {} }) {
@@ -183,7 +182,6 @@ export default function Hero({ onContactClick = () => {} }) {
           </div>
         </section>
       </main>
-      <AIChat />
     </>
   );
 }
