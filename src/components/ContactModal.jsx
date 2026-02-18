@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
-import { FaTimes, FaEnvelope, FaLinkedin, FaPhone, FaLocationArrow } from 'react-icons/fa';
+import { FaEnvelope, FaLinkedin, FaPhone, FaLocationArrow } from 'react-icons/fa';
+import { AiOutlineClose } from 'react-icons/ai';
 import PropTypes from 'prop-types';
 
 const ContactModal = ({ isOpen, onClose }) => {
@@ -68,7 +69,7 @@ const ContactModal = ({ isOpen, onClose }) => {
             className="p-3 text-gray-400 hover:text-white hover:bg-gray-800 rounded-none transition-colors duration-200 z-10"
             aria-label="Close modal"
           >
-            <FaTimes className="w-5 h-5" />
+            <AiOutlineClose className="w-6 h-6" />
           </button>
         </div>
 
