@@ -107,7 +107,7 @@ const ContactModal = ({ isOpen, onClose }) => {
             <div className="w-full h-48 md:h-[50vh] bg-gray-700 overflow-hidden">
               <iframe
                 title="location-map"
-                src="https://maps.google.com/maps?q=23.948102,90.37926&z=17&output=embed"
+                src="https://maps.google.com/maps?q=23.948102,90.37926&z=17&t=k&output=embed"
                 className="w-full h-full border-0"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
