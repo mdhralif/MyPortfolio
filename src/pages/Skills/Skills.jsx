@@ -32,9 +32,10 @@ import {
   SiTensorflow,
   SiHuggingface,
   SiJupyter,
-  
+  SiJavascript,
+  SiC, 
 } from "react-icons/si";
-import { TbBrandCSharp, TbBrandVscode, TbBrandCpp } from "react-icons/tb";
+import { TbBrandVscode } from "react-icons/tb";
 import { BsFileEarmarkCode, BsGrid1X2 } from "react-icons/bs";
 
 
@@ -88,20 +89,20 @@ const SkillsSection = () => {
       color: "text-purple-400",
       skills: [
         {
-          name: "C",
-          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#A8B9CC]" />,
+          name: "",
+          icon: <SiC className="w-4 h-4 text-[#A8B9CC]" />,
         },
         {
-          name: "",
-          icon: <TbBrandCSharp className="w-4 h-4 text-[#239120]" />,
+          name: "++",
+          icon: <SiC className="w-4 h-4 text-[#239120]" />,
         },
         {
-          name: "",
-          icon: <TbBrandCpp className="w-4 h-4 text-[#00599C]" />,
+          name: "#",
+          icon: <SiC  className="w-4 h-4 text-[#00599C]" />,
         },
         {
           name: "JavaScript",
-          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#F7DF1E]" />,
+          icon: <SiJavascript className="w-4 h-4 text-[#F7DF1E]" />,
         },
         {
           name: "TypeScript",
