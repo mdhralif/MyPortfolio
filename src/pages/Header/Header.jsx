@@ -26,6 +26,8 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // square uses a single accent color; no injected keyframes needed
+
   return (
     <header
       className={`fixed top-8 left-6 z-50 transition-transform transition-opacity duration-300 ${
@@ -34,8 +36,18 @@ export default function Header() {
           : "opacity-0 -translate-y-2 scale-90 pointer-events-none"
       }`}
     >
-      <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14">
-        <img src={alifIcon} alt="Alif Logo" className="w-full h-full object-cover" />
+      <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 group">
+        <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-13 lg:h-13 cursor-pointer">
+          <img src={alifIcon} alt="Alif Logo" className="w-full h-full object-cover" />
+        </div>
+
+        {/* single-color accent square */}
+        <span
+          aria-hidden="true"
+          className="w-3 h-3 sm:w-4 sm:h-4 md:w-4 md:h-4 lg:w-4 lg:h-4 block bg-[#2DD4BF] group-hover:bg-[#D2CBBB] hover:bg-[#D2CBBB] transition-colors duration-200 cursor-pointer transform translate-y-2 sm:translate-y-2 md:translate-y-3 lg:translate-y-3"
+        />
+      </div>
       </div>
     </header>
   );
