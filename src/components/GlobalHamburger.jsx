@@ -5,7 +5,7 @@ import { FaEnvelope } from "react-icons/fa";
 
 export default function GlobalHamburger({ onContactClick = () => {} }) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     if (menuOpen) document.body.style.overflow = "hidden";
@@ -17,23 +17,32 @@ export default function GlobalHamburger({ onContactClick = () => {} }) {
 
   // Hide on scroll down, show on scroll up; keep visible when menu is open
   useEffect(() => {
+    const SHOW_NEAR_TOP = 120; // px from top where controls can reveal when scrolling up
     let lastScrollY = typeof window !== "undefined" ? window.scrollY : 0;
 
     const onScroll = () => {
       const current = window.scrollY;
+
+      // keep visible while menu is open
       if (menuOpen) {
         setVisible(true);
       } else if (current <= 10) {
+        // at very top -> show
         setVisible(true);
-      } else if (current > lastScrollY && current > 50) {
+      } else if (current > lastScrollY) {
+        // scrolling down -> hide
         setVisible(false);
-      } else if (current < lastScrollY) {
-        setVisible(true);
+      } else {
+        // scrolling up -> only reveal when near the top
+        if (current <= SHOW_NEAR_TOP) setVisible(true);
+        else setVisible(false);
       }
+
       lastScrollY = current;
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
     return () => window.removeEventListener("scroll", onScroll);
   }, [menuOpen]);
 

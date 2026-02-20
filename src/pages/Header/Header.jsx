@@ -2,27 +2,33 @@ import { useEffect, useState } from "react";
 import alifIcon from "../../assets/images/logo.png";
 
 export default function Header() {
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    const SHOW_NEAR_TOP = 120; // px from top where controls can reveal when scrolling up
     let lastScrollY = typeof window !== "undefined" ? window.scrollY : 0;
 
     const onScroll = () => {
       const current = window.scrollY;
-      // always show near top
+
+      // If at the very top, always show
       if (current <= 10) {
         setVisible(true);
-      } else if (current > lastScrollY && current > 50) {
-        // scrolling down -> hide
+      } else if (current > lastScrollY) {
+        // scrolling down -> always hide
         setVisible(false);
-      } else if (current < lastScrollY) {
-        // scrolling up -> show
-        setVisible(true);
+      } else {
+        // scrolling up -> only reveal when near the top
+        if (current <= SHOW_NEAR_TOP) setVisible(true);
+        else setVisible(false);
       }
+
       lastScrollY = current;
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
+    // initialize based on current position
+    onScroll();
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
