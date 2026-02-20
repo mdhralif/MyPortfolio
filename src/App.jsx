@@ -6,6 +6,7 @@ import Projects from "./pages/Projects/Projects";
 import Hero from "./pages/Hero/Hero";
 import Skills from "./pages/Skills/Skills";
 import Footer from "./pages/Footer/Footer";
+import Header from "./pages/Header/Header";
 import GlobalHamburger from "./components/GlobalHamburger";
 import LoadingScreen from "./components/ui/LoadingScreen";
 import NotFound from "./components/NotFound";
@@ -32,6 +33,7 @@ export default function App() {
 
   return (
     <>
+      <Header />
       <GlobalHamburger onContactClick={handleContactClick} />
 
       <div className="min-h-screen flex flex-col">

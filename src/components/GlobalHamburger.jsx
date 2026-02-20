@@ -5,6 +5,7 @@ import { FaEnvelope } from "react-icons/fa";
 
 export default function GlobalHamburger({ onContactClick = () => {} }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     if (menuOpen) document.body.style.overflow = "hidden";
@@ -14,13 +15,39 @@ export default function GlobalHamburger({ onContactClick = () => {} }) {
     };
   }, [menuOpen]);
 
+  // Hide on scroll down, show on scroll up; keep visible when menu is open
+  useEffect(() => {
+    let lastScrollY = typeof window !== "undefined" ? window.scrollY : 0;
+
+    const onScroll = () => {
+      const current = window.scrollY;
+      if (menuOpen) {
+        setVisible(true);
+      } else if (current <= 10) {
+        setVisible(true);
+      } else if (current > lastScrollY && current > 50) {
+        setVisible(false);
+      } else if (current < lastScrollY) {
+        setVisible(true);
+      }
+      lastScrollY = current;
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [menuOpen]);
+
   return (
     <>
       <button
         aria-label="Open menu"
         aria-expanded={menuOpen}
         onClick={() => setMenuOpen((v) => !v)}
-        className="fixed top-6 right-6 z-50 p-3 md:p-4 rounded-md bg-transparent "
+        className={`fixed top-6 right-6 z-50 p-3 md:p-4 rounded-md bg-transparent transition-transform transition-opacity duration-300 ${
+          visible
+            ? "opacity-100 translate-y-0 scale-100"
+            : "opacity-0 translate-y-4 scale-90 pointer-events-none"
+        }`}
       >
         <svg
           className={`w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-white transition-transform ${menuOpen ? "rotate-90" : ""}`}
@@ -40,7 +67,7 @@ export default function GlobalHamburger({ onContactClick = () => {} }) {
         aria-hidden={!menuOpen}
         onClick={() => setMenuOpen(false)}
       >
-        <nav className="max-w-3xl pl-4" onClick={(e) => e.stopPropagation()}>
+        <nav className="max-w-3xl pl-4 mt-12 md:mt-16 lg:mt-20" onClick={(e) => e.stopPropagation()}>
           <Link
             to="/"
             onClick={() => setMenuOpen(false)}
