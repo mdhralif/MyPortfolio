@@ -36,7 +36,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-8 left-6 z-50 transition-transform transition-opacity duration-300 ${
+      className={`fixed top-9 left-6 z-50 transition-transform transition-opacity duration-300 ${
         visible
           ? "opacity-100 translate-y-0 scale-100"
           : "opacity-0 -translate-y-2 scale-90 pointer-events-none"
