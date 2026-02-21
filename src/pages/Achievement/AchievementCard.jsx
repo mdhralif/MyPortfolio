@@ -18,8 +18,8 @@ export default function AchievementCard({ title, org, year, description, image, 
             transition={{ duration: 0.4 }}
           />
         ) : (
-          <div className="text-center p-8 flex flex-col-reverse md:flex-col items-center">
-            <div className="text-4xl md:text-6xl font-bold text-white mb-3">Champion</div>
+          <div className="text-center p-8 flex flex-col-reverse items-center">
+            <div className="text-4xl md:text-6xl font-bold text-white mt-3">Champion</div>
             <div className="mb-4 relative">
               <FaMedal className="text-9xl md:text-[10rem] mx-auto text-yellow-400" />
             </div>
