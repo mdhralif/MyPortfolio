@@ -5,9 +5,9 @@ import { FiLink } from "react-icons/fi";
 
 export default function AchievementCard({ title, org, year, description, image, color = "#2DD4BF", link, logo }) {
   return (
-    <div className="w-full flex flex-col md:flex-row bg-[#161825] rounded-none overflow-hidden shadow-xl">
+    <div className="w-full flex flex-col md:flex-row bg-[#1c1f2e] rounded-none overflow-hidden shadow-xl">
       {/* Image/Icon section - full width on mobile, 55% on desktop */}
-      <div className="w-full md:w-[55%] h-[180px] md:h-[320px] lg:h-[350px] relative overflow-hidden bg-gray flex items-center justify-center">
+      <div className="w-full md:w-[55%] h-[180px] md:h-[320px] lg:h-[350px] relative overflow-hidden bg-[#1c1f2e] flex items-center justify-center">
         {image ? (
           <motion.img
             src={image}
@@ -19,22 +19,18 @@ export default function AchievementCard({ title, org, year, description, image, 
           />
         ) : (
           <div className="text-center p-8">
-            <div className="text-4xl md:text-6xl font-bold text-white mb-3">Champion</div>
+             <div className="text-4xl md:text-6xl font-bold text-white mb-3">Champion</div>
             <div className="mb-4 relative">
-              <FaMedal className="text-6xl md:text-8xl mx-auto text-yellow-400" />
+              <FaMedal className="text-9xl md:text-[10rem] mx-auto text-yellow-400" />
             </div>
           </div>
         )}
         
-        {/* Colored overlay */}
-        <div
-          className="absolute inset-0"
-          style={{ backgroundColor: color, mixBlendMode: "overlay", opacity: 0.3 }}
-        />
+        {/* Colored overlay removed to avoid tinting the panel */}
       </div>
 
       {/* Content section - full width on mobile, 45% on desktop */}
-      <div className="w-full md:w-[45%] h-[250px] md:h-[320px] lg:h-[350px] p-6 pt-8 md:p-8 md:pt-10 lg:p-10 lg:pt-12 flex flex-col justify-start bg-[#1c1f2e] overflow-hidden">
+      <div className="w-full md:w-[45%] h-[250px] md:h-[320px] lg:h-[350px] p-6 pt-8 md:p-8 md:pt-10 lg:p-10 lg:pt-12 flex flex-col justify-start bg-[#1c1f2e]ray-400hi overflow-hidden">
         <div>
           <div className="flex items-center gap-3 mb-3 md:mb-4">
             <div

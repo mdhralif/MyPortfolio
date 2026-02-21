@@ -18,7 +18,7 @@ export default function Achievement() {
   return (
     <main className="bg-[#161825] text-white py-20 px-6 min-h-screen">
       <section className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-6xl font-black text-center mb-8">
+        <h2 className="text-5xl md:text-7xl font-black text-center mb-8">
           My <span style={{ color: "#2DD4BF" }}>Achievements</span>
         </h2>
 
