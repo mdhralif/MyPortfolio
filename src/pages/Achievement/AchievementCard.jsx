@@ -18,8 +18,8 @@ export default function AchievementCard({ title, org, year, description, image, 
             transition={{ duration: 0.4 }}
           />
         ) : (
-          <div className="text-center p-8">
-             <div className="text-4xl md:text-6xl font-bold text-white mb-3">Champion</div>
+          <div className="text-center p-8 flex flex-col-reverse md:flex-col items-center">
+            <div className="text-4xl md:text-6xl font-bold text-white mb-3">Champion</div>
             <div className="mb-4 relative">
               <FaMedal className="text-9xl md:text-[10rem] mx-auto text-yellow-400" />
             </div>
@@ -30,7 +30,7 @@ export default function AchievementCard({ title, org, year, description, image, 
       </div>
 
       {/* Content section - full width on mobile, 45% on desktop */}
-      <div className="w-full md:w-[45%] h-[250px] md:h-[320px] lg:h-[350px] p-6 pt-8 md:p-8 md:pt-10 lg:p-10 lg:pt-12 flex flex-col justify-start bg-[#1c1f2e]ray-400hi overflow-hidden">
+      <div className="w-full md:w-[45%] h-[250px] md:h-[320px] lg:h-[350px] p-6 pt-8 md:p-8 md:pt-10 lg:p-10 lg:pt-12 flex flex-col justify-start bg-[#1c1f2e] overflow-hidden">
         <div>
           <div className="flex items-center gap-3 mb-3 md:mb-4">
             <div
