@@ -288,7 +288,7 @@ const SkillsSection = () => {
       <section className="container mx-auto px-4 py-11 relative z-10">
         {/* Section Title */}
         <h2 className="text-5xl md:text-7xl font-black text-transparent bg-white bg-clip-text text-center mb-4 md:mb-10">
-              What I’m <span style={{ color: '#2DD4BF' }}>Good At</span>
+          <span style={{ color: '#2DD4BF' }}>Skills </span>I&apos;ve
         </h2>    
 
         <div className="flex justify-center items-center relative mb-8">
