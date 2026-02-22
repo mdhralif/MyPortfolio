@@ -16,13 +16,15 @@ export default function About() {
   const extraEducations = [
     {
       title: "H.S.C. in Science",
-      org: "Khunla Public College (KPC)",
+      org: "Khulna Public College (KPC)",
       gpa: "5.00",
       scholarship: true,
       from: "2019",
       to: "2021",
-      desc: "Completed Higher secondary education with strong performance in core science subjects.",
+      desc: "Completed higher secondary education with strong academic achievement with board scholarship.",
       logo: KPClogo,
+      certificate: "#",
+      transcript: "#",
     },
     {
       title: "S.S.C. in Science",
@@ -31,8 +33,10 @@ export default function About() {
       scholarship: true,
       from: "2016",
       to: "2019",
-      desc: "Completed secondary education with strong performance in core science subjects.",
+      desc: "Completed secondary education with strong academic achievement with board scholarship.",
       logo: KEUSlogo,
+      certificate: "#",
+      transcript: "#",
     },
     {
       title: "Class of 2015 [Grade - 6]",
@@ -121,78 +125,9 @@ export default function About() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="bg-[#1c1f2e] p-6 relative"
         >
-          {/* Icons in top-right corner (desktop only). Mobile duplicate placed inline below to avoid overlap */}
-          <div className="hidden md:flex absolute top-4 right-4 flex gap-2">
-            <motion.a
-              href="https://drive.google.com/file/d/1MBG4-G79_cXUBKiTSOmdJGPzV7AtYzWZ/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group p-2 rounded-lg hover:bg-white/10 transition-all duration-300 cursor-pointer"
-              whileHover={{
-                y: -3,
-                scale: 1.05,
-                transition: { type: "spring", stiffness: 400 },
-              }}
-              whileTap={{ scale: 0.95 }}
-              title="Report"
-            >
-              <motion.svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="22"
-                height="22"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke={iconColor}
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="group-hover:stroke-white transition-colors duration-300"
-                whileHover={{ rotate: 5 }}
-              >
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                <path d="M14 2v6h6"></path>
-              </motion.svg>
-            </motion.a>
-
-            <motion.a
-              href="https://drive.google.com/file/d/1DdeOV4q5CSZsYMinkoK4dUqjOGIP5eZw/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group p-2 rounded-lg hover:bg-white/10 transition-all duration-300 cursor-pointer"
-              whileHover={{
-                y: -3,
-                scale: 1.05,
-                transition: { type: "spring", stiffness: 400 },
-              }}
-              whileTap={{ scale: 0.95 }}
-              title="Certificate"
-            >
-              <motion.svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="22"
-                height="22"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke={iconColor}
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="group-hover:stroke-white transition-colors duration-300"
-                whileHover={{ rotate: 360 }}
-                transition={{ duration: 0.6 }}
-              >
-                <rect x="2" y="2" width="16" height="20" rx="2"></rect>
-                <line x1="6" y1="8" x2="12" y2="8"></line>
-                <line x1="6" y1="12" x2="12" y2="12"></line>
-                <circle cx="11" cy="18" r="2"></circle>
-                <path d="M9 20l-1 3"></path>
-                <path d="M13 20l1 3"></path>
-              </motion.svg>
-            </motion.a>
-          </div>
 
           <div className="flex items-start gap-4">
-            <div className="w-28 h-28 overflow-hidden bg-white flex items-center justify-center p-1">
+            <div className="w-16 h-16 sm:w-28 sm:h-28 flex-shrink-0 overflow-hidden bg-white flex items-center justify-center p-1">
               <img 
                 src={KAZlogo} 
                 alt="KAZ Software Logo"
@@ -200,39 +135,8 @@ export default function About() {
               />
             </div>
             
-            <div className="flex-1">
-              {/* Mobile icons inline to avoid overlapping the layout */}
-              <div className="flex md:hidden justify-end gap-2 mb-3">
-                <a
-                  href="https://drive.google.com/file/d/1MBG4-G79_cXUBKiTSOmdJGPzV7AtYzWZ/view?usp=sharing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group p-2 rounded-lg hover:bg-white/10 transition-all duration-300 cursor-pointer"
-                  title="Report"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={iconColor} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:stroke-white transition-colors duration-300">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                    <path d="M14 2v6h6"></path>
-                  </svg>
-                </a>
-
-                <a
-                  href="https://drive.google.com/file/d/1DdeOV4q5CSZsYMinkoK4dUqjOGIP5eZw/view?usp=sharing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group p-2 rounded-lg hover:bg-white/10 transition-all duration-300 cursor-pointer"
-                  title="Certificate"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={iconColor} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:stroke-white transition-colors duration-300">
-                    <rect x="2" y="2" width="16" height="20" rx="2"></rect>
-                    <line x1="6" y1="8" x2="12" y2="8"></line>
-                    <line x1="6" y1="12" x2="12" y2="12"></line>
-                    <circle cx="11" cy="18" r="2"></circle>
-                    <path d="M9 20l-1 3"></path>
-                    <path d="M13 20l1 3"></path>
-                  </svg>
-                </a>
-              </div>
+            <div className="flex-1 min-w-0">
+              {/* Mobile icons removed - now shown as buttons below */}
               <h4 className="text-xl font-bold text-white mb-2">Software Engineer Intern</h4>
               <p className="text-sm md:text-base text-gray-400 font-medium mb-2">KAZ Software Ltd.</p>
               
@@ -244,7 +148,7 @@ export default function About() {
               </div>
               
               {/* Desktop: full text */}
-              <p className="hidden md:block text-gray-300 mb-4">Designed and developed scalable web applications, implemented responsive user interfaces, integrated RESTful APIs, and resolved frontend and backend issues.</p>
+              <p className="hidden md:block text-gray-300 mb-4">Completed a four-month internship at KAZ Software, where I contributed to the design and development of scalable web applications, implemented responsive UI, integrated APIs, and assisted in resolving both frontend & backend issues.</p>
 
               {/* Mobile: truncated with toggle */}
               <div className="md:hidden mb-4">
@@ -256,8 +160,7 @@ export default function About() {
                       : {}
                   }
                 >
-                 Designed and developed scalable web applications, implemented responsive user interfaces, integrated RESTful APIs, and resolved frontend and backend issues.
-                </p>
+                 Completed a four-month internship at KAZ Software, where I contributed to the design and development of scalable web applications, implemented responsive UI, integrated APIs, and assisted in resolving both frontend & backend issues.</p>
 
                 <button
                   onClick={() => setShowFullExp((s) => !s)}
@@ -266,6 +169,30 @@ export default function About() {
                   {showFullExp ? <FaChevronUp /> : <FaChevronDown />}
                   <span>{showFullExp ? 'Show less' : 'Show more'}</span>
                 </button>
+              </div>
+
+              {/* Report & Certificate buttons - same style as education cards */}
+              <div className="flex flex-wrap gap-3 mt-2">
+                <a
+                  href="https://drive.google.com/file/d/1DdeOV4q5CSZsYMinkoK4dUqjOGIP5eZw/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-[#0f1223] text-white text-sm font-semibold hover:bg-[#2DD4BF] hover:text-[#0f1223] transition-colors duration-200"
+                  title="View Certificate"
+                >
+                  <FaCertificate className="w-4 h-4" />
+                  <span>Certificate</span>
+                </a>
+                <a
+                  href="https://drive.google.com/file/d/1MBG4-G79_cXUBKiTSOmdJGPzV7AtYzWZ/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-[#0f1223] text-white text-sm font-semibold hover:bg-[#2DD4BF] hover:text-[#0f1223] transition-colors duration-200"
+                  title="View Report"
+                >
+                  <FaFileDownload className="w-4 h-4" />
+                  <span>Report</span>
+                </a>
               </div>
             </div>
           </div>
@@ -291,7 +218,7 @@ export default function About() {
           </div>
 
           <div className="flex items-start gap-4">
-            <div className="w-28 h-28 overflow-hidden bg-white flex items-center justify-center p-1">
+            <div className="w-16 h-16 sm:w-28 sm:h-28 flex-shrink-0 overflow-hidden bg-white flex items-center justify-center p-1">
               <img 
                 src={iutLogo} 
                 alt="IUT Logo"
@@ -404,7 +331,7 @@ export default function About() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-28 h-28 overflow-hidden bg-white flex items-center justify-center p-1">
+                <div className="w-16 h-16 sm:w-28 sm:h-28 flex-shrink-0 overflow-hidden bg-white flex items-center justify-center p-1">
                   <img
                     src={edu.logo}
                     alt={`${edu.org} Logo`}
@@ -412,7 +339,7 @@ export default function About() {
                   />
                 </div>
 
-                <div className="flex-1">
+                <div className="flex-1 min-w-0">
                   <h4 className="text-xl font-bold text-white mb-2">{edu.title}</h4>
                   <p className="text-sm md:text-base text-gray-400 font-medium mb-2">{edu.org}</p>
 
@@ -438,6 +365,36 @@ export default function About() {
                   </div>
 
                   <p className="hidden md:block text-gray-300 mb-4">{edu.desc}</p>
+
+                  {/* Certificate & Transcript buttons */}
+                  {(edu.certificate || edu.transcript) && (
+                    <div className="flex flex-wrap gap-3 mt-2">
+                      {edu.certificate && (
+                        <a
+                          href={edu.certificate}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 px-4 py-2 bg-[#0f1223] text-white text-sm font-semibold hover:bg-[#2DD4BF] hover:text-[#0f1223] transition-colors duration-200"
+                          title="View Certificate"
+                        >
+                          <FaCertificate className="w-4 h-4" />
+                          <span>Certificate</span>
+                        </a>
+                      )}
+                      {edu.transcript && (
+                        <a
+                          href={edu.transcript}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 px-4 py-2 bg-[#0f1223] text-white text-sm font-semibold hover:bg-[#2DD4BF] hover:text-[#0f1223] transition-colors duration-200"
+                          title="View Transcript"
+                        >
+                          <FaFileDownload className="w-4 h-4" />
+                          <span>Transcript</span>
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </div>
               </div>
             </motion.div>
