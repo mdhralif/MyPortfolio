@@ -1,7 +1,7 @@
 import ProfileImage from "@/assets/images/Alif_.png";
 import iutLogo from "@/assets/images/iutlogo.jpg";
 import KAZlogo from "@/assets/images/KAZLOGO.png";
-import { FaFacebook, FaLinkedin, FaGithub, FaFileDownload, FaCalendarAlt, FaAward, FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { FaFacebook, FaLinkedin, FaGithub, FaFileDownload, FaCalendarAlt, FaGraduationCap, FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -251,7 +251,7 @@ export default function About() {
         >
           {/* CGPA - desktop absolute, mobile inline to avoid overlap */}
           <div className="hidden md:flex absolute top-4 right-4 flex items-center gap-2 bg-transparent px-4 py-2 rounded-full border border-none">
-            <FaAward className="w-4 h-4 text-yellow-400" />
+            <FaGraduationCap className="w-6 h-6 text-white" />
             <span className="text-white font-semibold">CGPA: 3.87</span>
           </div>
 
@@ -270,7 +270,7 @@ export default function About() {
               
               {/* Mobile CGPA inline to prevent absolute overlap */}
               <div className="flex md:hidden items-center gap-2 mt-2 mb-2">
-                <FaAward className="w-4 h-4 text-yellow-400" />
+                <FaGraduationCap className="w-4 h-4 text-yellow-400" />
                 <span className="text-white font-semibold">CGPA: 3.87</span>
               </div>
 
