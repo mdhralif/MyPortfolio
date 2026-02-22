@@ -100,7 +100,7 @@ export default function GlobalHamburger({ onContactClick = () => {} }) {
 
           <motion.div variants={{ hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.2,0.8,0.2,1] } } }}>
             <Link
-              to="/about"
+              to="/Me"
               onClick={() => setMenuOpen(false)}
               className="block font-bold text-5xl md:text-7xl lg:text-8xl text-white leading-tight mb-6 hover:text-[#2DD4BF] transition-colors"
             >

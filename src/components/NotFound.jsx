@@ -16,7 +16,7 @@ const NotFound = () => {
               <span className="text-gray-600">•</span>
               <Link to="/skills" className="text-gray-400 hover:text-white transition-colors">Skills</Link>
               <span className="text-gray-600">•</span>
-              <Link to="/about" className="text-gray-400 hover:text-white transition-colors">About Me</Link>
+              <Link to="/Me" className="text-gray-400 hover:text-white transition-colors">About Me</Link>
               <span className="text-gray-600">•</span>
               <Link to="/projects" className="text-gray-400 hover:text-white transition-colors">Projects</Link>
               <span className="text-gray-600">•</span>
