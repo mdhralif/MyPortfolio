@@ -219,7 +219,7 @@ const SkillsSection = () => {
     },
     {
       icon: Paintbrush,
-      title: "Databases & SaaS",
+      title: "Databases & BaaS",
       color: "text-cyan-400",
       skills: [
         {
