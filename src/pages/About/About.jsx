@@ -435,7 +435,13 @@ export default function About() {
             {/* Image */}
             <div className="p-6">
               {selectedCert.image ? (
-                <div className="overflow-hidden">
+                <div className="relative overflow-hidden">
+                  {/* Icon overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
+                    {selectedCert.icon === "transcript"
+                      ? <FaScroll className="w-40 h-40 text-white opacity-40" />
+                      : <FaCertificate className="w-40 h-40 text-white opacity-40" />}
+                  </div>
                   <img
                     src={selectedCert.image}
                     alt={selectedCert.title}
