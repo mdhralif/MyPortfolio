@@ -10,7 +10,8 @@ import HSCTranscript from "@/assets/images/HSC_T.png";
 import SSCTranscript from "@/assets/images/SSC_T.png";
 import GPSCertificate from "@/assets/images/GPS_C.png";
 import KAZCertificate from "@/assets/images/KAZ_C.png";
-import { FaFacebook, FaLinkedin, FaGithub, FaFileDownload, FaCalendarAlt, FaGraduationCap, FaChevronDown, FaChevronUp, FaCertificate, FaStar, FaTimes, FaScroll, FaFilePdf } from "react-icons/fa";
+import ClassPhoto from "@/assets/images/ClassPhoto.png";
+import { FaFacebook, FaLinkedin, FaGithub, FaFileDownload, FaCalendarAlt, FaGraduationCap, FaChevronDown, FaChevronUp, FaCertificate, FaStar, FaTimes, FaScroll, FaFilePdf, FaUsers } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
@@ -58,7 +59,7 @@ export default function About() {
       transcript: SSCTranscript,
     },
     {
-      title: "Class of 2015 [Grade - 6]",
+      title: "Class of 2014 [Grade - 6]",
       shortTitle: "Class of 2015",
       org: "Glenferrie Primary School, Melbourne, Australia",
       Grade: "5.00",
@@ -67,6 +68,7 @@ export default function About() {
       desc: "Completed primary-level education under the Australian curriculum as an international student.",
       logo: GPSlogo,
       certificate: GPSCertificate,
+      classPhoto: ClassPhoto
     },
   ];
 
@@ -389,7 +391,7 @@ export default function About() {
               </div>
 
               {/* Certificate & Transcript buttons - moved below logo row for mobile */}
-              {(edu.certificate || edu.transcript) && (
+              {(edu.certificate || edu.transcript || 'classPhoto' in edu) && (
                 <div className="flex gap-2 mt-3 md:ml-32">
                   {edu.certificate && (
                     <button
@@ -409,6 +411,16 @@ export default function About() {
                     >
                       <FaScroll className="w-4 h-4" />
                       <span>Transcript</span>
+                    </button>
+                  )}
+                  {'classPhoto' in edu && (
+                    <button
+                      onClick={() => setSelectedCert({ title: `${edu.shortTitle || edu.title} | Class Photo`, image: edu.classPhoto, icon: "classPhoto" })}
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-[#0f1223] text-white text-sm font-semibold hover:bg-[#2DD4BF] hover:text-white transition-colors duration-200"
+                      title="View Class Photo"
+                    >
+                      <FaUsers className="w-4 h-4" />
+                      <span>Our Class</span>
                     </button>
                   )}
                 </div>
@@ -432,6 +444,8 @@ export default function About() {
               <div className="flex items-center gap-2">
                 {selectedCert.icon === "transcript"
                   ? <FaScroll className="text-[#2DD4BF] w-5 h-5" />
+                  : selectedCert.icon === "classPhoto"
+                  ? <FaUsers className="text-[#2DD4BF] w-5 h-5" />
                   : <FaCertificate className="text-[#2DD4BF] w-5 h-5" />}
                 <span className="text-white font-semibold">{selectedCert.title}</span>
               </div>
