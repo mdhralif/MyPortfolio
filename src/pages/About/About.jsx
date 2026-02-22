@@ -1,6 +1,9 @@
 import ProfileImage from "@/assets/images/Alif_.png";
 import iutLogo from "@/assets/images/iutlogo.jpg";
 import KAZlogo from "@/assets/images/KAZLOGO.png";
+import KPClogo from "@/assets/images/KPC.jpg";
+import KEUSlogo from "@/assets/images/KEUS.jpg";
+import GPSlogo from "@/assets/images/GFC.png";
 import { FaFacebook, FaLinkedin, FaGithub, FaFileDownload, FaCalendarAlt, FaGraduationCap, FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -9,6 +12,36 @@ export default function About() {
   const iconColor = "#ffffff";
   const [showFullExp, setShowFullExp] = useState(false);
   const [showAllCourses, setShowAllCourses] = useState(false);
+  const [showMoreEdu, setShowMoreEdu] = useState(false);
+  const extraEducations = [
+    {
+      title: "H.S.C. in Science",
+      org: "Khunla Public College (KPC)",
+      gpa: "5.00",
+      from: "2018",
+      to: "2020",
+      desc: "Completed Higher secondary education with strong performance in core science subjects.",
+      logo: KPClogo,
+    },
+    {
+      title: "S.S.C. in Science",
+      org: "Khunla Engineering Univerity School (KEUS)",
+      gpa: "5.00",
+      from: "2016",
+      to: "2018",
+      desc: "Completed secondary education with strong performance in core science subjects.",
+      logo: KEUSlogo,
+    },
+    {
+      title: "Class of 2015",
+      org: "Glenferrie Primary School, Melbourne, Australia",
+      Grade: "5.00",
+      from: "2014",
+      to: "2015",
+      desc: "Completed primary-level education under the Australian curriculum as an international student.",
+      logo: GPSlogo,
+    },
+  ];
 
   return (
     <main className="bg-[#161825] text-white min-h-screen">
@@ -330,6 +363,58 @@ export default function About() {
             </div>
           </div>
         </motion.div>
+
+        <div className="mt-4 flex items-center gap-2">
+          <button
+            onClick={() => setShowMoreEdu((s) => !s)}
+            aria-expanded={showMoreEdu}
+            aria-label={showMoreEdu ? "View less" : "Academic Journey"}
+            className="inline-flex items-center gap-3 bg-white text-[#161825] px-4 py-2 rounded-none font-semibold shadow-md hover:shadow-lg transition-shadow"
+          >
+            {showMoreEdu ? <FaChevronUp className="text-sm" /> : <FaChevronDown className="text-sm" />}
+            <span>{showMoreEdu ? "View less" : "Academic Journey"}</span>
+          </button>
+        </div>
+
+        {showMoreEdu &&
+          extraEducations.map((edu, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: idx * 0.05 }}
+              className="bg-[#1c1f2e] p-6 relative mt-6"
+            >
+              <div className="flex items-start gap-4">
+                <div className="w-28 h-28 overflow-hidden bg-white flex items-center justify-center p-1">
+                  <img
+                    src={edu.logo}
+                    alt={`${edu.org} Logo`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                <div className="flex-1">
+                  <h4 className="text-xl font-bold text-white mb-2">{edu.title}</h4>
+                  <p className="text-sm md:text-base text-gray-400 font-medium mb-2">{edu.org}</p>
+
+                  <div className="flex items-center gap-2 mt-2 mb-2">
+                    <FaGraduationCap className="w-4 h-4 text-yellow-400" />
+                    <span className="text-white font-semibold">GPA: {edu.gpa}</span>
+                  </div>
+
+                  <div className="flex items-center gap-4 text-gray-400 text-xs md:text-sm mb-3">
+                    <div className="flex items-center gap-1">
+                      <FaCalendarAlt className="w-4 h-4" />
+                      <span>{edu.from} - {edu.to}</span>
+                    </div>
+                  </div>
+
+                  <p className="hidden md:block text-gray-300 mb-4">{edu.desc}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
       </section>
     </main>
   );
