@@ -252,7 +252,7 @@ export default function About() {
               
               {/* Mobile CGPA inline to prevent absolute overlap */}
               <div className="flex md:hidden items-center gap-2 mt-2 mb-2">
-                <FaGraduationCap className="w-4 h-4 text-yellow-400" />
+                <FaGraduationCap className="w-4 h-4 text-white" />
                 <span className="text-white font-semibold">CGPA: 3.87</span>
               </div>
 
@@ -366,7 +366,7 @@ export default function About() {
                   {/* Mobile GPA + Scholarship inline */}
                   {edu.gpa && (
                     <div className="flex md:hidden items-center gap-2 mt-2 mb-1">
-                      <FaGraduationCap className="w-4 h-4 text-yellow-400" />
+                      <FaGraduationCap className="w-4 h-4 text-white" />
                       <span className="text-white font-semibold">GPA: {edu.gpa}</span>
                     </div>
                   )}
