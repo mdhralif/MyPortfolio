@@ -46,6 +46,7 @@ export default function About() {
       to: "2015",
       desc: "Completed primary-level education under the Australian curriculum as an international student.",
       logo: GPSlogo,
+      certificate: "#",
     },
   ];
 
@@ -177,7 +178,7 @@ export default function About() {
                   href="https://drive.google.com/file/d/1DdeOV4q5CSZsYMinkoK4dUqjOGIP5eZw/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-[#0f1223] text-white text-sm font-semibold hover:bg-[#2DD4BF] hover:text-[#0f1223] transition-colors duration-200"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-[#0f1223] text-white text-sm font-semibold hover:bg-[#2DD4BF] hover:text-white transition-colors duration-200"
                   title="View Certificate"
                 >
                   <FaCertificate className="w-4 h-4" />
@@ -187,7 +188,7 @@ export default function About() {
                   href="https://drive.google.com/file/d/1MBG4-G79_cXUBKiTSOmdJGPzV7AtYzWZ/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-[#0f1223] text-white text-sm font-semibold hover:bg-[#2DD4BF] hover:text-[#0f1223] transition-colors duration-200"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-[#0f1223] text-white text-sm font-semibold hover:bg-[#2DD4BF] hover:text-white transition-colors duration-200"
                   title="View Report"
                 >
                   <FaFileDownload className="w-4 h-4" />
@@ -274,7 +275,7 @@ export default function About() {
   "Design Patterns"
 ]
 .map((skill, index) => (
-                  <div key={index} className="min-w-[72px] h-10 flex items-center justify-center bg-[#0f1223]  text-white rounded-none text-sm font-medium px-2">
+                  <div key={index} className="min-w-[72px] h-10 flex items-center justify-center bg-[#252840]  text-gray-300 rounded-none text-sm font-medium px-2">
                     {skill}
                   </div>
                 ))}
@@ -297,11 +298,11 @@ export default function About() {
           <button
             onClick={() => setShowMoreEdu((s) => !s)}
             aria-expanded={showMoreEdu}
-            aria-label={showMoreEdu ? "View Less" : "Explore My Academic Journey"}
+            aria-label={showMoreEdu ? "Minimize" : "Explore My Academic Journey"}
             className="w-full md:w-auto inline-flex items-center justify-center gap-3 bg-white text-[#161825] px-4 py-2 rounded-none font-semibold shadow-md hover:shadow-lg transition-shadow"
           >
             {showMoreEdu ? <FaChevronUp className="text-sm" /> : <FaChevronDown className="text-sm" />}
-            <span>{showMoreEdu ? "View Less" : "Explore My Academic Journey"}</span>
+            <span>{showMoreEdu ? "Minimize" : "Explore My Academic Journey"}</span>
           </button>
         </div>
 
@@ -374,7 +375,7 @@ export default function About() {
                           href={edu.certificate}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 px-4 py-2 bg-[#0f1223] text-white text-sm font-semibold hover:bg-[#2DD4BF] hover:text-[#0f1223] transition-colors duration-200"
+                          className="inline-flex items-center gap-2 px-4 py-2 bg-[#0f1223] text-white text-sm font-semibold hover:bg-[#2DD4BF] hover:text-white transition-colors duration-200"
                           title="View Certificate"
                         >
                           <FaCertificate className="w-4 h-4" />
@@ -386,7 +387,7 @@ export default function About() {
                           href={edu.transcript}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 px-4 py-2 bg-[#0f1223] text-white text-sm font-semibold hover:bg-[#2DD4BF] hover:text-[#0f1223] transition-colors duration-200"
+                          className="inline-flex items-center gap-2 px-4 py-2 bg-[#0f1223] text-white text-sm font-semibold hover:bg-[#2DD4BF] hover:text-white transition-colors duration-200"
                           title="View Transcript"
                         >
                           <FaFileDownload className="w-4 h-4" />
