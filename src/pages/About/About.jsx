@@ -364,15 +364,15 @@ export default function About() {
           </div>
         </motion.div>
 
-        <div className="mt-4 flex items-center gap-2">
+        <div className="mt-4 flex items-center justify-center gap-2">
           <button
             onClick={() => setShowMoreEdu((s) => !s)}
             aria-expanded={showMoreEdu}
-            aria-label={showMoreEdu ? "View less" : "Academic Journey"}
+            aria-label={showMoreEdu ? "View Less" : "Academic Journey"}
             className="inline-flex items-center gap-3 bg-white text-[#161825] px-4 py-2 rounded-none font-semibold shadow-md hover:shadow-lg transition-shadow"
           >
             {showMoreEdu ? <FaChevronUp className="text-sm" /> : <FaChevronDown className="text-sm" />}
-            <span>{showMoreEdu ? "View less" : "Academic Journey"}</span>
+            <span>{showMoreEdu ? "View Less" : "Academic Journey"}</span>
           </button>
         </div>
 
@@ -385,6 +385,14 @@ export default function About() {
               transition={{ duration: 0.3, delay: idx * 0.05 }}
               className="bg-[#1c1f2e] p-6 relative mt-6"
             >
+              {/* GPA - top right like CGPA (only when gpa exists) */}
+              {edu.gpa && (
+                <div className="hidden md:flex absolute top-4 right-4 flex items-center gap-2 bg-transparent px-4 py-2 rounded-full border border-none">
+                  <FaGraduationCap className="w-6 h-6 text-white" />
+                  <span className="text-white font-semibold">GPA: {edu.gpa}</span>
+                </div>
+              )}
+
               <div className="flex items-start gap-4">
                 <div className="w-28 h-28 overflow-hidden bg-white flex items-center justify-center p-1">
                   <img
@@ -397,11 +405,6 @@ export default function About() {
                 <div className="flex-1">
                   <h4 className="text-xl font-bold text-white mb-2">{edu.title}</h4>
                   <p className="text-sm md:text-base text-gray-400 font-medium mb-2">{edu.org}</p>
-
-                  <div className="flex items-center gap-2 mt-2 mb-2">
-                    <FaGraduationCap className="w-4 h-4 text-yellow-400" />
-                    <span className="text-white font-semibold">GPA: {edu.gpa}</span>
-                  </div>
 
                   <div className="flex items-center gap-4 text-gray-400 text-xs md:text-sm mb-3">
                     <div className="flex items-center gap-1">
