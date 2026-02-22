@@ -435,11 +435,13 @@ export default function About() {
             {/* Image */}
             <div className="p-6">
               {selectedCert.image ? (
-                <img
-                  src={selectedCert.image}
-                  alt={selectedCert.title}
-                  className="w-full h-auto object-contain"
-                />
+                <div className="overflow-hidden">
+                  <img
+                    src={selectedCert.image}
+                    alt={selectedCert.title}
+                    className="w-full h-auto object-contain block scale-[1.03]"
+                  />
+                </div>
               ) : (
                 <div className="flex flex-col items-center justify-center py-16 text-gray-400 gap-3">
                   <FaCertificate className="w-16 h-16 opacity-20" />
