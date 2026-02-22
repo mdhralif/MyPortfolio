@@ -344,8 +344,7 @@ export default function About() {
                 )}
                 {edu.scholarship && (
                   <div className="flex items-center gap-2">
-                    <FaStar className="w-5 h-5 text-white" />
-                    <span className="text-white font-semibold text-sm">Board Scholarship</span>
+                    <span className="text-white font-semibold text-xs">Board Scholarship</span>
                   </div>
                 )}
               </div>
