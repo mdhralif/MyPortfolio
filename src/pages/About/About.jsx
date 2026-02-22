@@ -60,7 +60,7 @@ export default function About() {
     },
     {
       title: "Class of 2014 [Grade - 6]",
-      shortTitle: "Class of 2015",
+      shortTitle: "Class of 2014",
       org: "Glenferrie Primary School, Melbourne, Australia",
       Grade: "5.00",
       from: "2014",
