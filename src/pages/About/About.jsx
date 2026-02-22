@@ -192,28 +192,29 @@ export default function About() {
                 </button>
               </div>
 
-              {/* Report & Certificate buttons - same style as education cards */}
-              <div className="flex flex-wrap gap-3 mt-2">
-                <button
-                  onClick={() => setSelectedCert({ title: "KAZ Software | Certificate", image: KAZCertificate, icon: "certificate" })}
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-[#0f1223] text-white text-sm font-semibold hover:bg-[#2DD4BF] hover:text-white transition-colors duration-200"
-                  title="View Certificate"
-                >
-                  <FaCertificate className="w-4 h-4" />
-                  <span>Certificate</span>
-                </button>
-                <a
-                  href="https://drive.google.com/file/d/1MBG4-G79_cXUBKiTSOmdJGPzV7AtYzWZ/view?usp=sharing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-[#0f1223] text-white text-sm font-semibold hover:bg-[#2DD4BF] hover:text-white transition-colors duration-200"
-                  title="View Report"
-                >
-                  <FaFilePdf className="w-4 h-4" />
-                  <span>Report</span>
-                </a>
-              </div>
             </div>
+          </div>
+
+          {/* Report & Certificate buttons - moved below logo row for mobile */}
+          <div className="flex gap-2 mt-3 md:ml-32">
+            <button
+              onClick={() => setSelectedCert({ title: "KAZ Software | Certificate", image: KAZCertificate, icon: "certificate" })}
+              className="inline-flex items-center gap-2 px-4 py-2 bg-[#0f1223] text-white text-sm font-semibold hover:bg-[#2DD4BF] hover:text-white transition-colors duration-200"
+              title="View Certificate"
+            >
+              <FaCertificate className="w-4 h-4" />
+              <span>Certificate</span>
+            </button>
+            <a
+              href="https://drive.google.com/file/d/1MBG4-G79_cXUBKiTSOmdJGPzV7AtYzWZ/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-[#0f1223] text-white text-sm font-semibold hover:bg-[#2DD4BF] hover:text-white transition-colors duration-200"
+              title="View Report"
+            >
+              <FaFilePdf className="w-4 h-4" />
+              <span>Report</span>
+            </a>
           </div>
         </motion.div>
       </section>
@@ -385,33 +386,34 @@ export default function About() {
 
                   <p className="hidden md:block text-gray-300 mb-4">{edu.desc}</p>
 
-                  {/* Certificate & Transcript buttons */}
-                  {(edu.certificate || edu.transcript) && (
-                    <div className="flex flex-wrap gap-3 mt-2">
-                      {edu.certificate && (
-                        <button
-                          onClick={() => setSelectedCert({ title: `${edu.shortTitle || edu.title} | Certificate`, image: edu.certificate, icon: "certificate" })}
-                          className="inline-flex items-center gap-2 px-4 py-2 bg-[#0f1223] text-white text-sm font-semibold hover:bg-[#2DD4BF] hover:text-white transition-colors duration-200"
-                          title="View Certificate"
-                        >
-                          <FaCertificate className="w-4 h-4" />
-                          <span>Certificate</span>
-                        </button>
-                      )}
-                      {edu.transcript && (
-                        <button
-                          onClick={() => setSelectedCert({ title: `${edu.shortTitle || edu.title} | Transcript`, image: edu.transcript, icon: "transcript" })}
-                          className="inline-flex items-center gap-2 px-4 py-2 bg-[#0f1223] text-white text-sm font-semibold hover:bg-[#2DD4BF] hover:text-white transition-colors duration-200"
-                          title="View Transcript"
-                        >
-                          <FaScroll className="w-4 h-4" />
-                          <span>Transcript</span>
-                        </button>
-                      )}
-                    </div>
-                  )}
                 </div>
               </div>
+
+              {/* Certificate & Transcript buttons - moved below logo row for mobile */}
+              {(edu.certificate || edu.transcript) && (
+                <div className="flex gap-2 mt-3 md:ml-32">
+                  {edu.certificate && (
+                    <button
+                      onClick={() => setSelectedCert({ title: `${edu.shortTitle || edu.title} | Certificate`, image: edu.certificate, icon: "certificate" })}
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-[#0f1223] text-white text-sm font-semibold hover:bg-[#2DD4BF] hover:text-white transition-colors duration-200"
+                      title="View Certificate"
+                    >
+                      <FaCertificate className="w-4 h-4" />
+                      <span>Certificate</span>
+                    </button>
+                  )}
+                  {edu.transcript && (
+                    <button
+                      onClick={() => setSelectedCert({ title: `${edu.shortTitle || edu.title} | Transcript`, image: edu.transcript, icon: "transcript" })}
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-[#0f1223] text-white text-sm font-semibold hover:bg-[#2DD4BF] hover:text-white transition-colors duration-200"
+                      title="View Transcript"
+                    >
+                      <FaScroll className="w-4 h-4" />
+                      <span>Transcript</span>
+                    </button>
+                  )}
+                </div>
+              )}
             </motion.div>
           ))}
       </section>
