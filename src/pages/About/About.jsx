@@ -4,6 +4,12 @@ import KAZlogo from "@/assets/images/KAZLOGO.png";
 import KPClogo from "@/assets/images/KPC.jpg";
 import KEUSlogo from "@/assets/images/KEUS.jpg";
 import GPSlogo from "@/assets/images/GFC.png";
+import HSCCertificate from "@/assets/images/HSC_C.png";
+import SSCCertificate from "@/assets/images/SSC_C.png";
+import HSCTranscript from "@/assets/images/HSC_T.png";
+import SSCTranscript from "@/assets/images/SSC_T.png";
+import GPSCertificate from "@/assets/images/GPS_C.png";
+import KAZCertificate from "@/assets/images/KAZ_C.png";
 import { FaFacebook, FaLinkedin, FaGithub, FaFileDownload, FaCalendarAlt, FaGraduationCap, FaChevronDown, FaChevronUp, FaCertificate, FaStar, FaTimes, FaScroll, FaFilePdf } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -25,10 +31,8 @@ export default function About() {
       to: "2021",
       desc: "Completed higher secondary education with strong academic achievement with board scholarship.",
       logo: KPClogo,
-      certificate: "#",
-      certificateImage: null,
-      transcript: "#",
-      transcriptImage: null,
+      certificate: HSCCertificate,
+      transcript: HSCTranscript,
     },
     {
       title: "S.S.C. in Science",
@@ -40,10 +44,8 @@ export default function About() {
       to: "2019",
       desc: "Completed secondary education with strong academic achievement with board scholarship.",
       logo: KEUSlogo,
-      certificate: "#",
-      certificateImage: null,
-      transcript: "#",
-      transcriptImage: null,
+      certificate: SSCCertificate,
+      transcript: SSCTranscript,
     },
     {
       title: "Class of 2015 [Grade - 6]",
@@ -54,8 +56,7 @@ export default function About() {
       to: "2015",
       desc: "Completed primary-level education under the Australian curriculum as an international student.",
       logo: GPSlogo,
-      certificate: "#",
-      certificateImage: null,
+      certificate: GPSCertificate,
     },
   ];
 
@@ -184,7 +185,7 @@ export default function About() {
               {/* Report & Certificate buttons - same style as education cards */}
               <div className="flex flex-wrap gap-3 mt-2">
                 <button
-                  onClick={() => setSelectedCert({ title: "KAZ Software | Certificate", image: null, icon: "certificate" })}
+                  onClick={() => setSelectedCert({ title: "KAZ Software | Certificate", image: KAZCertificate, icon: "certificate" })}
                   className="inline-flex items-center gap-2 px-4 py-2 bg-[#0f1223] text-white text-sm font-semibold hover:bg-[#2DD4BF] hover:text-white transition-colors duration-200"
                   title="View Certificate"
                 >
@@ -379,7 +380,7 @@ export default function About() {
                     <div className="flex flex-wrap gap-3 mt-2">
                       {edu.certificate && (
                         <button
-                          onClick={() => setSelectedCert({ title: `${edu.shortTitle || edu.title} | Certificate`, image: edu.certificateImage, icon: "certificate" })}
+                          onClick={() => setSelectedCert({ title: `${edu.shortTitle || edu.title} | Certificate`, image: edu.certificate, icon: "certificate" })}
                           className="inline-flex items-center gap-2 px-4 py-2 bg-[#0f1223] text-white text-sm font-semibold hover:bg-[#2DD4BF] hover:text-white transition-colors duration-200"
                           title="View Certificate"
                         >
@@ -389,7 +390,7 @@ export default function About() {
                       )}
                       {edu.transcript && (
                         <button
-                          onClick={() => setSelectedCert({ title: `${edu.shortTitle || edu.title} | Transcript`, image: edu.transcriptImage, icon: "transcript" })}
+                          onClick={() => setSelectedCert({ title: `${edu.shortTitle || edu.title} | Transcript`, image: edu.transcript, icon: "transcript" })}
                           className="inline-flex items-center gap-2 px-4 py-2 bg-[#0f1223] text-white text-sm font-semibold hover:bg-[#2DD4BF] hover:text-white transition-colors duration-200"
                           title="View Transcript"
                         >
