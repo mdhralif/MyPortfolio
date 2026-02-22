@@ -33,10 +33,14 @@ import {
   SiHuggingface,
   SiJupyter,
   SiJavascript,
-  SiC, 
+  SiC,
+  SiExpress,
+  SiDotnet,
+  SiPrimeng,
+  SiBootstrap, 
 } from "react-icons/si";
 import { TbBrandVscode } from "react-icons/tb";
-import { BsFileEarmarkCode, BsGrid1X2 } from "react-icons/bs";
+import { BsGrid1X2 } from "react-icons/bs";
 
 
 const SkillCard = ({ title, skills }) => (
@@ -130,13 +134,17 @@ const SkillsSection = () => {
           icon: <FaAngular className="w-4 h-4 text-[#DD0031]" />,
         },
         {
+          name: "PrimeNg",
+          icon: <SiPrimeng className="w-4 h-4 text-[#DD0031]" />,
+        },
+        {
           name: "CSS 3",
           icon: <SiCss3 className="w-4 h-4 text-[#1572B6]" />,
         },
         { name: "React", icon: <FaReact className="w-4 h-4 text-[#61DAFB]" /> },
         {
-          name: "React Native",
-          icon: <FaReact className="w-4 h-4 text-[#61DAFB]" />,
+          name: "Bootstrap",
+          icon: <SiBootstrap className="w-4 h-4 text-[#563D7C]" />,
         },
         {
           name: "Tailwind CSS",
@@ -154,11 +162,12 @@ const SkillsSection = () => {
           icon: <FaNodeJs className="w-4 h-4 text-[#339933]" />,
         },
         {
-          name: "C# .NET",
+          name: "",
+          icon: <SiDotnet className="w-4 h-4 text-[#339933]" />,
         },
         {
           name: "Express.js",
-          icon: <BsFileEarmarkCode className="w-4 h-4 text-[#000000]" />,
+          icon: <SiExpress className="w-4 h-4 text-[#000000]" />,
         },
         {
           name: "REST APIs",
