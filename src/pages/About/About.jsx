@@ -12,7 +12,7 @@ import GPSCertificate from "@/assets/images/GPS_C.png";
 import KAZCertificate from "@/assets/images/KAZ_C.png";
 import { FaFacebook, FaLinkedin, FaGithub, FaFileDownload, FaCalendarAlt, FaGraduationCap, FaChevronDown, FaChevronUp, FaCertificate, FaStar, FaTimes, FaScroll, FaFilePdf } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function About() {
   const iconColor = "#ffffff";
@@ -20,6 +20,16 @@ export default function About() {
   const [showAllCourses, setShowAllCourses] = useState(false);
   const [showMoreEdu, setShowMoreEdu] = useState(false);
   const [selectedCert, setSelectedCert] = useState(null); // { title, image }
+
+  // Lock background scroll when modal is open
+  useEffect(() => {
+    if (selectedCert) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [selectedCert]);
   const extraEducations = [
     {
       title: "H.S.C. in Science",
@@ -413,7 +423,7 @@ export default function About() {
           onClick={() => setSelectedCert(null)}
         >
           <div
-            className="relative bg-[#1c1f2e] rounded-none shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-auto"
+            className="no-scrollbar relative bg-[#1c1f2e] rounded-none shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-auto"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
