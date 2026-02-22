@@ -344,7 +344,7 @@ export default function About() {
                 )}
                 {edu.scholarship && (
                   <div className="flex items-center gap-2">
-                    <FaStar className="w-5 h-5 text-yellow-100" />
+                    <FaStar className="w-5 h-5 text-white" />
                     <span className="text-white font-semibold text-sm">Board Scholarship</span>
                   </div>
                 )}
@@ -372,7 +372,7 @@ export default function About() {
                   )}
                   {edu.scholarship && (
                     <div className="flex md:hidden items-center gap-2 mb-2">
-                      <FaStar className="w-4 h-4 text-yellow-100" />
+                      <FaStar className="w-4 h-4 text-white" />
                       <span className="text-white font-semibold text-sm">Board Scholarship</span>
                     </div>
                   )}
