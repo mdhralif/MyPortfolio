@@ -4,7 +4,7 @@ import KAZlogo from "@/assets/images/KAZLOGO.png";
 import KPClogo from "@/assets/images/KPC.jpg";
 import KEUSlogo from "@/assets/images/KEUS.jpg";
 import GPSlogo from "@/assets/images/GFC.png";
-import { FaFacebook, FaLinkedin, FaGithub, FaFileDownload, FaCalendarAlt, FaGraduationCap, FaChevronDown, FaChevronUp, FaCertificate, FaStar } from "react-icons/fa";
+import { FaFacebook, FaLinkedin, FaGithub, FaFileDownload, FaCalendarAlt, FaGraduationCap, FaChevronDown, FaChevronUp, FaCertificate, FaStar, FaTimes, FaScroll, FaFilePdf } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -13,9 +13,11 @@ export default function About() {
   const [showFullExp, setShowFullExp] = useState(false);
   const [showAllCourses, setShowAllCourses] = useState(false);
   const [showMoreEdu, setShowMoreEdu] = useState(false);
+  const [selectedCert, setSelectedCert] = useState(null); // { title, image }
   const extraEducations = [
     {
       title: "H.S.C. in Science",
+      shortTitle: "H.S.C.",
       org: "Khulna Public College (KPC)",
       gpa: "5.00",
       scholarship: true,
@@ -24,10 +26,13 @@ export default function About() {
       desc: "Completed higher secondary education with strong academic achievement with board scholarship.",
       logo: KPClogo,
       certificate: "#",
+      certificateImage: null,
       transcript: "#",
+      transcriptImage: null,
     },
     {
       title: "S.S.C. in Science",
+      shortTitle: "S.S.C.",
       org: "Khunla Engineering Univerity School (KEUS)",
       gpa: "5.00",
       scholarship: true,
@@ -36,10 +41,13 @@ export default function About() {
       desc: "Completed secondary education with strong academic achievement with board scholarship.",
       logo: KEUSlogo,
       certificate: "#",
+      certificateImage: null,
       transcript: "#",
+      transcriptImage: null,
     },
     {
       title: "Class of 2015 [Grade - 6]",
+      shortTitle: "Class of 2015",
       org: "Glenferrie Primary School, Melbourne, Australia",
       Grade: "5.00",
       from: "2014",
@@ -47,6 +55,7 @@ export default function About() {
       desc: "Completed primary-level education under the Australian curriculum as an international student.",
       logo: GPSlogo,
       certificate: "#",
+      certificateImage: null,
     },
   ];
 
@@ -174,16 +183,14 @@ export default function About() {
 
               {/* Report & Certificate buttons - same style as education cards */}
               <div className="flex flex-wrap gap-3 mt-2">
-                <a
-                  href="https://drive.google.com/file/d/1DdeOV4q5CSZsYMinkoK4dUqjOGIP5eZw/view?usp=sharing"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={() => setSelectedCert({ title: "KAZ Software | Certificate", image: null, icon: "certificate" })}
                   className="inline-flex items-center gap-2 px-4 py-2 bg-[#0f1223] text-white text-sm font-semibold hover:bg-[#2DD4BF] hover:text-white transition-colors duration-200"
                   title="View Certificate"
                 >
                   <FaCertificate className="w-4 h-4" />
                   <span>Certificate</span>
-                </a>
+                </button>
                 <a
                   href="https://drive.google.com/file/d/1MBG4-G79_cXUBKiTSOmdJGPzV7AtYzWZ/view?usp=sharing"
                   target="_blank"
@@ -191,7 +198,7 @@ export default function About() {
                   className="inline-flex items-center gap-2 px-4 py-2 bg-[#0f1223] text-white text-sm font-semibold hover:bg-[#2DD4BF] hover:text-white transition-colors duration-200"
                   title="View Report"
                 >
-                  <FaFileDownload className="w-4 h-4" />
+                  <FaFilePdf className="w-4 h-4" />
                   <span>Report</span>
                 </a>
               </div>
@@ -371,28 +378,24 @@ export default function About() {
                   {(edu.certificate || edu.transcript) && (
                     <div className="flex flex-wrap gap-3 mt-2">
                       {edu.certificate && (
-                        <a
-                          href={edu.certificate}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                        <button
+                          onClick={() => setSelectedCert({ title: `${edu.shortTitle || edu.title} | Certificate`, image: edu.certificateImage, icon: "certificate" })}
                           className="inline-flex items-center gap-2 px-4 py-2 bg-[#0f1223] text-white text-sm font-semibold hover:bg-[#2DD4BF] hover:text-white transition-colors duration-200"
                           title="View Certificate"
                         >
                           <FaCertificate className="w-4 h-4" />
                           <span>Certificate</span>
-                        </a>
+                        </button>
                       )}
                       {edu.transcript && (
-                        <a
-                          href={edu.transcript}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                        <button
+                          onClick={() => setSelectedCert({ title: `${edu.shortTitle || edu.title} | Transcript`, image: edu.transcriptImage, icon: "transcript" })}
                           className="inline-flex items-center gap-2 px-4 py-2 bg-[#0f1223] text-white text-sm font-semibold hover:bg-[#2DD4BF] hover:text-white transition-colors duration-200"
                           title="View Transcript"
                         >
-                          <FaFileDownload className="w-4 h-4" />
+                          <FaScroll className="w-4 h-4" />
                           <span>Transcript</span>
-                        </a>
+                        </button>
                       )}
                     </div>
                   )}
@@ -401,6 +404,51 @@ export default function About() {
             </motion.div>
           ))}
       </section>
+
+      {/* Certificate Modal */}
+      {selectedCert && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+          onClick={() => setSelectedCert(null)}
+        >
+          <div
+            className="relative bg-[#1c1f2e] rounded-none shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header */}
+            <div className="flex items-center justify-between px-6 py-4 border-b border-white/10">
+              <div className="flex items-center gap-2">
+                {selectedCert.icon === "transcript"
+                  ? <FaScroll className="text-[#2DD4BF] w-5 h-5" />
+                  : <FaCertificate className="text-[#2DD4BF] w-5 h-5" />}
+                <span className="text-white font-semibold">{selectedCert.title}</span>
+              </div>
+              <button
+                onClick={() => setSelectedCert(null)}
+                className="text-gray-400 hover:text-white transition-colors"
+                aria-label="Close"
+              >
+                <FaTimes className="w-5 h-5" />
+              </button>
+            </div>
+            {/* Image */}
+            <div className="p-6">
+              {selectedCert.image ? (
+                <img
+                  src={selectedCert.image}
+                  alt={selectedCert.title}
+                  className="w-full h-auto object-contain"
+                />
+              ) : (
+                <div className="flex flex-col items-center justify-center py-16 text-gray-400 gap-3">
+                  <FaCertificate className="w-16 h-16 opacity-20" />
+                  <p className="text-sm">Certificate image not available yet.</p>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
