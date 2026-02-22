@@ -4,7 +4,7 @@ import KAZlogo from "@/assets/images/KAZLOGO.png";
 import KPClogo from "@/assets/images/KPC.jpg";
 import KEUSlogo from "@/assets/images/KEUS.jpg";
 import GPSlogo from "@/assets/images/GFC.png";
-import { FaFacebook, FaLinkedin, FaGithub, FaFileDownload, FaCalendarAlt, FaGraduationCap, FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { FaFacebook, FaLinkedin, FaGithub, FaFileDownload, FaCalendarAlt, FaGraduationCap, FaChevronDown, FaChevronUp, FaCertificate, FaStar } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -18,6 +18,7 @@ export default function About() {
       title: "H.S.C. in Science",
       org: "Khunla Public College (KPC)",
       gpa: "5.00",
+      scholarship: true,
       from: "2019",
       to: "2021",
       desc: "Completed Higher secondary education with strong performance in core science subjects.",
@@ -27,13 +28,14 @@ export default function About() {
       title: "S.S.C. in Science",
       org: "Khunla Engineering Univerity School (KEUS)",
       gpa: "5.00",
+      scholarship: true,
       from: "2016",
       to: "2019",
       desc: "Completed secondary education with strong performance in core science subjects.",
       logo: KEUSlogo,
     },
     {
-      title: "Class of 2015",
+      title: "Class of 2015 [Grade - 6]",
       org: "Glenferrie Primary School, Melbourne, Australia",
       Grade: "5.00",
       from: "2014",
@@ -385,13 +387,21 @@ export default function About() {
               transition={{ duration: 0.3, delay: idx * 0.05 }}
               className="bg-[#1c1f2e] p-6 relative mt-6"
             >
-              {/* GPA - top right like CGPA (only when gpa exists) */}
-              {edu.gpa && (
-                <div className="hidden md:flex absolute top-4 right-4 flex items-center gap-2 bg-transparent px-4 py-2 rounded-full border border-none">
-                  <FaGraduationCap className="w-6 h-6 text-white" />
-                  <span className="text-white font-semibold">GPA: {edu.gpa}</span>
-                </div>
-              )}
+              {/* GPA + Scholarship - desktop top right */}
+              <div className="hidden md:flex flex-col absolute top-4 right-4 items-end gap-1 px-4 py-2">
+                {edu.gpa && (
+                  <div className="flex items-center gap-2">
+                    <FaGraduationCap className="w-6 h-6 text-white" />
+                    <span className="text-white font-semibold">GPA: {edu.gpa}</span>
+                  </div>
+                )}
+                {edu.scholarship && (
+                  <div className="flex items-center gap-2">
+                    <FaStar className="w-5 h-5 text-yellow-100" />
+                    <span className="text-white font-semibold text-sm">Board Scholarship</span>
+                  </div>
+                )}
+              </div>
 
               <div className="flex items-start gap-4">
                 <div className="w-28 h-28 overflow-hidden bg-white flex items-center justify-center p-1">
@@ -406,11 +416,17 @@ export default function About() {
                   <h4 className="text-xl font-bold text-white mb-2">{edu.title}</h4>
                   <p className="text-sm md:text-base text-gray-400 font-medium mb-2">{edu.org}</p>
 
-                  {/* Mobile GPA inline to prevent absolute overlap */}
+                  {/* Mobile GPA + Scholarship inline */}
                   {edu.gpa && (
-                    <div className="flex md:hidden items-center gap-2 mt-2 mb-2">
+                    <div className="flex md:hidden items-center gap-2 mt-2 mb-1">
                       <FaGraduationCap className="w-4 h-4 text-yellow-400" />
                       <span className="text-white font-semibold">GPA: {edu.gpa}</span>
+                    </div>
+                  )}
+                  {edu.scholarship && (
+                    <div className="flex md:hidden items-center gap-2 mb-2">
+                      <FaStar className="w-4 h-4 text-yellow-100" />
+                      <span className="text-white font-semibold text-sm">Board Scholarship</span>
                     </div>
                   )}
 
