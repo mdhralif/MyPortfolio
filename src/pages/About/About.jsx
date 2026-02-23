@@ -109,7 +109,7 @@ export default function About() {
           <div className="py-6">
             
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
-              <span style={{ color: 'white' }}>I&apos; m,</span> MD H R ALIF
+              <span style={{ color: 'white' }}>I&apos;m,</span> MD H R ALIF
             </h1>
 
             <p className="text-gray-300 text-lg md:text-xl max-w-2xl mb-6 text-justify">
