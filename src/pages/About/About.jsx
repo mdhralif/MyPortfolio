@@ -456,6 +456,8 @@ export default function About() {
                 <FaTimes className="w-5 h-5" />
               </button>
             </div>
+            {/* White divider line */}
+            <hr className="border-0 h-px bg-gray-500 mx-6 my-0" />
             {/* Image */}
             <div className="p-6">
               {selectedCert.image ? (
