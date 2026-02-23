@@ -109,11 +109,11 @@ export default function About() {
           <div className="py-6">
             
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
-              <span style={{ color: 'white' }}>Me,</span> MD H R ALIF
+              <span style={{ color: 'white' }}>I&apos;m,</span> MD H R ALIF
             </h1>
 
             <p className="text-gray-300 text-lg md:text-xl max-w-2xl mb-6 text-justify">
-              I’m Md Hasibur Rahman Alif, a Software Engineering student and passionate <span className="inline-block bg-[#2ad6c0]/50 text-white px-1">full-stack developer</span> with experience building web and AI-powered applications. I’ve worked as a <span className="inline-block bg-[#2ad6c0]/50 text-white px-1">Software Engineer Intern</span> at KAZ Software and developed production level applications using Angular and .NET framework. I’m eager to contribute my skills and grow as a developer in a dynamic tech company.
+              A Software Engineering student and passionate <span className="inline-block bg-[#2ad6c0]/50 text-white px-1">full-stack developer</span> with experience building web and AI-powered applications. I’ve worked as a <span className="inline-block bg-[#2ad6c0]/50 text-white px-1">Software Engineer Intern</span> at KAZ Software and developed production level applications using Angular and .NET framework. I’m eager to contribute my skills and grow as a developer in a dynamic tech company.
             </p>
 
             {/* CV Download */}
