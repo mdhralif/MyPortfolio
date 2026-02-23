@@ -465,8 +465,8 @@ export default function About() {
                   {/* Icon overlay */}
                   <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
                     {selectedCert.icon === "transcript"
-                      ? <FaScroll className="w-40 h-40 text-white opacity-30" />
-                      : <FaCertificate className="w-40 h-40 text-white opacity-30" />}
+                      ? <FaScroll className="w-40 h-40 text-white opacity-20" />
+                      : <FaCertificate className="w-40 h-40 text-white opacity-20" />}
                   </div>
                   <img
                     src={selectedCert.image}
