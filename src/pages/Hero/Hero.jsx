@@ -97,15 +97,14 @@ export default function Hero({ onContactClick = () => {} }) {
 
                 {/* Small CV download icon (top-right of the card) */}
                 <a
-                  href="https://drive.google.com/file/d/1vg9YRsNnimnVixbsyHrKLEDVDEvGTgmK/view?usp=sharing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title="My CV"
-                  aria-label="My CV"
+                  href="https://drive.google.com/uc?export=download&id=1vg9YRsNnimnVixbsyHrKLEDVDEvGTgmK"
+                  download="MD_H_R_ALIF_CV.pdf"
+                  title="Download CV"
+                  aria-label="Download CV"
                   className="absolute top-6 right-6 w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 flex items-center justify-center transition-colors group"
                 >
                   <FaFileDownload className="text-white group-hover:text-[#2DD4BF] w-7 h-7 md:w-8 md:h-8 lg:w-10 lg:h-10" />
-                  <span className="sr-only">My CV</span>
+                  <span className="sr-only">Download CV</span>
                 </a>
 
                 {/* Name section */}
