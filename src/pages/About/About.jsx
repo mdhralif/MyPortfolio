@@ -114,7 +114,7 @@ export default function About() {
             </h1>
 
             <p className="text-gray-300 text-lg md:text-xl max-w-2xl mb-6 text-justify">
-              I’m Md Hasibur Rahman Alif, a Software Engineering student and passionate <span className="inline-block bg-[#2ad6c0]/50 text-white px-1">full-stack developer</span> with experience building scalable web and AI-powered applications. I’ve worked as a <span className="inline-block bg-[#2ad6c0]/50 text-white px-1">Software Engineer Intern</span> at KAZ Software and developed production level applications using Angular and .NET framework. I’m eager to contribute my skills and grow as a developer in a dynamic tech company.
+              I’m Md Hasibur Rahman Alif, a Software Engineering student and passionate <span className="inline-block bg-[#2ad6c0]/50 text-white px-1">full-stack developer</span> with experience building web and AI-powered applications. I’ve worked as a <span className="inline-block bg-[#2ad6c0]/50 text-white px-1">Software Engineer Intern</span> at KAZ Software and developed production level applications using Angular and .NET framework. I’m eager to contribute my skills and grow as a developer in a dynamic tech company.
             </p>
 
             {/* CV Download */}
@@ -171,7 +171,7 @@ export default function About() {
               </div>
               
               {/* Desktop: full text */}
-              <p className="hidden md:block text-gray-300 mb-4">Completed a four-month internship at KAZ Software, where I contributed to the design and development of scalable web applications, implemented responsive UI, integrated APIs, and assisted in resolving both frontend & backend issues.</p>
+              <p className="hidden md:block text-gray-300 mb-4">Completed a four-month internship at KAZ Software, where I contributed to the design and development of web applications, implemented responsive UI, integrated APIs, and assisted in resolving both frontend & backend issues.</p>
 
               {/* Mobile: truncated with toggle */}
               <div className="md:hidden mb-4">
@@ -183,7 +183,7 @@ export default function About() {
                       : {}
                   }
                 >
-                 Completed a four-month internship at KAZ Software, where I contributed to the design and development of scalable web applications, implemented responsive UI, integrated APIs, and assisted in resolving both frontend & backend issues.</p>
+                 Completed a four-month internship at KAZ Software, where I contributed to the design and development of web applications, implemented responsive UI, integrated APIs, and assisted in resolving both frontend & backend issues.</p>
 
                 <button
                   onClick={() => setShowFullExp((s) => !s)}
