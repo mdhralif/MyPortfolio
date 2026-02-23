@@ -11,7 +11,7 @@ import SSCTranscript from "@/assets/images/SSC_T.png";
 import GPSCertificate from "@/assets/images/GPS_C.png";
 import KAZCertificate from "@/assets/images/KAZ_C.png";
 import ClassPhoto from "@/assets/images/ClassPhoto.png";
-import { FaFacebook, FaLinkedin, FaGithub, FaFileDownload, FaCalendarAlt, FaGraduationCap, FaChevronDown, FaChevronUp, FaCertificate, FaStar, FaTimes, FaScroll, FaFilePdf, FaUsers } from "react-icons/fa";
+import { FaFacebook, FaLinkedin, FaGithub, FaFileDownload, FaCalendarAlt, FaGraduationCap, FaChevronDown, FaChevronUp, FaCertificate, FaStar, FaTimes, FaScroll, FaFilePdf, FaUsers, FaMapMarkerAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
@@ -160,7 +160,10 @@ export default function About() {
             <div className="flex-1 min-w-0">
               {/* Mobile icons removed - now shown as buttons below */}
               <h4 className="text-xl font-bold text-white mb-2">Software Engineer Intern</h4>
-              <p className="text-sm md:text-base text-gray-400 font-medium mb-2">KAZ Software Ltd.</p>
+              <p className="text-sm md:text-base text-gray-400 font-medium mb-2 flex items-center gap-2">
+                <FaMapMarkerAlt className="w-4 h-4 text-white" />
+                KAZ Software Ltd.
+              </p>
               
               <div className="flex items-center gap-4 text-gray-400 text-xs md:text-sm mb-3">
                 <div className="flex items-center gap-1">
@@ -249,7 +252,10 @@ export default function About() {
             
             <div className="flex-1">
               <h4 className="text-xl font-bold text-white mb-2">B.Sc. in Software Engineering</h4>
-              <p className="text-sm md:text-base text-gray-400 font-medium mb-2">Islamic University of Technology (IUT)</p>
+              <p className="text-sm md:text-base text-gray-400 font-medium mb-2 flex items-center gap-2">
+                <FaMapMarkerAlt className="w-4 h-4 text-white " />
+                Islamic University of Technology (IUT)
+              </p>
               
               {/* Mobile CGPA inline to prevent absolute overlap */}
               <div className="flex md:hidden items-center gap-2 mt-2 mb-2">
@@ -361,7 +367,10 @@ export default function About() {
 
                 <div className="flex-1 min-w-0">
                   <h4 className="text-xl font-bold text-white mb-2">{edu.title}</h4>
-                  <p className="text-sm md:text-base text-gray-400 font-medium mb-2">{edu.org}</p>
+                  <p className="text-sm md:text-base text-gray-400 font-medium mb-2 flex items-center gap-2">
+                    <FaMapMarkerAlt className="w-4 h-4 text-white" />
+                    {edu.org}
+                  </p>
 
                   {/* Mobile GPA + Scholarship inline */}
                   {edu.gpa && (
