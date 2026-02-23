@@ -16,7 +16,6 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
 export default function About() {
-  const iconColor = "#ffffff";
   const [showFullExp, setShowFullExp] = useState(false);
   const [showAllCourses, setShowAllCourses] = useState(false);
   const [showMoreEdu, setShowMoreEdu] = useState(false);
@@ -440,7 +439,7 @@ export default function About() {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
-            <div className="flex items-center justify-between px-6 py-4 border-b border-white/10">
+            <div className="flex items-center justify-between px-6 py-4 ">
               <div className="flex items-center gap-2">
                 {selectedCert.icon === "transcript"
                   ? <FaScroll className="text-[#2DD4BF] w-5 h-5" />
@@ -464,8 +463,8 @@ export default function About() {
                   {/* Icon overlay */}
                   <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
                     {selectedCert.icon === "transcript"
-                      ? <FaScroll className="w-40 h-40 text-white opacity-40" />
-                      : <FaCertificate className="w-40 h-40 text-white opacity-40" />}
+                      ? <FaScroll className="w-40 h-40 text-white opacity-30" />
+                      : <FaCertificate className="w-40 h-40 text-white opacity-30" />}
                   </div>
                   <img
                     src={selectedCert.image}
