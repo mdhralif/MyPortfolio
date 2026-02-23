@@ -53,9 +53,15 @@ export default function App() {
             />
             <Route path="/skills" element={<Skills />} />
             <Route path="/achievement" element={<Achievement />} />
-            <Route path="/contact" element={<ContactModal />} />
+            <Route
+              path="/contact"
+              element={<Hero onContactClick={handleContactClick} />}
+            />
             <Route path="/projects" element={<Projects />} />
-            <Route path="/Me" element={<About onContactClick={handleContactClick} />} />
+            <Route
+              path="/Me"
+              element={<About onContactClick={handleContactClick} />}
+            />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
