@@ -30,6 +30,13 @@ body {
   flex-direction: column;
 }
 
+/* Force all globe icons to be white */
+.icon-cloud svg,
+.icon-cloud svg path,
+.icon-cloud canvas {
+  filter: brightness(0) invert(1) !important;
+}
+
 @keyframes float-slow {
   0%,
   100% {
