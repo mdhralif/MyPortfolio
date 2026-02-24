@@ -48,12 +48,12 @@ const LoadingScreen = ({ onLoadingComplete }) => {
       progress >= 100 ? 'opacity-0' : 'opacity-100'
     }`}
     style={{
-      background: 'linear-gradient(135deg, #111827 0%, #1f2937 50%, #374151 100%)',
+      background: '#161825',
       visibility: isVisible ? 'visible' : 'hidden'
     }}>
       
       {/* Subtle overlay for depth */}
-      <div className="absolute inset-0" style={{background: '#0f172a'}}></div>
+      <div className="absolute inset-0" style={{background: '#161825'}}></div>
       
       {/* Animated background particles - subtle gray glow */}
       <div className="absolute inset-0 overflow-hidden">
