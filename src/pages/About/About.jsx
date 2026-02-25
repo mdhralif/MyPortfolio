@@ -24,11 +24,27 @@ export default function About() {
   // Lock background scroll when modal is open
   useEffect(() => {
     if (selectedCert) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = 'hidden';
+      
+      // Add keyboard listener for Escape key
+      const handleEscape = (e) => {
+        if (e.key === 'Escape') {
+          setSelectedCert(null);
+        }
+      };
+      document.addEventListener('keydown', handleEscape);
+      
+      return () => {
+        document.removeEventListener('keydown', handleEscape);
+        document.body.style.overflow = 'unset';
+      };
     } else {
-      document.body.style.overflow = "";
+      document.body.style.overflow = 'unset';
     }
-    return () => { document.body.style.overflow = ""; };
+    
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
   }, [selectedCert]);
   const extraEducations = [
     {
@@ -444,7 +460,7 @@ export default function About() {
           onClick={() => setSelectedCert(null)}
         >
           <div
-            className="no-scrollbar relative bg-[#1c1f2e] rounded-none shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-auto"
+            className="relative bg-[#1c1f2e] rounded-none shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
