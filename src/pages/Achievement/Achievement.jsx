@@ -16,7 +16,7 @@ const achievements = [
 
 export default function Achievement() {
   return (
-    <main className="bg-[#161825] text-white py-20 px-6 min-h-screen">
+    <main className="bg-[#161825] text-white pt-20 pb-20 md:pt-16 md:pb-20 px-6 min-h-screen">
       <section className="max-w-6xl mx-auto">
         <h2 className="text-5xl md:text-7xl font-black text-center mb-8">
           <span style={{ color: "#2DD4BF" }}>My</span> Achievements

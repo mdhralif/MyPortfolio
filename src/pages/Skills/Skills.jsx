@@ -293,10 +293,10 @@ const SkillsSection = () => {
   ];
 
   return (
-    <main className="pt-20 lg:pt-0 text-white min-h-screen bg-[#1C1F2E] relative">
-      <section className="container mx-auto px-4 py-11 relative z-10">
+    <main className="pt-20 md:pt-16 text-white min-h-screen bg-[#1C1F2E] relative">
+      <section className="container mx-auto px-4 pb-11 relative z-10">
         {/* Section Title */}
-        <h2 className="text-5xl md:text-7xl font-black text-transparent bg-white bg-clip-text text-center mb-4 md:mb-10">
+        <h2 className="text-5xl md:text-7xl font-black text-transparent bg-white bg-clip-text text-center mb-8 md:mb-10">
           <span style={{ color: '#2DD4BF' }}>Skills </span>I&apos;ve
         </h2>    
 

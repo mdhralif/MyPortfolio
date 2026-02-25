@@ -89,7 +89,7 @@ export default function About() {
 
   return (
     <main className="bg-[#161825] text-white min-h-screen">
-      <section className="max-w-6xl mx-auto px-6 py-16">
+      <section className="max-w-6xl mx-auto px-6 pt-20 pb-16 md:pt-16 md:pb-16">
         <div className="mb-12 text-center">
           <h2 className="text-5xl md:text-7xl font-black text-transparent bg-white bg-clip-text leading-tight">
             <span style={{ color: '#2DD4BF' }}>About</span> Me
