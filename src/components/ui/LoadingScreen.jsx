@@ -48,12 +48,12 @@ const LoadingScreen = ({ onLoadingComplete }) => {
       progress >= 100 ? 'opacity-0' : 'opacity-100'
     }`}
     style={{
-      background: '#161825',
+      background: '#111828',
       visibility: isVisible ? 'visible' : 'hidden'
     }}>
       
       {/* Subtle overlay for depth */}
-      <div className="absolute inset-0" style={{background: '#161825'}}></div>
+      <div className="absolute inset-0" style={{background: '#111828'}}></div>
       
       {/* Animated background particles - subtle gray glow */}
       <div className="absolute inset-0 overflow-hidden">
