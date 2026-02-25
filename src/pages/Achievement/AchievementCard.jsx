@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
-import { FaMedal } from "react-icons/fa";
 import { FiLink } from "react-icons/fi";
+import championIcon from "../../assets/images/champion.png";
 
 export default function AchievementCard({ title, org, year, description, image, color = "#2DD4BF", link, logo }) {
   return (
@@ -18,11 +18,8 @@ export default function AchievementCard({ title, org, year, description, image, 
             transition={{ duration: 0.4 }}
           />
         ) : (
-          <div className="text-center p-8 flex flex-col-reverse items-center">
-            <div className="text-4xl md:text-6xl font-bold text-white mt-3">Champion</div>
-            <div className="mb-4 relative">
-              <FaMedal className="text-9xl md:text-[10rem] mx-auto text-yellow-400" />
-            </div>
+          <div className="text-center p-8 flex items-center justify-center">
+            <img src={championIcon} alt="Champion" className="w-40 md:w-64 mx-auto" />
           </div>
         )}
         
@@ -32,16 +29,24 @@ export default function AchievementCard({ title, org, year, description, image, 
       {/* Content section - full width on mobile, 45% on desktop */}
       <div className="w-full md:w-[45%] h-[250px] md:h-[320px] lg:h-[350px] p-6 pt-8 md:p-8 md:pt-10 lg:p-10 lg:pt-12 flex flex-col justify-start bg-[#1c1f2e] overflow-hidden">
         <div>
-          <div className="flex items-center gap-3 mb-3 md:mb-4">
-            <div
-              className="w-2 h-2 md:w-3 md:h-3 rounded-none"
-              style={{ backgroundColor: color }}
-            />
-            <div className="h-[1px] w-12 md:w-20 bg-gray-600" />
-          </div>
+          {!image ? (
+            <div className="mb-3 md:mb-4">
+              <span className="text-base md:text-xl font-bold text-yellow-400 bg-yellow-400/10 px-3 py-1 rounded-none"> 
+                Champion
+              </span>
+            </div>
+          ) : (
+            <div className="flex items-center gap-3 mb-3 md:mb-4">
+              <div
+                className="w-2 h-2 md:w-3 md:h-3 rounded-none"
+                style={{ backgroundColor: color }}
+              />
+              <div className="h-[1px] w-12 md:w-20 bg-gray-600" />
+            </div>
+          )}
 
           <div className="flex items-start justify-between">
-            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-2 md:mb-3">
+            <h3 className="text-lg md:text-2xl lg:text-3xl font-bold text-white mb-2 md:mb-3">
               {title}
             </h3>
             <div className="ml-4 mt-1">
@@ -70,7 +75,7 @@ export default function AchievementCard({ title, org, year, description, image, 
             <span className="text-xs md:text-sm text-gray-400">{year}</span>
           </div>
           
-          <p className="text-sm md:text-base text-gray-300 leading-relaxed text-justify">
+          <p className="text-xs md:text-base text-gray-300 leading-relaxed text-justify">
             {description}
           </p>
         </div>
