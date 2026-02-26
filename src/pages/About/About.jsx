@@ -129,7 +129,7 @@ export default function About() {
             </h1>
 
             <p className="text-gray-300 text-lg md:text-xl max-w-2xl mb-6 text-justify">
-              A Software Engineering student and passionate <span className="inline-block bg-[#2ad6c0]/50 text-white px-1">full-stack developer</span> with experience building web and AI-powered applications. I’ve worked as a <span className="inline-block bg-[#2ad6c0]/50 text-white px-1">Software Engineer Intern</span> at KAZ Software and developed production level applications using Angular and .NET framework. I’m eager to contribute my skills and grow as a developer in a dynamic tech company.
+              A Software Engineering student and passionate <span className="inline-block bg-[#2ad6c0]/50 text-white px-1">full-stack developer</span> with experience building web and AI-powered applications. I’ve worked as a <span className="inline-block bg-[#2ad6c0]/50 text-white px-1">Software Engineer Intern</span> at KAZ Software and developed production level applications using Angular and .NET framework. I’m eager to apply my skills and continue growing as a software Engineer.
             </p>
 
             {/* CV Download */}
