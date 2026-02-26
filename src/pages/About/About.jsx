@@ -460,7 +460,7 @@ export default function About() {
           onClick={() => setSelectedCert(null)}
         >
           <div
-            className="relative bg-[#1c1f2e] rounded-none shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+            className="relative bg-[#1c1f2e] rounded-none shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto no-scrollbar"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
