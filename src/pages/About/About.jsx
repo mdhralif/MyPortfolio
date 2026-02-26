@@ -189,7 +189,7 @@ export default function About() {
               </div>
               
               {/* Desktop: full text */}
-              <p className="hidden md:block text-gray-300 mb-4 text-justify">Worked on two production grade web platforms : Dignify, a role-based digital music distribution system, and Web EVV, a caregiver management and monitoring application. Designed and implemented scalable frontend architectures using Angular and TypeScript, integrated secure RESTful APIs for authentication, payments, earnings, and role-based access control, and handled media uploads with cloud storage integration.</p>
+              <p className="hidden md:block text-gray-300 mb-4 text-justify">Worked on two production grade web platforms : Dignify, a digital music distribution system, and Web EVV, a caregiver management and monitoring application. Designed and implemented scalable frontend architectures using Angular and TypeScript, integrated secure RESTful APIs for authentication, payments, earnings and handled media uploads with cloud storage integration.</p>
 
               {/* Mobile: truncated with toggle */}
               <div className="md:hidden mb-4">
@@ -201,7 +201,7 @@ export default function About() {
                       : {}
                   }
                 >
-                 Worked on two production grade web platforms: Dignify, a role-based digital music distribution system, and Web EVV, a caregiver management and monitoring application. Designed and implemented scalable frontend architectures using Angular and TypeScript, integrated secure RESTful APIs for authentication, payments, earnings, and role-based access control, and handled media uploads with cloud storage integration.</p>
+                 Worked on two production grade web platforms: Dignify, a role based digital music distribution system, and Web EVV, a caregiver management and monitoring application. Designed and implemented scalable frontend architectures using Angular and TypeScript, integrated secure RESTful APIs for authentication, payments, earnings and handled media uploads with cloud storage integration.</p>
 
                 <button
                   onClick={() => setShowFullExp((s) => !s)}
