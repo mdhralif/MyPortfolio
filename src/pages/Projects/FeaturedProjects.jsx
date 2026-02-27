@@ -109,7 +109,12 @@ export default function FeaturedProjects() {
         <section className="text-white w-full bg-[#161925] pb-0 pt-20 md:pt-16">
             <h2 className="text-5xl md:text-7xl font-black text-transparent bg-white bg-clip-text text-center leading-tight mb-4 md:mb-8">
               {/* Mobile-only title */}
-              <span className="block md:hidden" style={{ color: '#2DD4BF' }}>My </span>Projects
+              <span className="block md:hidden">
+                <span className="inline-block bg-clip-text text-transparent" style={{ color: '#2DD4BF' }}>
+                  My
+                </span>
+                <span className="ml-1 text-white"> Projects</span>
+              </span>
 
               {/* Desktop / tablet title */}
               <span className="hidden md:block">
