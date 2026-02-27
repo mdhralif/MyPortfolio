@@ -97,6 +97,10 @@ export default function FeaturedProjects() {
 
   const handleViewAllProjects = () => {
     navigate('/projects');
+    // Scroll to top after navigation
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 100);
   };
 
   return (
