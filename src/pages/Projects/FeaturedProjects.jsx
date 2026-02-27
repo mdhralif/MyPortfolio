@@ -194,7 +194,7 @@ function Card({
   return (
     <div
       ref={container}
-      className={`${i === 0 ? 'h-[70vh] md:h-[80vh]' : 'h-screen'} flex items-center justify-center sticky top-0 project-container pt-8 md:pt-0`}
+      className={`${i === 0 ? 'h-[70vh] md:h-[80vh]' : 'h-screen'} flex items-center justify-center sticky top-0 project-container ${i === 0 ? 'pt-16 md:pt-0' : 'pt-8 md:pt-0'}`}
     >
       <motion.div
         style={{
