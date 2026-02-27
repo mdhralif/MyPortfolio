@@ -106,7 +106,7 @@ export default function FeaturedProjects() {
   return (
     <ReactLenis root>
       <main className="bg-[#161925]" ref={container}>
-        <section className="text-white w-full bg-[#161925] pb-12 md:pb-20 pt-20 md:pt-16">
+        <section className="text-white w-full bg-[#161925] pb-2 md:pb-4 pt-20 md:pt-16">
             <h2 className="text-5xl md:text-7xl font-black text-transparent bg-white bg-clip-text text-center leading-tight mb-4 md:mb-8">
               <span style={{ color: '#2DD4BF' }}>Projects</span> I’ve Built
             </h2>       
@@ -128,13 +128,14 @@ export default function FeaturedProjects() {
               />
             );
           })}
-          
-          {/* View All Projects Button */}
-          <div className="flex justify-center mt-16 mb-8 px-4">
-            <div className="w-[90%] md:w-auto">
-              <motion.button
-                onClick={handleViewAllProjects}
-                className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-[#161825] font-bold text-xl rounded-none  w-full md:w-auto"
+        </section>
+
+        {/* View All Projects Button - Moved to end of section */}
+        <div className="bg-[#161925] flex justify-center pb-12 md:pb-20 px-4">
+          <div className="w-[90%] md:w-auto">
+            <motion.button
+              onClick={handleViewAllProjects}
+              className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-[#161825] font-bold text-xl rounded-none w-full md:w-auto"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, y: 20 }}
@@ -158,9 +159,8 @@ export default function FeaturedProjects() {
                 <polyline points="12,5 19,12 12,19"></polyline>
               </motion.svg>
             </motion.button>
-            </div>
           </div>
-        </section>
+        </div>
 
       </main>
     </ReactLenis>
