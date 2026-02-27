@@ -3,6 +3,7 @@ import "./assets/css/index.css";
 import About from "./pages/About/About";
 import Achievement from "./pages/Achievement/Achievement";
 import Projects from "./pages/Projects/Projects";
+import FeaturedProjects from "./pages/Projects/FeaturedProjects";
 import Hero from "./pages/Hero/Hero";
 import Skills from "./pages/Skills/Skills";
 import Footer from "./pages/Footer/Footer";
@@ -45,7 +46,7 @@ export default function App() {
               element={
                 <>
                   <Hero onContactClick={handleContactClick} />
-                  <Projects />
+                  <FeaturedProjects />
                   <Skills />
                   <Achievement />
                 </>

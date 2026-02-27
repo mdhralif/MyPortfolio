@@ -1,19 +1,16 @@
 import { ReactLenis } from "lenis/react";
 import { useTransform, motion, useScroll } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 
-// Import all images
+// Import only first 3 project images
 import soulaceImg from "@/assets/images/soulace.png";
 import nexmeetImg from "@/assets/images/nexmeet.png";
 import blingoImg from "@/assets/images/blingo.png";
-import nexbookImg from "@/assets/images/nexbook.png";
-import nextalkImg from "@/assets/images/nextalk.png";
-import iutWebImg from "@/assets/images/iut_web.png";
-import pixelforgeImg from "@/assets/images/pixelforge.png";
-import fluppyImg from "@/assets/images/fluppy.png";
 
-const projects = [
+// Featured projects - only first 3
+const featuredProjects = [
   {
     title: "NexMeet",
     description:
@@ -44,62 +41,11 @@ const projects = [
     githubLink: "https://github.com/mdhralif/Blingo",
     liveLink: "https://blingo.onrender.com/",
   },
-  {
-    title: "Nexbook",
-    description:
-      "A prototype of Facebook, Nexbook is a social networking platform that enables users to React, post, and follow in a virtual community",
-    src: nexbookImg,
-    link: nexbookImg,
-    color: "#ed649e",
-    githubLink: "https://github.com/mdhralif/Nexbook",
-    liveLink: "https://alif-nexbook.vercel.app",
-  },
-  {
-    title: "IUT website Design",
-    description:
-      "A prototype of the Islamic University of Technology (IUT) website using basic HTML, CSS, and JavaScript",
-    src: iutWebImg,
-    link: iutWebImg,
-    color: "#fff",
-    githubLink: "https://github.com/mdhralif",
-    liveLink: "https://drive.google.com/file/d/1AD-3NzOo-DUug4-E801I4hanOdGLkNSd/view?usp=sharing",
-  },
-  {
-    title: "NexTalk",
-    description:
-      "Nextalk is a real-time conversation web app designed to facilitate instant messaging and seamless communication between users.",
-    src: nextalkImg,
-    link: nextalkImg,
-    color: "#10b981",
-    githubLink: "https://github.com/mdhralif/Realtime_Chat_Application",
-    liveLink: "https://drive.google.com/file/d/1GaoliAKVd3J9IDk97kINaRAaMSNF5kUx/view?usp=sharing",
-  },
-
-  {
-    title: "PixelForge",
-    description:
-      "Pixelforge is a Minecraft-inspired prototype that simulates a block-based world with crafting and building mechanics,focused on creating a detailed map of the Islamic University of Technology (IUT).",
-    src: pixelforgeImg,
-    link: pixelforgeImg,
-    color: "#f59e0b",
-    githubLink: "https://github.com/mdhralif",
-    liveLink: "https://drive.google.com/file/d/1SKGoVzAZgH5KBLp6EEodw4J9MyL5iFRx/view?usp=sharing",
-  },
-  {
-    title: "Flappy Bird",
-    description:
-      "A clone of the classic Flappy Bird game, built using Unity & scripting with C#, featuring responsive controls and dynamic gameplay.",
-    src: fluppyImg,
-    link: fluppyImg,
-    color: "#fff",
-    githubLink: "https://github.com/mdhralif/Fluppy_Bird",
-    liveLink: "https://drive.google.com/file/d/1UAgQtEz32a5xWLXzvf5yd3ghycyVUYvg/view?usp=sharing",
-  },
 ];
 
-export default function Projects() {
+export default function FeaturedProjects() {
   const container = useRef(null);
-  const [currentProject, setCurrentProject] = useState(0);
+  const navigate = useNavigate();
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start start", "end end"],
@@ -149,31 +95,22 @@ export default function Projects() {
     };
   }, []);
 
-  // Update current project based on scroll progress
-  useEffect(() => {
-    const unsubscribe = scrollYProgress.onChange((latest) => {
-      const projectIndex = Math.min(
-        Math.floor(latest * projects.length * 1.2),
-        projects.length - 1
-      );
-      setCurrentProject(Math.max(0, projectIndex));
-    });
-
-    return () => unsubscribe();
-  }, [scrollYProgress]);
+  const handleViewAllProjects = () => {
+    navigate('/projects');
+  };
 
   return (
     <ReactLenis root>
       <main className="bg-[#161925]" ref={container}>
         <section className="text-white w-full bg-[#161925] pb-12 md:pb-20 pt-20 md:pt-16">
             <h2 className="text-5xl md:text-7xl font-black text-transparent bg-white bg-clip-text text-center leading-tight mb-4 md:mb-8">
-              <span style={{ color: '#2DD4BF' }}>Projects</span> I’ve Built
+              <span style={{ color: '#2DD4BF' }}>Featured</span> Projects
             </h2>       
-          {projects.map((project, i) => {
+          {featuredProjects.map((project, i) => {
             const targetScale = 1; // All cards same size
             return (
               <Card
-                key={`p_${i}`}
+                key={`fp_${i}`}
                 i={i}
                 url={project.link}
                 title={project.title}
@@ -188,44 +125,36 @@ export default function Projects() {
             );
           })}
           
-          {/* Swipe Indicator */}
-          <div className="fixed right-6 top-1/2 transform -translate-y-1/2 z-50 hidden md:flex flex-col gap-2">
-            {projects.map((_, index) => (
-              <motion.div
-                key={index}
-                className={`w-1 h-6 rounded-none transition-all duration-300 ${
-                  index === currentProject
-                    ? 'bg-white '
-                    : 'bg-gray-600 '
-                }`}
-                whileHover={{ scale: 1.1, width: '6px' }}
-                animate={{
-                  height: index === currentProject ? '32px' : '24px',
-                  opacity: index === currentProject ? 1 : 0.6
-                }}
-              />
-            ))}
-            <div className="mt-2 text-xs text-gray-400 text-center">
-              {currentProject + 1}/{projects.length}
+          {/* View All Projects Button */}
+          <div className="flex justify-center mt-16 mb-8 px-4">
+            <div className="w-[90%] md:w-auto">
+              <motion.button
+                onClick={handleViewAllProjects}
+                className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-[#161825] font-bold text-xl rounded-none  w-full md:w-auto"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+            >
+              <span>View All Projects</span>
+              <motion.svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="group-hover:translate-x-1 transition-transform"
+              >
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12,5 19,12 12,19"></polyline>
+              </motion.svg>
+            </motion.button>
             </div>
-          </div>
-
-          {/* Mobile Swipe Indicator */}
-          <div className="flex md:hidden justify-center gap-1 mt-8 mb-4 flex-wrap">
-            {projects.map((_, index) => (
-              <motion.div
-                key={index}
-                className={`h-1 rounded-none transition-all duration-300 ${
-                  index === currentProject
-                    ? 'bg-[#2DD4BF] w-6'
-                    : 'bg-gray-600 w-1.5'
-                }`}
-                animate={{
-                  width: index === currentProject ? '24px' : '6px',
-                  opacity: index === currentProject ? 1 : 0.4
-                }}
-              />
-            ))}
           </div>
         </section>
 
