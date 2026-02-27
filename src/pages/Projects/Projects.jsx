@@ -209,6 +209,40 @@ export default function Projects() {
               {currentProject + 1}/{projects.length}
             </div>
           </div>
+
+          {/* Back to Top Button */}
+          <div className="flex justify-center mt-8">
+            <motion.button
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="group flex items-center justify-center w-12 h-12 md:w-14 md:h-14 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:border-[#2DD4BF] transition-all duration-300"
+              whileHover={{ 
+                scale: 1.1, 
+                y: -2,
+                backgroundColor: "rgba(45, 212, 191, 0.1)" 
+              }}
+              whileTap={{ scale: 0.95 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.6 }}
+            >
+              <motion.svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="text-white group-hover:text-[#2DD4BF] transition-colors"
+                whileHover={{ y: -2 }}
+              >
+                <line x1="12" y1="19" x2="12" y2="5"></line>
+                <polyline points="5,12 12,5 19,12"></polyline>
+              </motion.svg>
+            </motion.button>
+          </div>
         </section>
 
       </main>

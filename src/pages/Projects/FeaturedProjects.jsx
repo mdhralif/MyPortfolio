@@ -108,8 +108,14 @@ export default function FeaturedProjects() {
       <main className="bg-[#161925]" ref={container}>
         <section className="text-white w-full bg-[#161925] pb-0 pt-20 md:pt-16">
             <h2 className="text-5xl md:text-7xl font-black text-transparent bg-white bg-clip-text text-center leading-tight mb-4 md:mb-8">
-              <span style={{ color: '#2DD4BF' }}>Projects</span> I’ve Built
-            </h2>       
+              {/* Mobile-only title */}
+              <span className="block md:hidden" style={{ color: '#2DD4BF' }}>My </span>Projects
+
+              {/* Desktop / tablet title */}
+              <span className="hidden md:block">
+                <span style={{ color: '#2DD4BF' }}>Projects</span> I’ve Built
+              </span>
+            </h2>
           {featuredProjects.map((project, i) => {
             const targetScale = 1; // All cards same size
             return (
