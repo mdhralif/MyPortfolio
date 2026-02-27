@@ -209,24 +209,6 @@ export default function Projects() {
               {currentProject + 1}/{projects.length}
             </div>
           </div>
-
-          {/* Mobile Swipe Indicator */}
-          <div className="flex md:hidden justify-center gap-1 mt-8 mb-4 flex-wrap">
-            {projects.map((_, index) => (
-              <motion.div
-                key={index}
-                className={`h-1 rounded-none transition-all duration-300 ${
-                  index === currentProject
-                    ? 'bg-[#2DD4BF] w-6'
-                    : 'bg-gray-600 w-1.5'
-                }`}
-                animate={{
-                  width: index === currentProject ? '24px' : '6px',
-                  opacity: index === currentProject ? 1 : 0.4
-                }}
-              />
-            ))}
-          </div>
         </section>
 
       </main>
