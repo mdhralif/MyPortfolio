@@ -525,8 +525,20 @@ export default function About() {
                 </div>
               ) : (
                 <div className="flex flex-col items-center justify-center py-16 text-gray-400 gap-3">
-                  <FaCertificate className="w-16 h-16 opacity-20" />
-                  <p className="text-sm">Certificate image not available yet.</p>
+                  {selectedCert.icon === "transcript" ? (
+                    <FaScroll className="w-16 h-16 opacity-20" />
+                  ) : selectedCert.icon === "classPhoto" ? (
+                    <FaUsers className="w-16 h-16 opacity-20" />
+                  ) : (
+                    <FaCertificate className="w-16 h-16 opacity-20" />
+                  )}
+                  <p className="text-sm">
+                    {selectedCert.icon === "transcript"
+                      ? "Transcript image not available yet."
+                      : selectedCert.icon === "classPhoto"
+                      ? "Class photo not available yet."
+                      : "Certificate image not available yet."}
+                  </p>
                 </div>
               )}
             </div>
