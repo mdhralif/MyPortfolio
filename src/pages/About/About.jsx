@@ -11,7 +11,7 @@ import SSCTranscript from "@/assets/images/SSC_T.png";
 import GPSCertificate from "@/assets/images/GPS_C.png";
 import KAZCertificate from "@/assets/images/KAZ_C.png";
 import ClassPhoto from "@/assets/images/ClassPhoto.png";
-import { FaFacebook, FaLinkedin, FaGithub, FaFileDownload, FaCalendarAlt, FaGraduationCap, FaChevronDown, FaChevronUp, FaCertificate, FaStar, FaTimes, FaScroll, FaFilePdf, FaUsers, FaMapMarkerAlt } from "react-icons/fa";
+import { FaFacebook, FaLinkedin, FaGithub, FaFileDownload, FaCalendarAlt, FaGraduationCap, FaChevronDown, FaChevronUp, FaCertificate, FaTimes, FaScroll, FaFilePdf, FaUsers, FaMapMarkerAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
