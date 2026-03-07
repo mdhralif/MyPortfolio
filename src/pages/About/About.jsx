@@ -286,7 +286,7 @@ export default function About() {
                 </div>
               </div>
               
-              <p className="hidden md:block text-gray-300 mb-4">Academic Highlights :</p>
+              <p className="hidden md:block text-gray-300 mb-4 font-semibold">Academic Courses :</p>
 
               <div
                 className={`hidden md:flex md:flex-wrap gap-3 overflow-hidden transition-[max-height] duration-300 ${
@@ -332,8 +332,32 @@ export default function About() {
                   <span>{showAllCourses ? "Show less" : "Show more"}</span>
                 </button>
               </div>
+
+              
             </div>
           </div>
+        
+          {/* Certificate & Transcript buttons for B.Sc. (aligned with other cards) */}
+          <div className="flex gap-2 mt-3 md:ml-32">
+            <button
+              onClick={() => setSelectedCert({ title: "B.Sc. in Software Engineering | Certificate", image: null, icon: "certificate" })}
+              className="inline-flex items-center gap-2 px-4 py-2 bg-[#0f1223] text-white text-sm font-semibold hover:bg-[#2DD4BF] hover:text-white transition-colors duration-200"
+              title="View Certificate"
+            >
+              <FaCertificate className="w-4 h-4" />
+              <span>Certificate</span>
+            </button>
+
+            <button
+              onClick={() => setSelectedCert({ title: "B.Sc. in Software Engineering | Transcript", image: null, icon: "transcript" })}
+              className="inline-flex items-center gap-2 px-4 py-2 bg-[#0f1223] text-white text-sm font-semibold hover:bg-[#2DD4BF] hover:text-white transition-colors duration-200"
+              title="View Transcript"
+            >
+              <FaScroll className="w-4 h-4" />
+              <span>Transcript</span>
+            </button>
+          </div>
+
         </motion.div>
 
         {showMoreEdu &&
