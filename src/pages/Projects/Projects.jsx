@@ -199,27 +199,7 @@ export default function Projects() {
             );
           })}
           
-          {/* Swipe Indicator */}
-          <div className="fixed right-6 top-1/2 transform -translate-y-1/2 z-50 hidden md:flex flex-col gap-2">
-            {projects.map((_, index) => (
-              <motion.div
-                key={index}
-                className={`w-1 h-6 rounded-none transition-all duration-300 ${
-                  index === currentProject
-                    ? 'bg-white '
-                    : 'bg-gray-600 '
-                }`}
-                whileHover={{ scale: 1.1, width: '6px' }}
-                animate={{
-                  height: index === currentProject ? '32px' : '24px',
-                  opacity: index === currentProject ? 1 : 0.6
-                }}
-              />
-            ))}
-            <div className="mt-2 text-xs text-gray-400 text-center">
-              {currentProject + 1}/{projects.length}
-            </div>
-          </div>
+          {/* Swipe Indicator removed as requested */}
 
           {/* Back to Top Button */}
           <div className="flex justify-center mt-8">
