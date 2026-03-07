@@ -104,7 +104,7 @@ export default function GlobalHamburger({ onContactClick = () => {} }) {
               onClick={() => setMenuOpen(false)}
               className="block font-bold text-5xl md:text-7xl lg:text-8xl text-white leading-tight mb-6 hover:text-[#2DD4BF] transition-colors"
             >
-              About
+              Profile
             </Link>
           </motion.div>
 
