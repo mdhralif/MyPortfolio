@@ -99,7 +99,7 @@ const projects = [
 
 export default function Projects() {
   const container = useRef(null);
-  const [setCurrentProject] = useState(0);
+  const [, setCurrentProject] = useState(0);
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start start", "end end"],
