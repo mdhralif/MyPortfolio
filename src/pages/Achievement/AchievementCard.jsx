@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
-import { FiLink } from "react-icons/fi";
-import championIcon from "../../assets/images/champion.png";
+import { FiLink, FiMapPin } from "react-icons/fi";
+import championIcon from "../../assets/images/trophy.png";
 
-export default function AchievementCard({ title, org, year, description, image, color = "#2DD4BF", link, logo }) {
+export default function AchievementCard({ title, org, year, description, image, color = "#2DD4BF", link}) {
   return (
     <div className="w-full flex flex-col md:flex-row bg-[#1c1f2e] rounded-none overflow-hidden shadow-xl">
       {/* Image/Icon section - full width on mobile, 55% on desktop */}
@@ -31,7 +31,7 @@ export default function AchievementCard({ title, org, year, description, image, 
         <div>
           {!image ? (
             <div className="mb-3 md:mb-4">
-              <span className="text-base md:text-xl font-bold text-yellow-400 bg-yellow-400/10 px-3 py-1 rounded-none"> 
+              <span className="text-base md:text-3xl font-bold text-[#161825] bg-white px-3 py-1 rounded-none"> 
                 Champion
               </span>
             </div>
@@ -61,13 +61,14 @@ export default function AchievementCard({ title, org, year, description, image, 
           </div>
           
           <div className="flex items-center gap-3 mb-2 md:mb-3">
-            <div className="flex items-center gap-2">
-              {logo ? (
+              <div className="flex items-center gap-2">
+              {/* {logo ? (
                 <img src={logo} alt={`${org} logo`} className="w-6 h-6 md:w-8 md:h-8 object-contain" />
               ) : (
                 <div className="w-6 h-6 md:w-8 md:h-8 bg-gray-700" />
-              )}
-              <span className="text-sm md:text-base font-semibold" style={{ color }}>
+              )} */}
+              <FiMapPin className="text-white text-sm md:text-base" />
+              <span className="text-sm md:text-base font-semibold text-white ml-1">
                 {org}
               </span>
             </div>
@@ -75,7 +76,7 @@ export default function AchievementCard({ title, org, year, description, image, 
             <span className="text-xs md:text-sm text-gray-400">{year}</span>
           </div>
           
-          <p className="text-xs md:text-base text-gray-300 leading-relaxed text-justify">
+          <p className="text-sm md:text-lg text-white leading-relaxed text-justify">
             {description}
           </p>
         </div>
