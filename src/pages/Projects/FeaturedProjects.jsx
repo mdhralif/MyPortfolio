@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 
 // Import only first 3 project images
-import soulaceImg from "@/assets/images/soulace.png";
+import nexbookImg from "@/assets/images/nexbook.png";
 import nexmeetImg from "@/assets/images/nexmeet.png";
 import blingoImg from "@/assets/images/blingo.png";
 
@@ -22,14 +22,14 @@ const featuredProjects = [
     liveLink: "https://alif-nexmeet.vercel.app",
   },
   {
-    title: "SoulAce",
+    title: "Nexbook",
     description:
-      "Built a mental health platform offering AI-powered journalism, personalized well being tools, real-time mental health assessment and personalized recommendations.",
-    src: soulaceImg,
-    link: soulaceImg,
-    color: "#5196fd",
-    githubLink: "https://github.com/mdhralif/Blingo",
-    liveLink: "https://soulace.onrender.com/",
+      "A prototype of Facebook, Nexbook is a social networking platform that enables users to React, post, and follow in a virtual community",
+    src: nexbookImg,
+    link: nexbookImg,
+    color: "#ed649e",
+    githubLink: "https://github.com/mdhralif/Nexbook",
+    liveLink: "https://alif-nexbook.vercel.app",
   },
   {
     title: "Blingo",
@@ -118,7 +118,7 @@ export default function FeaturedProjects() {
 
               {/* Desktop / tablet title */}
               <span className="hidden md:block">
-                <span style={{ color: '#2DD4BF' }}>Projects</span> I’ve Built
+                <span style={{ color: '#2DD4BF' }}>Featured</span> Projects
               </span>
             </h2>
           {featuredProjects.map((project, i) => {
