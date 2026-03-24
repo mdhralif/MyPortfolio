@@ -145,8 +145,8 @@ export default function FeaturedProjects() {
         <div className="bg-[#161925] flex justify-center pb-12 md:pb-20">
           <motion.button
             onClick={handleViewAllProjects}
-            className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-[#161825] font-bold text-xl rounded-none w-[90%] md:w-auto"
-            whileHover={{ scale: 1.05, y: -2 }}
+            className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 md:py-6 lg:py-8 bg-white text-gray-600 font-bold text-xl md:text-2xl lg:text-3xl xl:text-4xl rounded-none w-[90%] md:w-[85%] lg:w-[75%] xl:w-[65%]"
+            whileHover={{ y: -2 }}
             whileTap={{ scale: 0.95 }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
