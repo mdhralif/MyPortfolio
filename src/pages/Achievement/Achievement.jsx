@@ -7,7 +7,7 @@ import kuetLogo from "@/assets/images/kuet.png";
 
 const achievements = [
   {
-    certificateName: "Banglalink AppQuest Hackathon",
+    certificateName: "Banglalink AppQuest Hackathon, 2025",
     placement: "Award of Distinction [Champion]",
     description: "Built a mobile app that uses camera tracking to guide physiotherapy exercises with real-time posture feedback.",
     link: "https://www.linkedin.com/posts/md-h-r-alif-7358801a6_honored-to-be-the-champion-at-banglalink-ugcPost-7406008507109478400-oq1J?utm_source=share&utm_medium=member_desktop&rcm=ACoAADAuzBkBSSwMV6Qt1xaULMLxEbtc9MUQ9MU",
@@ -23,7 +23,7 @@ const achievements = [
     logo: gplogo,
   },
   {
-  "certificateName": "AI Fluency: Framework & Foundations",
+  "certificateName": "AI Fluency- Framework & Foundations",
   "placement": "Certificate of Completion",
   "description": "Completed a structured program covering AI frameworks, foundational concepts, and best practices for AI fluency.",
   "link": "https://media.licdn.com/dms/image/v2/D562DAQEDsP_pvRvUzg/profile-treasury-image-shrink_800_800/B56ZoQjz55JoAY-/0/1761214414938?e=1776866400&v=beta&t=KSBkAopo0IXm67qsM_ZfnsDfu8SXwwbgoey-0zJZpgc",
