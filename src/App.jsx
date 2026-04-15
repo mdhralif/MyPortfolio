@@ -31,7 +31,9 @@ const getNormalizedPathname = () => {
 };
 
 const shouldSkipLoading = (pathname) =>
-  pathname.endsWith("/projects") || pathname.endsWith("/skills");
+  pathname.endsWith("/projects") ||
+  pathname.endsWith("/skills") ||
+  pathname.endsWith("/me");
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(
