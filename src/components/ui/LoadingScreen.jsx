@@ -60,8 +60,21 @@ const LoadingScreen = ({ onLoadingComplete }) => {
         </div>
 
         {/* Text underneath */}
-        <div className="flex items-center justify-center gap-4 text-white font-mono tracking-[0.2em] text-xs sm:text-sm font-semibold uppercase mt-1">
-          <span>LOADING</span>
+        <div className="flex items-center justify-between w-full text-white font-mono tracking-[0.2em] text-xs sm:text-sm font-semibold uppercase mt-1">
+          <div className="flex">
+            {"LET'S EXPLORE".split("").map((char, index) => {
+              const targetLength = 13;
+              const isVisible = index < Math.floor((Math.min(progress, 100) / 100) * targetLength);
+              return (
+                <span 
+                  key={index}
+                  className={`transition-opacity duration-150 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+                >
+                  {char === " " ? "\u00A0" : char}
+                </span>
+              );
+            })}
+          </div>
           <span>{Math.round(progress)}%</span>
         </div>
         
