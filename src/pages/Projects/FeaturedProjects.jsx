@@ -3,6 +3,7 @@ import { useTransform, motion, useScroll } from "framer-motion";
 import { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa";
 
 // Import only first 3 project images
 import nexbookImg from "@/assets/images/nexbook.png";
@@ -139,37 +140,22 @@ export default function FeaturedProjects() {
               />
             );
           })}
-        </section>
 
-        {/* View All Projects Button - Moved to end of section */}
-        <div className="bg-[#161925] flex justify-center pb-12 md:pb-20">
-          <motion.button
-            onClick={handleViewAllProjects}
-            className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-none bg-white text-[#18181a] font-extrabold text-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
-            whileHover={{ y: 0 }}
-            whileTap={{ scale: 0.98 }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
-          >
-              <span>View All Projects</span>
-              <motion.svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="group-hover:translate-x-1 transition-transform duration-300"
-              >
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12,5 19,12 12,19"></polyline>
-              </motion.svg>
-            </motion.button>
-        </div>
+          <Card
+            i={featuredProjects.length}
+            title="All Projects"
+            description="Explore the full collection of my projects and builds."
+            url=""
+            color="#2DD4BF"
+            progress={scrollYProgress}
+            range={[featuredProjects.length * 0.25, 1]}
+            targetScale={1}
+            githubLink=""
+            liveLink=""
+            isAllProjectsCard
+            onAllProjectsClick={handleViewAllProjects}
+          />
+        </section>
 
       </main>
     </ReactLenis>
@@ -187,6 +173,8 @@ function Card({
   targetScale,
   githubLink,
   liveLink,
+  isAllProjectsCard = false,
+  onAllProjectsClick,
 }) {
   const container = useRef(null);
   const scale = useTransform(progress, range, [1, targetScale]);
@@ -209,6 +197,43 @@ function Card({
       >
         {/* Modern split card design */}
         <div className="w-full flex flex-col md:flex-row bg-zinc-900 rounded-none overflow-hidden shadow-xl">
+
+          {isAllProjectsCard ? (
+            <div className="relative flex h-[250px] w-full items-center justify-center overflow-hidden bg-[#0f1223] md:h-[400px] lg:h-[450px]">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#2DD4BF]/20 via-[#161925] to-[#0b0c12]" />
+              <div className="absolute -right-12 -top-12 h-48 w-48 rounded-full bg-[#2DD4BF]/15 blur-3xl" />
+              <div className="absolute -bottom-16 -left-10 h-56 w-56 rounded-full bg-white/10 blur-3xl" />
+              <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:28px_28px] opacity-30" />
+
+              <div className="relative z-10 flex h-full w-full flex-col justify-between p-6 md:p-10 lg:p-12">
+                <div className="flex justify-start">
+                  <div className="inline-flex items-center gap-2 rounded-none border border-white/10 bg-white/5 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.35em] text-white/70 backdrop-blur-sm">
+                    All Projects
+                  </div>
+                </div>
+
+                <div className="max-w-2xl">
+                  <h3 className="text-3xl font-black leading-tight text-white md:text-5xl lg:text-6xl">
+                    Explore the full project archive
+                  </h3>
+                  <p className="mt-3 max-w-lg text-sm leading-relaxed text-white/70 md:text-base">
+                    Browse every build, experiment, and featured app in one place.
+                  </p>
+                </div>
+
+                <div className="flex justify-start">
+                  <button
+                    onClick={onAllProjectsClick}
+                    className="group inline-flex items-center gap-3 border border-white/15 bg-[#161825]/80 px-5 py-3 text-sm font-semibold text-white backdrop-blur-md transition-all duration-300 hover:border-[#2DD4BF] hover:bg-[#2DD4BF] hover:text-[#161925] md:px-6 md:py-4 md:text-base"
+                  >
+                    <span>Open All Projects</span>
+                    <FaArrowRight className="text-base transition-transform duration-300 group-hover:translate-x-1" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <>
           
           {/* Image section - full width on mobile, 55% on desktop */}
           <div className="w-full md:w-[55%] h-[250px] md:h-[400px] lg:h-[450px] relative overflow-hidden">
@@ -235,8 +260,11 @@ function Card({
               Project {i + 1}
             </div>
           </div>
+            </>
+          )}
 
-          {/* Content section - full width on mobile, 45% on desktop */}
+          {!isAllProjectsCard ? (
+          /* Content section - full width on mobile, 45% on desktop */
           <div className="w-full md:w-[45%] p-6 md:p-8 lg:p-10 flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-3 mb-4 md:mb-6">
@@ -401,6 +429,7 @@ function Card({
               </div>
             </div>
           </div>
+          ) : null}
         </div>
       </motion.div>
     </div>
@@ -420,4 +449,6 @@ Card.propTypes = {
   targetScale: PropTypes.number.isRequired,
   githubLink: PropTypes.string.isRequired,
   liveLink: PropTypes.string.isRequired,
+  isAllProjectsCard: PropTypes.bool,
+  onAllProjectsClick: PropTypes.func,
 };
