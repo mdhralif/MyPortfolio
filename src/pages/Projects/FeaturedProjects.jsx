@@ -199,7 +199,7 @@ function Card({
         <div className="w-full flex flex-col md:flex-row bg-zinc-900 rounded-none overflow-hidden shadow-xl">
 
           {isAllProjectsCard ? (
-            <div className="relative flex h-[250px] w-full items-center justify-center overflow-hidden bg-[#0f1223] md:h-[400px] lg:h-[450px]">
+            <div className="relative flex h-[540px] w-full items-center justify-center overflow-hidden bg-[#0f1223] md:h-[400px] lg:h-[450px]">
               <div className="absolute inset-0 bg-gradient-to-br from-[#2DD4BF]/20 via-[#161925] to-[#0b0c12]" />
               <div className="absolute -right-12 -top-12 h-48 w-48 rounded-full bg-[#2DD4BF]/15 blur-3xl" />
               <div className="absolute -bottom-16 -left-10 h-56 w-56 rounded-full bg-white/10 blur-3xl" />
