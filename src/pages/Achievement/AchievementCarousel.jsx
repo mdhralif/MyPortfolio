@@ -83,7 +83,7 @@ export default function AchievementCarousel({ items = [] }) {
   if (!items.length) return null;
 
   return (
-    <div className="w-[94%] md:w-[92%] mx-auto overflow-x-clip [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)] py-4 -my-4">
+    <div className="w-[94%] md:w-[92%] mx-auto overflow-x-clip py-4 -my-4">
       <div
         ref={trackRef}
         className={`flex gap-8 pr-8 select-none ${isDragging ? "cursor-grabbing" : "cursor-grab"}`}

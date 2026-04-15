@@ -145,14 +145,14 @@ export default function FeaturedProjects() {
         <div className="bg-[#161925] flex justify-center pb-12 md:pb-20">
           <motion.button
             onClick={handleViewAllProjects}
-            className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 md:py-6 lg:py-8 bg-white text-gray-600 font-bold text-xl md:text-2xl lg:text-3xl xl:text-4xl rounded-none w-[90%] md:w-[85%] lg:w-[75%] xl:w-[65%]"
-            whileHover={{ y: -2 }}
-            whileTap={{ scale: 0.95 }}
+            className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 md:py-6 lg:py-8 bg-[#0f1322]/80 text-white font-extrabold text-xl md:text-2xl lg:text-3xl xl:text-4xl rounded-none w-[90%] md:w-[85%] lg:w-[75%] xl:w-[65%] border border-white/60 backdrop-blur-md shadow-[0_0_0_1px_rgba(255,255,255,0.12),0_20px_40px_rgba(0,0,0,0.35)] transition-colors duration-300 hover:bg-[#121a2b]/90 hover:border-white"
+            whileHover={{ y: -4 }}
+            whileTap={{ scale: 0.98 }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.6 }}
           >
-              <span>View All Projects</span>
+              <span className="tracking-wide">View All Projects</span>
               <motion.svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -163,7 +163,7 @@ export default function FeaturedProjects() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="group-hover:translate-x-1 transition-transform"
+                className="group-hover:translate-x-1.5 transition-transform duration-300"
               >
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12,5 19,12 12,19"></polyline>
