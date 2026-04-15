@@ -325,7 +325,7 @@ const SkillsSection = () => {
 
         {shouldRenderGlobe ? (
           <div
-            className="fixed inset-0 z-20 flex items-center justify-center bg-[#161825]/20 backdrop-blur-md"
+            className="fixed inset-0 z-20 flex items-center justify-center bg-[#161825]/20 backdrop-blur-sm"
             aria-hidden={globeState !== "visible"}
           >
             <div className="pointer-events-none flex w-full max-w-3xl items-center justify-center px-4 md:px-6">
