@@ -8,7 +8,7 @@ import kuetLogo from "@/assets/images/kuet.png";
 const achievements = [
   {
     certificateName: "Banglalink AppQuest Hackathon",
-    placement: "Award of Distinction (Champion)",
+    placement: "Award of Distinction [Champion]",
     description: "Built a mobile app that uses camera tracking to guide physiotherapy exercises with real-time posture feedback.",
     link: "https://www.linkedin.com/posts/md-h-r-alif-7358801a6_honored-to-be-the-champion-at-banglalink-ugcPost-7406008507109478400-oq1J?utm_source=share&utm_medium=member_desktop&rcm=ACoAADAuzBkBSSwMV6Qt1xaULMLxEbtc9MUQ9MU",
     color: "#fff",
