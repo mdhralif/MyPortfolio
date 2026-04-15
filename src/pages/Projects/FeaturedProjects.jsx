@@ -118,7 +118,7 @@ export default function FeaturedProjects() {
 
               {/* Desktop / tablet title */}
               <span className="hidden md:block">
-                <span style={{ color: '#2DD4BF' }}>Featured</span> Projects
+                <span style={{ color: '#2DD4BF' }}>Projects</span> Archive
               </span>
             </h2>
           {featuredProjects.map((project, i) => {
