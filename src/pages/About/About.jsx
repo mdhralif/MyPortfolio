@@ -48,7 +48,7 @@ export default function About() {
   }, [selectedCert]);
   const extraEducations = [
     {
-      title: "H.S.C. in Science",
+      title: "H.S.C. in Science [Grade - 12]",
       shortTitle: "H.S.C.",
       org: "Khulna Public College (KPC)",
       gpa: "5.00",
@@ -61,7 +61,7 @@ export default function About() {
       transcript: HSCTranscript,
     },
     {
-      title: "S.S.C. in Science",
+      title: "S.S.C. in Science [Grade - 10]",
       shortTitle: "S.S.C.",
       org: "Khunla Engineering Univerity School (KEUS)",
       gpa: "5.00",
