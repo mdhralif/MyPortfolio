@@ -43,8 +43,8 @@ const achievements = [
 
 export default function Achievement() {
   return (
-    <main className="bg-[#161825] text-white pt-20 pb-20 md:pt-16 md:pb-20 px-6 min-h-screen">
-      <section className="max-w-6xl mx-auto">
+    <main className="bg-[#161825] text-white pt-20 md:pt-16 min-h-screen">
+      <section className="max-w-6xl mx-auto px-4 md:px-8 pb-11">
         <h2 className="text-5xl md:text-7xl font-black text-center mb-14 md:mb-16">
           <span style={{ color: "#2DD4BF" }}>Key </span>Achievements
         </h2>
