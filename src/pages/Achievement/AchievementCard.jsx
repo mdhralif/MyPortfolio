@@ -11,12 +11,12 @@ export default function AchievementCard({
   link,
 }) {
   return (
-    <div className="relative w-full h-[240px] rounded-3xl overflow-hidden bg-[#1f2937]/90 border border-white/15 shadow-none">
+    <div className="relative w-full h-[240px] overflow-hidden bg-[#1f2937]/90 shadow-none">
       <div
         className="absolute inset-0 opacity-10 pointer-events-none"
         style={{ backgroundImage: `url(${grainImage})` }}
       />
-      <div className="absolute inset-0 rounded-3xl border border-white/10 pointer-events-none" />
+      <div className="absolute inset-0 pointer-events-none" />
 
       <div className="relative z-10 h-full p-4 md:p-5 lg:p-6 flex flex-col">
         <div className="flex items-start justify-between gap-4">
