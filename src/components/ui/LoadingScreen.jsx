@@ -1,27 +1,14 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-const loadingMessages = [
-  'Let\'s',
-  'Explore'
-];
-
 const LoadingScreen = ({ onLoadingComplete }) => {
   const [progress, setProgress] = useState(0);
-  const [loadingText, setLoadingText] = useState(loadingMessages[0]);
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setProgress(prev => {
         const newProgress = prev + Math.random() * 8 + 2;
-        
-        // Update loading text based on progress (map progress to messages)
-        const idx = Math.min(
-          loadingMessages.length - 1,
-          Math.floor(newProgress / (100 / loadingMessages.length))
-        );
-        setLoadingText(loadingMessages[idx]);
 
         if (newProgress >= 100) {
           clearInterval(timer);
@@ -61,35 +48,23 @@ const LoadingScreen = ({ onLoadingComplete }) => {
       </div>
 
       {/* Main loading content */}
-      <div className="relative z-10 text-center space-y-8 px-8">
+      <div className="relative z-10 w-full max-w-xs sm:max-w-sm px-8 flex flex-col items-center">
         
-       
-
-        {/* Loading section */}
-        <div className="space-y-6">
-          
-          {/* Loading text */}
-          <div className="min-h-[2rem] flex items-center justify-center">
-            <span className="text-gray-300 text-5xl font-extrabold">
-              {loadingText}
-            </span>
-          </div>
-          
+        {/* Progress bar border */}
+        <div className="w-full h-5 sm:h-6 border-[1px] border-white/60 p-[2px] mb-4">
+          {/* Progress fill */}
+          <div 
+            className="h-full bg-white transition-all duration-100 ease-out"
+            style={{ width: `${Math.min(100, Math.round(progress))}%` }}
+          />
         </div>
 
-        {/* Loading dots */}
-        <div className="flex justify-center items-center space-x-2">
-          {[...Array(3)].map((_, i) => (
-            <div
-              key={i}
-              className="w-3 h-3 bg-white rounded-full"
-              style={{
-                animation: `bounce 1.4s ease-in-out infinite`,
-                animationDelay: `${i * 0.16}s`
-              }}
-            />
-          ))}
+        {/* Text underneath */}
+        <div className="flex items-center justify-center gap-4 text-white font-mono tracking-[0.2em] text-xs sm:text-sm font-semibold uppercase mt-1">
+          <span>LOADING</span>
+          <span>{Math.round(progress)}%</span>
         </div>
+        
       </div>
     </div>
   );
