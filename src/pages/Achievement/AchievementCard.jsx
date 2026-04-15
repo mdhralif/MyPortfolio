@@ -39,7 +39,10 @@ export default function AchievementCard({
               <h3 className="text-base md:text-2xl font-bold text-white leading-tight truncate md:whitespace-normal">
                 {certificateName}
               </h3>
-              <p className="text-sm md:text-base font-semibold mt-2" style={{ color }}>
+              <p
+                className="mt-2 inline-flex w-fit rounded-none bg-gray-700/50 px-3 py-1 text-sm md:text-base font-semibold"
+                style={{ color }}
+              >
                 {placement}
               </p>
             </div>
