@@ -11,6 +11,15 @@ const ContactModal = ({ isOpen, onClose }) => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
       setIsMapLoading(true);
+
+      const loadingTimer = window.setTimeout(() => {
+        setIsMapLoading(false);
+      }, 1200);
+
+      return () => {
+        window.clearTimeout(loadingTimer);
+        document.body.style.overflow = 'unset';
+      };
     } else {
       document.body.style.overflow = 'unset';
     }
