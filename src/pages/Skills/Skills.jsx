@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import IconCloudDemo from "@/components/globe";
 import { Code2, Paintbrush, Database, Layout, Cpu, Cloud,} from "lucide-react";
+import { useLocation } from "react-router-dom";
 import {
   FaReact,
   FaNodeJs,
@@ -86,6 +87,9 @@ SkillCard.propTypes = {
 };
 
 const SkillsSection = () => {
+  const [showGlobe, setShowGlobe] = useState(true);
+  const location = useLocation();
+
   const skillCategories = [
     {
       icon: Layout,
@@ -292,6 +296,22 @@ const SkillsSection = () => {
     
   ];
 
+  useEffect(() => {
+    if (location.pathname !== "/skills") {
+      setShowGlobe(false);
+      return undefined;
+    }
+
+    setShowGlobe(true);
+
+    const hideGlobe = () => setShowGlobe(false);
+    const timer = window.setTimeout(hideGlobe, 1000);
+
+    return () => {
+      window.clearTimeout(timer);
+    };
+  }, [location.pathname]);
+
   return (
     <main className="pt-20 md:pt-16 text-white min-h-screen bg-[#1C1F2E] relative">
       <section className="container mx-auto px-4 pb-11 relative z-10">
@@ -300,14 +320,13 @@ const SkillsSection = () => {
           <span style={{ color: '#2DD4BF' }}>Skills </span>I&apos;ve
         </h2>    
 
-        <div className="flex justify-center items-center relative mb-8">
-          {/* Background panel matching skill card style */}
-          <div className="absolute inset-0 flex justify-center items-center">
-            <div className="bg-gray-900/80 border-0 rounded-none h-full w-full" />
-          </div>
-
-          {/* Globe sits above the background panel */}
-          <div className="relative z-10">
+        <div
+          className={`fixed inset-0 z-20 flex items-center justify-center bg-[#161825]/20 backdrop-blur-md transition-opacity duration-1000 ease-in-out will-change-[opacity] ${
+            showGlobe ? "opacity-100" : "pointer-events-none opacity-0"
+          }`}
+          aria-hidden={!showGlobe}
+        >
+          <div className="pointer-events-none w-full max-w-4xl px-4 md:px-8">
             <IconCloudDemo />
           </div>
         </div>
