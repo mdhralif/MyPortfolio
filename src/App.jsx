@@ -21,8 +21,22 @@ const imageModules = import.meta.glob(
 );
 const imageUrls = Object.values(imageModules);
 
+const getNormalizedPathname = () => {
+  if (typeof window === "undefined") return "/";
+
+  const pathname = window.location.pathname.toLowerCase();
+  return pathname.endsWith("/") && pathname.length > 1
+    ? pathname.slice(0, -1)
+    : pathname;
+};
+
+const shouldSkipLoading = (pathname) =>
+  pathname.endsWith("/projects") || pathname.endsWith("/skills");
+
 export default function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(
+    !shouldSkipLoading(getNormalizedPathname())
+  );
 
   // Contact modal state - shared across Hero and About
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);

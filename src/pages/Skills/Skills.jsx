@@ -314,6 +314,7 @@ const SkillsSection = () => {
   }, [location.pathname]);
 
   const shouldRenderGlobe = location.pathname === "/skills" && globeState !== "hidden";
+  const shouldPreloadGlobe = location.pathname === "/";
 
   return (
     <main className="pt-20 md:pt-16 text-white min-h-screen bg-[#1C1F2E] relative">
@@ -333,6 +334,16 @@ const SkillsSection = () => {
             </div>
           </div>
         ) : null}
+
+        {shouldPreloadGlobe ? (
+          <div
+            className="pointer-events-none absolute h-0 w-0 overflow-hidden opacity-0"
+            aria-hidden="true"
+          >
+            <IconCloudDemo />
+          </div>
+        ) : null}
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, index) => (
             <SkillCard
