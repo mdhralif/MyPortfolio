@@ -304,9 +304,9 @@ const SkillsSection = () => {
 
     setGlobeState("visible");
 
-    const hideTimer = window.setTimeout(() => {
+        const hideTimer = window.setTimeout(() => {
       setGlobeState("hidden");
-    }, 1200);
+        }, 1500);
 
     return () => {
       window.clearTimeout(hideTimer);
