@@ -87,7 +87,7 @@ SkillCard.propTypes = {
 };
 
 const SkillsSection = () => {
-  const [showGlobe, setShowGlobe] = useState(true);
+  const [globeState, setGlobeState] = useState("hidden");
   const location = useLocation();
 
   const skillCategories = [
@@ -298,19 +298,22 @@ const SkillsSection = () => {
 
   useEffect(() => {
     if (location.pathname !== "/skills") {
-      setShowGlobe(false);
+      setGlobeState("hidden");
       return undefined;
     }
 
-    setShowGlobe(true);
+    setGlobeState("visible");
 
-    const hideGlobe = () => setShowGlobe(false);
-    const timer = window.setTimeout(hideGlobe, 1000);
+    const hideTimer = window.setTimeout(() => {
+      setGlobeState("hidden");
+    }, 1200);
 
     return () => {
-      window.clearTimeout(timer);
+      window.clearTimeout(hideTimer);
     };
   }, [location.pathname]);
+
+  const shouldRenderGlobe = location.pathname === "/skills" && globeState !== "hidden";
 
   return (
     <main className="pt-20 md:pt-16 text-white min-h-screen bg-[#1C1F2E] relative">
@@ -320,16 +323,16 @@ const SkillsSection = () => {
           <span style={{ color: '#2DD4BF' }}>Skills </span>I&apos;ve
         </h2>    
 
-        <div
-          className={`fixed inset-0 z-20 flex items-center justify-center bg-[#161825]/20 backdrop-blur-md transition-opacity duration-1000 ease-in-out will-change-[opacity] ${
-            showGlobe ? "opacity-100" : "pointer-events-none opacity-0"
-          }`}
-          aria-hidden={!showGlobe}
-        >
-          <div className="pointer-events-none w-full max-w-4xl px-4 md:px-8">
-            <IconCloudDemo />
+        {shouldRenderGlobe ? (
+          <div
+            className="fixed inset-0 z-20 flex items-center justify-center bg-[#161825]/20 backdrop-blur-md"
+            aria-hidden={globeState !== "visible"}
+          >
+            <div className="pointer-events-none flex w-full max-w-3xl items-center justify-center px-4 md:px-6">
+              <IconCloudDemo />
+            </div>
           </div>
-        </div>
+        ) : null}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, index) => (
             <SkillCard
