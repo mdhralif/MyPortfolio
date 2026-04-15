@@ -379,7 +379,7 @@ export default function About() {
                 )}
                 {edu.scholarship && (
                   <div className="flex items-center gap-2">
-                    <span className="text-white font-semibold text-xs">Board Scholarship</span>
+                    <span className="text-white font-semibold text-xs">Awarded Board Scholarship</span>
                   </div>
                 )}
               </div>
@@ -410,7 +410,7 @@ export default function About() {
                   {edu.scholarship && (
                     <div className="flex md:hidden items-center gap-2 mb-2">
                       <FaScroll className="w-4 h-4 text-white" />
-                      <span className="text-white font-semibold text-sm">Board Scholarship</span>
+                      <span className="text-white font-semibold text-sm">Awarded Board Scholarship</span>
                     </div>
                   )}
 
