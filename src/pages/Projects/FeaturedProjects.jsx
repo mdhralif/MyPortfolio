@@ -224,9 +224,9 @@ function Card({
                 <div className="flex justify-start">
                   <button
                     onClick={onAllProjectsClick}
-                    className="group inline-flex items-center gap-3 border border-white/15 bg-[#161825]/80 px-5 py-3 text-sm font-semibold text-white backdrop-blur-md transition-all duration-300 hover:border-[#2DD4BF] hover:bg-[#2DD4BF] hover:text-[#161925] md:px-6 md:py-4 md:text-base"
+                    className="group inline-flex items-center gap-3 bg-[#fff] px-5 py-3 text-sm font-bold text-black backdrop-blur-md transition-all duration-300 hover:border-[#2DD4BF] hover:bg-[#2DD4BF] hover:text-[#161925] md:px-6 md:py-4 md:text-base"
                   >
-                    <span>Open All Projects</span>
+                    <span>Let&apos;s Explore</span>
                     <FaArrowRight className="text-base transition-transform duration-300 group-hover:translate-x-1" />
                   </button>
                 </div>
