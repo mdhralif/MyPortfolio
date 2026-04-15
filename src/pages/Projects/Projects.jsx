@@ -12,6 +12,7 @@ import nextalkImg from "@/assets/images/nextalk.png";
 import iutWebImg from "@/assets/images/iut_web.png";
 import pixelforgeImg from "@/assets/images/pixelforge.png";
 import fluppyImg from "@/assets/images/fluppy.png";
+import scrollImg from "@/assets/images/scroll1.png";
 
 const projects = [
   {
@@ -20,7 +21,7 @@ const projects = [
       "Designed and developed a video conferencing platform with real-time meeting features, scheduling options, and session recording",
     src: nexmeetImg,
     link: nexmeetImg,
-    color: "#8f89ff",
+    color: "#fff",
     githubLink: "https://github.com/mdhralif/nexmeet",
     liveLink: "https://alif-nexmeet.vercel.app",
   },
@@ -30,7 +31,7 @@ const projects = [
       "Built a mental health platform offering AI-powered journalism, personalized well being tools, real-time mental health assessment and personalized recommendations.",
     src: soulaceImg,
     link: soulaceImg,
-    color: "#5196fd",
+    color: "#fff",
     githubLink: "https://github.com/mdhralif/Blingo",
     liveLink: "https://soulace.onrender.com/",
   },
@@ -50,7 +51,7 @@ const projects = [
       "A prototype of Facebook, Nexbook is a social networking platform that enables users to React, post, and follow in a virtual community",
     src: nexbookImg,
     link: nexbookImg,
-    color: "#ed649e",
+    color: "#fff",
     githubLink: "https://github.com/mdhralif/Nexbook",
     liveLink: "https://alif-nexbook.vercel.app",
   },
@@ -70,7 +71,7 @@ const projects = [
       "Nextalk is a real-time conversation web app designed to facilitate instant messaging and seamless communication between users.",
     src: nextalkImg,
     link: nextalkImg,
-    color: "#10b981",
+    color: "#fff",
     githubLink: "https://github.com/mdhralif/Realtime_Chat_Application",
     liveLink: "https://drive.google.com/file/d/1GaoliAKVd3J9IDk97kINaRAaMSNF5kUx/view?usp=sharing",
   },
@@ -81,7 +82,7 @@ const projects = [
       "Pixelforge is a Minecraft-inspired prototype that simulates a block-based world with crafting and building mechanics,focused on creating a detailed map of the Islamic University of Technology (IUT).",
     src: pixelforgeImg,
     link: pixelforgeImg,
-    color: "#f59e0b",
+    color: "#fff",
     githubLink: "https://github.com/mdhralif",
     liveLink: "https://drive.google.com/file/d/1SKGoVzAZgH5KBLp6EEodw4J9MyL5iFRx/view?usp=sharing",
   },
@@ -100,10 +101,29 @@ const projects = [
 export default function Projects() {
   const container = useRef(null);
   const [, setCurrentProject] = useState(0);
+  const [showScrollHint, setShowScrollHint] = useState(true);
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start start", "end end"],
   });
+
+  useEffect(() => {
+    const hideScrollHint = () => setShowScrollHint(false);
+    const timer = window.setTimeout(hideScrollHint, 2200);
+
+    window.addEventListener("scroll", hideScrollHint, { passive: true, once: true });
+    window.addEventListener("wheel", hideScrollHint, { passive: true, once: true });
+    window.addEventListener("touchstart", hideScrollHint, { passive: true, once: true });
+    window.addEventListener("keydown", hideScrollHint, { once: true });
+
+    return () => {
+      window.clearTimeout(timer);
+      window.removeEventListener("scroll", hideScrollHint);
+      window.removeEventListener("wheel", hideScrollHint);
+      window.removeEventListener("touchstart", hideScrollHint);
+      window.removeEventListener("keydown", hideScrollHint);
+    };
+  }, []);
 
   useEffect(() => {
     // Add specific styles for 1366x768 resolution
@@ -164,10 +184,70 @@ export default function Projects() {
 
   return (
     <ReactLenis root>
-      <main className="bg-[#161925]" ref={container}>
+      <main className="bg-[#161925] relative" ref={container}>
+        <div
+          aria-hidden="true"
+          className={`fixed inset-0 z-50 flex items-center justify-center bg-[#161825]/20 backdrop-blur-sm transition-opacity duration-700 ${
+            showScrollHint ? "opacity-100" : "pointer-events-none opacity-0"
+          }`}
+        >
+          <div className="flex flex-col items-center gap-4 md:gap-5">
+            <motion.div
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 1.3, repeat: Infinity, ease: "easeInOut" }}
+              className="text-[#2DD4BF]"
+            >
+              <svg
+                width="80"
+                height="80"
+                viewBox="0 0 64 64"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-14 w-14 md:h-16 md:w-16"
+              >
+                <path
+                  d="M16 38L32 22L48 38"
+                  stroke="currentColor"
+                  strokeWidth="8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </motion.div>
+
+            <img
+              src={scrollImg}
+              alt="Scroll hint"
+              className="h-auto w-[78vw] max-w-[320px] md:w-[340px] lg:w-[360px]"
+              draggable="false"
+            />
+
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 1.3, repeat: Infinity, ease: "easeInOut" }}
+              className="text-[#2DD4BF]"
+            >
+              <svg
+                width="84"
+                height="84"
+                viewBox="0 0 64 64"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-16 w-16 md:h-20 md:w-20"
+              >
+                <path
+                  d="M16 26L32 42L48 26"
+                  stroke="currentColor"
+                  strokeWidth="8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </motion.div>
+          </div>
+        </div>
         <section className="text-white w-full bg-[#161925] pb-24 md:pb-20 pt-20 md:pt-16">
             <h2 className="text-5xl md:text-7xl font-black text-transparent bg-white bg-clip-text text-center leading-tight mb-4 md:mb-8">
-              {/* Mobile-only title */}
               <span className="block md:hidden">
                 <span className="inline-block bg-clip-text text-transparent" style={{ color: '#2DD4BF' }}>
                   My
