@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./assets/css/index.css";
 import About from "./pages/About/About";
 import Achievement from "./pages/Achievement/Achievement";
@@ -15,6 +15,12 @@ import ContactModal from "./components/ContactModal";
 
 import { Route, Routes } from "react-router-dom";
 
+const imageModules = import.meta.glob(
+  "./assets/images/**/*.{png,jpg,jpeg,JPG,JPEG,webp,WEBP,gif,GIF,avif,AVIF,svg,SVG}",
+  { eager: true, import: "default" }
+);
+const imageUrls = Object.values(imageModules);
+
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -27,6 +33,19 @@ export default function App() {
   const handleLoadingComplete = () => {
     setIsLoading(false);
   };
+
+  useEffect(() => {
+    const preloadedImages = imageUrls.map((src) => {
+      const img = new Image();
+      img.decoding = "async";
+      img.src = src;
+      return img;
+    });
+
+    return () => {
+      preloadedImages.length = 0;
+    };
+  }, []);
 
   if (isLoading) {
     return <LoadingScreen onLoadingComplete={handleLoadingComplete} />;
