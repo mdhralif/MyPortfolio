@@ -48,19 +48,18 @@ const LoadingScreen = ({ onLoadingComplete }) => {
       </div>
 
       {/* Main loading content */}
-      <div className="relative z-10 w-full max-w-xs sm:max-w-sm px-8 flex flex-col items-center">
+      <div className="relative z-10 w-full max-w-2xl px-4 sm:px-8 flex flex-col items-center">
         
-        {/* Smile */}
-        <div className="text-white text-5xl sm:text-6xl font-medium mb-6">
+        {/* Smile - positioned exactly where it was above the center */}
+        <div className="absolute bottom-full mb-12 sm:mb-20 text-white text-5xl sm:text-6xl font-medium">
           ツ
         </div>
 
-        {/* Numeric ID on top */}
-        <div className="flex justify-center w-full text-white font-mono tracking-[0.1em] sm:tracking-[0.15em] text-xs sm:text-sm font-semibold mb-3">
+        {/* Text - naturally placed in the exact center (where the bar used to be), with increased size */}
+        <div className="flex justify-center w-full text-white font-mono tracking-[0.1em] sm:tracking-[0.15em] text-sm sm:text-lg md:text-xl font-bold">
           <div className="flex text-center flex-wrap justify-center">
             {"You're about to see my work !".split("").map((char, index) => {
               const targetLength = 29;
-              // Finishes appearing when progress reaches 80%
               const isVisible = index < Math.floor((Math.min(progress, 80) / 80) * targetLength);
               return (
                 <span 
@@ -74,21 +73,18 @@ const LoadingScreen = ({ onLoadingComplete }) => {
           </div>
         </div>
 
-        {/* Progress bar border */}
-        <div className="w-full h-5 sm:h-6 border-[1px] border-white/60 p-[2px] mb-4">
-          {/* Progress fill */}
-          <div 
-            className="h-full bg-white transition-all duration-100 ease-out"
-            style={{ width: `${Math.min(100, Math.round(progress))}%` }}
-          />
-        </div>
-
-        {/* Text underneath */}
-        <div className="flex items-center justify-between w-full text-white font-mono tracking-[0.2em] text-xs sm:text-sm font-semibold uppercase mt-1">
-          <div className="flex">
-            {"LOADING..." }
+        {/* Loading Bar and Percentage - placed just below the text */}
+        <div className="w-full max-w-[200px] sm:max-w-[240px] mt-6 sm:mt-8 flex flex-col items-center">
+          <div className="w-full h-5 sm:h-6 border-[1px] border-white/60 p-[2px] mb-2">
+            <div 
+              className="h-full bg-white transition-all duration-75 ease-out"
+              style={{ width: `${Math.min(100, progress)}%` }}
+            />
           </div>
-          <span>{Math.round(progress)}%</span>
+          <div className="flex items-center justify-between w-full text-white font-mono tracking-[0.15em] text-[10px] sm:text-xs font-semibold uppercase opacity-80">
+            <span>LOADING...</span>
+            <span>{Math.round(progress)}%</span>
+          </div>
         </div>
         
       </div>
