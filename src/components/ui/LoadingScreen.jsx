@@ -50,6 +50,30 @@ const LoadingScreen = ({ onLoadingComplete }) => {
       {/* Main loading content */}
       <div className="relative z-10 w-full max-w-xs sm:max-w-sm px-8 flex flex-col items-center">
         
+        {/* Smile */}
+        <div className="text-white text-5xl sm:text-6xl font-medium mb-6">
+          ツ
+        </div>
+
+        {/* Numeric ID on top */}
+        <div className="flex justify-center w-full text-white font-mono tracking-[0.1em] sm:tracking-[0.15em] text-xs sm:text-sm font-semibold mb-3">
+          <div className="flex text-center flex-wrap justify-center">
+            {"You're about to see my work !".split("").map((char, index) => {
+              const targetLength = 29;
+              // Finishes appearing when progress reaches 80%
+              const isVisible = index < Math.floor((Math.min(progress, 80) / 80) * targetLength);
+              return (
+                <span 
+                  key={`id-${index}`}
+                  className={`transition-opacity duration-150 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+                >
+                  {char === " " ? "\u00A0" : char}
+                </span>
+              );
+            })}
+          </div>
+        </div>
+
         {/* Progress bar border */}
         <div className="w-full h-5 sm:h-6 border-[1px] border-white/60 p-[2px] mb-4">
           {/* Progress fill */}
@@ -62,18 +86,7 @@ const LoadingScreen = ({ onLoadingComplete }) => {
         {/* Text underneath */}
         <div className="flex items-center justify-between w-full text-white font-mono tracking-[0.2em] text-xs sm:text-sm font-semibold uppercase mt-1">
           <div className="flex">
-            {"LET'S EXPLORE".split("").map((char, index) => {
-              const targetLength = 13;
-              const isVisible = index < Math.floor((Math.min(progress, 100) / 100) * targetLength);
-              return (
-                <span 
-                  key={index}
-                  className={`transition-opacity duration-150 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
-                >
-                  {char === " " ? "\u00A0" : char}
-                </span>
-              );
-            })}
+            {"LOADING..." }
           </div>
           <span>{Math.round(progress)}%</span>
         </div>
