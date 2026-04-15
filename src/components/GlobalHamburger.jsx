@@ -72,6 +72,7 @@ export default function GlobalHamburger({ onContactClick = () => {} }) {
 
       <motion.div
         className={`fixed inset-0 bg-[#161825] transform z-40 flex flex-col items-start justify-start p-12 md:p-16`}
+        initial={{ translateY: "-100%" }}
         animate={menuOpen ? { translateY: 0 } : { translateY: "-100%" }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         aria-hidden={!menuOpen}
