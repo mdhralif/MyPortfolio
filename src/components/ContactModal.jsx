@@ -1,12 +1,16 @@
-import { useEffect } from 'react';
-import { FaEnvelope, FaLinkedin, FaPhone, FaLocationArrow } from 'react-icons/fa';
+import { useEffect, useState } from 'react';
+import { FaEnvelope, FaLinkedin, FaPhone } from 'react-icons/fa';
+import { FaMapPin } from 'react-icons/fa6';
 import { AiOutlineClose } from 'react-icons/ai';
 import PropTypes from 'prop-types';
 
 const ContactModal = ({ isOpen, onClose }) => {
+  const [isMapLoading, setIsMapLoading] = useState(true);
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
+      setIsMapLoading(true);
     } else {
       document.body.style.overflow = 'unset';
     }
@@ -102,17 +106,25 @@ const ContactModal = ({ isOpen, onClose }) => {
 
           <div className="p-4 md:p-6 bg-gray-800 h-fit">
             <div className="mb-3 text-lg md:text-xl font-medium text-white">
-              <FaLocationArrow className="inline-block w-5 h-5 mr-2 text-gray-300" /><span> </span>
+              <FaMapPin className="inline-block w-5 h-5 mr-2 text-gray-300" />
               Location
               </div>
-            <div className="w-full h-48 md:h-[50vh] bg-gray-700 overflow-hidden">
-              <iframe
-                title="location-map"
-                src="https://maps.google.com/maps?q=23.948102,90.37926&z=17&t=k&output=embed"
-                className="w-full h-full border-0"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
+            <div className="relative w-full h-48 md:h-[50vh] bg-gray-700 overflow-hidden">
+              {isMapLoading ? (
+                <div className="pointer-events-none absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
+                  <div className="h-10 w-10 rounded-full border-4 border-white/20 border-t-[#2DD4BF] animate-spin" />
+                </div>
+              ) : null}
+              <div className="absolute inset-0 pointer-events-none bg-transparent">
+                <iframe
+                  title="location-map"
+                  src="https://maps.google.com/maps?q=23.948102,90.37926&z=17&t=k&output=embed"
+                  className="w-full h-full border-0"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  onLoad={() => setIsMapLoading(false)}
+                />
+              </div>
             </div>
           </div>
         </div>
