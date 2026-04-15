@@ -1,7 +1,7 @@
 import AchievementCarousel from "./AchievementCarousel";
 import banglalinkLogo from "@/assets/images/banglalink.png";
 import gplogo from "@/assets/images/gplogo.png";
-import anthropicLogo from "@/assets/images/Anthropic.jpg";
+import anthropicLogo from "@/assets/images/Anthropic.png";
 import kuetLogo from "@/assets/images/kuet.png";
 
 
@@ -46,7 +46,7 @@ export default function Achievement() {
     <main className="bg-[#161825] text-white pt-20 pb-20 md:pt-16 md:pb-20 px-6 min-h-screen">
       <section className="max-w-6xl mx-auto">
         <h2 className="text-5xl md:text-7xl font-black text-center mb-14 md:mb-16">
-          <span style={{ color: "#2DD4BF" }}>My</span> Accomplishments
+          <span style={{ color: "#2DD4BF" }}>Key </span>Achievements
         </h2>
 
         <div className="flex justify-center">
