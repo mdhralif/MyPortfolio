@@ -2,12 +2,12 @@ import { useState, useRef } from "react";
 import chatlogo from "@/assets/images/chatlogo.png";
 import { FaChevronDown } from "react-icons/fa";
 
-const SYSTEM_PROMPT = `You are a helpful assistant that knows everything about Md Hasibur Rahman Alif (MD H R ALIF):
-- B.Sc. in Software Engineering (Islamic University of Technology - IUT)
-- Experience: Software Engineer Intern at KAZ Software Ltd. (Sep 2025 - Jan 2026)
-- Skills: React, Node.js, Python, Web Development, AI/ML, Databases, Algorithms
-- Projects: production-level web apps, APIs, UI design, bug fixing
-Answer user questions concisely and, when needed, refer to the profile above.`;
+// const SYSTEM_PROMPT = `You are a helpful assistant that knows everything about Md Hasibur Rahman Alif (MD H R ALIF):
+// - B.Sc. in Software Engineering (Islamic University of Technology - IUT)
+// - Experience: Software Engineer Intern at KAZ Software Ltd. (Sep 2025 - Jan 2026)
+// - Skills: React, Node.js, Python, Web Development, AI/ML, Databases, Algorithms
+// - Projects: production-level web apps, APIs, UI design, bug fixing
+// Answer user questions concisely and, when needed, refer to the profile above.`;
 
 export default function AIChat() {
   // Using DotLottieReact component from @lottiefiles/dotlottie-react
