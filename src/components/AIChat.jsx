@@ -45,7 +45,7 @@ export default function AIChat() {
       ];
 
       const chatCompletion = await client.chatCompletion({
-        model: "meta-llama/Meta-Llama-3-8B-Instruct",
+        model: "meta-llama/Meta-Llama-3-70B-Instruct",
         messages: messagesPayload,
         max_tokens: 500,
       });
