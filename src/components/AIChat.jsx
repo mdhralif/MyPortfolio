@@ -126,12 +126,12 @@ export default function AIChat() {
               ))}
               
               {messages.length === 1 && (
-                <div className="flex flex-wrap gap-2 mt-4">
+                <div className="flex flex-wrap gap-2 mt-4 w-full">
                   {["Tell me about your projects "," Your experience are ?","Your CGPA?","What are your skills?","Education?"].map((q, idx) => (
                     <button 
                       key={idx} 
                       onClick={(e) => sendMessage(e, q)}
-                      className="text-xs bg-[#161825] border border-gray-700 hover:border-[#2DD4BF] text-gray-300 hover:text-[#2DD4BF] px-3 py-1.5 transition-colors"
+                      className="flex-1 text-xs whitespace-nowrap bg-[#161825] border border-gray-700 hover:border-[#2DD4BF] text-gray-300 hover:text-[#2DD4BF] px-3 py-1.5 transition-colors"
                     >
                       {q}
                     </button>
