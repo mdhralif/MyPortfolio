@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { InferenceClient } from "@huggingface/inference";
 import chatlogo from "@/assets/images/chatlogo.png";
 import { FaChevronDown } from "react-icons/fa";
+import { ArrowUp } from "lucide-react";
 import SYSTEM_PROMPT from "../../system_prompt.txt?raw";
 
 export default function AIChat() {
@@ -98,7 +99,7 @@ export default function AIChat() {
           <div className="w-full max-w-sm md:max-w-md bg-[#0f1223] rounded-none shadow-2xl overflow-hidden">
             <div className="px-4 py-3 flex items-start justify-between border-b border-gray-800 pb-4">
               <div className="flex flex-col">
-                <div className="font-bold text-xl text-white">Ask Nexa</div>
+                <div className="font-bold text-xl text-white">Nexa</div>
                 <div className="text-sm text-[#2DD4BF] mt-1">The AI Assistant at Alif&apos;s Portfolio</div>
               </div>
               <button 
@@ -126,7 +127,7 @@ export default function AIChat() {
               
               {messages.length === 1 && (
                 <div className="flex flex-wrap gap-2 mt-4">
-                  {["What are your skills?", "Tell me about your projects", "What is your educational background?"].map((q, idx) => (
+                  {["What are your skills?", "Tell me about your projects", "Educational background?","Your experience?","Your CGPA?"].map((q, idx) => (
                     <button 
                       key={idx} 
                       onClick={(e) => sendMessage(e, q)}
@@ -148,8 +149,8 @@ export default function AIChat() {
                 placeholder="Ask anything about me..."
                 className="flex-1 px-3 py-2 rounded-none bg-[#111218] text-white focus:outline-none"
               />
-              <button disabled={loading} className="px-4 py-2 bg-white text-black hover:bg-[#2DD4BF] transition-colors rounded-none font-bold">
-                {loading ? "..." : "Send"}
+              <button disabled={loading} className="px-4 py-2 bg-white text-black hover:bg-[#2DD4BF] hover:text-white transition-colors rounded-none font-bold flex items-center justify-center" aria-label="Send Message">
+                {loading ? <span className="animate-pulse">...</span> : <ArrowUp className="w-5 h-5" />}
               </button>
             </form>
           </div>

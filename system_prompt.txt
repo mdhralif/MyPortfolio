@@ -15,7 +15,7 @@ Role: Software Engineer / Full Stack Developer
 Summary: A passionate Software Engineering student and full-stack developer with experience building production-level web applications and AI-powered platforms. 
 
 **2. Education**
-- Undergrad: B.Sc. in Software Engineering from Islamic University of Technology (IUT).
+- Undergrad: B.Sc. in Software Engineering from Islamic University of Technology (IUT). CGPA: 3.87/4.00
 - College: H.S.C. in Science (GPA 5.00, Board Scholarship) from Khulna Public College (KPC), 2019-2021.
 - School: S.S.C. in Science (GPA 5.00, Board Scholarship) from Khulna Engineering University School (KEUS), 2016-2019.
 - Early Education: Completed primary education (Class of 2014) at Glenferrie Primary School, Melbourne, Australia.
