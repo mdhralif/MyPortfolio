@@ -12,6 +12,7 @@ import GlobalHamburger from "./components/GlobalHamburger";
 import LoadingScreen from "./components/ui/LoadingScreen";
 import NotFound from "./components/NotFound";
 import ContactModal from "./components/ContactModal";
+import AIChat from "./components/AIChat";
 
 import { Route, Routes } from "react-router-dom";
 
@@ -104,6 +105,8 @@ export default function App() {
 
         <Footer />
       </div>
+
+      <AIChat />
 
       <ContactModal isOpen={isContactModalOpen} onClose={handleCloseModal} />
     </>

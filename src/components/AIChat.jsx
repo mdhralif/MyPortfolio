@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
-import chatbotGif from "@/assets/images/chatbot.gif";
+import chatlogo from "@/assets/images/chatlogo.png";
+import { FaChevronDown } from "react-icons/fa";
 
 const SYSTEM_PROMPT = `You are a helpful assistant that knows everything about Md Hasibur Rahman Alif (MD H R ALIF):
 - B.Sc. in Software Engineering (Islamic University of Technology - IUT)
@@ -12,7 +13,12 @@ export default function AIChat() {
   // Using DotLottieReact component from @lottiefiles/dotlottie-react
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState([
+    {
+      role: "assistant",
+      content: "Hello ! I'm Nexa, your personal guide to Alif's portfolio. Feel free to ask me anything about his background, coding skills, or the projects he has built!",
+    },
+  ]);
   const [loading, setLoading] = useState(false);
   const endRef = useRef(null);
 
@@ -20,92 +26,96 @@ export default function AIChat() {
     if (endRef.current) endRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
-  async function sendMessage(e) {
+  async function sendMessage(e, text) {
     e && e.preventDefault();
-    if (!input.trim()) return;
+    const msgText = text || input;
+    if (!msgText.trim()) return;
 
-    const userMsg = { role: "user", content: input.trim() };
+    const userMsg = { role: "user", content: msgText.trim() };
     const updated = [...messages, userMsg];
     setMessages(updated);
     setInput("");
     setLoading(true);
 
     try {
-      const payload = {
-        model: "gpt-3.5-turbo",
-        messages: [
-          { role: "system", content: SYSTEM_PROMPT },
-          ...updated,
-        ],
-        max_tokens: 600,
-      };
-
-      const res = await fetch("https://api.openai.com/v1/chat/completions", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
-        },
-        body: JSON.stringify(payload),
-      });
-
-      if (!res.ok) {
-        const text = await res.text();
-        throw new Error(text || "OpenAI request failed");
-      }
-
-      const data = await res.json();
-      const reply = data.choices?.[0]?.message?.content || "Sorry, no response.";
-      const botMsg = { role: "assistant", content: reply };
-      setMessages((m) => [...m, botMsg]);
-      setTimeout(scrollToEnd, 100);
+      // AI Chatbot is disabled for now.
+      // We simulate a typing delay, then return a static message.
+      setTimeout(() => {
+        const botMsg = { 
+          role: "assistant", 
+          content: "I am currently under development! Please check back later or contact me directly via the contact form." 
+        };
+        setMessages((m) => [...m, botMsg]);
+        setTimeout(scrollToEnd, 100);
+        setLoading(false);
+      }, 1000);
     } catch (err) {
       const errMsg = { role: "assistant", content: `Error: ${err.message}` };
       setMessages((m) => [...m, errMsg]);
-    } finally {
       setLoading(false);
     }
   }
 
   return (
     <>
-      <div className="absolute bottom-8 right-12 z-50">
-        <button
-          onClick={() => setOpen((o) => !o)}
-          aria-label={open ? "Close AI" : "Ask AI"}
-          title={open ? "Close AI" : "Ask AI"}
-          className="bg-transparent border-none p-0 cursor-pointer"
-        >
-          <span className="sr-only">{open ? "Close AI" : "Ask AI"}</span>
-          <img 
-            src={chatbotGif} 
-            alt="AI Chat" 
-            className="w-20 h-20"
-            style={{ pointerEvents: "none" }}
-          />
-        </button>
-      </div>
+      {!open && (
+        <div className="fixed bottom-8 right-8 z-30">
+          <button
+            onClick={() => setOpen(true)}
+            aria-label="Ask AI"
+            title="Ask AI"
+            className="flex items-center justify-center w-28 h-28 bg-transparent transition-transform hover:scale-105"
+          >
+            <img src={chatlogo} alt="AI Chat" className="w-full h-full object-contain invert mix-blend-screen opacity-90" />
+          </button>
+        </div>
+      )}
 
       {open && (
-        <div className="absolute z-40 bottom-24 right-12 flex items-end justify-end p-0">
-          <div className="w-full max-w-sm md:max-w-md bg-[#0f1223] rounded-none shadow-2xl overflow-hidden">
-            <div className="px-4 py-3 flex items-center justify-between">
-              <div className="font-bold text-white">AI Assistant</div>
-              <button onClick={() => setOpen(false)} className="text-gray-400 hover:text-white">Close</button>
+        <div className="fixed z-30 bottom-4 md:bottom-8 right-4 md:right-8 flex items-end justify-end p-0">
+          <div className="w-full max-w-sm md:max-w-md bg-[#0f1223] rounded-none shadow-2xl overflow-hidden border border-gray-800">
+            <div className="px-4 py-3 flex items-start justify-between border-b border-gray-800 pb-4">
+              <div className="flex flex-col">
+                <div className="font-bold text-xl text-white">Ask Nexa</div>
+                <div className="text-sm text-[#2DD4BF] mt-1">The AI Assistant at Alif&apos;s Portfolio</div>
+              </div>
+              <button 
+                onClick={() => setOpen(false)} 
+                className="text-gray-400 hover:text-white mt-1 p-1 transition-colors"
+                aria-label="Minimize Chat"
+                title="Minimize"
+              >
+                <FaChevronDown className="w-5 h-5" />
+              </button>
             </div>
 
-            <div className="h-72 md:h-80 overflow-auto p-4 text-sm text-gray-100" style={{ background: "linear-gradient(180deg,#0f1223, #0b0c12)" }}>
-              {messages.length === 0 && (
-                <div className="text-gray-400">Ask me anything about Myself (eg. education, skills, projects, experience) .</div>
-              )}
-
+            <div 
+              className="h-72 md:h-80 overflow-y-auto p-4 text-sm text-gray-100 custom-scrollbar" 
+              style={{ background: "linear-gradient(180deg,#0f1223, #0b0c12)" }}
+              data-lenis-prevent="true"
+            >
               {messages.map((m, i) => (
                 <div key={i} className={`mb-3 ${m.role === "user" ? "text-right" : "text-left"}`}>
-                  <div className={`inline-block px-3 py-2 rounded ${m.role === "user" ? "bg-white text-black" : "bg-gray-800 text-gray-200"}`}>
+                  <div className={`inline-block px-3 py-2 rounded-none ${m.role === "user" ? "bg-white text-black" : "bg-gray-800 text-gray-200"}`}>
                     {m.content}
                   </div>
                 </div>
               ))}
+              
+              {messages.length === 1 && (
+                <div className="flex flex-wrap gap-2 mt-4">
+                  {["What are your skills?", "Tell me about your projects", "What is your educational background?"].map((q, idx) => (
+                    <button 
+                      key={idx} 
+                      onClick={(e) => sendMessage(e, q)}
+                      className="text-xs bg-[#161825] border border-gray-700 hover:border-[#2DD4BF] text-gray-300 hover:text-[#2DD4BF] px-3 py-1.5 transition-colors"
+                    >
+                      {q}
+                    </button>
+                  ))}
+                </div>
+              )}
+
               <div ref={endRef} />
             </div>
 
@@ -113,10 +123,12 @@ export default function AIChat() {
               <input
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Type a question..."
+                placeholder="Ask anything about me..."
                 className="flex-1 px-3 py-2 rounded-none bg-[#111218] text-white focus:outline-none"
               />
-              <button disabled={loading} className="px-4 py-2 bg-[#2DD4BF] text-black rounded-none">{loading ? "..." : "Send"}</button>
+              <button disabled={loading} className="px-4 py-2 bg-white text-black hover:bg-[#2DD4BF] transition-colors rounded-none font-bold">
+                {loading ? "..." : "Send"}
+              </button>
             </form>
           </div>
         </div>
