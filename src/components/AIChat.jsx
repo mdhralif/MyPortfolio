@@ -119,7 +119,7 @@ export default function AIChat() {
             >
               {messages.map((m, i) => (
                 <div key={i} className={`mb-3 ${m.role === "user" ? "text-right" : "text-left"}`}>
-                  <div className={`inline-block px-3 py-2 rounded-none text-justify ${m.role === "user" ? "bg-white text-black" : "bg-gray-800 text-gray-200"}`}>
+                  <div className={`inline-block px-3 py-2 rounded-none text-justify whitespace-pre-wrap ${m.role === "user" ? "bg-white text-black" : "bg-gray-800 text-gray-200"}`}>
                     {m.content}
                   </div>
                 </div>
