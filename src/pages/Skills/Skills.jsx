@@ -321,7 +321,7 @@ const SkillsSection = () => {
       <section className="container mx-auto px-4 md:px-8 pb-11 relative z-10">
         {/* Section Title */}
         <h2 className="text-5xl md:text-7xl font-black text-transparent bg-white bg-clip-text text-center mb-8 md:mb-10">
-          <span style={{ color: '#2DD4BF' }}>Skills </span>I&apos;ve
+          <span style={{ color: '#2DD4BF' }}>My  </span>Tech Stack
         </h2>    
 
         {shouldRenderGlobe ? (
