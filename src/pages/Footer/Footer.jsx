@@ -8,12 +8,13 @@ const Footer = () => {
           {/* Scroll to Top - Desktop Only */}
           <button 
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="hidden md:flex absolute left-8 top-1/2 -translate-y-1/2 items-center justify-center text-gray-400 hover:text-[#2DD4BF] transition-all duration-300 hover:-translate-y-6"
+            className="hidden md:flex flex-col absolute left-8 bottom-8 items-center justify-center text-gray-400 hover:text-[#2DD4BF] transition-all duration-300 hover:-translate-y-2"
             aria-label="Scroll to top"
           >
-            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
             </svg>
+            <span className="text-sm font-medium mt-1">Back to top</span>
           </button>
 
           {/* Social Links */}
