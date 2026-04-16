@@ -56,7 +56,7 @@ const SkillCard = ({ title, skills }) => (
         {skills.map((skill, index) => (
           <Badge
             key={index}
-            className="group/badge relative bg-gray-800/50 hover:bg-gray-700/80 text-gray-100 flex items-center gap-2 py-2 px-3 rounded-none"
+            className="group/badge relative flex-1 justify-center whitespace-nowrap bg-gray-800/50 hover:bg-gray-700/80 text-gray-100 flex items-center gap-2 py-2 px-3 rounded-none"
           >
             <span className="transform group-hover/badge:scale-110 transition-transform duration-300 bg-transparent rounded-none">
               {React.isValidElement(skill.icon)
