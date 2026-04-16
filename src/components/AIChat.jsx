@@ -100,7 +100,7 @@ export default function AIChat() {
             <div className="px-4 py-3 flex items-start justify-between border-b border-gray-800 pb-4">
               <div className="flex flex-col">
                 <div className="font-bold text-xl text-white">Nexa</div>
-                <div className="text-sm text-[#2DD4BF] mt-1">The AI Assistant at Alif&apos;s Portfolio</div>
+                <div className="text-sm font-bold text-[#2DD4BF] mt-1">The AI Assistant at Alif&apos;s Portfolio</div>
               </div>
               <button 
                 onClick={() => setOpen(false)} 
