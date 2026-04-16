@@ -127,7 +127,7 @@ export default function AIChat() {
               
               {messages.length === 1 && (
                 <div className="flex flex-wrap gap-2 mt-4">
-                  {["What are your skills?", "Tell me about your projects", "Educational background?","Your experience?","Your CGPA?"].map((q, idx) => (
+                  {["Tell me about your projects","Your experience?","Your CGPA?"].map((q, idx) => (
                     <button 
                       key={idx} 
                       onClick={(e) => sendMessage(e, q)}
