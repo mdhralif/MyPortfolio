@@ -86,7 +86,7 @@ export default function AIChat() {
 
       {open && (
         <div className="fixed z-30 bottom-4 md:bottom-8 right-4 md:right-8 flex items-end justify-end p-0">
-          <div className="w-full max-w-sm md:max-w-md bg-[#0f1223] rounded-none shadow-2xl overflow-hidden border border-gray-800">
+          <div className="w-full max-w-sm md:max-w-md bg-[#0f1223] rounded-none shadow-2xl overflow-hidden">
             <div className="px-4 py-3 flex items-start justify-between border-b border-gray-800 pb-4">
               <div className="flex flex-col">
                 <div className="font-bold text-xl text-white">Ask Nexa</div>
