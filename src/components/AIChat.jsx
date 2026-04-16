@@ -66,8 +66,20 @@ export default function AIChat() {
             title="Ask AI"
             className="flex items-center justify-center w-28 h-28 bg-transparent transition-transform hover:scale-105"
           >
-            {/* The image uses an animated hue-rotation to create a color-changing effect internally, rather than on the background */}
-            <img src={chatlogo} alt="AI Chat" className="w-full h-full object-contain invert mix-blend-screen animate-hue-rotate" />
+            {/* We use mask-image to fill the actual shape of the PNG with a sweeping animated linear gradient */}
+            <div 
+              className="w-full h-full bg-gradient-to-r from-[#2DD4BF] via-purple-500 to-[#2DD4BF] bg-[length:200%_100%] animate-bg-shine"
+              style={{
+                WebkitMaskImage: `url(${chatlogo})`,
+                WebkitMaskSize: 'contain',
+                WebkitMaskRepeat: 'no-repeat',
+                WebkitMaskPosition: 'center',
+                maskImage: `url(${chatlogo})`,
+                maskSize: 'contain',
+                maskRepeat: 'no-repeat',
+                maskPosition: 'center'
+              }}
+            ></div>
           </button>
         </div>
       )}
