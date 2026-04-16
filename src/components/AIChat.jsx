@@ -62,8 +62,8 @@ export default function AIChat() {
         <div className="fixed bottom-1 right-1 z-30">
           <button
             onClick={() => setOpen(true)}
-            aria-label="Ask AI"
-            title="Ask AI"
+            aria-label="Ask Nexa"
+            title="Ask Nexa"
             className="flex items-center justify-center w-28 h-28 bg-transparent transition-transform hover:scale-105"
           >
             {/* We use mask-image to fill the actual shape of the PNG with a sweeping animated linear gradient */}
