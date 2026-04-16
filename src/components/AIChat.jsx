@@ -66,7 +66,8 @@ export default function AIChat() {
             title="Ask AI"
             className="flex items-center justify-center w-28 h-28 bg-transparent transition-transform hover:scale-105"
           >
-            <img src={chatlogo} alt="AI Chat" className="w-full h-full object-contain opacity-90" />
+            {/* The image uses an animated hue-rotation to create a color-changing effect internally, rather than on the background */}
+            <img src={chatlogo} alt="AI Chat" className="w-full h-full object-contain invert mix-blend-screen animate-hue-rotate" />
           </button>
         </div>
       )}

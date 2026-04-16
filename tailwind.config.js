@@ -6,6 +6,8 @@ module.exports = {
     extend: {
       animation: {
         meteor: "meteor 5s linear infinite",
+        "bg-shine": "bg-shine 2.5s linear infinite",
+        "hue-rotate": "hue-rotate 5s linear infinite",
       },
       keyframes: {
         meteor: {
@@ -21,6 +23,22 @@ module.exports = {
             opacity: "0",
           },
         },
+        "bg-shine": {
+          "from": {
+            "backgroundPosition": "0 0"
+          },
+          "to": {
+            "backgroundPosition": "-200% 0"
+          }
+        },
+        "hue-rotate": {
+          "from": {
+            "filter": "hue-rotate(0deg) invert(1) opacity(0.9)"
+          },
+          "to": {
+            "filter": "hue-rotate(360deg) invert(1) opacity(0.9)"
+          }
+        }
       },
       borderRadius: {
         lg: "var(--radius)",
