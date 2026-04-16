@@ -149,7 +149,7 @@ export default function AIChat() {
                 placeholder="Ask anything about me..."
                 className="flex-1 px-3 py-2 rounded-none bg-[#111218] text-white focus:outline-none"
               />
-              <button disabled={loading} className="px-4 py-2 bg-white text-black hover:bg-[#2DD4BF] hover:text-white transition-colors rounded-none font-bold flex items-center justify-center" aria-label="Send Message">
+              <button disabled={loading} className="px-4 py-2 bg-[#2DD4BF] text-[#0f1223] hover:bg-white hover:text-black transition-colors rounded-none font-bold flex items-center justify-center shadow-lg" aria-label="Send Message">
                 {loading ? <span className="animate-pulse">...</span> : <ArrowUp className="w-5 h-5" />}
               </button>
             </form>
