@@ -59,7 +59,7 @@ export default function AIChat() {
   return (
     <>
       {!open && (
-        <div className="fixed bottom-8 right-8 z-30">
+        <div className="fixed bottom-1 right-1 z-30">
           <button
             onClick={() => setOpen(true)}
             aria-label="Ask AI"
