@@ -66,7 +66,7 @@ export default function AIChat() {
             title="Ask AI"
             className="flex items-center justify-center w-28 h-28 bg-transparent transition-transform hover:scale-105"
           >
-            <img src={chatlogo} alt="AI Chat" className="w-full h-full object-contain invert mix-blend-screen opacity-90" />
+            <img src={chatlogo} alt="AI Chat" className="w-full h-full object-contain opacity-90" />
           </button>
         </div>
       )}
