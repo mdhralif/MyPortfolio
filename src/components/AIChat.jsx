@@ -96,11 +96,11 @@ export default function AIChat() {
 
       {open && (
         <div className="fixed z-30 bottom-4 md:bottom-8 right-4 md:right-8 flex items-end justify-end p-0">
-          <div className="w-full max-w-sm md:max-w-md bg-[#0f1223] rounded-none shadow-2xl overflow-hidden">
+          <div className="w-full max-w-[320px] md:max-w-[380px] bg-[#0f1223] rounded-none shadow-2xl overflow-hidden">
             <div className="px-4 py-3 flex items-start justify-between border-b border-gray-800 pb-4">
               <div className="flex flex-col">
                 <div className="font-bold text-xl text-white">Nexa</div>
-                <div className="text-sm font-bold text-[#2DD4BF] mt-1">The AI Assistant at Alif&apos;s Portfolio</div>
+                <div className="text-sm font-bold text-[#2DD4BF] mt-1">AI Assistant at Alif&apos;s Portfolio</div>
               </div>
               <button 
                 onClick={() => setOpen(false)} 
@@ -127,7 +127,7 @@ export default function AIChat() {
               
               {messages.length === 1 && (
                 <div className="flex flex-wrap gap-2 mt-4">
-                  {["Tell me about your projects","Your experience?","Your CGPA?"].map((q, idx) => (
+                  {["Tell me about your projects "," Your experience are ?","Your CGPA?","What are your skills?","Education?"].map((q, idx) => (
                     <button 
                       key={idx} 
                       onClick={(e) => sendMessage(e, q)}
