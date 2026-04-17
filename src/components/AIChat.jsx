@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { InferenceClient } from "@huggingface/inference";
 import chatlogo from "@/assets/images/chatlogo.png";
 import { FaChevronDown } from "react-icons/fa";
@@ -21,6 +21,10 @@ export default function AIChat() {
   const scrollToEnd = () => {
     if (endRef.current) endRef.current.scrollIntoView({ behavior: "smooth" });
   };
+
+  useEffect(() => {
+    scrollToEnd();
+  }, [messages, loading]);
 
   async function sendMessage(e, text) {
     e && e.preventDefault();
@@ -147,6 +151,18 @@ export default function AIChat() {
                 </div>
               )}
 
+              {loading && (
+                <div className="mb-3 text-left">
+                  <div className="inline-block px-4 py-3.5 rounded-none bg-gray-800">
+                    <div className="flex gap-1.5 items-center">
+                      <div className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+                      <div className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+                      <div className="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce"></div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
               <div ref={endRef} />
             </div>
 
@@ -158,7 +174,7 @@ export default function AIChat() {
                 className="flex-1 px-3 py-2 rounded-none bg-[#111218] text-white focus:outline-none"
               />
               <button disabled={loading} className="px-4 py-2 bg-[#2DD4BF] text-[#0f1223] hover:bg-white hover:text-black transition-colors rounded-none font-bold flex items-center justify-center shadow-lg" aria-label="Send Message">
-                {loading ? <span className="animate-pulse">...</span> : <ArrowUp className="w-5 h-5" />}
+                <ArrowUp className="w-5 h-5" />
               </button>
             </form>
           </div>
