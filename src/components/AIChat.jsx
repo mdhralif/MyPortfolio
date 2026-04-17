@@ -170,7 +170,7 @@ export default function AIChat() {
               <input
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Ask anything about me..."
+                placeholder="Ask what you want to know..."
                 className="flex-1 px-3 py-2 rounded-none bg-[#111218] text-white focus:outline-none"
               />
               <button disabled={loading} className="px-4 py-2 bg-[#2DD4BF] text-[#0f1223] hover:bg-white hover:text-black transition-colors rounded-none font-bold flex items-center justify-center shadow-lg" aria-label="Send Message">
