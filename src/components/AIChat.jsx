@@ -112,7 +112,7 @@ export default function AIChat() {
               <div className="px-4 py-3 flex items-start justify-between border-b border-gray-800 pb-4">
               <div className="flex flex-col">
                 <div className="font-bold text-2xl text-white">Nexa</div>
-                <div className="text-[11px] font-sans uppercase tracking-widest font-semibold text-[#2DD4BF]/80 mt-1">The AI Assistant at Alif&apos;s Portfolio</div>
+                <div className="text-[11px] font-sans uppercase tracking-widest font-semibold text-[#2DD4BF]/80 mt-1">AI Assistant for Alif&apos;s Portfolio</div>
               </div>
               <button 
                 onClick={() => setOpen(false)} 
