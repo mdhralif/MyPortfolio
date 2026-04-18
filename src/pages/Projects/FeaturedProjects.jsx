@@ -213,7 +213,7 @@ function Card({
                 </div>
 
                 <div className="max-w-2xl">
-                  <h3 className="text-3xl font-black leading-tight text-white md:text-5xl lg:text-6xl">
+                  <h3 className="text-4xl font-black leading-tight text-white md:text-5xl lg:text-6xl">
                     Explore the full project archive.
                   </h3>
                   <p className="mt-3 max-w-lg text-sm leading-relaxed text-white/70 md:text-base">
