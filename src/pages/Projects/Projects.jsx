@@ -187,7 +187,7 @@ export default function Projects() {
       <main className="bg-[#161925] relative" ref={container}>
         <div
           aria-hidden="true"
-          className={`fixed inset-0 z-50 flex items-center justify-center bg-[#161825]/20 backdrop-blur-sm transition-opacity duration-700 ${
+          className={`fixed inset-0 z-20 flex items-center justify-center bg-[#161825]/20 backdrop-blur-sm transition-opacity duration-700 ${
             showScrollHint ? "opacity-100" : "pointer-events-none opacity-0"
           }`}
         >
