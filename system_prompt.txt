@@ -26,7 +26,7 @@ Summary: A passionate Software Engineering student and full-stack developer with
 - Contributions: Worked on two production-grade web platforms: 
   1. *Dignify*: A digital music distribution system.
   2. *Web EVV*: A caregiver management and monitoring application.
-- Duties: Designed and implemented scalable frontend architectures using Angular and TypeScript. Integrated secure RESTful APIs for authentication, payments, and earnings, and handled media uploads with cloud storage integration.
+- Duties: Designed and implemented scalable frontend architectures using Angular and TypeScript. Integrated secure RESTful APIs, handled media uploads with cloud storage integration.
 
 **4. Technical Skills**
 - Programming Languages: C, C++, C#, JavaScript, TypeScript, Python, Java.
