@@ -6,28 +6,55 @@ import PropTypes from 'prop-types';
 
 const ContactModal = ({ isOpen, onClose }) => {
   const [isMapLoading, setIsMapLoading] = useState(true);
-
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-      setIsMapLoading(true);
+    let loadingTimer;
+    let scrollY;
+    const prevOverflow = document.body.style.overflow;
+    const prevPosition = document.body.style.position;
+    const prevTop = document.body.style.top;
 
-      const loadingTimer = window.setTimeout(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      // Lock scroll by fixing body position and preserving scroll offset
+      scrollY = window.scrollY || document.documentElement.scrollTop;
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+      document.body.style.overflow = 'hidden';
+
+      setIsMapLoading(true);
+      document.addEventListener('keydown', handleEscape);
+
+      loadingTimer = window.setTimeout(() => {
         setIsMapLoading(false);
       }, 1200);
-
-      return () => {
-        window.clearTimeout(loadingTimer);
-        document.body.style.overflow = 'unset';
-      };
     } else {
-      document.body.style.overflow = 'unset';
+      // restore in case the modal was closed elsewhere
+      document.body.style.position = prevPosition || '';
+      document.body.style.top = prevTop || '';
+      document.body.style.overflow = prevOverflow || '';
     }
-    
+
     return () => {
-      document.body.style.overflow = 'unset';
+      window.clearTimeout(loadingTimer);
+      document.removeEventListener('keydown', handleEscape);
+
+      // Restore body scroll and position
+      document.body.style.position = prevPosition || '';
+      document.body.style.top = prevTop || '';
+      document.body.style.overflow = prevOverflow || '';
+
+      // restore scroll position if we previously locked it
+      if (typeof scrollY === 'number') {
+        window.scrollTo(0, scrollY);
+      }
     };
-  }, [isOpen]);
+  }, [isOpen, onClose]);
 
   const handleBackdropClick = (e) => {
     if (e.target === e.currentTarget) {
