@@ -189,8 +189,7 @@ export default function About() {
               </div>
               
               {/* Desktop: full text */}
-              <p className="hidden md:block text-gray-300 mb-4 text-justify">Worked on two production grade web platforms : Dignify, a digital music distribution system, and Web EVV, a caregiver management and monitoring application. Designed and implemented scalable frontend architectures using Angular and TypeScript, integrated secure RESTful APIs for authentication, payments, earnings and handled media uploads with cloud storage integration.</p>
-
+              <p className="hidden md:block text-gray-300 mb-4 text-justify">Worked on two production-grade web platforms, building scalable and maintainable frontend architectures using Angular and TypeScript. Implemented secure data handling, file management, and seamless integration with backend services while ensuring performance, modularity, and a smooth user experience.</p>
               {/* Mobile: truncated with toggle */}
               <div className="md:hidden mb-4">
                 <p
