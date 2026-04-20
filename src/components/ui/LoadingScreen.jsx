@@ -56,8 +56,8 @@ const LoadingScreen = ({ onLoadingComplete }) => {
         </div>
 
         {/* Text - naturally placed in the exact center (where the bar used to be), with increased size */}
-        <div className="flex justify-center w-full text-white font-mono tracking-[0.1em] sm:tracking-[0.15em] text-sm sm:text-lg md:text-xl font-bold">
-          <div className="flex text-center flex-wrap justify-center">
+        <div className="flex justify-center w-full text-white font-mono tracking-[0.1em] sm:tracking-[0.15em] text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold">
+          <div className="flex text-center flex-nowrap justify-center whitespace-nowrap">
             {"You're about to see my work !".split("").map((char, index) => {
               const targetLength = 29;
               const isVisible = index < Math.floor((Math.min(progress, 80) / 80) * targetLength);
