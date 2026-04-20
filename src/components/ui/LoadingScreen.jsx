@@ -72,20 +72,6 @@ const LoadingScreen = ({ onLoadingComplete }) => {
             })}
           </div>
         </div>
-
-        {/* Loading Bar and Percentage - placed just below the text */}
-        <div className="w-full max-w-[200px] sm:max-w-[240px] mt-6 sm:mt-8 flex flex-col items-center">
-          <div className="w-full h-5 sm:h-6 border-[1px] border-white/60 p-[2px] mb-2">
-            <div 
-              className="h-full bg-white transition-all duration-75 ease-out"
-              style={{ width: `${Math.min(100, progress)}%` }}
-            />
-          </div>
-          <div className="flex items-center justify-between w-full text-white font-mono tracking-[0.15em] text-[10px] sm:text-xs font-semibold uppercase opacity-80">
-            <span>LOADING...</span>
-            <span>{Math.round(progress)}%</span>
-          </div>
-        </div>
         
       </div>
     </div>
