@@ -64,10 +64,6 @@ export default function App() {
     };
   }, []);
 
-  if (isLoading) {
-    return <LoadingScreen onLoadingComplete={handleLoadingComplete} />;
-  }
-
   return (
     <>
       <Header />
@@ -109,6 +105,8 @@ export default function App() {
       <AIChat />
 
       <ContactModal isOpen={isContactModalOpen} onClose={handleCloseModal} />
+
+      {isLoading && <LoadingScreen onLoadingComplete={handleLoadingComplete} />}
     </>
   );
 }
