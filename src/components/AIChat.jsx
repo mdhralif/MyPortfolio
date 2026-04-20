@@ -12,7 +12,7 @@ export default function AIChat() {
   const [messages, setMessages] = useState([
     {
       role: "assistant",
-      content: "Hello ! I'm Nexa, your personal guide to Alif's portfolio. Feel free to ask me anything about his background, coding skills, or the projects he has built!",
+      content: "Hello ! I'm Nexa, your personal guide to Alif's portfolio. You can ask me anything about his background, coding skills, or the projects he has built!",
     },
   ]);
   const [loading, setLoading] = useState(false);
