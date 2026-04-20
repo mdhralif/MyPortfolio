@@ -11,7 +11,7 @@ import SSCTranscript from "@/assets/images/SSC_T.png";
 import GPSCertificate from "@/assets/images/GPS_C.png";
 import KAZCertificate from "@/assets/images/KAZ_C.png";
 import ClassPhoto from "@/assets/images/ClassPhoto.png";
-import { FaFacebook, FaLinkedin, FaGithub, FaFileDownload, FaCalendarAlt, FaGraduationCap, FaChevronDown, FaChevronUp, FaCertificate, FaTimes, FaScroll, FaFilePdf, FaUsers, FaAward, FaMapMarkerAlt } from "react-icons/fa";
+import { FaFacebook, FaLinkedin, FaGithub, FaFileDownload, FaCalendarAlt, FaGraduationCap, FaChevronDown, FaChevronUp, FaCertificate, FaTimes, FaScroll, FaFilePdf, FaUsers,FaMapMarkerAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
@@ -510,12 +510,6 @@ export default function About() {
             <div className="p-6">
               {selectedCert.image ? (
                 <div className="relative overflow-hidden">
-                  {/* Icon overlay */}
-                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10">
-                    {selectedCert.icon === "classPhoto"
-                      ? <FaUsers className="w-40 h-40 text-white opacity-20" />
-                      : <FaAward className="w-40 h-40 text-white opacity-20" />}
-                  </div>
                   <img
                     src={selectedCert.image}
                     alt={selectedCert.title}
