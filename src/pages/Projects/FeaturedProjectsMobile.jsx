@@ -55,7 +55,7 @@ export default function FeaturedProjectsMobile() {
       </div>
 
       <div className="px-4">
-        <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory touch-pan-x pb-6">
+        <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory touch-auto pb-6">
           {featuredProjects.map((p, i) => (
             <article
               key={`mobile_fp_${i}`}
