@@ -11,7 +11,7 @@ export default function AchievementCard({
   link,
 }) {
   return (
-    <div className="relative w-full h-[240px] overflow-hidden bg-[#1f2937]/90 shadow-none">
+    <div className="relative w-full h-[200px] md:h-[240px] overflow-hidden bg-[#1f2937]/90 shadow-none">
       <div
         className="absolute inset-0 opacity-10 pointer-events-none"
         style={{ backgroundImage: `url(${grainImage})` }}
@@ -36,11 +36,11 @@ export default function AchievementCard({
             </div>
 
             <div className="min-w-0">
-              <h3 className="text-base md:text-2xl font-bold text-white leading-tight truncate md:whitespace-normal">
+              <h3 className="text-sm md:text-2xl font-bold text-white leading-tight line-clamp-2 overflow-hidden break-words md:whitespace-normal md:line-clamp-none">
                 {certificateName}
               </h3>
               <p
-                className="mt-2 inline-flex w-fit rounded-none bg-gray-700/50 px-3 py-1 text-sm md:text-base font-semibold"
+                className="mt-2 inline-flex w-fit rounded-none bg-gray-700/50 px-2 py-0.5 text-xs md:px-3 md:py-1 md:text-base font-semibold"
                 style={{ color }}
               >
                 {placement}
@@ -63,7 +63,7 @@ export default function AchievementCard({
           ) : null}
         </div>
 
-        <p className="mt-4 text-sm md:text-base text-white/95 leading-relaxed text-justify overflow-y-auto pr-1">
+        <p className="mt-3 text-xs md:text-base text-white/95 leading-relaxed text-justify overflow-y-auto pr-1">
           {description}
         </p>
       </div>
