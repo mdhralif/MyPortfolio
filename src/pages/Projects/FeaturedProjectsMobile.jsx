@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 
 // Images (same as desktop component)
 import soulaceImg from "@/assets/images/soulace.png";
@@ -82,8 +82,46 @@ const featuredProjects = [
 ];
 
 export default function FeaturedProjectsMobile() {
+  const scrollerRef = useRef(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const scroller = scrollerRef.current;
+    if (!scroller) return;
+
+    let raf = null;
+    const gap = 16; // corresponds to `gap-4`
+
+    const updateIndex = () => {
+      const scrollLeft = scroller.scrollLeft;
+      const first = scroller.children[0];
+      if (!first) return;
+      const itemWidth = first.offsetWidth + gap;
+      const idx = Math.round(scrollLeft / itemWidth);
+      setCurrentIndex(Math.min(Math.max(0, idx), featuredProjects.length - 1));
+    };
+
+    const onScroll = () => {
+      if (raf) cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(updateIndex);
+    };
+
+    scroller.addEventListener("scroll", onScroll, { passive: true });
+    // initial
+    updateIndex();
+
+    // on resize, recompute
+    window.addEventListener("resize", updateIndex);
+
+    return () => {
+      scroller.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", updateIndex);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, []);
+
   return (
-    <section className="md:hidden text-white w-full bg-[#161925] pb-12 pt-20 min-h-[72vh]">
+    <section className="md:hidden relative text-white w-full bg-[#161925] pb-12 pt-20 min-h-[72vh]">
       <div className="px-4">
         <h2 className="text-5xl font-black text-transparent bg-white bg-clip-text text-center leading-tight mb-6">
           <span className="block">
@@ -96,7 +134,7 @@ export default function FeaturedProjectsMobile() {
       </div>
 
       <div className="px-4">
-        <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory touch-auto pb-6">
+      <div ref={scrollerRef} className="flex gap-4 overflow-x-auto snap-x snap-mandatory touch-auto pb-6">
           {featuredProjects.map((p, i) => (
             <article
               key={`mobile_fp_${i}`}
@@ -150,7 +188,12 @@ export default function FeaturedProjectsMobile() {
             </article>
           ))}
         </div>
-        {/* Removed View All button for mobile; mobile shows all projects inline */}
+
+        {/* Project counter (bottom-right) */}
+        <div className="absolute right-4 bottom-4 bg-black/60 text-white/90 px-3 py-1 text-xs rounded-none">
+          {currentIndex + 1}/{featuredProjects.length}
+        </div>
+
       </div>
     </section>
   );
