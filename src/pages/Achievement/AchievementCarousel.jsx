@@ -104,7 +104,7 @@ export default function AchievementCarousel({ items = [] }) {
             {items.map((it, i) => (
               <div
                 key={`${repeatIndex}-${i}-${it.title}`}
-                className="w-[75vw] max-w-[420px] flex-shrink-0"
+                className="w-[86vw] md:w-[75vw] max-w-[420px] flex-shrink-0"
               >
                 <AchievementCard {...it} />
               </div>
