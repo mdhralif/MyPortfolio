@@ -132,7 +132,7 @@ export default function FeaturedProjectsMobile() {
   return (
     <section className="md:hidden relative text-white w-full bg-[#161925] pb-12 pt-20 min-h-[72vh]">
       <div className="px-4">
-        <h2 className="text-5xl font-black text-transparent bg-white bg-clip-text text-center leading-tight mb-6">
+        <h2 className="text-5xl font-black text-transparent bg-white bg-clip-text text-center leading-tight mb-12">
           <span className="block">
             <span className="inline-block bg-clip-text text-transparent" style={{ color: '#2DD4BF' }}>
               My
