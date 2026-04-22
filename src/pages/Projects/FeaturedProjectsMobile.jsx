@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 
 // Images (same as desktop component)
 import soulaceImg from "@/assets/images/soulace.png";
@@ -19,15 +19,15 @@ const featuredProjects = [
     githubLink: "https://github.com/mdhralif/nexmeet",
     liveLink: "https://alif-nexmeet.vercel.app",
   },
-  {
-    title: "SoulAce",
+    {
+    title: "Nexbook",
     description:
-      "Built a mental health platform offering AI-powered journalism, personalized well being tools, real-time mental health assessment and personalized recommendations.",
-    src: soulaceImg,
-    githubLink: "https://github.com/mdhralif/Blingo",
-    liveLink: "https://soulace.onrender.com/",
+      "A prototype of Facebook, Nexbook is a social networking platform that enables users to React, post, and follow in a virtual community",
+    src: nexbookImg,
+    githubLink: "https://github.com/mdhralif/Nexbook",
+    liveLink: "https://alif-nexbook.vercel.app",
   },
-  {
+    {
     title: "Blingo",
     description:
       "Built an AI-driven text editor that translates Banglish into proper Bangla using Groq API and LLaMA 3.3 with custom prompt engineering.",
@@ -36,13 +36,14 @@ const featuredProjects = [
     liveLink: "https://blingo.onrender.com/",
   },
   {
-    title: "Nexbook",
+    title: "SoulAce",
     description:
-      "A prototype of Facebook, Nexbook is a social networking platform that enables users to React, post, and follow in a virtual community",
-    src: nexbookImg,
-    githubLink: "https://github.com/mdhralif/Nexbook",
-    liveLink: "https://alif-nexbook.vercel.app",
+      "Built a mental health platform offering AI-powered journalism, personalized well being tools, real-time mental health assessment and personalized recommendations.",
+    src: soulaceImg,
+    githubLink: "https://github.com/mdhralif/Blingo",
+    liveLink: "https://soulace.onrender.com/",
   },
+
   {
     title: "IUT website Design",
     description:
