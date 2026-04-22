@@ -1,11 +1,14 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import { FaArrowRight } from "react-icons/fa";
 
 // Images (same as desktop component)
-import nexbookImg from "@/assets/images/nexbook.png";
+import soulaceImg from "@/assets/images/soulace.png";
 import nexmeetImg from "@/assets/images/nexmeet.png";
 import blingoImg from "@/assets/images/blingo.png";
+import nexbookImg from "@/assets/images/nexbook.png";
+import nextalkImg from "@/assets/images/nextalk.png";
+import iutWebImg from "@/assets/images/iut_web.png";
+import pixelforgeImg from "@/assets/images/pixelforge.png";
+import fluppyImg from "@/assets/images/fluppy.png";
 
 const featuredProjects = [
   {
@@ -17,12 +20,12 @@ const featuredProjects = [
     liveLink: "https://alif-nexmeet.vercel.app",
   },
   {
-    title: "Nexbook",
+    title: "SoulAce",
     description:
-      "A prototype of Facebook, Nexbook is a social networking platform that enables users to React, post, and follow in a virtual community",
-    src: nexbookImg,
-    githubLink: "https://github.com/mdhralif/Nexbook",
-    liveLink: "https://alif-nexbook.vercel.app",
+      "Built a mental health platform offering AI-powered journalism, personalized well being tools, real-time mental health assessment and personalized recommendations.",
+    src: soulaceImg,
+    githubLink: "https://github.com/mdhralif/Blingo",
+    liveLink: "https://soulace.onrender.com/",
   },
   {
     title: "Blingo",
@@ -32,15 +35,53 @@ const featuredProjects = [
     githubLink: "https://github.com/mdhralif/Blingo",
     liveLink: "https://blingo.onrender.com/",
   },
+  {
+    title: "Nexbook",
+    description:
+      "A prototype of Facebook, Nexbook is a social networking platform that enables users to React, post, and follow in a virtual community",
+    src: nexbookImg,
+    githubLink: "https://github.com/mdhralif/Nexbook",
+    liveLink: "https://alif-nexbook.vercel.app",
+  },
+  {
+    title: "IUT website Design",
+    description:
+      "A prototype of the Islamic University of Technology (IUT) website using basic HTML, CSS, and JavaScript",
+    src: iutWebImg,
+    githubLink: "https://github.com/mdhralif",
+    liveLink:
+      "https://drive.google.com/file/d/1AD-3NzOo-DUug4-E801I4hanOdGLkNSd/view?usp=sharing",
+  },
+  {
+    title: "NexTalk",
+    description:
+      "Nextalk is a real-time conversation web app designed to facilitate instant messaging and seamless communication between users.",
+    src: nextalkImg,
+    githubLink: "https://github.com/mdhralif/Realtime_Chat_Application",
+    liveLink:
+      "https://drive.google.com/file/d/1GaoliAKVd3J9IDk97kINaRAaMSNF5kUx/view?usp=sharing",
+  },
+  {
+    title: "PixelForge",
+    description:
+      "Pixelforge is a Minecraft-inspired prototype that simulates a block-based world with crafting and building mechanics,focused on creating a detailed map of the Islamic University of Technology (IUT).",
+    src: pixelforgeImg,
+    githubLink: "https://github.com/mdhralif",
+    liveLink:
+      "https://drive.google.com/file/d/1SKGoVzAZgH5KBLp6EEodw4J9MyL5iFRx/view?usp=sharing",
+  },
+  {
+    title: "Flappy Bird",
+    description:
+      "A clone of the classic Flappy Bird game, built using Unity & scripting with C#, featuring responsive controls and dynamic gameplay.",
+    src: fluppyImg,
+    githubLink: "https://github.com/mdhralif/Fluppy_Bird",
+    liveLink:
+      "https://drive.google.com/file/d/1UAgQtEz32a5xWLXzvf5yd3ghycyVUYvg/view?usp=sharing",
+  },
 ];
 
 export default function FeaturedProjectsMobile() {
-  const navigate = useNavigate();
-
-  const handleViewAll = () => {
-    navigate('/projects');
-    setTimeout(() => window.scrollTo(0, 0), 100);
-  };
   return (
     <section className="md:hidden text-white w-full bg-[#161925] pb-0 pt-20">
       <div className="px-4">
@@ -109,15 +150,7 @@ export default function FeaturedProjectsMobile() {
             </article>
           ))}
         </div>
-        <div className="mt-8 flex justify-center pb-8">
-          <button
-            onClick={handleViewAll}
-            className="group inline-flex items-center gap-3 bg-white px-6 py-3 text-sm font-bold text-black rounded-none max-w-[680px] w-full mx-4 justify-center"
-          >
-            View All Projects
-            <FaArrowRight className="text-base transition-all group-hover:translate-x-1" />
-          </button>
-        </div>
+        {/* Removed View All button for mobile; mobile shows all projects inline */}
       </div>
     </section>
   );
