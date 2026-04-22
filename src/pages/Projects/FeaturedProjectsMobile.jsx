@@ -15,6 +15,7 @@ const featuredProjects = [
     title: "NexMeet",
     description:
       "Designed and developed a video conferencing platform with real-time meeting features, scheduling options, and session recording",
+    short: "Video conferencing App",
     src: nexmeetImg,
     githubLink: "https://github.com/mdhralif/nexmeet",
     liveLink: "https://alif-nexmeet.vercel.app",
@@ -23,6 +24,7 @@ const featuredProjects = [
     title: "Nexbook",
     description:
       "A prototype of Facebook, Nexbook is a social networking platform that enables users to React, post, and follow in a virtual community",
+    short: "Social network App",
     src: nexbookImg,
     githubLink: "https://github.com/mdhralif/Nexbook",
     liveLink: "https://alif-nexbook.vercel.app",
@@ -31,6 +33,7 @@ const featuredProjects = [
     title: "Blingo",
     description:
       "Built an AI-driven text editor that translates Banglish into proper Bangla using Groq API and LLaMA 3.3 with custom prompt engineering.",
+    short: "AI-powered Text Editor",
     src: blingoImg,
     githubLink: "https://github.com/mdhralif/Blingo",
     liveLink: "https://blingo.onrender.com/",
@@ -39,6 +42,7 @@ const featuredProjects = [
     title: "SoulAce",
     description:
       "Built a mental health platform offering AI-powered journalism, personalized well being tools, real-time mental health assessment and personalized recommendations.",
+    short: "Mental health platform",
     src: soulaceImg,
     githubLink: "https://github.com/mdhralif/Blingo",
     liveLink: "https://soulace.onrender.com/",
@@ -48,6 +52,7 @@ const featuredProjects = [
     title: "IUT website Design",
     description:
       "A prototype of the Islamic University of Technology (IUT) website using basic HTML, CSS, and JavaScript",
+    short: "Website prototype",
     src: iutWebImg,
     githubLink: "https://github.com/mdhralif",
     liveLink:
@@ -57,6 +62,7 @@ const featuredProjects = [
     title: "NexTalk",
     description:
       "Nextalk is a real-time conversation web app designed to facilitate instant messaging and seamless communication between users.",
+    short: "Real-time chat App",
     src: nextalkImg,
     githubLink: "https://github.com/mdhralif/Realtime_Chat_Application",
     liveLink:
@@ -66,6 +72,7 @@ const featuredProjects = [
     title: "PixelForge",
     description:
       "Pixelforge is a Minecraft-inspired prototype that simulates a block-based world with crafting and building mechanics,focused on creating a detailed map of the Islamic University of Technology (IUT).",
+    short: "Minecraft-style prototype",
     src: pixelforgeImg,
     githubLink: "https://github.com/mdhralif",
     liveLink:
@@ -75,6 +82,7 @@ const featuredProjects = [
     title: "Flappy Bird",
     description:
       "A clone of the classic Flappy Bird game, built using Unity & scripting with C#, featuring responsive controls and dynamic gameplay.",
+    short: "2D arcade game clone",
     src: fluppyImg,
     githubLink: "https://github.com/mdhralif/Fluppy_Bird",
     liveLink:
@@ -151,7 +159,7 @@ export default function FeaturedProjectsMobile() {
 
               <div className="p-4">
                 <h4 className="text-lg font-semibold text-white">{p.title}</h4>
-                <p className="text-sm text-gray-300 mt-2 line-clamp-3 text-justify">{p.description}</p>
+                <p className="text-sm text-gray-300 mt-2 truncate line-clamp-1">{p.short || (p.description || "").split(".")[0] || p.description}</p>
 
                 <div className="mt-4 flex items-center gap-3">
                   {p.githubLink && (
