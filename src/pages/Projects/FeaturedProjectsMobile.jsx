@@ -83,7 +83,7 @@ const featuredProjects = [
 
 export default function FeaturedProjectsMobile() {
   return (
-    <section className="md:hidden text-white w-full bg-[#161925] pb-0 pt-20">
+    <section className="md:hidden text-white w-full bg-[#161925] pb-12 pt-20 min-h-[72vh]">
       <div className="px-4">
         <h2 className="text-5xl font-black text-transparent bg-white bg-clip-text text-center leading-tight mb-6">
           <span className="block">
