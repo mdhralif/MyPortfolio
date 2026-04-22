@@ -62,12 +62,16 @@ export default function FeaturedProjectsMobile() {
               className="snap-start min-w-[82%] bg-zinc-900 rounded-none overflow-hidden shadow-lg"
             >
               <div className="h-44 w-full overflow-hidden">
-                <img src={p.src} alt={p.title} className="w-full h-full object-cover" />
+                <img
+                  src={p.src}
+                  alt={p.title}
+                  className="w-full h-full object-cover transform scale-105 transition-transform duration-500"
+                />
               </div>
 
               <div className="p-4">
                 <h4 className="text-lg font-semibold text-white">{p.title}</h4>
-                <p className="text-sm text-gray-300 mt-2 line-clamp-3">{p.description}</p>
+                <p className="text-sm text-gray-300 mt-2 line-clamp-3 text-justify">{p.description}</p>
 
                 <div className="mt-4 flex items-center gap-3">
                   {p.githubLink && (
@@ -105,16 +109,14 @@ export default function FeaturedProjectsMobile() {
             </article>
           ))}
         </div>
-        <div className="mt-4 flex px-0">
-          <div className="px-4 w-full">
-            <button
-              onClick={handleViewAll}
-              className="group inline-flex items-center gap-3 bg-white px-5 py-3 text-sm font-bold text-black rounded-none"
-            >
-              View All Projects
-              <FaArrowRight className="text-base transition-all group-hover:translate-x-1" />
-            </button>
-          </div>
+        <div className="mt-8 flex justify-center pb-8">
+          <button
+            onClick={handleViewAll}
+            className="group inline-flex items-center gap-3 bg-white px-6 py-3 text-sm font-bold text-black rounded-none max-w-[680px] w-full mx-4 justify-center"
+          >
+            View All Projects
+            <FaArrowRight className="text-base transition-all group-hover:translate-x-1" />
+          </button>
         </div>
       </div>
     </section>
