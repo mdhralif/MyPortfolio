@@ -4,6 +4,7 @@ import { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
+import FeaturedProjectsMobile from "./FeaturedProjectsMobile";
 
 // Import only first 3 project images
 import nexbookImg from "@/assets/images/nexbook.png";
@@ -107,7 +108,9 @@ export default function FeaturedProjects() {
   return (
     <ReactLenis root>
       <main className="bg-[#161925]" ref={container}>
-        <section className="text-white w-full bg-[#161925] pb-0 pt-20 md:pt-16">
+        <FeaturedProjectsMobile />
+
+        <section className="hidden md:block text-white w-full bg-[#161925] pb-0 pt-20 md:pt-16">
             <h2 className="text-5xl md:text-7xl font-black text-transparent bg-white bg-clip-text text-center leading-tight mb-4 md:mb-8">
               {/* Mobile-only title */}
               <span className="block md:hidden">
