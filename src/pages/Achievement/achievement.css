@@ -1,0 +1,74 @@
+.achievement-section {
+  background: transparent;
+}
+
+.achievement-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem 1rem;
+  align-items: start;
+}
+
+@media (max-width: 640px) {
+  .achievement-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.achievement-card {
+  background: #0f1223; /* match project card/bg used elsewhere */
+  color: #ffffff;
+  border-radius: 0;
+  position: relative;
+  padding: 18px 16px;
+  overflow: hidden;
+  box-shadow: none;
+  border-bottom: none;
+  max-width: none;
+  width: 100%;
+}
+
+.achievement-grid.single {
+  grid-template-columns: minmax(0, 720px);
+  justify-content: center;
+  justify-items: center;
+}
+
+.achievement-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.achievement-title {
+  font-weight: 900;
+  font-size: 1.25rem;
+  margin-bottom: 4px;
+  color: #fff;
+}
+
+.achievement-sub {
+  color: rgba(255,255,255,0.78);
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.achievement-meta {
+  color: rgba(255,255,255,0.85);
+  font-size: 0.9rem;
+  margin-top: 6px;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.achievement-desc {
+  color: rgba(255,255,255,0.9);
+  font-size: 0.95rem;
+  line-height: 1.1rem;
+  margin-top: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
