@@ -2,13 +2,22 @@ import "./achievement.css";
 import AchievementCard from "./AchievementCard";
 import banglalinkLogo from "@/assets/images/banglalink.png";
 import gplogo from "@/assets/images/gplogo.png";
-import anthropicLogo from "@/assets/images/Anthropic.png";
+import Acllogo from "@/assets/images/ACL.png";
 import kuetLogo from "@/assets/images/kuet.png";
 
 
 const achievements = [
   {
-    certificateName: "Banglalink AppQuest Hackathon",
+    certificateName: "ACL BioNLP Workshop, 2026",
+    placement: "3rd in the leaderboard.",
+    description: "ACL BioNLP Workshop 2026, PsyDefDetect shared task.",
+    location: "ACL BioNLP Workshop 2026",
+    link: null,
+    color: "#fff",
+    logo: Acllogo,
+  },
+  {
+    certificateName: "AppQuest Hackathon, 2025",
     placement: "Award of Champion",
     description: "AppQuest Hackathon organized by Banglalink",
     link: "https://www.linkedin.com/posts/md-h-r-alif-7358801a6_honored-to-be-the-champion-at-banglalink-ugcPost-7406008507109478400-oq1J?utm_source=share&utm_medium=member_desktop&rcm=ACoAADAuzBkBSSwMV6Qt1xaULMLxEbtc9MUQ9MU",
@@ -16,27 +25,27 @@ const achievements = [
     logo: banglalinkLogo,
   },
   {
-    certificateName: "Grameenphone TECH TRENDS",
+    certificateName: "GP TECH TRENDS",
     placement: "Certificate of Excellence",
-    description: "TECH TRENDS program.",
+    description: "TECH TRENDS program organized by Grameenphone",
     location: "Dhaka, Bangladesh",
     link: "https://media.licdn.com/dms/image/v2/D562DAQGqql-slf8kxg/profile-treasury-image-shrink_8192_8192/profile-treasury-image-shrink_8192_8192/0/1719564850910?e=1776866400&v=beta&t=--Ab_MPIEpXH8C6bJy1FYsd_WYnBQPGZ8GjKvlVNFmQ",
     color: "#fff",
     logo: gplogo,
   },
-  {
-  "certificateName": "AI Fluency- Framework & Foundations",
-  "placement": "Certificate of Completion",
-  "description": "AI frameworks course by Anthropic.",
-  "location": "Remote",
-  "link": "https://media.licdn.com/dms/image/v2/D562DAQEDsP_pvRvUzg/profile-treasury-image-shrink_800_800/B56ZoQjz55JoAY-/0/1761214414938?e=1776866400&v=beta&t=KSBkAopo0IXm67qsM_ZfnsDfu8SXwwbgoey-0zJZpgc",
-  "color": "#fff",
-  "logo": anthropicLogo,
- },
+//   {
+//   "certificateName": "AI Fluency- Framework & Foundations",
+//   "placement": "Certificate of Completion",
+//   "description": "AI frameworks course by Anthropic.",
+//   "location": "Remote",
+//   "link": "https://media.licdn.com/dms/image/v2/D562DAQEDsP_pvRvUzg/profile-treasury-image-shrink_800_800/B56ZoQjz55JoAY-/0/1761214414938?e=1776866400&v=beta&t=KSBkAopo0IXm67qsM_ZfnsDfu8SXwwbgoey-0zJZpgc",
+//   "color": "#fff",
+//   "logo": anthropicLogo,
+//  },
  {
-  "certificateName": "KUET Bitfest Hackathon, 2024",
-  "placement": "Recognition of Top 24 Finalist",
-  "description": "Hackathon organized by KUET.",
+  "certificateName": "KUET Bitfest Datathon, 2024",
+  "placement": "Recognition of Top 10 Finalist",
+  "description": "Datathon organized by KUET.",
   "location": "KUET, Khulna",
   "link": null,
   "color": "#fff",
