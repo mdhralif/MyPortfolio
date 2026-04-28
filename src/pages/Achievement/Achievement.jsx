@@ -66,17 +66,25 @@ export default function Achievement() {
         <div className="flex justify-center">
           <div className="w-full max-w-7xl achievement-section">
             <div className={`achievement-grid ${achievements.length === 1 ? 'single' : ''}`}>
-              {achievements.map((a, idx) => (
-                <AchievementCard
-                  key={idx}
-                  certificateName={a.certificateName}
-                  placement={a.placement}
-                  description={a.description}
-                  logo={a.logo}
-                  color={a.color}
-                  link={a.link}
-                />
-              ))}
+              {(() => {
+                const items = [...achievements];
+                if (items.length % 2 === 1) items.push(null); // add placeholder to keep grid balanced
+                return items.map((a, idx) =>
+                  a ? (
+                    <AchievementCard
+                      key={idx}
+                      certificateName={a.certificateName}
+                      placement={a.placement}
+                      description={a.description}
+                      logo={a.logo}
+                      color={a.color}
+                      link={a.link}
+                    />
+                  ) : (
+                    <div className="achievement-card" key={`placeholder-${idx}`} aria-hidden="true" />
+                  )
+                );
+              })()}
             </div>
           </div>
         </div>
