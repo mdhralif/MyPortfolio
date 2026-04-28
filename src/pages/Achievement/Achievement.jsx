@@ -10,8 +10,7 @@ const achievements = [
   {
     certificateName: "Banglalink AppQuest Hackathon",
     placement: "Award of Champion",
-    description: "Mobile physiotherapy app with real-time posture feedback.",
-    location: "Banglalink Headquarters, Dhaka",
+    description: "AppQuest Hackathon organized by Banglalink",
     link: "https://www.linkedin.com/posts/md-h-r-alif-7358801a6_honored-to-be-the-champion-at-banglalink-ugcPost-7406008507109478400-oq1J?utm_source=share&utm_medium=member_desktop&rcm=ACoAADAuzBkBSSwMV6Qt1xaULMLxEbtc9MUQ9MU",
     color: "#fff",
     logo: banglalinkLogo,
@@ -19,7 +18,7 @@ const achievements = [
   {
     certificateName: "Grameenphone TECH TRENDS",
     placement: "Certificate of Excellence",
-    description: "Completed TECH TRENDS program.",
+    description: "TECH TRENDS program.",
     location: "Dhaka, Bangladesh",
     link: "https://media.licdn.com/dms/image/v2/D562DAQGqql-slf8kxg/profile-treasury-image-shrink_8192_8192/profile-treasury-image-shrink_8192_8192/0/1719564850910?e=1776866400&v=beta&t=--Ab_MPIEpXH8C6bJy1FYsd_WYnBQPGZ8GjKvlVNFmQ",
     color: "#fff",
@@ -28,7 +27,7 @@ const achievements = [
   {
   "certificateName": "AI Fluency- Framework & Foundations",
   "placement": "Certificate of Completion",
-  "description": "AI frameworks & foundations course.",
+  "description": "AI frameworks course by Anthropic.",
   "location": "Remote",
   "link": "https://media.licdn.com/dms/image/v2/D562DAQEDsP_pvRvUzg/profile-treasury-image-shrink_800_800/B56ZoQjz55JoAY-/0/1761214414938?e=1776866400&v=beta&t=KSBkAopo0IXm67qsM_ZfnsDfu8SXwwbgoey-0zJZpgc",
   "color": "#fff",
@@ -37,7 +36,7 @@ const achievements = [
  {
   "certificateName": "KUET Bitfest Hackathon, 2024",
   "placement": "Recognition of Top 24 Finalist",
-  "description": "AI-powered Bangla writing platform with translation and suggestions.",
+  "description": "Hackathon organized by KUET with 24 finalists.",
   "location": "KUET, Khulna",
   "link": null,
   "color": "#fff",
@@ -64,7 +63,6 @@ export default function Achievement() {
                   placement={a.placement}
                   description={a.description}
                   logo={a.logo}
-                  location={a.location}
                   color={a.color}
                   link={a.link}
                 />

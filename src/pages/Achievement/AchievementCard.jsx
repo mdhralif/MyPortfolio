@@ -1,13 +1,13 @@
 import PropTypes from "prop-types";
-import { IoLocationSharp } from "react-icons/io5";
 
 export default function AchievementCard({
   certificateName,
   placement,
   description,
+  whatItWas,
   logo,
-  location,
 }) {
+  const descText = whatItWas || description;
   return (
     <div className="achievement-card">
 
@@ -23,15 +23,9 @@ export default function AchievementCard({
         <div className="min-w-0">
           <h3 className="achievement-title">{certificateName}</h3>
           <div className="achievement-sub">{placement}</div>
-          {description ? <div className="achievement-desc">{description}</div> : null}
+          {descText ? <div className="achievement-desc">{descText}</div> : null}
 
-          {/** location shown as a subtle meta row */}
-          {location ? (
-            <div className="achievement-meta">
-              <IoLocationSharp className="" />
-              <span>{location}</span>
-            </div>
-          ) : null}
+          {/* location removed */}
         </div>
       </div>
     </div>
@@ -43,6 +37,5 @@ AchievementCard.propTypes = {
   placement: PropTypes.string.isRequired,
   description: PropTypes.string,
   logo: PropTypes.string,
-  location: PropTypes.string,
   link: PropTypes.string,
 };
