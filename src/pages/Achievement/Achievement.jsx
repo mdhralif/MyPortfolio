@@ -52,6 +52,7 @@ const achievements = [
   "logo": anthropicLogo,
  },
 
+
 ];
 
 export default function Achievement() {
