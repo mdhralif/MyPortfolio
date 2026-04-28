@@ -10,7 +10,7 @@ const achievements = [
   {
     certificateName: "ACL BioNLP Workshop, 2026",
     placement: "3rd in the leaderboard.",
-    description: "ACL BioNLP Workshop 2026, PsyDefDetect shared task.",
+    description: "ACL BioNLP Workshop 2026, PsyDefDetect shared task",
     location: "ACL BioNLP Workshop 2026",
     link: null,
     color: "#fff",
@@ -45,7 +45,7 @@ const achievements = [
  {
   "certificateName": "KUET Bitfest Datathon, 2024",
   "placement": "Recognition of Top 10 Finalist",
-  "description": "Datathon organized by KUET.",
+  "description": "Datathon organized by KUET",
   "location": "KUET, Khulna",
   "link": null,
   "color": "#fff",
