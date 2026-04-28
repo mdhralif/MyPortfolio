@@ -36,9 +36,9 @@ const achievements = [
  {
   "certificateName": "KUET Bitfest Datathon, 2024",
   "placement": "Recognition of Top 10 Finalists",
-  "description": "Datathon organized by KUET",
+  "description": "Data Hackathon organized by KUET",
   "location": "KUET, Khulna",
-  "link": null,
+  "link": "https://www.facebook.com/photo.php?fbid=1127385082057875&set=pb.100043591827218.-2207520000&type=3",
   "color": "#fff",
   "logo": kuetLogo
 },
@@ -53,7 +53,7 @@ const achievements = [
  },
 
 
- 
+
 ];
 
 export default function Achievement() {
