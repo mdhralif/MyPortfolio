@@ -22,7 +22,9 @@ export default function AchievementCard({
 
         <div className="min-w-0">
           <h3 className="achievement-title">{certificateName}</h3>
-          <div className="achievement-sub">{placement}</div>
+          <div className="achievement-sub">
+            <span className="placement-badge">{placement}</span>
+          </div>
           {descText ? <div className="achievement-desc">{descText}</div> : null}
 
           {/* location removed */}

@@ -36,7 +36,7 @@ const achievements = [
  {
   "certificateName": "KUET Bitfest Hackathon, 2024",
   "placement": "Recognition of Top 24 Finalist",
-  "description": "Hackathon organized by KUET with 24 finalists.",
+  "description": "Hackathon organized by KUET.",
   "location": "KUET, Khulna",
   "link": null,
   "color": "#fff",
