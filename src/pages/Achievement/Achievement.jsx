@@ -4,7 +4,7 @@ import banglalinkLogo from "@/assets/images/banglalink.png";
 import gplogo from "@/assets/images/gplogo.png";
 import Acllogo from "@/assets/images/ACL.png";
 import kuetLogo from "@/assets/images/kuet.png";
-import anthropicLogo from "@/assets/images/anthropic.png";
+import anthropicLogo from "@/assets/images/Anthropic.png";
 
 
 const achievements = [
