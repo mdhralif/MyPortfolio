@@ -67,6 +67,22 @@
   box-shadow: 0 1px 0 rgba(0,0,0,0.25) inset;
 }
 
+.achievement-link-icon {
+  color: rgba(255,255,255,0.85);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 10;
+}
+.achievement-link-icon:hover {
+  color: #2dd4bf;
+}
+
 .achievement-meta {
   color: rgba(255,255,255,0.85);
   font-size: 0.9rem;

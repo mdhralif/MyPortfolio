@@ -1,15 +1,21 @@
 import PropTypes from "prop-types";
+import { AiOutlineLink } from "react-icons/ai";
 
 export default function AchievementCard({
   certificateName,
   placement,
   description,
-  whatItWas,
   logo,
+  link,
 }) {
-  const descText = whatItWas || description;
+  const descText =  description;
   return (
     <div className="achievement-card">
+      {typeof link === 'string' && link ? (
+        <a href={link} target="_blank" rel="noopener noreferrer" className="achievement-link-icon" aria-label="Open achievement link">
+          <AiOutlineLink />
+        </a>
+      ) : null}
 
       <div className="flex items-start gap-4">
         <div className="w-12 h-12 flex items-center justify-center shrink-0">
