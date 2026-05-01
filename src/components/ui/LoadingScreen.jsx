@@ -58,14 +58,37 @@ const LoadingScreen = ({ onLoadingComplete }) => {
         {/* Smile - positioned exactly where it was above the center */}
         <div className="absolute bottom-full mb-12 sm:mb-20 text-white text-5xl sm:text-6xl font-medium">ツ</div>
 
-        {/* Text - naturally placed in the exact center (where the bar used to be), with increased size */}
-        <div className="flex justify-center w-full text-white font-mono tracking-[0.1em] sm:tracking-[0.15em] text-sm sm:text-2xl md:text-3xl lg:text-4xl font-bold">
+        {/* Mobile: 3 large words in same position - one by one appear and disappear */}
+        <div className="flex md:hidden flex-col items-center justify-center w-full relative h-20 sm:h-24">
+          {['Come', 'On', 'In'].map((word, idx) => {
+            const startProgress = idx * 33;
+            const endProgress = (idx + 1) * 33;
+            const isInRange = progress >= startProgress && progress < endProgress;
+            const opacity = isInRange ? (progress - startProgress) / (endProgress - startProgress) : 0;
+            
+            return (
+              <div
+                key={idx}
+                className="absolute text-white font-bold text-5xl sm:text-6xl text-center"
+                style={{
+                  opacity: Math.min(opacity, 1),
+                  transition: 'opacity 0.4s ease-in-out'
+                }}
+              >
+                {word}
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Desktop: Original animated text */}
+        <div className="hidden md:flex justify-center w-full text-white font-mono tracking-[0.1em] sm:tracking-[0.15em] text-sm sm:text-2xl md:text-3xl lg:text-4xl font-bold">
           <div className="flex text-center flex-nowrap justify-center whitespace-nowrap">
             {"You're about to see my work !".split("").map((char, index) => {
               const targetLength = 29;
               const isVisibleChar = index < Math.floor((Math.min(progress, 80) / 80) * targetLength);
               return (
-                <span key={`id-${index}`} className={`transition-opacity duration-150 ${isVisibleChar ? 'opacity-100' : 'opacity-0'}`}>
+                <span key={`id-${index}`} className={`transition-opacity duration-50 ${isVisibleChar ? 'opacity-100' : 'opacity-0'}`}>
                   {char === ' ' ? '\u00A0' : char}
                 </span>
               );
