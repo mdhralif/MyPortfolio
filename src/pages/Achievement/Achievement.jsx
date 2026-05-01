@@ -1,3 +1,5 @@
+import React, { useState, useEffect } from "react";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import "./achievement.css";
 import AchievementCard from "./AchievementCard";
 import banglalinkLogo from "@/assets/images/banglalink.png";
@@ -57,6 +59,18 @@ const achievements = [
 ];
 
 export default function Achievement() {
+  const [mobileExpanded, setMobileExpanded] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    function handleResize() {
+      setIsMobile(window.innerWidth <= 640);
+    }
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <main className="bg-[#161825] text-white pt-20 md:pt-16 min-h-screen">
       <section className="max-w-6xl mx-auto px-4 md:px-8 pb-11">
@@ -69,8 +83,10 @@ export default function Achievement() {
             <div className={`achievement-grid ${achievements.length === 1 ? 'single' : ''}`}>
               {(() => {
                 const items = [...achievements];
-                if (items.length % 2 === 1) items.push(null); // add placeholder to keep grid balanced
-                return items.map((a, idx) =>
+                // Only add placeholder when not collapsing on mobile
+                if (items.length % 2 === 1 && !(isMobile && !mobileExpanded)) items.push(null); // add placeholder to keep grid balanced
+                const displayItems = isMobile && !mobileExpanded ? items.slice(0, 3) : items;
+                return displayItems.map((a, idx) =>
                   a ? (
                     <AchievementCard
                       key={idx}
@@ -81,12 +97,25 @@ export default function Achievement() {
                       color={a.color}
                       link={a.link}
                     />
-                  ) : (
-                    <div className="achievement-card" key={`placeholder-${idx}`} aria-hidden="true" />
+                    ) : (
+                    <div className="achievement-card achievement-placeholder" key={`placeholder-${idx}`} aria-hidden="true" />
                   )
                 );
               })()}
             </div>
+
+            {isMobile && achievements.length > 3 ? (
+              <div className="mt-6 flex justify-center md:hidden">
+                <button
+                  type="button"
+                  onClick={() => setMobileExpanded(v => !v)}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-none bg-transparent border border-white/20 text-white font-medium shadow-sm hover:bg-white/5 hover:border-white/30 transition"
+                >
+                  {mobileExpanded ? <FaChevronUp className="w-4 h-4" /> : <FaChevronDown className="w-4 h-4" />}
+                  <span>{mobileExpanded ? "Show less" : "Show more"}</span>
+                </button>
+              </div>
+            ) : null}
           </div>
         </div>
 

@@ -16,7 +16,7 @@
 }
 
 .achievement-card {
-  background: #1C1F2E; /* match project card/bg used elsewhere */
+  background: #1C1F2E; 
   color: #ffffff;
   border-radius: 0;
   position: relative;
@@ -37,6 +37,17 @@
   grid-template-columns: minmax(0, 720px);
   justify-content: center;
   justify-items: center;
+}
+
+/* Placeholder card used to balance grid on larger screens; hide on small screens */
+.achievement-placeholder {
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .achievement-placeholder {
+    display: none;
+  }
 }
 
 .achievement-logo {

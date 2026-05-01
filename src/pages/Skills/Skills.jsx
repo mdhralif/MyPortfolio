@@ -16,6 +16,8 @@ import {
   FaGithub,
   FaAngular,
   FaKaggle,
+  FaChevronDown,
+  FaChevronUp,
 } from "react-icons/fa";
 import {
   SiTypescript,
@@ -88,6 +90,8 @@ SkillCard.propTypes = {
 
 const SkillsSection = () => {
   const [globeState, setGlobeState] = useState("hidden");
+  const [mobileExpanded, setMobileExpanded] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const location = useLocation();
 
   const skillCategories = [
@@ -313,6 +317,15 @@ const SkillsSection = () => {
     };
   }, [location.pathname]);
 
+  useEffect(() => {
+    function handleResize() {
+      setIsMobile(window.innerWidth <= 640);
+    }
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const shouldRenderGlobe = location.pathname === "/skills" && globeState !== "hidden";
   const shouldPreloadGlobe = location.pathname === "/";
 
@@ -345,7 +358,7 @@ const SkillsSection = () => {
         ) : null}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {skillCategories.map((category, index) => (
+          {(isMobile && !mobileExpanded ? skillCategories.slice(0, 3) : skillCategories).map((category, index) => (
             <SkillCard
               key={index}
               icon={category.icon}
@@ -355,6 +368,20 @@ const SkillsSection = () => {
             />
           ))}
         </div>
+
+        {/* Mobile toggle button */}
+        {isMobile && skillCategories.length > 3 ? (
+          <div className="mt-6 flex justify-center md:hidden">
+            <button
+              type="button"
+              onClick={() => setMobileExpanded(v => !v)}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-none bg-transparent border border-white/20 text-white font-medium shadow-sm hover:bg-white/5 hover:border-white/30 transition"
+            >
+              {mobileExpanded ? <FaChevronUp className="w-4 h-4" /> : <FaChevronDown className="w-4 h-4" />}
+              <span>{mobileExpanded ? "Show less" : "Show more"}</span>
+            </button>
+          </div>
+        ) : null}
       </section>
     </main>
   );
