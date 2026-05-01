@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { FaEnvelope, FaLinkedin, FaPhone } from 'react-icons/fa';
+import { FaEnvelope, FaLinkedin } from 'react-icons/fa';
 import { FaMapPin } from 'react-icons/fa6';
 import { AiOutlineClose } from 'react-icons/ai';
 import PropTypes from 'prop-types';
@@ -80,12 +80,6 @@ const ContactModal = ({ isOpen, onClose }) => {
       label: 'LinkedIn',
       value: 'MD H R ALIF',
       action: () => window.open('https://www.linkedin.com/in/md-h-r-alif-7358801a6/', '_blank')
-    },
-    {
-      icon: FaPhone,
-      label: 'Phone',
-      value: '(+880) 132 457 5819',
-      action: () => window.open('tel:+8801324575819', '_blank')
     }
   ];
 
