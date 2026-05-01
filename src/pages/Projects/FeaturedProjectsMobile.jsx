@@ -95,6 +95,17 @@ export default function FeaturedProjectsMobile() {
   const scrollerRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const scroll = (direction) => {
+    const scroller = scrollerRef.current;
+    if (!scroller) return;
+    const first = scroller.children[0];
+    if (!first) return;
+    const gap = 16;
+    const itemWidth = first.offsetWidth + gap;
+    const scrollAmount = itemWidth * (direction === 'left' ? -1 : 1);
+    scroller.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  };
+
   useEffect(() => {
     const scroller = scrollerRef.current;
     if (!scroller) return;
@@ -144,7 +155,9 @@ export default function FeaturedProjectsMobile() {
       </div>
 
       <div className="px-4">
-      <div ref={scrollerRef} className="flex gap-4 overflow-x-auto snap-x snap-mandatory touch-auto pb-6">
+      <div className="relative">
+        {/* Carousel */}
+        <div ref={scrollerRef} className="flex gap-4 overflow-hidden snap-x snap-mandatory pb-6">
           {featuredProjects.map((p, i) => (
             <article
               key={`mobile_fp_${i}`}
@@ -199,10 +212,33 @@ export default function FeaturedProjectsMobile() {
           ))}
         </div>
 
-        {/* Project counter (bottom-right) */}
-        <div className="absolute right-4 bottom-4 bg-black/60 text-white/90 px-3 py-1 text-xs rounded-none">
+        {/* Left overlay button */}
+        <button
+          onClick={() => scroll('left')}
+          disabled={currentIndex === 0}
+          className="absolute left-2 top-1/2 -translate-y-1/2 p-2 rounded-none bg-black/40 border border-white/20 text-white hover:bg-black/60 hover:border-white/40 transition disabled:opacity-30 disabled:cursor-not-allowed z-20 backdrop-blur-sm"
+          aria-label="Previous project"
+        >
+          <FaChevronLeft className="w-5 h-5" />
+        </button>
+
+        {/* Right overlay button */}
+        <button
+          onClick={() => scroll('right')}
+          disabled={currentIndex === featuredProjects.length - 1}
+          className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-none bg-black/40 border border-white/20 text-white hover:bg-black/60 hover:border-white/40 transition disabled:opacity-30 disabled:cursor-not-allowed z-20 backdrop-blur-sm"
+          aria-label="Next project"
+        >
+          <FaChevronRight className="w-5 h-5" />
+        </button>
+      </div>
+
+      {/* Project counter */}
+      <div className="mt-4 text-center">
+        <div className="inline-block bg-black/60 text-white/90 px-3 py-1 text-xs rounded-none">
           {currentIndex + 1}/{featuredProjects.length}
         </div>
+      </div>
 
       </div>
     </section>
