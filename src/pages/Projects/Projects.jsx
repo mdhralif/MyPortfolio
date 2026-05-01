@@ -305,14 +305,14 @@ function Card({
   return (
     <div
       ref={container}
-      className={`${i === 0 ? 'h-[70vh] md:h-[80vh]' : 'h-screen'} flex items-center justify-center sticky top-0 project-container ${i === 0 ? 'pt-16 md:pt-0' : 'pt-8 md:pt-0'}`}
+      className={`${i === 0 ? 'h-[75vh] md:h-[85vh]' : 'h-screen'} flex items-center justify-center sticky top-0 project-container ${i === 0 ? 'pt-16 md:pt-0' : 'pt-8 md:pt-0'}`}
     >
       <motion.div
         style={{
           scale,
           top: `calc(-5vh + ${i * 25}px)`,
         }}
-        className="relative -top-[25%] h-auto w-[90%] md:w-[85%] lg:w-[75%] xl:w-[65%] origin-top project-card"
+        className="relative -top-[25%] h-auto w-full md:w-[85%] lg:w-[75%] xl:w-[65%] origin-top project-card"
         whileHover={{
           y: -8,
           transition: { duration: 0.3 },
@@ -322,7 +322,7 @@ function Card({
         <div className="w-full flex flex-col md:flex-row bg-zinc-900 rounded-none overflow-hidden shadow-xl">
           
           {/* Image section - full width on mobile, 55% on desktop */}
-          <div className="w-full md:w-[55%] h-[250px] md:h-[400px] lg:h-[450px] relative overflow-hidden">
+          <div className="w-full md:w-[55%] h-[300px] md:h-[450px] lg:h-[520px] relative overflow-hidden">
             <motion.img
               src={url}
               alt={title}

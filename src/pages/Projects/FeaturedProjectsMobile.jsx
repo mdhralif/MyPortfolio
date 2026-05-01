@@ -1,4 +1,5 @@
 import { useRef, useState, useEffect } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 // Images (same as desktop component)
 import soulaceImg from "@/assets/images/soulace.png";
@@ -147,9 +148,9 @@ export default function FeaturedProjectsMobile() {
           {featuredProjects.map((p, i) => (
             <article
               key={`mobile_fp_${i}`}
-              className="snap-start min-w-[82%] bg-zinc-900 rounded-none overflow-hidden shadow-lg"
+              className="snap-start min-w-full bg-zinc-900 rounded-none overflow-hidden shadow-lg"
             >
-              <div className="h-44 w-full overflow-hidden">
+              <div className="relative h-64 w-full overflow-hidden">
                 <img
                   src={p.src}
                   alt={p.title}
