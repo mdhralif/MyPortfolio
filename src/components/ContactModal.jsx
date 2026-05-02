@@ -190,7 +190,7 @@ const ContactModal = ({ isOpen, onClose }) => {
                   {isSending ? 'Sending...' : 'Send'}
                 </button>
                 {mailStatus.message && mailStatus.type === 'success' && (
-                  <div className="absolute inset-0 flex items-center justify-center p-3 rounded-none text-sm bg-green-900 text-green-200 font-semibold shadow-xl z-20 animate-in fade-in zoom-in-95 border border-green-700">
+                  <div className="absolute inset-0 flex items-center justify-center p-3 rounded-none text-sm bg-green-900 text-green-200 font-semibold shadow-xl z-20 animate-in fade-in zoom-in-95 border-none">
                     {mailStatus.message}
                   </div>
                 )}
