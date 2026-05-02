@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import { FaEnvelope, FaLinkedin } from 'react-icons/fa';
+import { FaEnvelope, FaLinkedin, FaSync } from 'react-icons/fa';
 import { FaMapPin } from 'react-icons/fa6';
 import { AiOutlineClose } from 'react-icons/ai';
 import PropTypes from 'prop-types';
+import profileImage from '../assets/images/profile.jpg';
 
 const ContactModal = ({ isOpen, onClose }) => {
   const [isMapLoading, setIsMapLoading] = useState(true);
@@ -145,6 +146,20 @@ const ContactModal = ({ isOpen, onClose }) => {
                   <div className="h-10 w-10 rounded-full border-4 border-white/20 border-t-[#2DD4BF] animate-spin" />
                 </div>
               ) : null}
+              <button
+                onClick={() => {
+                  const iframe = document.querySelector('iframe[title="location-map"]');
+                  if (iframe) {
+                    setIsMapLoading(true);
+                    const baseUrl = 'https://maps.google.com/maps?q=23.948102,90.37926&z=17&output=embed';
+                    iframe.src = `${baseUrl}&t=${Date.now()}`;
+                  }
+                }}
+                className="absolute top-3 right-3 z-20 p-2 bg-white hover:bg-gray-200 rounded-full transition-colors duration-200"
+                title="Refresh map"
+              >
+                <FaSync className="w-4 h-4 text-gray-800" />
+              </button>
               <div className="absolute inset-0 bg-transparent">
                 <iframe
                   title="location-map"
@@ -154,6 +169,18 @@ const ContactModal = ({ isOpen, onClose }) => {
                   referrerPolicy="no-referrer-when-downgrade"
                   onLoad={() => setIsMapLoading(false)}
                 />
+                {/* Profile image marker pin - stays centered */}
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[calc(100%-8px)] z-20 pointer-events-none">
+                  <div className="relative flex flex-col items-center">
+                    <img
+                      src={profileImage}
+                      alt="Location marker"
+                      className="w-12 h-12 rounded-full border-4 border-white shadow-2xl object-cover"
+                    />
+                    {/* Pin pointer */}
+                    <div className="w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-white shadow-lg" style={{ marginTop: '-2px' }} />
+                  </div>
+                </div>
                 <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at center, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 100%)' }} />
               </div>
             </div>
