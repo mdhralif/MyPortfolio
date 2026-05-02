@@ -141,8 +141,8 @@ const ContactModal = ({ isOpen, onClose }) => {
 
         {/* Content: left = mail form, right = map */}
         <div className="grid items-stretch grid-cols-1 md:grid-cols-2 gap-4 px-4 md:px-6 pb-6 overflow-hidden">
-          <div className="w-full h-full bg-gray-800 p-6 rounded-none relative">
-            <div className="mb-6 flex items-center gap-3">
+          <div className="w-full h-full bg-gray-800 p-4 md:p-6 rounded-none relative">
+            <div className="mb-4 md:mb-6 flex items-center gap-3">
               <FaEnvelope className="w-8 h-8 text-white" />
               <h3 className="text-xl font-semibold text-white">Send Me an Email</h3>
             </div>
@@ -159,7 +159,7 @@ const ContactModal = ({ isOpen, onClose }) => {
                 </button>
               </div>
             )}
-            <form onSubmit={handleSendMail} className="space-y-4" noValidate>
+            <form onSubmit={handleSendMail} className="space-y-3 md:space-y-4" noValidate>
               <div>
                 <label className="block text-sm font-medium text-gray-300 mb-2">Your Email</label>
                 <input
@@ -176,7 +176,7 @@ const ContactModal = ({ isOpen, onClose }) => {
                 <textarea
                   value={mailForm.message}
                   onChange={(e) => setMailForm({ ...mailForm, message: e.target.value })}
-                  className="w-full px-4 py-2 bg-gray-700 border-none text-white rounded-none focus:outline-none transition-colors duration-200 resize-none h-40"
+                  className="w-full px-4 py-2 bg-gray-700 border-none text-white rounded-none focus:outline-none transition-colors duration-200 resize-none h-32 md:h-40"
                   placeholder="Write your message here..."
                   required
                 />
@@ -199,11 +199,11 @@ const ContactModal = ({ isOpen, onClose }) => {
           </div>
 
           <div className="p-4 md:p-6 bg-gray-800 h-full flex flex-col">
-            <div className="mb-6 flex items-center gap-3">
+            <div className="mb-4 md:mb-6 flex items-center gap-3">
               <FaMap className="w-8 h-8 text-white" />
               <h3 className="text-xl font-semibold text-white">My Location</h3>
             </div>
-            <div className="relative w-full flex-1 min-h-[350px] md:min-h-0 drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)] transition-transform duration-500 hover:scale-[1.02]">
+            <div className="relative w-full flex-1 min-h-[250px] md:min-h-0 drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)] transition-transform duration-500 hover:scale-[1.02]">
               <div 
                 className="absolute inset-0 bg-gray-700 overflow-hidden"
                 style={{ clipPath: 'polygon(0% 8%, 33.33% 0%, 66.66% 8%, 100% 0%, 100% 92%, 66.66% 100%, 33.33% 92%, 0% 100%)' }}
