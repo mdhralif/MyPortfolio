@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { FaEnvelope, FaLinkedin, FaSync } from 'react-icons/fa';
+import { FaSync, FaEnvelope } from 'react-icons/fa';
 import { FaMapPin } from 'react-icons/fa6';
 import { AiOutlineClose } from 'react-icons/ai';
 import PropTypes from 'prop-types';
@@ -7,6 +7,9 @@ import profileImage from '../assets/images/profile.jpg';
 
 const ContactModal = ({ isOpen, onClose }) => {
   const [isMapLoading, setIsMapLoading] = useState(true);
+  const [mailForm, setMailForm] = useState({ email: '', message: '' });
+  const [mailStatus, setMailStatus] = useState({ type: '', message: '' });
+  const [isSending, setIsSending] = useState(false);
   useEffect(() => {
     let loadingTimer;
     let scrollY;
@@ -63,26 +66,48 @@ const ContactModal = ({ isOpen, onClose }) => {
     }
   };
 
-  const contactOptions = [
-    {
-      icon: FaEnvelope,
-      label: 'Email',
-      value: 'hasiburrahman999.alif@gmail.com',
-      action: () => window.open('mailto:hasiburrahman999.alif@gmail.com', '_blank')
-    },
-    // {
-    //   icon: FaWhatsapp,
-    //   label: 'WhatsApp',
-    //   value: '(+880) 132 457 5819',
-    //   action: () => window.open('https://wa.me/8801324575819', '_blank')
-    // },
-    {
-      icon: FaLinkedin,
-      label: 'LinkedIn',
-      value: 'MD H R ALIF',
-      action: () => window.open('https://www.linkedin.com/in/md-h-r-alif-7358801a6/', '_blank')
+  const handleSendMail = async (e) => {
+    e.preventDefault();
+    
+    if (!mailForm.email || !mailForm.message) {
+      setMailStatus({ type: 'error', message: 'Please fill in all fields' });
+      return;
     }
-  ];
+
+    setIsSending(true);
+    setMailStatus({ type: '', message: '' });
+
+    try {
+      // Replace 'YOUR_FORM_ID' with your actual Formspree form ID
+      const FORMSPREE_ID = 'mnjwjawv';
+      
+      const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: mailForm.email,
+          message: mailForm.message,
+        }),
+      });
+
+      if (response.ok) {
+        setMailStatus({ type: 'success', message: 'Email sent successfully!' });
+        setMailForm({ email: '', message: '' });
+        setTimeout(() => {
+          setMailStatus({ type: '', message: '' });
+        }, 2000);
+      } else {
+        setMailStatus({ type: 'error', message: 'Failed to send email. Try again.' });
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+      setMailStatus({ type: 'error', message: 'Error sending email. Try again.' });
+    } finally {
+      setIsSending(false);
+    }
+  };
 
   if (!isOpen) return null;
 
@@ -108,39 +133,56 @@ const ContactModal = ({ isOpen, onClose }) => {
           </button>
         </div>
 
-        {/* Content: left = contact options, right = map */}
-        <div className="grid items-start grid-cols-1 md:grid-cols-2 gap-4 px-4 md:px-6 pb-6 overflow-hidden">
-          <div className="space-y-4 bg-transparent overflow-hidden">
-            {contactOptions.map((option, index) => (
-              <button
-                key={index}
-                onClick={option.action}
-                className="w-full p-4 md:p-6 bg-gray-800 hover:bg-gray-700 text-white rounded-none transition-colors duration-200 group"
-              >
-                <div className="flex items-center space-x-4 md:space-x-6">
-                  <div className="flex-shrink-0">
-                    <option.icon className="w-6 h-6 text-gray-300" />
-                  </div>
-                  <div className="flex-1 text-left">
-                    <div className="font-medium text-lg md:text-xl text-white">{option.label}</div>
-                    <div className="text-sm md:text-base text-gray-400">{option.value}</div>
-                  </div>
-                  <div className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                    <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
+        {/* Content: left = mail form, right = map */}
+        <div className="grid items-stretch grid-cols-1 md:grid-cols-2 gap-4 px-4 md:px-6 pb-6 overflow-hidden">
+          <div className="w-full h-full bg-gray-800 p-6 rounded-none">
+            <div className="mb-6 flex items-center gap-3">
+              <FaEnvelope className="w-8 h-8 text-white" />
+              <h3 className="text-xl font-semibold text-white">Send Me an Email</h3>
+            </div>
+            <form onSubmit={handleSendMail} className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-2">Your Email</label>
+                <input
+                  type="email"
+                  value={mailForm.email}
+                  onChange={(e) => setMailForm({ ...mailForm, email: e.target.value })}
+                  className="w-full px-4 py-2 bg-gray-700 border-none text-white rounded-none focus:outline-none transition-colors duration-200"
+                  placeholder="your.email@example.com"
+                  required
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-2">Message</label>
+                <textarea
+                  value={mailForm.message}
+                  onChange={(e) => setMailForm({ ...mailForm, message: e.target.value })}
+                  className="w-full px-4 py-2 bg-gray-700 border-none text-white rounded-none focus:outline-none transition-colors duration-200 resize-none h-40"
+                  placeholder="Write your message here..."
+                  required
+                />
+              </div>
+              {mailStatus.message && (
+                <div className={`p-3 rounded-none text-sm ${mailStatus.type === 'success' ? 'bg-green-900 text-green-200' : 'bg-red-900 text-red-200'}`}>
+                  {mailStatus.message}
                 </div>
+              )}
+              <button
+                type="submit"
+                disabled={isSending}
+                className="w-full py-3 bg-white text-[#18181a] font-semibold rounded-none transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+              >
+                {isSending ? 'Sending...' : 'Send'}
               </button>
-            ))}
+            </form>
           </div>
 
-          <div className="p-4 md:p-6 bg-gray-800 h-fit">
+          <div className="p-4 md:p-6 bg-gray-800 h-full flex flex-col">
             <div className="mb-3 text-lg md:text-xl font-medium text-white">
               <FaMapPin className="inline-block w-5 h-5 mr-2 text-gray-300" />
               Location
               </div>
-            <div className="relative w-full h-48 md:h-[50vh] bg-gray-700 overflow-hidden">
+            <div className="relative w-full flex-1 bg-gray-700 overflow-hidden">
               {isMapLoading ? (
                 <div className="pointer-events-none absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
                   <div className="h-10 w-10 rounded-full border-4 border-white/20 border-t-[#2DD4BF] animate-spin" />
@@ -151,8 +193,8 @@ const ContactModal = ({ isOpen, onClose }) => {
                   const iframe = document.querySelector('iframe[title="location-map"]');
                   if (iframe) {
                     setIsMapLoading(true);
-                    const baseUrl = 'https://maps.google.com/maps?q=23.948102,90.37926&z=17&output=embed';
-                    iframe.src = `${baseUrl}&t=${Date.now()}`;
+                    const baseUrl = 'https://maps.google.com/maps?q=23.948102,90.37926&t=k&z=17&output=embed';
+                    iframe.src = `${baseUrl}&cb=${Date.now()}`;
                   }
                 }}
                 className="absolute top-3 right-3 z-20 p-2 bg-white hover:bg-gray-200 rounded-full transition-colors duration-200"
@@ -163,7 +205,7 @@ const ContactModal = ({ isOpen, onClose }) => {
               <div className="absolute inset-0 bg-transparent">
                 <iframe
                   title="location-map"
-                  src="https://maps.google.com/maps?q=23.948102,90.37926&z=17&output=embed"
+                  src="https://maps.google.com/maps?q=23.948102,90.37926&t=k&z=17&output=embed"
                   className="w-full h-full border-0"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
