@@ -115,14 +115,18 @@ const ContactModal = ({ isOpen, onClose }) => {
     }
   };
 
-  if (!isOpen) return null;
-
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#161825] md:bg-[#161825]/90 md:backdrop-blur-3xl md:backdrop-saturate-200"
+      className={`fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#161825] md:bg-[#161825]/90 md:backdrop-blur-3xl md:backdrop-saturate-200 transition-all duration-300 ${
+        isOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
+      }`}
       onClick={handleBackdropClick}
     >
-      <div className="no-scrollbar relative w-full max-w-4xl bg-transparent rounded-none shadow-none transform transition-all duration-300 animate-in zoom-in-95 max-h-[90vh] overflow-y-auto">
+      <div 
+        className={`no-scrollbar relative w-full max-w-4xl bg-transparent rounded-none shadow-none transform transition-all duration-300 max-h-[90vh] overflow-y-auto ${
+          isOpen ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
+        }`}
+      >
         {/* Header */}
         <div className="flex items-center justify-between p-6 md:p-8 pb-4">
           <h2 className="text-2xl md:text-3xl font-bold text-white"><span className="text-[#2DD4BF]">Say</span> Hello!</h2>
@@ -208,11 +212,6 @@ const ContactModal = ({ isOpen, onClose }) => {
                 className="absolute inset-0 bg-gray-700 overflow-hidden"
                 style={{ clipPath: 'polygon(0% 8%, 33.33% 0%, 66.66% 8%, 100% 0%, 100% 92%, 66.66% 100%, 33.33% 92%, 0% 100%)' }}
               >
-              {isMapLoading ? (
-                <div className="pointer-events-none absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
-                  <div className="h-10 w-10 rounded-full border-4 border-white/20 border-t-[#2DD4BF] animate-spin" />
-                </div>
-              ) : null}
               <button
                 onClick={() => {
                   const iframe = document.querySelector('iframe[title="location-map"]');
