@@ -203,7 +203,7 @@ const ContactModal = ({ isOpen, onClose }) => {
               <FaMap className="w-8 h-8 text-white" />
               <h3 className="text-xl font-semibold text-white">My Location</h3>
             </div>
-            <div className="relative w-full flex-1 bg-gray-700 overflow-hidden">
+            <div className="relative w-full flex-1 bg-gray-700 overflow-hidden min-h-[350px] md:min-h-0">
               {isMapLoading ? (
                 <div className="pointer-events-none absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
                   <div className="h-10 w-10 rounded-full border-4 border-white/20 border-t-[#2DD4BF] animate-spin" />
