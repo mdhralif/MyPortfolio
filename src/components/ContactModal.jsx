@@ -124,7 +124,7 @@ const ContactModal = ({ isOpen, onClose }) => {
     >
       <div className="no-scrollbar relative w-full max-w-4xl bg-transparent rounded-none shadow-none transform transition-all duration-300 animate-in zoom-in-95 max-h-[90vh] overflow-y-auto">
         {/* Header */}
-        <div className="sticky top-0 z-10 bg-transparent flex items-center justify-between p-6 md:p-8 pb-4">
+        <div className="flex items-center justify-between p-6 md:p-8 pb-4">
           <h2 className="text-2xl md:text-3xl font-bold text-white"><span className="text-[#2DD4BF]">Say</span> Hello!</h2>
           <button
             type="button"
