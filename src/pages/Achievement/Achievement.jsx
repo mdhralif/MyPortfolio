@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import "./achievement.css";
 import AchievementCard from "./AchievementCard";
@@ -6,7 +6,7 @@ import banglalinkLogo from "@/assets/images/banglalink.png";
 import gplogo from "@/assets/images/gplogo.png";
 import Acllogo from "@/assets/images/ACL.png";
 import kuetLogo from "@/assets/images/kuet.png";
-import anthropicLogo from "@/assets/images/Anthropic.png";
+// import anthropicLogo from "@/assets/images/Anthropic.png";
 
 
 const achievements = [
@@ -44,15 +44,15 @@ const achievements = [
   "color": "#fff",
   "logo": kuetLogo
 },
-{
-  "certificateName": "AI Frameworks Course",
-  "placement": "Certificate of Completion",
-  "description": "AI frameworks course by Anthropic.",
-  "location": "Remote",
-  "link": "https://www.linkedin.com/in/md-h-r-alif-7358801a6/overlay/Honor/277892522/treasury/?profileId=ACoAADAuzBkBSSwMV6Qt1xaULMLxEbtc9MUQ9MU",
-  "color": "#fff",
-  "logo": anthropicLogo,
- },
+// {
+//   "certificateName": "AI Frameworks Course",
+//   "placement": "Certificate of Completion",
+//   "description": "AI frameworks course by Anthropic.",
+//   "location": "Remote",
+//   "link": "https://www.linkedin.com/in/md-h-r-alif-7358801a6/overlay/Honor/277892522/treasury/?profileId=ACoAADAuzBkBSSwMV6Qt1xaULMLxEbtc9MUQ9MU",
+//   "color": "#fff",
+//   "logo": anthropicLogo,
+//  },
 
 
 
