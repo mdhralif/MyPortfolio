@@ -31,6 +31,7 @@ const getNormalizedPathname = () => {
     : pathname;
 };
 
+
 const shouldSkipLoading = (pathname) =>
   pathname.endsWith("/projects") ||
   pathname.endsWith("/skills") ||
