@@ -148,7 +148,7 @@ const ContactModal = ({ isOpen, onClose }) => {
               <div className="absolute inset-0 pointer-events-none bg-transparent">
                 <iframe
                   title="location-map"
-                  src="https://maps.google.com/maps?q=23.948102,90.37926&z=17&t=k&output=embed"
+                  src="https://maps.google.com/maps?q=23.948102,90.37926&z=17&output=embed"
                   className="w-full h-full border-0"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
