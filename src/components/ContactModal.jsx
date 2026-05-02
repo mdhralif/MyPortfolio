@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { FaSync, FaEnvelope } from 'react-icons/fa';
-import { FaMapPin } from 'react-icons/fa6';
+import { FaMap } from 'react-icons/fa6';
 import { AiOutlineClose } from 'react-icons/ai';
 import PropTypes from 'prop-types';
 import profileImage from '../assets/images/profile.jpg';
@@ -199,10 +199,10 @@ const ContactModal = ({ isOpen, onClose }) => {
           </div>
 
           <div className="p-4 md:p-6 bg-gray-800 h-full flex flex-col">
-            <div className="mb-3 text-lg md:text-xl font-medium text-white">
-              <FaMapPin className="inline-block w-5 h-5 mr-2 text-gray-300" />
-              Location
-              </div>
+            <div className="mb-6 flex items-center gap-3">
+              <FaMap className="w-8 h-8 text-white" />
+              <h3 className="text-xl font-semibold text-white">My Location</h3>
+            </div>
             <div className="relative w-full flex-1 bg-gray-700 overflow-hidden">
               {isMapLoading ? (
                 <div className="pointer-events-none absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
