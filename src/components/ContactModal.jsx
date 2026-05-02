@@ -203,7 +203,11 @@ const ContactModal = ({ isOpen, onClose }) => {
               <FaMap className="w-8 h-8 text-white" />
               <h3 className="text-xl font-semibold text-white">My Location</h3>
             </div>
-            <div className="relative w-full flex-1 bg-gray-700 overflow-hidden min-h-[350px] md:min-h-0">
+            <div className="relative w-full flex-1 min-h-[350px] md:min-h-0 drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)] transition-transform duration-500 hover:scale-[1.02]">
+              <div 
+                className="absolute inset-0 bg-gray-700 overflow-hidden"
+                style={{ clipPath: 'polygon(0% 8%, 33.33% 0%, 66.66% 8%, 100% 0%, 100% 92%, 66.66% 100%, 33.33% 92%, 0% 100%)' }}
+              >
               {isMapLoading ? (
                 <div className="pointer-events-none absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
                   <div className="h-10 w-10 rounded-full border-4 border-white/20 border-t-[#2DD4BF] animate-spin" />
@@ -245,6 +249,11 @@ const ContactModal = ({ isOpen, onClose }) => {
                   </div>
                 </div>
                 <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at center, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 100%)' }} />
+                
+                {/* Map pane dividers to simulate 3 folded sections */}
+                <div className="absolute top-0 bottom-0 left-[33.33%] w-2 md:w-3 bg-gray-800 z-30 pointer-events-none -translate-x-1/2" />
+                <div className="absolute top-0 bottom-0 left-[66.66%] w-2 md:w-3 bg-gray-800 z-30 pointer-events-none -translate-x-1/2" />
+              </div>
               </div>
             </div>
           </div>
