@@ -129,7 +129,7 @@ const ContactModal = ({ isOpen, onClose }) => {
       >
         {/* Header */}
         <div className="flex items-center justify-between p-6 md:p-8 pb-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-white"><span className="text-[#2DD4BF]">Say</span> Hello!</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-white"><span className="text-[#2DD4BF]">Let's Work</span> Together</h2>
           <button
             type="button"
             onClick={(e) => {
