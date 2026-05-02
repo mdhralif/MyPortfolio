@@ -145,7 +145,7 @@ const ContactModal = ({ isOpen, onClose }) => {
                   <div className="h-10 w-10 rounded-full border-4 border-white/20 border-t-[#2DD4BF] animate-spin" />
                 </div>
               ) : null}
-              <div className="absolute inset-0 pointer-events-none bg-transparent">
+              <div className="absolute inset-0 bg-transparent">
                 <iframe
                   title="location-map"
                   src="https://maps.google.com/maps?q=23.948102,90.37926&z=17&output=embed"
@@ -154,6 +154,7 @@ const ContactModal = ({ isOpen, onClose }) => {
                   referrerPolicy="no-referrer-when-downgrade"
                   onLoad={() => setIsMapLoading(false)}
                 />
+                <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at center, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 100%)' }} />
               </div>
             </div>
           </div>
