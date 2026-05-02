@@ -74,6 +74,12 @@ const ContactModal = ({ isOpen, onClose }) => {
       return;
     }
 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(mailForm.email)) {
+      setMailStatus({ type: 'error', message: `Please include a valid email address. '${mailForm.email}' is missing an '@' or domain.` });
+      return;
+    }
+
     setIsSending(true);
     setMailStatus({ type: '', message: '' });
 
@@ -135,12 +141,25 @@ const ContactModal = ({ isOpen, onClose }) => {
 
         {/* Content: left = mail form, right = map */}
         <div className="grid items-stretch grid-cols-1 md:grid-cols-2 gap-4 px-4 md:px-6 pb-6 overflow-hidden">
-          <div className="w-full h-full bg-gray-800 p-6 rounded-none">
+          <div className="w-full h-full bg-gray-800 p-6 rounded-none relative">
             <div className="mb-6 flex items-center gap-3">
               <FaEnvelope className="w-8 h-8 text-white" />
               <h3 className="text-xl font-semibold text-white">Send Me an Email</h3>
             </div>
-            <form onSubmit={handleSendMail} className="space-y-4">
+            {mailStatus.message && mailStatus.type === 'error' && (
+              <div className="absolute top-4 right-4 left-4 md:left-auto md:w-2/3 p-3 pr-10 rounded-none text-sm bg-red-900 text-red-200 shadow-xl z-20 animate-in fade-in slide-in-from-top-2 border border-red-700">
+                {mailStatus.message}
+                <button
+                  type="button"
+                  onClick={() => setMailStatus({ type: '', message: '' })}
+                  className="absolute top-2 right-2 p-1 text-red-300 hover:text-white hover:bg-red-800 rounded transition-colors"
+                  aria-label="Dismiss error"
+                >
+                  <AiOutlineClose className="w-4 h-4" />
+                </button>
+              </div>
+            )}
+            <form onSubmit={handleSendMail} className="space-y-4" noValidate>
               <div>
                 <label className="block text-sm font-medium text-gray-300 mb-2">Your Email</label>
                 <input
@@ -162,18 +181,20 @@ const ContactModal = ({ isOpen, onClose }) => {
                   required
                 />
               </div>
-              {mailStatus.message && (
-                <div className={`p-3 rounded-none text-sm ${mailStatus.type === 'success' ? 'bg-green-900 text-green-200' : 'bg-red-900 text-red-200'}`}>
-                  {mailStatus.message}
-                </div>
-              )}
-              <button
-                type="submit"
-                disabled={isSending}
-                className="w-full py-3 bg-white text-[#18181a] font-semibold rounded-none transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
-              >
-                {isSending ? 'Sending...' : 'Send'}
-              </button>
+              <div className="relative w-full">
+                <button
+                  type="submit"
+                  disabled={isSending}
+                  className="w-full py-3 bg-white text-[#18181a] font-semibold rounded-none transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                >
+                  {isSending ? 'Sending...' : 'Send'}
+                </button>
+                {mailStatus.message && mailStatus.type === 'success' && (
+                  <div className="absolute inset-0 flex items-center justify-center p-3 rounded-none text-sm bg-green-900 text-green-200 font-semibold shadow-xl z-20 animate-in fade-in zoom-in-95 border border-green-700">
+                    {mailStatus.message}
+                  </div>
+                )}
+              </div>
             </form>
           </div>
 
